@@ -24,7 +24,6 @@ import {
   BookOpen,
   Sparkles,
   Heart,
-  Lock,
 } from "lucide-react";
 
 export default function HomePage() {
@@ -182,31 +181,6 @@ export default function HomePage() {
             ))}
           </div>
 
-          {/* Demo banner - inside hero so it stays in the dark zone */}
-          {hasHistory && progress?.isDemo && (
-            <div className="max-w-6xl mx-auto px-6 pt-6">
-              <div
-                className="rounded-2xl px-5 py-3 flex items-center justify-between"
-                style={{
-                  background: "linear-gradient(135deg, rgba(124, 58, 237, 0.2), rgba(59, 130, 246, 0.2))",
-                  border: "1px solid rgba(124, 58, 237, 0.4)",
-                }}
-              >
-                <div className="flex items-center gap-2">
-                  <Lock size={16} className="text-[#7C3AED]" />
-                  <span className="text-sm text-white/90">
-                    Demo mode — sign up to unlock all content
-                  </span>
-                </div>
-                <button
-                  className="text-sm font-bold text-[#7C3AED] hover:text-[#A78BFA] transition-colors flex items-center gap-1"
-                >
-                  Sign Up
-                  <ArrowRight size={16} />
-                </button>
-              </div>
-            </div>
-          )}
         </div>
       </section>
 

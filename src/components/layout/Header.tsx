@@ -1,8 +1,10 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { MessageCircle, Home, BarChart3, BookOpen, Info, Play } from "lucide-react";
+import { MessageCircle, Home, BarChart3, BookOpen, Info, Play, ArrowRight } from "lucide-react";
+import { loadProgress } from "@/lib/progress/store";
 
 const NAV_ITEMS = [
   { href: "/", label: "Home", icon: Home },
@@ -14,6 +16,12 @@ const NAV_ITEMS = [
 
 export function Header() {
   const pathname = usePathname();
+  const [isDemo, setIsDemo] = useState(false);
+
+  useEffect(() => {
+    const progress = loadProgress();
+    setIsDemo(progress.isDemo);
+  }, []);
 
   return (
     <header
@@ -63,6 +71,17 @@ export function Header() {
                 </Link>
               );
             })}
+            {isDemo && (
+              <button
+                className="ml-2 flex items-center gap-1.5 px-4 py-1.5 rounded-lg text-sm font-bold text-white transition-all duration-200 hover:opacity-90"
+                style={{
+                  background: "linear-gradient(135deg, #7C3AED, #6D28D9)",
+                }}
+              >
+                Sign Up
+                <ArrowRight size={16} />
+              </button>
+            )}
           </nav>
 
           {/* Mobile nav */}
