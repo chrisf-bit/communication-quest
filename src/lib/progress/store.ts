@@ -8,6 +8,7 @@ import {
   ProficiencyLevel,
 } from "@/types";
 import { xpForResult, firstTimeBonus, perfectScenarioBonus, getLevelForXP } from "./xp";
+import { getStreakMilestone } from "@/lib/daily";
 
 const STORAGE_KEY = "conversation-quest-progress";
 
@@ -45,6 +46,8 @@ function createDefaultProgress(isDemo = true): UserProgress {
     completedScenarioIds: [],
     lastSessionDate: null,
     currentStreak: 0,
+    longestStreak: 0,
+    completedDailyChallenges: [],
     isDemo,
     hasCompletedAssessment: false,
   };
@@ -73,6 +76,12 @@ function migrateProgress(data: any): UserProgress {
   }
   if (progress.hasCompletedAssessment === undefined) {
     progress.hasCompletedAssessment = false;
+  }
+  if (progress.longestStreak === undefined) {
+    progress.longestStreak = progress.currentStreak ?? 0;
+  }
+  if (progress.completedDailyChallenges === undefined) {
+    progress.completedDailyChallenges = [];
   }
 
   return progress;
@@ -199,6 +208,9 @@ export function recordSession(
     progress.currentStreak = 1;
   }
   progress.lastSessionDate = today;
+  if (progress.currentStreak > (progress.longestStreak ?? 0)) {
+    progress.longestStreak = progress.currentStreak;
+  }
 
   // Add session to history (keep last 20)
   progress.sessions = [session, ...progress.sessions].slice(0, 20);
@@ -259,6 +271,32 @@ export function recordAssessment(profile: {
 
   saveProgress(progress);
   return { xpAwarded: totalXP };
+}
+
+/**
+ * Record that the user completed today's daily challenge.
+ * Returns the streak milestone XP bonus if one was reached.
+ */
+export function recordDailyChallenge(dateKey: string): { streakMilestoneXP: number } {
+  const progress = loadProgress();
+
+  // Already completed today
+  if (progress.completedDailyChallenges.includes(dateKey)) {
+    return { streakMilestoneXP: 0 };
+  }
+
+  progress.completedDailyChallenges = [...progress.completedDailyChallenges, dateKey];
+
+  // Check for streak milestone bonus
+  const milestone = getStreakMilestone(progress.currentStreak);
+  let streakMilestoneXP = 0;
+  if (milestone) {
+    progress.totalXP += milestone.xpBonus;
+    streakMilestoneXP = milestone.xpBonus;
+  }
+
+  saveProgress(progress);
+  return { streakMilestoneXP };
 }
 
 export function resetProgress(): void {

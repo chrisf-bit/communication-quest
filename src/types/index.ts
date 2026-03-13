@@ -300,6 +300,8 @@ export interface UserProgress {
   completedScenarioIds: string[];
   lastSessionDate: string | null;
   currentStreak: number;
+  longestStreak: number;
+  completedDailyChallenges: string[];
   isDemo: boolean;
   hasCompletedAssessment: boolean;
   assessmentProfile?: {
