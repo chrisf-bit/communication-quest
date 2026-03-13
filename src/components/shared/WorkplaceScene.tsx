@@ -488,7 +488,7 @@ function BreakRoomScene() {
   );
 }
 
-/** Foreground layers — furniture that should occlude the character */
+/** Foreground layers - furniture that should occlude the character */
 
 function OfficeForeground() {
   return (
@@ -566,7 +566,7 @@ function PresentationForeground() {
 function BreakRoomForeground() {
   return (
     <svg viewBox="0 0 600 400" className="w-full h-full" preserveAspectRatio="xMidYMax slice">
-      {/* Only bar stools in front of character — counter is behind */}
+      {/* Only bar stools in front of character - counter is behind */}
       {[310, 385, 460, 535].map((x, i) => {
         const colours = ["#FF6B6B", "#FBBF24", "#059669", "#3B82F6"];
         return (

@@ -25,7 +25,7 @@ interface VocabularyFlowProps {
 type Phase = "intro" | "challenge" | "summary";
 
 /**
- * Get the "target style" for a vocabulary challenge — used for progress tracking.
+ * Get the "target style" for a vocabulary challenge - used for progress tracking.
  */
 function getChallengeTargetStyle(challenge: VocabularyChallenge): CommunicationStyle {
   switch (challenge.type) {
@@ -89,7 +89,7 @@ export function VocabularyFlow({
       setAnswers((prev) => [...prev, answer]);
 
       if (currentIndex + 1 >= challenges.length) {
-        // Session complete — save progress
+        // Session complete - save progress
         const allAnswers = [...answers, answer];
         const totalScore = allAnswers.reduce((sum, a) => sum + a.score, 0);
         const totalMax = allAnswers.reduce((sum, a) => sum + a.maxScore, 0);

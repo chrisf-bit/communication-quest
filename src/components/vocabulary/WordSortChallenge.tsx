@@ -2,11 +2,9 @@
 
 import { useState, useMemo } from "react";
 import { CommunicationStyle, WordSortChallenge as WordSortData } from "@/types";
-import { STYLES } from "@/data/styles";
+import { STYLES, STYLE_GRID_ORDER } from "@/data/styles";
 import { STYLE_LANGUAGE_TIPS } from "@/data/vocabulary";
 import { Check, X, ArrowRight } from "lucide-react";
-
-const STYLE_ORDER: CommunicationStyle[] = ["analytical", "direct", "supportive", "expressive"];
 
 const STYLE_BG: Record<CommunicationStyle, string> = {
   direct: "linear-gradient(145deg, #DC2626, #B91C1C)",
@@ -153,7 +151,7 @@ export function WordSortChallengeUI({
 
         {/* Style buckets */}
         <div className="grid grid-cols-2 gap-3 w-full max-w-lg mb-8">
-          {STYLE_ORDER.map((style) => {
+          {STYLE_GRID_ORDER.map((style) => {
             const styleDef = STYLES[style];
             const assignedWords = shuffledWords.filter(
               (w) => assignments[w.word] === style

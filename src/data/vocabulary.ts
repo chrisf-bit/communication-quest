@@ -231,7 +231,7 @@ const SENTENCE_DETECTION_CHALLENGES: SentenceDetectionChallenge[] = [
   {
     id: "sd-10",
     type: "sentence-detection",
-    sentence: "Bottom line — what's our return on this?",
+    sentence: "Bottom line - what's our return on this?",
     correctStyle: "direct",
     adjacentStyle: "analytical",
     explanation: "'Bottom line' and focusing on return demonstrates results-driven, direct communication.",
@@ -239,7 +239,7 @@ const SENTENCE_DETECTION_CHALLENGES: SentenceDetectionChallenge[] = [
   {
     id: "sd-11",
     type: "sentence-detection",
-    sentence: "This has so much potential — let's brainstorm some ideas together!",
+    sentence: "This has so much potential - let's brainstorm some ideas together!",
     correctStyle: "expressive",
     adjacentStyle: "supportive",
     explanation: "The combination of 'potential', 'brainstorm', and enthusiasm is quintessential expressive language.",
@@ -278,7 +278,7 @@ const LANGUAGE_MATCH_CHALLENGES: LanguageMatchChallenge[] = [
     characterSays: "We need to move fast on this.",
     characterStyle: "direct",
     options: [
-      { id: "a", text: "I've drafted three options — here are the trade-offs.", isCorrect: false },
+      { id: "a", text: "I've drafted three options - here are the trade-offs.", isCorrect: false },
       { id: "b", text: "How does the team feel about rushing this?", isCorrect: false },
       { id: "c", text: "Done. I'll have it resolved by end of day.", isCorrect: true },
       { id: "d", text: "What if we explored a completely new approach?", isCorrect: false },
@@ -293,7 +293,7 @@ const LANGUAGE_MATCH_CHALLENGES: LanguageMatchChallenge[] = [
     options: [
       { id: "a", text: "The numbers show it's the right call.", isCorrect: false },
       { id: "b", text: "Let's get it done and people will come around.", isCorrect: false },
-      { id: "c", text: "That's a fair concern — shall we check in with the team first?", isCorrect: true },
+      { id: "c", text: "That's a fair concern - shall we check in with the team first?", isCorrect: true },
       { id: "d", text: "Think of the possibilities though!", isCorrect: false },
     ],
     explanation: "A supportive communicator expressing concern needs acknowledgement and a collaborative, people-first response.",
@@ -301,10 +301,10 @@ const LANGUAGE_MATCH_CHALLENGES: LanguageMatchChallenge[] = [
   {
     id: "lm-04",
     type: "language-match",
-    characterSays: "I've been thinking — what if we completely redesigned the customer journey?",
+    characterSays: "I've been thinking - what if we completely redesigned the customer journey?",
     characterStyle: "expressive",
     options: [
-      { id: "a", text: "That's a bold idea — what's your vision for it?", isCorrect: true },
+      { id: "a", text: "That's a bold idea - what's your vision for it?", isCorrect: true },
       { id: "b", text: "We'd need to see the cost-benefit analysis first.", isCorrect: false },
       { id: "c", text: "Let's just fix what's broken.", isCorrect: false },
       { id: "d", text: "How would the team feel about such a big change?", isCorrect: false },
@@ -317,12 +317,12 @@ const LANGUAGE_MATCH_CHALLENGES: LanguageMatchChallenge[] = [
     characterSays: "Can you break down exactly how you arrived at that figure?",
     characterStyle: "analytical",
     options: [
-      { id: "a", text: "I used three data sources — let me walk you through each one.", isCorrect: true },
+      { id: "a", text: "I used three data sources - let me walk you through each one.", isCorrect: true },
       { id: "b", text: "Trust me, the number is right.", isCorrect: false },
       { id: "c", text: "The team worked really hard on it.", isCorrect: false },
       { id: "d", text: "It's a really exciting result!", isCorrect: false },
     ],
-    explanation: "When an analytical communicator asks for a breakdown, they expect structured, specific detail — not reassurance or enthusiasm.",
+    explanation: "When an analytical communicator asks for a breakdown, they expect structured, specific detail - not reassurance or enthusiasm.",
   },
   {
     id: "lm-06",
@@ -331,11 +331,11 @@ const LANGUAGE_MATCH_CHALLENGES: LanguageMatchChallenge[] = [
     characterStyle: "direct",
     options: [
       { id: "a", text: "Let's explore all the angles before deciding.", isCorrect: false },
-      { id: "b", text: "Focus on the client delivery — everything else can wait.", isCorrect: true },
+      { id: "b", text: "Focus on the client delivery - everything else can wait.", isCorrect: true },
       { id: "c", text: "Maybe we should ask the team what they think?", isCorrect: false },
       { id: "d", text: "There are so many interesting options to consider.", isCorrect: false },
     ],
-    explanation: "Direct communicators asking for priorities want a clear, decisive answer — not exploration or consensus-building.",
+    explanation: "Direct communicators asking for priorities want a clear, decisive answer - not exploration or consensus-building.",
   },
   {
     id: "lm-07",
@@ -343,9 +343,9 @@ const LANGUAGE_MATCH_CHALLENGES: LanguageMatchChallenge[] = [
     characterSays: "I just want to make sure everyone's voice is heard before we commit.",
     characterStyle: "supportive",
     options: [
-      { id: "a", text: "We don't have time for that — let's decide.", isCorrect: false },
+      { id: "a", text: "We don't have time for that - let's decide.", isCorrect: false },
       { id: "b", text: "The data already supports one clear direction.", isCorrect: false },
-      { id: "c", text: "Agreed — let's set up a round-table so everyone can share their perspective.", isCorrect: true },
+      { id: "c", text: "Agreed - let's set up a round-table so everyone can share their perspective.", isCorrect: true },
       { id: "d", text: "I have a great idea for how to handle it!", isCorrect: false },
     ],
     explanation: "Supportive communicators value inclusion. Matching their approach by facilitating group input shows you understand their priority.",
@@ -353,11 +353,11 @@ const LANGUAGE_MATCH_CHALLENGES: LanguageMatchChallenge[] = [
   {
     id: "lm-08",
     type: "language-match",
-    characterSays: "This project has incredible potential — I can already see where it could go!",
+    characterSays: "This project has incredible potential - I can already see where it could go!",
     characterStyle: "expressive",
     options: [
       { id: "a", text: "Let's ground this in the numbers first.", isCorrect: false },
-      { id: "b", text: "I love that energy — let's sketch out the vision together.", isCorrect: true },
+      { id: "b", text: "I love that energy - let's sketch out the vision together.", isCorrect: true },
       { id: "c", text: "What's the immediate deliverable?", isCorrect: false },
       { id: "d", text: "Is everyone comfortable with this direction?", isCorrect: false },
     ],
@@ -369,12 +369,12 @@ const LANGUAGE_MATCH_CHALLENGES: LanguageMatchChallenge[] = [
     characterSays: "I'd like to see a detailed comparison of both approaches before we proceed.",
     characterStyle: "analytical",
     options: [
-      { id: "a", text: "Let's just go with option A — it feels right.", isCorrect: false },
+      { id: "a", text: "Let's just go with option A - it feels right.", isCorrect: false },
       { id: "b", text: "I'll prepare a side-by-side analysis with the key metrics.", isCorrect: true },
       { id: "c", text: "How does the team feel about both options?", isCorrect: false },
-      { id: "d", text: "Both options are exciting — let's explore the possibilities!", isCorrect: false },
+      { id: "d", text: "Both options are exciting - let's explore the possibilities!", isCorrect: false },
     ],
-    explanation: "An analytical communicator requesting a comparison expects a structured, data-driven response — not intuition or enthusiasm.",
+    explanation: "An analytical communicator requesting a comparison expects a structured, data-driven response - not intuition or enthusiasm.",
   },
   {
     id: "lm-10",
@@ -382,8 +382,8 @@ const LANGUAGE_MATCH_CHALLENGES: LanguageMatchChallenge[] = [
     characterSays: "I appreciate everyone's input, but I think we need to consider how this affects the newer team members.",
     characterStyle: "supportive",
     options: [
-      { id: "a", text: "Good point — let's pair each new starter with a buddy during the transition.", isCorrect: true },
-      { id: "b", text: "They'll adapt — let's not slow down.", isCorrect: false },
+      { id: "a", text: "Good point - let's pair each new starter with a buddy during the transition.", isCorrect: true },
+      { id: "b", text: "They'll adapt - let's not slow down.", isCorrect: false },
       { id: "c", text: "What do the onboarding metrics look like?", isCorrect: false },
       { id: "d", text: "Maybe we could reimagine the whole onboarding experience!", isCorrect: false },
     ],

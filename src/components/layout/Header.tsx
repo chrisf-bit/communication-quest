@@ -93,7 +93,7 @@ export function Header() {
                   key={href}
                   href={href}
                   className={`
-                    flex flex-col items-center gap-0.5 px-2.5 py-1 rounded-lg text-[10px] font-medium transition-colors
+                    flex flex-col items-center gap-0.5 px-2 py-1 rounded-lg text-[10px] font-medium transition-colors
                     ${
                       isActive
                         ? "text-[#58CC02]"
@@ -101,11 +101,21 @@ export function Header() {
                     }
                   `}
                 >
-                  <Icon size={20} />
+                  <Icon size={18} />
                   {label}
                 </Link>
               );
             })}
+            {isDemo && (
+              <button
+                className="ml-1 flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-bold text-white transition-all duration-200 hover:opacity-90"
+                style={{
+                  background: "linear-gradient(135deg, #7C3AED, #6D28D9)",
+                }}
+              >
+                Sign Up
+              </button>
+            )}
           </nav>
         </div>
       </div>

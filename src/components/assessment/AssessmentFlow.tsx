@@ -19,7 +19,6 @@ import {
   Volume2,
   Target,
   Sparkles,
-  MessageCircle,
 } from "lucide-react";
 
 const STYLE_ICONS: Record<CommunicationStyle, typeof Zap> = {
@@ -39,12 +38,13 @@ export function AssessmentFlow({ onComplete }: AssessmentFlowProps) {
   const [phase, setPhase] = useState<Phase>("intro");
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState<
-    { questionId: string; selectedStyle: CommunicationStyle }[]
+    { questionId: string; selectedOptionId: string }[]
   >([]);
   const [lastAnswer, setLastAnswer] = useState<{
-    selected: CommunicationStyle;
-    correct: CommunicationStyle;
+    selectedOptionId: string;
+    correctOptionId: string;
     isCorrect: boolean;
+    correctStyle: CommunicationStyle;
     explanation: string;
   } | null>(null);
   const [profile, setProfile] = useState<ReturnType<
@@ -56,19 +56,20 @@ export function AssessmentFlow({ onComplete }: AssessmentFlowProps) {
     ASSESSMENT_QUESTIONS[currentIndex];
 
   const handleAnswer = useCallback(
-    (style: CommunicationStyle) => {
+    (optionId: string) => {
       if (!question) return;
 
-      const isCorrect = style === question.correctStyle;
+      const isCorrect = optionId === question.correctOptionId;
       const newAnswers = [
         ...answers,
-        { questionId: question.id, selectedStyle: style },
+        { questionId: question.id, selectedOptionId: optionId },
       ];
       setAnswers(newAnswers);
       setLastAnswer({
-        selected: style,
-        correct: question.correctStyle,
+        selectedOptionId: optionId,
+        correctOptionId: question.correctOptionId,
         isCorrect,
+        correctStyle: question.correctStyle,
         explanation: question.explanation,
       });
       setPhase("feedback");
@@ -80,7 +81,7 @@ export function AssessmentFlow({ onComplete }: AssessmentFlowProps) {
     const nextIndex = currentIndex + 1;
 
     if (nextIndex >= ASSESSMENT_QUESTIONS.length) {
-      // Done — calculate profile
+      // Done - calculate profile
       const result = calculateAssessmentProfile(answers);
       setProfile(result);
 
@@ -134,8 +135,8 @@ export function AssessmentFlow({ onComplete }: AssessmentFlowProps) {
               Style Assessment
             </h1>
             <p className="text-lg text-white/80 max-w-md mx-auto">
-              5 quick questions to discover how well you read communication
-              styles. Takes about 2 minutes.
+              10 questions testing your ability to recognise communication
+              patterns. Takes about 3 minutes.
             </p>
           </div>
 
@@ -150,8 +151,8 @@ export function AssessmentFlow({ onComplete }: AssessmentFlowProps) {
               What you&apos;ll discover
             </p>
             {[
-              "Which styles you recognise easily",
-              "Where you might need more practice",
+              "Which language patterns you recognise",
+              "Which styles you find trickier to spot",
               "A personalised starting profile",
             ].map((item) => (
               <div key={item} className="flex items-center gap-3">
@@ -184,10 +185,11 @@ export function AssessmentFlow({ onComplete }: AssessmentFlowProps) {
 
   // RESULTS
   if (phase === "results" && profile) {
-    const StrongestIcon = STYLE_ICONS[profile.strongestStyle];
-    const WeakestIcon = STYLE_ICONS[profile.weakestStyle];
-    const strongDef = STYLES[profile.strongestStyle];
-    const weakDef = STYLES[profile.weakestStyle];
+    const allEqual = profile.strongestStyle === null;
+    const strongDef = profile.strongestStyle ? STYLES[profile.strongestStyle] : null;
+    const weakDef = profile.weakestStyle ? STYLES[profile.weakestStyle] : null;
+    const StrongestIcon = profile.strongestStyle ? STYLE_ICONS[profile.strongestStyle] : null;
+    const WeakestIcon = profile.weakestStyle ? STYLE_ICONS[profile.weakestStyle] : null;
 
     return (
       <div
@@ -280,48 +282,64 @@ export function AssessmentFlow({ onComplete }: AssessmentFlowProps) {
             })}
           </div>
 
-          {/* Strongest + Focus */}
-          <div className="grid grid-cols-2 gap-4">
+          {/* Strongest + Focus (hidden when all styles score equally) */}
+          {!allEqual && strongDef && weakDef && StrongestIcon && WeakestIcon && (
+            <div className="grid grid-cols-2 gap-4">
+              <div
+                className="rounded-2xl p-4 space-y-2"
+                style={{
+                  background: `linear-gradient(135deg, ${strongDef.colour}20, ${strongDef.colour}08)`,
+                  border: `2px solid ${strongDef.colour}40`,
+                }}
+              >
+                <div className="flex items-center gap-2">
+                  <StrongestIcon
+                    size={18}
+                    style={{ color: strongDef.colour }}
+                  />
+                  <span
+                    className="text-xs font-bold uppercase tracking-wider"
+                    style={{ color: strongDef.colour }}
+                  >
+                    Strongest
+                  </span>
+                </div>
+                <p className="text-white font-bold">{strongDef.name}</p>
+              </div>
+              <div
+                className="rounded-2xl p-4 space-y-2"
+                style={{
+                  background: `linear-gradient(135deg, ${weakDef.colour}20, ${weakDef.colour}08)`,
+                  border: `2px solid ${weakDef.colour}40`,
+                }}
+              >
+                <div className="flex items-center gap-2">
+                  <WeakestIcon size={18} style={{ color: weakDef.colour }} />
+                  <span
+                    className="text-xs font-bold uppercase tracking-wider"
+                    style={{ color: weakDef.colour }}
+                  >
+                    Focus Area
+                  </span>
+                </div>
+                <p className="text-white font-bold">{weakDef.name}</p>
+              </div>
+            </div>
+          )}
+          {allEqual && (
             <div
-              className="rounded-2xl p-4 space-y-2"
+              className="rounded-2xl p-4 text-center"
               style={{
-                background: `linear-gradient(135deg, ${strongDef.colour}20, ${strongDef.colour}08)`,
-                border: `2px solid ${strongDef.colour}40`,
+                background: "rgba(88, 204, 2, 0.1)",
+                border: "2px solid rgba(88, 204, 2, 0.3)",
               }}
             >
-              <div className="flex items-center gap-2">
-                <StrongestIcon
-                  size={18}
-                  style={{ color: strongDef.colour }}
-                />
-                <span
-                  className="text-xs font-bold uppercase tracking-wider"
-                  style={{ color: strongDef.colour }}
-                >
-                  Strongest
-                </span>
-              </div>
-              <p className="text-white font-bold">{strongDef.name}</p>
+              <p className="text-white font-bold">Perfectly Balanced</p>
+              <p className="text-white/60 text-sm mt-1">
+                You scored equally across all four styles.
+              </p>
             </div>
-            <div
-              className="rounded-2xl p-4 space-y-2"
-              style={{
-                background: `linear-gradient(135deg, ${weakDef.colour}20, ${weakDef.colour}08)`,
-                border: `2px solid ${weakDef.colour}40`,
-              }}
-            >
-              <div className="flex items-center gap-2">
-                <WeakestIcon size={18} style={{ color: weakDef.colour }} />
-                <span
-                  className="text-xs font-bold uppercase tracking-wider"
-                  style={{ color: weakDef.colour }}
-                >
-                  Focus Area
-                </span>
-              </div>
-              <p className="text-white font-bold">{weakDef.name}</p>
-            </div>
-          </div>
+          )}
 
           {/* Coaching message */}
           <div
@@ -332,11 +350,13 @@ export function AssessmentFlow({ onComplete }: AssessmentFlowProps) {
             }}
           >
             <p className="text-sm text-white/90 leading-relaxed">
-              {profile.correctCount >= 4
-                ? "Excellent start! You have a strong grasp of communication styles. Practice will sharpen your ability to adapt your own responses."
-                : profile.correctCount >= 2
-                  ? `Good foundation! You spotted some styles quickly. Focus on ${weakDef.name} scenarios to build a well-rounded skill set.`
-                  : "Great that you're starting this journey! The more you practise, the easier it becomes to read and adapt to different styles."}
+              {profile.correctCount >= 8
+                ? "Impressive! You have a strong instinct for language patterns. Training will help you apply this skill to real conversations."
+                : profile.correctCount >= 5
+                  ? `Good foundation! You spotted several patterns.${weakDef ? ` Focus on ${weakDef.name} scenarios to sharpen your weaker area.` : " Keep practising to sharpen all four styles."}`
+                  : profile.correctCount >= 3
+                    ? "A solid start. Communication styles can be tricky to distinguish, especially from language alone. The training scenarios will build your pattern recognition quickly."
+                    : "Great that you're starting this journey! Recognising styles from language patterns is a skill that develops with practice. The training scenarios will help."}
             </p>
           </div>
 
@@ -359,8 +379,9 @@ export function AssessmentFlow({ onComplete }: AssessmentFlowProps) {
 
   // FEEDBACK after answering
   if (phase === "feedback" && lastAnswer && question) {
-    const correctDef = STYLES[lastAnswer.correct];
-    const CorrectIcon = STYLE_ICONS[lastAnswer.correct];
+    const correctDef = STYLES[lastAnswer.correctStyle];
+    const CorrectIcon = STYLE_ICONS[lastAnswer.correctStyle];
+    const correctOption = question.options.find((o) => o.id === lastAnswer.correctOptionId);
 
     return (
       <div
@@ -413,7 +434,7 @@ export function AssessmentFlow({ onComplete }: AssessmentFlowProps) {
                 className="text-sm font-bold"
                 style={{ color: correctDef.colour }}
               >
-                {correctDef.name} Style
+                {correctOption?.text ?? correctDef.name}
               </span>
             </div>
             <p className="text-sm text-white/80 leading-relaxed">
@@ -477,76 +498,84 @@ export function AssessmentFlow({ onComplete }: AssessmentFlowProps) {
           </div>
         </div>
 
-        {/* Context */}
-        <div
-          className="rounded-2xl p-5 space-y-3"
-          style={{
-            background: "rgba(15, 23, 42, 0.8)",
-            border: "2px solid rgba(255,255,255,0.15)",
-          }}
-        >
-          <p className="text-sm text-white/60">{question.context}</p>
-          <div className="flex items-center gap-3">
-            <div
-              className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
-              style={{ background: "rgba(124, 58, 237, 0.2)" }}
-            >
-              <MessageCircle size={20} className="text-[#A78BFA]" />
-            </div>
-            <div>
-              <p className="text-sm font-bold text-white">
-                {question.characterName}
-              </p>
-              <p className="text-xs text-white/50">{question.characterRole}</p>
-            </div>
-          </div>
-          <p className="text-white/90 text-sm leading-relaxed italic">
-            &ldquo;{question.dialogue}&rdquo;
-          </p>
-        </div>
-
         {/* Question prompt */}
-        <p className="text-center text-white font-semibold">
-          What communication style is this person using?
+        <p className="text-center text-white font-semibold text-lg">
+          {question.prompt}
         </p>
 
-        {/* Style options */}
-        <div className="grid grid-cols-2 gap-3">
-          {STYLE_LIST.map((style) => {
-            const styleDef = STYLES[style];
-            const Icon = STYLE_ICONS[style];
+        {/* Phrase display (for phrase-match type) */}
+        {question.phrase && (
+          <div
+            className="rounded-2xl p-5"
+            style={{
+              background: "rgba(15, 23, 42, 0.8)",
+              border: "2px solid rgba(255,255,255,0.15)",
+            }}
+          >
+            <p className="text-white/90 text-sm sm:text-base leading-relaxed italic">
+              &ldquo;{question.phrase}&rdquo;
+            </p>
+          </div>
+        )}
 
-            return (
-              <button
-                key={style}
-                onClick={() => handleAnswer(style)}
-                className="rounded-2xl p-4 text-left transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
-                style={{
-                  background: "rgba(15, 23, 42, 0.8)",
-                  border: "2px solid rgba(255,255,255,0.2)",
-                }}
-                onMouseEnter={(e) => {
-                  (e.currentTarget as HTMLElement).style.borderColor = `${styleDef.colour}60`;
-                  (e.currentTarget as HTMLElement).style.boxShadow = `0 0 20px ${styleDef.colour}15`;
-                }}
-                onMouseLeave={(e) => {
-                  (e.currentTarget as HTMLElement).style.borderColor =
-                    "rgba(255,255,255,0.2)";
-                  (e.currentTarget as HTMLElement).style.boxShadow = "none";
-                }}
-              >
+        {/* Options */}
+        <div className={`grid gap-3 ${question.type === "phrase-match" ? "grid-cols-2" : "grid-cols-1"}`}>
+          {question.options.map((option) => (
+            <button
+              key={option.id}
+              onClick={() => handleAnswer(option.id)}
+              className={`rounded-2xl p-4 text-left transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] ${
+                question.type === "phrase-match" ? "" : "w-full"
+              }`}
+              style={{
+                background: "rgba(15, 23, 42, 0.8)",
+                border: "2px solid rgba(255,255,255,0.2)",
+              }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLElement).style.borderColor = "rgba(124, 58, 237, 0.5)";
+                (e.currentTarget as HTMLElement).style.boxShadow = "0 0 20px rgba(124, 58, 237, 0.15)";
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLElement).style.borderColor = "rgba(255,255,255,0.2)";
+                (e.currentTarget as HTMLElement).style.boxShadow = "none";
+              }}
+            >
+              {question.type === "phrase-match" ? (
                 <div className="flex items-center gap-3">
-                  <div
-                    className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
-                    style={{ background: `${styleDef.colour}25` }}
-                  >
-                    <Icon size={22} style={{ color: styleDef.colour }} />
-                  </div>
-                  <span className="font-bold text-white">{styleDef.name}</span>
+                  {(() => {
+                    const Icon = STYLE_ICONS[option.style];
+                    const styleDef = STYLES[option.style];
+                    return (
+                      <>
+                        <div
+                          className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
+                          style={{ background: `${styleDef.colour}25` }}
+                        >
+                          <Icon size={22} style={{ color: styleDef.colour }} />
+                        </div>
+                        <span className="font-bold text-white">{option.text}</span>
+                      </>
+                    );
+                  })()}
                 </div>
-              </button>
-            );
-          })}
+              ) : (
+                <div className="flex items-start gap-3">
+                  <span
+                    className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0 text-sm font-bold mt-0.5"
+                    style={{
+                      background: "rgba(124, 58, 237, 0.2)",
+                      color: "#A78BFA",
+                    }}
+                  >
+                    {option.id.toUpperCase()}
+                  </span>
+                  <p className="text-sm text-white/90 leading-relaxed">
+                    {option.text}
+                  </p>
+                </div>
+              )}
+            </button>
+          ))}
         </div>
       </div>
     </div>

@@ -2,20 +2,9 @@
 
 import { useState } from "react";
 import { CommunicationStyle, Scenario, Character } from "@/types";
-import { STYLES } from "@/data/styles";
+import { STYLES, STYLE_GRID_ORDER } from "@/data/styles";
 import { ScenarioHeader } from "./ScenarioHeader";
 import { Eye, Check } from "lucide-react";
-
-
-// Grid order matches the standard 2-axis model:
-// Vertical: Task (top) / People (bottom)
-// Horizontal: Introvert (left) / Extrovert (right)
-const STYLE_GRID_ORDER: CommunicationStyle[] = [
-  "analytical", // top-left: Task + Introvert
-  "direct",     // top-right: Task + Extrovert
-  "supportive", // bottom-left: People + Introvert
-  "expressive", // bottom-right: People + Extrovert
-];
 
 // Solid gradient backgrounds matching style cards across the app
 const BUTTON_BG: Record<CommunicationStyle, string> = {

@@ -77,7 +77,7 @@ export default function HomePage() {
         />
 
         <div className="relative max-w-6xl mx-auto px-6 text-center space-y-8">
-          <div className="flex justify-center gap-4">
+          <div className="flex justify-center gap-3 sm:gap-4">
             {[
               { icon: BarChart3, colour: "#2563EB" },
               { icon: Zap, colour: "#FF6B6B" },
@@ -86,7 +86,7 @@ export default function HomePage() {
             ].map(({ icon: Icon, colour }, i) => (
               <div
                 key={i}
-                className="w-14 h-14 rounded-2xl flex items-center justify-center"
+                className="w-11 h-11 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl flex items-center justify-center"
                 style={{
                   backgroundColor: colour,
                   boxShadow: `0 4px 16px ${colour}40`,
@@ -188,8 +188,8 @@ export default function HomePage() {
       {hasHistory && progress && (() => {
         const xpProgress = getProgressToNextLevel(progress.totalXP);
         return (
-        <section className="max-w-6xl mx-auto px-6 -mt-8 -mb-8 relative z-10">
-          <div className="grid grid-cols-4 gap-4">
+        <section className="max-w-6xl mx-auto px-4 sm:px-6 -mt-8 -mb-8 relative z-10">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
             {[
               {
                 icon: Play,
@@ -220,7 +220,7 @@ export default function HomePage() {
             ].map(({ icon: CardIcon, value, label, position, isScore, isXP }) => (
               <div
                 key={label}
-                className="rounded-2xl p-5 text-center space-y-2"
+                className="rounded-2xl p-3 sm:p-5 text-center space-y-1.5 sm:space-y-2"
                 style={{
                   background: "linear-gradient(90deg, #DC2626, #D97706, #059669, #2563EB)",
                   backgroundSize: "300% 100%",
@@ -228,24 +228,27 @@ export default function HomePage() {
                 }}
               >
                 <div className="flex flex-col items-center space-y-2">
-                  <div className="w-14 h-14 flex items-center justify-center">
+                  <div className="w-10 h-10 sm:w-14 sm:h-14 flex items-center justify-center">
                     {isScore ? (
                       <ScoreRing
                         score={overallPct}
                         maxScore={100}
-                        size={56}
-                        strokeWidth={5}
+                        size={40}
+                        strokeWidth={4}
                         colour="#ffffff"
                         showLabel={false}
                       />
                     ) : CardIcon ? (
-                      <CardIcon size={32} className="text-white" />
+                      <CardIcon size={24} className="text-white sm:hidden" />
+                    ) : null}
+                    {isScore ? null : CardIcon ? (
+                      <CardIcon size={32} className="text-white hidden sm:block" />
                     ) : null}
                   </div>
-                  <p className="text-3xl font-bold text-white">
+                  <p className="text-2xl sm:text-3xl font-bold text-white">
                     {isXP ? `${value}` : isScore ? `${value}%` : value}
                   </p>
-                  <p className="text-sm text-white/90 font-semibold">
+                  <p className="text-xs sm:text-sm text-white/90 font-semibold">
                     {isXP ? `${label}` : label}
                   </p>
                   {isXP && xpProgress.nextTier && (
@@ -303,7 +306,7 @@ export default function HomePage() {
                     <p className="text-sm font-bold text-white">Recommended for you</p>
                     <p className="text-sm text-white/70 mt-0.5">
                       Your <span className="font-semibold capitalize" style={{ color: styleDef.colour }}>{weakStyle}</span> style
-                      is at {weakPct}% — try a focused practice session to improve.
+                      is at {weakPct}% - try a focused practice session to improve.
                     </p>
                   </div>
                   <ArrowRight size={20} className="text-white/50 flex-shrink-0" />

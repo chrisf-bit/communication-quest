@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from "react";
 import { VocabularyChallenge, CommunicationStyle } from "@/types";
-import { STYLES, STYLE_LIST } from "@/data/styles";
+import { STYLES, STYLE_GRID_ORDER } from "@/data/styles";
 import { getVocabMoment } from "@/data/vocabulary";
 import { BookOpen, ArrowRight, Check, X } from "lucide-react";
 
@@ -77,7 +77,7 @@ export function VocabMoment({ targetStyle, onComplete }: VocabMomentProps) {
           </div>
           <p className="text-sm text-white/70">Which style does this sound like?</p>
           <div className="grid grid-cols-2 gap-3">
-            {STYLE_LIST.map((style) => {
+            {STYLE_GRID_ORDER.map((style) => {
               const isSelected = selectedAnswer === style;
               const isCorrectAnswer = style === challenge.correctStyle;
 
@@ -182,7 +182,7 @@ export function VocabMoment({ targetStyle, onComplete }: VocabMomentProps) {
             </div>
             <p className="text-sm text-white/70">Which communication style uses this word most?</p>
             <div className="grid grid-cols-2 gap-3">
-              {STYLE_LIST.map((style) => {
+              {STYLE_GRID_ORDER.map((style) => {
                 const isSelected = selectedAnswer === style;
                 const isCorrectAnswer = style === randomWord.style;
 

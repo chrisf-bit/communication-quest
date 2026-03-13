@@ -2,11 +2,9 @@
 
 import { useState } from "react";
 import { CommunicationStyle, SentenceDetectionChallenge as SentenceData } from "@/types";
-import { STYLES } from "@/data/styles";
+import { STYLES, STYLE_GRID_ORDER } from "@/data/styles";
 import { STYLE_LANGUAGE_TIPS } from "@/data/vocabulary";
 import { Check, X, MessageSquare } from "lucide-react";
-
-const STYLE_ORDER: CommunicationStyle[] = ["analytical", "direct", "supportive", "expressive"];
 
 const STYLE_BG: Record<CommunicationStyle, string> = {
   direct: "linear-gradient(145deg, #DC2626, #B91C1C)",
@@ -121,7 +119,7 @@ export function SentenceDetectionChallengeUI({
 
         {/* Style choices */}
         <div className="grid grid-cols-2 gap-3 w-full max-w-lg mb-8">
-          {STYLE_ORDER.map((style) => {
+          {STYLE_GRID_ORDER.map((style) => {
             const styleDef = STYLES[style];
             const state = getButtonState(style);
 
@@ -195,7 +193,7 @@ export function SentenceDetectionChallengeUI({
               {selected === challenge.correctStyle
                 ? "Correct!"
                 : selected === (challenge.adjacentStyle ?? STYLE_ADJACENCY[challenge.correctStyle])
-                ? "Close — partial credit!"
+                ? "Close - partial credit!"
                 : "Not quite."}
             </p>
             <p className="text-sm text-white/90">

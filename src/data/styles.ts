@@ -443,6 +443,17 @@ export const STYLE_LIST: CommunicationStyle[] = [
   "analytical",
 ];
 
+/**
+ * Grid order for 2x2 style grids:
+ * Blue (top-left), Red (top-right), Green (bottom-left), Yellow (bottom-right)
+ */
+export const STYLE_GRID_ORDER: CommunicationStyle[] = [
+  "analytical",
+  "direct",
+  "supportive",
+  "expressive",
+];
+
 // Adjacency map for partial credit in "Spot the Style"
 // These pairs share enough traits that misidentification is understandable
 export const STYLE_ADJACENCY: Record<CommunicationStyle, CommunicationStyle> = {

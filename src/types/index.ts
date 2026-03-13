@@ -304,8 +304,8 @@ export interface UserProgress {
   hasCompletedAssessment: boolean;
   assessmentProfile?: {
     styleScores: Record<CommunicationStyle, number>;
-    strongestStyle: CommunicationStyle;
-    weakestStyle: CommunicationStyle;
+    strongestStyle: CommunicationStyle | null;
+    weakestStyle: CommunicationStyle | null;
     correctCount: number;
     completedAt: string;
   };

@@ -230,8 +230,8 @@ export function recordSession(
  */
 export function recordAssessment(profile: {
   styleScores: Record<CommunicationStyle, number>;
-  strongestStyle: CommunicationStyle;
-  weakestStyle: CommunicationStyle;
+  strongestStyle: CommunicationStyle | null;
+  weakestStyle: CommunicationStyle | null;
   correctCount: number;
 }): { xpAwarded: number } {
   const progress = loadProgress();
@@ -242,9 +242,9 @@ export function recordAssessment(profile: {
     completedAt: new Date().toISOString(),
   };
 
-  // Award XP: 10 per correct answer + 50 bonus for 4+ correct
-  const baseXP = profile.correctCount * 10;
-  const bonusXP = profile.correctCount >= 4 ? 50 : 0;
+  // Award XP: 5 per correct answer + 50 bonus for 8+ correct
+  const baseXP = profile.correctCount * 5;
+  const bonusXP = profile.correctCount >= 8 ? 50 : 0;
   const totalXP = baseXP + bonusXP;
 
   progress.totalXP += totalXP;

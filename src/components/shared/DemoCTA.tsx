@@ -47,7 +47,7 @@ export function DemoCTA({ variant, xpEarned }: DemoCTAProps) {
     );
   }
 
-  // Fullscreen variant — shown after demo workout summary
+  // Fullscreen variant - shown after demo workout summary
   return (
     <div
       className="min-h-screen flex items-center justify-center px-4"

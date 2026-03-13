@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Fredoka, Inter, JetBrains_Mono } from "next/font/google";
 import { Header } from "@/components/layout/Header";
+import { ConsentBanner } from "@/components/layout/ConsentBanner";
 import "./globals.css";
 
 const fredoka = Fredoka({
@@ -45,6 +46,7 @@ export default function RootLayout({
       >
         <Header />
         <main className="min-h-[calc(100vh-3.5rem)]">{children}</main>
+        <ConsentBanner />
       </body>
     </html>
   );

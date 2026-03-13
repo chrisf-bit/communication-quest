@@ -8,7 +8,7 @@
  * After completing either, they see a sign-up CTA.
  */
 
-// Hand-picked showcase scenarios — one per style, foundation difficulty
+// Hand-picked showcase scenarios - one per style, foundation difficulty
 // These are the best "first impression" scenarios
 export const DEMO_SCENARIO_IDS = [
   "scenario-01", // Direct - Jordan Cole, "Cutting Through the Agenda"
