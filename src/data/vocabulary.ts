@@ -439,3 +439,29 @@ export function generateVocabularySet(count: number = 5): VocabularyChallenge[] 
 
   return shuffle(mixed.slice(0, count));
 }
+
+/**
+ * Get a single random vocabulary challenge related to a specific style.
+ * Used for "vocab moment" in workout flow after each scenario.
+ * Prefers sentence-detection or language-match (they're style-specific),
+ * falls back to word-sort (which tests multiple styles).
+ */
+export function getVocabMoment(style: CommunicationStyle): VocabularyChallenge {
+  // Filter sentence detection challenges by style
+  const matchingSentences = SENTENCE_DETECTION_CHALLENGES.filter(
+    (c) => c.correctStyle === style
+  );
+  // Filter language match challenges by style
+  const matchingLanguage = LANGUAGE_MATCH_CHALLENGES.filter(
+    (c) => c.characterStyle === style
+  );
+
+  const styleSpecific = shuffle([...matchingSentences, ...matchingLanguage]);
+
+  if (styleSpecific.length > 0) {
+    return styleSpecific[0];
+  }
+
+  // Fallback to a random word sort
+  return shuffle(WORD_SORT_CHALLENGES)[0];
+}

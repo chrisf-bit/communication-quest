@@ -1,4 +1,4 @@
-import { Scenario, QuestionType, WorkoutQuestion, WorkoutConfig } from "@/types";
+import { Scenario, QuestionType, WorkoutQuestion, WorkoutConfig, CommunicationStyle } from "@/types";
 
 // Shuffles array in place (Fisher-Yates)
 function shuffle<T>(array: T[]): T[] {
@@ -76,10 +76,16 @@ export function generatePracticeSet(
   scenarios: Scenario[],
   mode: QuestionType,
   count: number = 5,
-  completedIds: string[] = []
+  completedIds: string[] = [],
+  focusStyle?: CommunicationStyle
 ): WorkoutQuestion[] {
-  const unseen = scenarios.filter((s) => !completedIds.includes(s.id));
-  const pool = unseen.length >= count ? unseen : shuffle(scenarios);
+  // Filter by style if specified
+  const styleFiltered = focusStyle
+    ? scenarios.filter((s) => s.targetStyle === focusStyle)
+    : scenarios;
+
+  const unseen = styleFiltered.filter((s) => !completedIds.includes(s.id));
+  const pool = unseen.length >= count ? unseen : shuffle(styleFiltered);
   const selected = shuffle(pool).slice(0, count);
 
   return selected.map((scenario, index) => ({

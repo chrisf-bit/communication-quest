@@ -2,15 +2,37 @@
 
 import { useState, useMemo, useCallback } from "react";
 import Link from "next/link";
-import { QuestionType, Scenario } from "@/types";
+import { QuestionType, Scenario, CommunicationStyle } from "@/types";
 import { WorkoutFlow } from "@/components/workout/WorkoutFlow";
 import { VocabularyFlow } from "@/components/vocabulary/VocabularyFlow";
 import { DemoCTA } from "@/components/shared/DemoCTA";
 import { SCENARIOS } from "@/data/scenarios";
+import { STYLES, STYLE_LIST } from "@/data/styles";
 import { generatePracticeSet } from "@/data/workoutGenerator";
 import { loadProgress } from "@/lib/progress/store";
+import { getStylePercentage } from "@/lib/progress/stats";
 import { isDemoLimitReached, isVocabDemoLimitReached } from "@/lib/demo";
-import { Eye, MessageSquare, PenLine, BookOpen, ArrowLeft, Sparkles, Lock } from "lucide-react";
+import {
+  Eye,
+  MessageSquare,
+  PenLine,
+  BookOpen,
+  ArrowLeft,
+  Sparkles,
+  Lock,
+  Zap,
+  Volume2,
+  Heart,
+  BarChart3,
+  Shuffle,
+} from "lucide-react";
+
+const STYLE_ICONS: Record<CommunicationStyle, typeof Zap> = {
+  direct: Zap,
+  expressive: Volume2,
+  supportive: Heart,
+  analytical: BarChart3,
+};
 
 const MODES: {
   type: QuestionType;
@@ -58,8 +80,12 @@ const MODES: {
   },
 ];
 
+type PracticeStep = "mode" | "style-filter" | "playing";
+
 export default function PracticePage() {
+  const [step, setStep] = useState<PracticeStep>("mode");
   const [selectedMode, setSelectedMode] = useState<QuestionType | null>(null);
+  const [focusStyle, setFocusStyle] = useState<CommunicationStyle | null>(null);
   const [practiceKey, setPracticeKey] = useState(0);
   const [showDemoCTA, setShowDemoCTA] = useState(false);
 
@@ -72,20 +98,33 @@ export default function PracticePage() {
   }, []);
 
   const questions = useMemo(() => {
-    if (!selectedMode || selectedMode === "vocabulary") return [];
+    if (!selectedMode || selectedMode === "vocabulary" || step !== "playing") return [];
     const progress = loadProgress();
     return generatePracticeSet(
       SCENARIOS,
       selectedMode,
       5,
-      progress.completedScenarioIds
+      progress.completedScenarioIds,
+      focusStyle ?? undefined
     );
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [selectedMode, practiceKey]);
+  }, [selectedMode, practiceKey, step, focusStyle]);
 
   const handleRestart = useCallback(() => {
     setPracticeKey((k) => k + 1);
   }, []);
+
+  const handleBack = useCallback(() => {
+    if (step === "playing") {
+      setStep("style-filter");
+    } else if (step === "style-filter") {
+      setStep("mode");
+      setSelectedMode(null);
+      setFocusStyle(null);
+    } else {
+      setSelectedMode(null);
+    }
+  }, [step]);
 
   const handleModeSelect = useCallback((mode: QuestionType) => {
     const progress = loadProgress();
@@ -103,20 +142,32 @@ export default function PracticePage() {
       }
     }
     setSelectedMode(mode);
+
+    // Vocabulary goes straight to playing, others get style filter
+    if (mode === "vocabulary") {
+      setStep("playing");
+    } else {
+      setStep("style-filter");
+    }
+  }, []);
+
+  const handleStyleSelect = useCallback((style: CommunicationStyle | null) => {
+    setFocusStyle(style);
+    setStep("playing");
   }, []);
 
   if (showDemoCTA) {
     return <DemoCTA variant="fullscreen" />;
   }
 
-  if (selectedMode) {
-    // Vocabulary mode has its own flow
+  // Playing state
+  if (step === "playing" && selectedMode) {
     if (selectedMode === "vocabulary") {
       return (
         <div className="min-h-screen">
           <div className="absolute top-4 left-4 z-50">
             <button
-              onClick={() => setSelectedMode(null)}
+              onClick={() => { setStep("mode"); setSelectedMode(null); }}
               className="flex items-center gap-1.5 text-sm text-white/90 hover:text-white transition-colors"
             >
               <ArrowLeft size={20} />
@@ -142,11 +193,11 @@ export default function PracticePage() {
       >
         <div className="max-w-6xl mx-auto px-4 py-6">
           <button
-            onClick={() => setSelectedMode(null)}
+            onClick={handleBack}
             className="flex items-center gap-1.5 text-sm text-white/90 hover:text-white transition-colors mb-4"
           >
             <ArrowLeft size={20} />
-            Back to modes
+            Back
           </button>
           <WorkoutFlow
             key={practiceKey}
@@ -160,6 +211,114 @@ export default function PracticePage() {
     );
   }
 
+  // Style filter step
+  if (step === "style-filter" && selectedMode) {
+    const progress = loadProgress();
+    const modeConfig = MODES.find((m) => m.type === selectedMode);
+
+    return (
+      <div
+        className="min-h-screen"
+        style={{
+          background:
+            "linear-gradient(160deg, #0F172A 0%, #1A1035 40%, #0D1520 100%)",
+        }}
+      >
+        <div
+          className="pointer-events-none fixed top-20 left-1/4 w-72 h-72 rounded-full blur-[120px] opacity-20"
+          style={{ background: modeConfig?.colour ?? "#7C3AED" }}
+        />
+
+        <div className="relative max-w-3xl mx-auto px-4 py-12 space-y-8">
+          <button
+            onClick={handleBack}
+            className="flex items-center gap-1.5 text-sm text-white/90 hover:text-white transition-colors"
+          >
+            <ArrowLeft size={20} />
+            Back to modes
+          </button>
+
+          <div className="text-center space-y-3">
+            <h1 className="text-2xl sm:text-3xl font-bold text-white">
+              Focus on a Style?
+            </h1>
+            <p className="text-white/70 max-w-md mx-auto">
+              Practise all styles or focus on one to strengthen a specific area.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {/* All styles option */}
+            <button
+              onClick={() => handleStyleSelect(null)}
+              className="rounded-2xl p-5 text-left transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
+              style={{
+                background: "rgba(15, 23, 42, 0.8)",
+                border: "2px solid rgba(255,255,255,0.3)",
+              }}
+            >
+              <div className="flex items-center gap-4">
+                <div
+                  className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
+                  style={{ background: "rgba(255,255,255,0.1)" }}
+                >
+                  <Shuffle size={24} className="text-white" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-white">All Styles</h3>
+                  <p className="text-sm text-white/60">Mixed practice across all four styles</p>
+                </div>
+              </div>
+            </button>
+
+            {/* Per-style options */}
+            {STYLE_LIST.map((style) => {
+              const styleDef = STYLES[style];
+              const StyleIcon = STYLE_ICONS[style];
+              const pct = getStylePercentage(progress, style);
+              const scenarioCount = SCENARIOS.filter((s) => s.targetStyle === style).length;
+
+              return (
+                <button
+                  key={style}
+                  onClick={() => handleStyleSelect(style)}
+                  className="rounded-2xl p-5 text-left transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
+                  style={{
+                    background: `linear-gradient(135deg, ${styleDef.colour}15, ${styleDef.colour}08)`,
+                    border: `2px solid ${styleDef.colour}40`,
+                  }}
+                >
+                  <div className="flex items-center gap-4">
+                    <div
+                      className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
+                      style={{ background: `${styleDef.colour}25` }}
+                    >
+                      <StyleIcon size={24} style={{ color: styleDef.colour }} />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center justify-between">
+                        <h3 className="font-bold text-white">{styleDef.name}</h3>
+                        {pct > 0 && (
+                          <span className="text-sm font-bold" style={{ color: styleDef.colour }}>
+                            {pct}%
+                          </span>
+                        )}
+                      </div>
+                      <p className="text-sm text-white/60">
+                        {scenarioCount} scenarios
+                      </p>
+                    </div>
+                  </div>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // Mode selection (default)
   return (
     <div
       className="min-h-screen"

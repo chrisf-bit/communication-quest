@@ -18,6 +18,7 @@ import { ChooseBestResponse } from "./ChooseBestResponse";
 import { RewriteResponse } from "./RewriteResponse";
 import { ScenarioFeedback } from "./ScenarioFeedback";
 import { WorkoutSummary } from "./WorkoutSummary";
+import { VocabMoment } from "./VocabMoment";
 import { MessageCircle, ArrowRight } from "lucide-react";
 
 interface WorkoutFlowProps {
@@ -27,7 +28,7 @@ interface WorkoutFlowProps {
   onRestart: () => void;
 }
 
-type Phase = "intro" | "question" | "scenario-feedback" | "summary";
+type Phase = "intro" | "question" | "scenario-feedback" | "vocab-moment" | "summary";
 
 export function WorkoutFlow({
   questions,
@@ -177,6 +178,11 @@ export function WorkoutFlow({
   );
 
   const handleScenarioContinue = useCallback(() => {
+    // After scenario feedback, show a vocab moment
+    setPhase("vocab-moment");
+  }, []);
+
+  const handleVocabMomentComplete = useCallback(() => {
     const nextIndex = currentIndex + 1;
 
     if (nextIndex >= questions.length) {
@@ -351,6 +357,24 @@ export function WorkoutFlow({
         levelUps={levelUps}
         xpEarned={xpEarned}
       />
+    );
+  }
+
+  if (phase === "vocab-moment" && currentScenario) {
+    return (
+      <div
+        className="min-h-[calc(100vh-3.5rem)] flex items-center justify-center px-4"
+        style={{
+          background: "linear-gradient(160deg, #0F172A 0%, #1A1035 40%, #0D1520 100%)",
+        }}
+      >
+        <div className="max-w-lg w-full">
+          <VocabMoment
+            targetStyle={currentScenario.targetStyle}
+            onComplete={handleVocabMomentComplete}
+          />
+        </div>
+      </div>
     );
   }
 
