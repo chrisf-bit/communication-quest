@@ -5,7 +5,7 @@ import {
   CommunicationStyle,
 } from "@/types";
 
-const STORAGE_KEY = "people-skills-gym-progress";
+const STORAGE_KEY = "conversation-quest-progress";
 
 const DEFAULT_STYLE_SCORE = {
   attempts: 0,

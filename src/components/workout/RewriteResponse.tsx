@@ -112,11 +112,11 @@ export function RewriteResponse({
           {canSubmit && (
             <button
               onClick={handleConfirm}
-              className="w-full py-4 rounded-2xl font-semibold text-lg flex items-center justify-center gap-2 transition-all duration-200 hover:bg-white/10"
+              className="w-full py-4 rounded-2xl font-bold text-lg flex items-center justify-center gap-2 transition-all duration-200 hover:bg-white/10"
               style={{
-                color: "#58CC02",
-                border: "2px solid rgba(88, 204, 2, 0.4)",
-                backgroundColor: "rgba(88, 204, 2, 0.1)",
+                color: "white",
+                border: "2px solid rgba(255, 255, 255, 0.6)",
+                backgroundColor: "rgba(255, 255, 255, 0.05)",
               }}
             >
               <Send size={24} />

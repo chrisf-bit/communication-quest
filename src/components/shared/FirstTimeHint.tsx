@@ -34,19 +34,19 @@ export function FirstTimeHint({ hintKey, title, description }: FirstTimeHintProp
     <div
       className="flex items-start gap-3 p-4 rounded-xl mb-3"
       style={{
-        background: "rgba(120, 80, 0, 0.25)",
-        border: "2px solid rgba(251, 191, 36, 0.5)",
+        background: "rgba(124, 58, 237, 0.15)",
+        border: "2px solid rgba(124, 58, 237, 0.4)",
         animation: "slide-up 0.3s ease-out",
       }}
     >
       <div
         className="flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center mt-0.5"
-        style={{ background: "#FBBF24" }}
+        style={{ background: "rgba(124, 58, 237, 0.3)" }}
       >
-        <Lightbulb size={16} className="text-black" />
+        <Lightbulb size={16} className="text-[#A78BFA]" />
       </div>
       <div className="flex-1 min-w-0">
-        <p className="text-sm font-medium text-[#FBBF24] mb-1">{title}</p>
+        <p className="text-sm font-medium text-[#A78BFA] mb-1">{title}</p>
         <p className="text-sm leading-relaxed text-white/80">{description}</p>
       </div>
       <button

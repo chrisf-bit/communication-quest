@@ -47,10 +47,10 @@ const EXPRESSION_MAP: Record<
 
 // Where the character stands in each scene type (percentage-based positioning)
 const SCENE_POSITIONS: Record<number, { bottom: string; left: string; height: string }> = {
-  0: { bottom: "6%", left: "6%", height: "72%" },   // Office - standing beside the desk
-  1: { bottom: "8%", left: "26%", height: "68%" },   // Meeting - standing at head of table
-  2: { bottom: "4%", left: "30%", height: "72%" },   // Presentation - standing at podium
-  3: { bottom: "6%", left: "12%", height: "70%" },   // Break room - standing near counter
+  0: { bottom: "4%", left: "6%", height: "85%" },   // Office - standing beside the desk
+  1: { bottom: "6%", left: "26%", height: "82%" },   // Meeting - standing at head of table
+  2: { bottom: "2%", left: "30%", height: "85%" },   // Presentation - standing at podium
+  3: { bottom: "4%", left: "12%", height: "84%" },   // Break room - standing near counter
 };
 
 export function ScenarioHeader({
