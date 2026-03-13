@@ -528,7 +528,7 @@ export default function HomePage() {
         style={{ background: "#0A0F1A", borderTop: "1px solid rgba(255,255,255,0.08)" }}
       >
         <p className="text-sm text-white/90 font-medium">
-          Conversation Quest - Practice-based communication training
+          Communication Quest - Practice-based communication training
         </p>
       </footer>
     </div>

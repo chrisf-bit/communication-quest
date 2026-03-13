@@ -41,7 +41,7 @@ const SECTIONS: {
     content: (
       <div className="space-y-3">
         <p>
-          Conversation Quest collects and stores the following data locally on your device:
+          Communication Quest collects and stores the following data locally on your device:
         </p>
         <ul className="space-y-2 ml-4">
           <li className="flex items-start gap-2">
@@ -393,7 +393,7 @@ export default function PrivacyPage() {
             </div>
           </div>
           <p className="text-white/70 text-sm sm:text-base leading-relaxed mt-4">
-            Conversation Quest is operated by Rapid Learn Limited. We are committed to protecting
+            Communication Quest is operated by Rapid Learn Limited. We are committed to protecting
             your privacy and being transparent about how we handle your data. This policy explains
             what data we collect, how it is stored, and your rights under UK GDPR.
           </p>

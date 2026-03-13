@@ -29,7 +29,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Conversation Quest - Communication Training Game",
+  title: "Communication Quest - Communication Training Game",
   description:
     "Practice recognising and adapting to different communication styles in realistic workplace situations. Short sessions, real scenarios, useful feedback.",
 };

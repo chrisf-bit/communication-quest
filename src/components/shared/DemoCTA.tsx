@@ -87,7 +87,7 @@ export function DemoCTA({ variant, xpEarned }: DemoCTAProps) {
             </p>
           )}
           <p className="text-white/80 text-lg">
-            You've seen what Conversation Quest can do. Sign up to unlock the full experience.
+            You've seen what Communication Quest can do. Sign up to unlock the full experience.
           </p>
         </div>
 

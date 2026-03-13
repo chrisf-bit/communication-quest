@@ -55,7 +55,7 @@ export default function MethodPage() {
           </div>
           <h1 className="text-3xl sm:text-4xl font-bold text-white">About the Method</h1>
           <p className="text-white/90 leading-relaxed max-w-2xl mx-auto">
-            Conversation Quest is built on a widely recognised model of
+            Communication Quest is built on a widely recognised model of
             communication styles. The idea is simple: people tend to communicate in
             patterns, and if you can read those patterns, you can adapt your
             approach to connect more effectively.

@@ -45,7 +45,7 @@ export function Header() {
               <MessageCircle size={20} className="text-white" />
             </div>
             <span className="font-semibold text-white hidden sm:inline tracking-tight">
-              Conversation Quest
+              Communication Quest
             </span>
           </Link>
 
