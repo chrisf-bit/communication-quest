@@ -3,7 +3,9 @@
 import { useState, useMemo, useCallback } from "react";
 import { Scenario } from "@/types";
 import { WorkoutFlow } from "@/components/workout/WorkoutFlow";
+import { DemoCTA } from "@/components/shared/DemoCTA";
 import { loadProgress } from "@/lib/progress/store";
+import { isDemoLimitReached, DEMO_SCENARIO_IDS } from "@/lib/demo";
 
 // Dynamic import to avoid SSR issues with scenarios
 import { SCENARIOS } from "@/data/scenarios";
@@ -20,19 +22,26 @@ export default function WorkoutPage() {
     return map;
   }, []);
 
-  const questions = useMemo(() => {
-    const progress = loadProgress();
-    return generateWorkout(SCENARIOS, progress.completedScenarioIds);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [workoutKey]);
+  const progress = useMemo(() => loadProgress(), [workoutKey]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  const handleComplete = useCallback(() => {
-    // Workout complete - summary shown by WorkoutFlow
-  }, []);
+  // Demo users who've used their free session see the fullscreen CTA
+  if (isDemoLimitReached(progress.workoutsCompleted, progress.isDemo)) {
+    return <DemoCTA variant="fullscreen" />;
+  }
 
-  const handleRestart = useCallback(() => {
+  // Demo users get curated scenarios; full users get the normal generator
+  const questions = progress.isDemo
+    ? generateWorkout(
+        SCENARIOS.filter((s) => DEMO_SCENARIO_IDS.includes(s.id)),
+        []
+      )
+    : generateWorkout(SCENARIOS, progress.completedScenarioIds);
+
+  const handleComplete = () => {};
+
+  const handleRestart = () => {
     setWorkoutKey((k) => k + 1);
-  }, []);
+  };
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-6">

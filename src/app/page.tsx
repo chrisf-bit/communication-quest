@@ -5,8 +5,9 @@ import Link from "next/link";
 import { loadProgress } from "@/lib/progress/store";
 import { getOverallPercentage } from "@/lib/progress/stats";
 import { UserProgress } from "@/types";
-import { StyleBadge } from "@/components/shared/StyleBadge";
+
 import { ScoreRing } from "@/components/shared/ScoreRing";
+import { getProgressToNextLevel } from "@/lib/progress/xp";
 import {
   Play,
   ArrowRight,
@@ -20,6 +21,9 @@ import {
   Brain,
   BarChart3,
   BookOpen,
+  Sparkles,
+  Heart,
+  Lock,
 } from "lucide-react";
 
 export default function HomePage() {
@@ -74,10 +78,23 @@ export default function HomePage() {
 
         <div className="relative max-w-6xl mx-auto px-6 text-center space-y-8">
           <div className="flex justify-center gap-4">
-            <StyleBadge style="analytical" size="lg" showLabel={false} />
-            <StyleBadge style="direct" size="lg" showLabel={false} />
-            <StyleBadge style="supportive" size="lg" showLabel={false} />
-            <StyleBadge style="expressive" size="lg" showLabel={false} />
+            {[
+              { icon: BarChart3, colour: "#2563EB" },
+              { icon: Zap, colour: "#FF6B6B" },
+              { icon: Heart, colour: "#059669" },
+              { icon: Sparkles, colour: "#F59E0B" },
+            ].map(({ icon: Icon, colour }, i) => (
+              <div
+                key={i}
+                className="w-14 h-14 rounded-2xl flex items-center justify-center"
+                style={{
+                  backgroundColor: colour,
+                  boxShadow: `0 4px 16px ${colour}40`,
+                }}
+              >
+                <Icon size={28} className="text-white" />
+              </div>
+            ))}
           </div>
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white tracking-tighter leading-none">
             Conversation{" "}
@@ -142,9 +159,35 @@ export default function HomePage() {
       </section>
 
       {/* Stats bar for returning users */}
-      {hasHistory && progress && (
-        <section className="max-w-6xl mx-auto px-6 -mt-8 -mb-8 relative z-10">
-          <div className="grid grid-cols-3 gap-4">
+      {hasHistory && progress && (() => {
+        const xpProgress = getProgressToNextLevel(progress.totalXP);
+        return (
+        <section className="max-w-6xl mx-auto px-6 -mt-8 -mb-8 relative z-10 space-y-4">
+          {/* Demo banner */}
+          {progress.isDemo && (
+            <div
+              className="rounded-2xl px-5 py-3 flex items-center justify-between"
+              style={{
+                background: "linear-gradient(135deg, rgba(124, 58, 237, 0.2), rgba(59, 130, 246, 0.2))",
+                border: "1px solid rgba(124, 58, 237, 0.4)",
+              }}
+            >
+              <div className="flex items-center gap-2">
+                <Lock size={16} className="text-[#7C3AED]" />
+                <span className="text-sm text-white/90">
+                  Demo mode — sign up to unlock all content
+                </span>
+              </div>
+              <button
+                className="text-sm font-bold text-[#7C3AED] hover:text-[#A78BFA] transition-colors flex items-center gap-1"
+              >
+                Sign Up
+                <ArrowRight size={16} />
+              </button>
+            </div>
+          )}
+
+          <div className="grid grid-cols-4 gap-4">
             {[
               {
                 icon: Play,
@@ -156,19 +199,26 @@ export default function HomePage() {
                 icon: null,
                 value: overallPct,
                 label: "Average",
-                position: "50%",
+                position: "33%",
                 isScore: true,
               },
               {
                 icon: Flame,
                 value: progress.currentStreak,
                 label: "Day Streak",
-                position: "100%",
+                position: "66%",
               },
-            ].map(({ icon: CardIcon, value, label, position, isScore }) => (
+              {
+                icon: Zap,
+                value: progress.totalXP,
+                label: xpProgress.currentTier.label,
+                position: "100%",
+                isXP: true,
+              },
+            ].map(({ icon: CardIcon, value, label, position, isScore, isXP }) => (
               <div
                 key={label}
-                className="rounded-2xl p-6 text-center space-y-2"
+                className="rounded-2xl p-5 text-center space-y-2"
                 style={{
                   background: "linear-gradient(90deg, #DC2626, #D97706, #059669, #2563EB)",
                   backgroundSize: "300% 100%",
@@ -191,17 +241,31 @@ export default function HomePage() {
                     ) : null}
                   </div>
                   <p className="text-3xl font-bold text-white">
-                    {isScore ? `${value}%` : value}
+                    {isXP ? `${value}` : isScore ? `${value}%` : value}
                   </p>
                   <p className="text-sm text-white/90 font-semibold">
-                    {label}
+                    {isXP ? `${label}` : label}
                   </p>
+                  {isXP && xpProgress.nextTier && (
+                    <div className="w-full">
+                      <div
+                        className="w-full h-1.5 rounded-full overflow-hidden"
+                        style={{ background: "rgba(255,255,255,0.3)" }}
+                      >
+                        <div
+                          className="h-full rounded-full bg-white transition-all duration-500"
+                          style={{ width: `${Math.round(xpProgress.progress * 100)}%` }}
+                        />
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
             ))}
           </div>
         </section>
-      )}
+        );
+      })()}
 
       {/* Three ways to train */}
       <section

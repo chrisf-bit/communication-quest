@@ -226,6 +226,37 @@ export interface TextEvaluator {
 }
 
 // ============================================
+// XP & Proficiency Level Types
+// ============================================
+
+export type ProficiencyLevel = "rookie" | "rising-star" | "sharp-shooter" | "ninja" | "jedi";
+
+export interface ProficiencyTier {
+  level: ProficiencyLevel;
+  label: string;
+  xpRequired: number;
+}
+
+export const PROFICIENCY_TIERS: ProficiencyTier[] = [
+  { level: "rookie", label: "Rookie", xpRequired: 0 },
+  { level: "rising-star", label: "Rising Star", xpRequired: 100 },
+  { level: "sharp-shooter", label: "Sharp Shooter", xpRequired: 300 },
+  { level: "ninja", label: "Ninja", xpRequired: 600 },
+  { level: "jedi", label: "Jedi", xpRequired: 1000 },
+];
+
+export interface StyleXP {
+  xp: number;
+  level: ProficiencyLevel;
+}
+
+// ============================================
+// Demo Mode Types
+// ============================================
+
+export type AppMode = "demo" | "authenticated";
+
+// ============================================
 // Progress / Persistence Types
 // ============================================
 
@@ -250,9 +281,12 @@ export interface UserProgress {
   workoutsCompleted: number;
   totalScore: number;
   totalPossibleScore: number;
+  totalXP: number;
   styleScores: Record<CommunicationStyle, StyleScore>;
+  styleXP: Record<CommunicationStyle, StyleXP>;
   sessions: SessionRecord[];
   completedScenarioIds: string[];
   lastSessionDate: string | null;
   currentStreak: number;
+  isDemo: boolean;
 }

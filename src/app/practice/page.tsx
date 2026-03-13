@@ -5,10 +5,12 @@ import Link from "next/link";
 import { QuestionType, Scenario } from "@/types";
 import { WorkoutFlow } from "@/components/workout/WorkoutFlow";
 import { VocabularyFlow } from "@/components/vocabulary/VocabularyFlow";
+import { DemoCTA } from "@/components/shared/DemoCTA";
 import { SCENARIOS } from "@/data/scenarios";
 import { generatePracticeSet } from "@/data/workoutGenerator";
 import { loadProgress } from "@/lib/progress/store";
-import { Eye, MessageSquare, PenLine, BookOpen, ArrowLeft, Sparkles } from "lucide-react";
+import { isDemoLimitReached, isVocabDemoLimitReached } from "@/lib/demo";
+import { Eye, MessageSquare, PenLine, BookOpen, ArrowLeft, Sparkles, Lock } from "lucide-react";
 
 const MODES: {
   type: QuestionType;
@@ -59,6 +61,7 @@ const MODES: {
 export default function PracticePage() {
   const [selectedMode, setSelectedMode] = useState<QuestionType | null>(null);
   const [practiceKey, setPracticeKey] = useState(0);
+  const [showDemoCTA, setShowDemoCTA] = useState(false);
 
   const scenarioMap = useMemo(() => {
     const map: Record<string, Scenario> = {};
@@ -83,6 +86,28 @@ export default function PracticePage() {
   const handleRestart = useCallback(() => {
     setPracticeKey((k) => k + 1);
   }, []);
+
+  const handleModeSelect = useCallback((mode: QuestionType) => {
+    const progress = loadProgress();
+    if (progress.isDemo) {
+      if (mode === "vocabulary") {
+        if (isVocabDemoLimitReached(progress.sessions, true)) {
+          setShowDemoCTA(true);
+          return;
+        }
+      } else {
+        if (isDemoLimitReached(progress.workoutsCompleted, true)) {
+          setShowDemoCTA(true);
+          return;
+        }
+      }
+    }
+    setSelectedMode(mode);
+  }, []);
+
+  if (showDemoCTA) {
+    return <DemoCTA variant="fullscreen" />;
+  }
 
   if (selectedMode) {
     // Vocabulary mode has its own flow
@@ -173,10 +198,18 @@ export default function PracticePage() {
 
         {/* Mode cards */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {MODES.map(({ type, label, description, icon: Icon, colour, colourBg }) => (
+          {MODES.map(({ type, label, description, icon: Icon, colour, colourBg }) => {
+            const progress = loadProgress();
+            const isLocked = progress.isDemo && (
+              type === "vocabulary"
+                ? isVocabDemoLimitReached(progress.sessions, true)
+                : isDemoLimitReached(progress.workoutsCompleted, true)
+            );
+
+            return (
             <button
               key={type}
-              onClick={() => setSelectedMode(type)}
+              onClick={() => handleModeSelect(type)}
               className="backdrop-blur-xl rounded-2xl p-6 text-left space-y-4 transition-all duration-200 hover:scale-[1.02] hover:shadow-lg active:scale-[0.98] cursor-pointer group"
               style={{
                 background: "rgba(15, 23, 42, 0.8)",
@@ -197,12 +230,16 @@ export default function PracticePage() {
               >
                 <Icon size={30} style={{ color: colour }} />
               </div>
-              <h3 className="font-semibold text-lg text-white">{label}</h3>
+              <div className="flex items-center gap-2">
+                <h3 className="font-semibold text-lg text-white">{label}</h3>
+                {isLocked && <Lock size={16} className="text-white/50" />}
+              </div>
               <p className="text-sm text-white/90 leading-relaxed">
-                {description}
+                {isLocked ? "Sign up to unlock this mode" : description}
               </p>
             </button>
-          ))}
+            );
+          })}
         </div>
 
         {/* Mixed session link */}
