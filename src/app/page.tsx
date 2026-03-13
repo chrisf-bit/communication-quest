@@ -115,24 +115,49 @@ export default function HomePage() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-2">
-            <Link
-              href="/workout"
-              className="inline-flex items-center justify-center gap-2.5 px-10 py-4 rounded-2xl font-bold text-lg text-white transition-all duration-200 hover:shadow-xl hover:-translate-y-0.5 active:scale-[0.98]"
-              style={{
-                background: "linear-gradient(135deg, #58CC02, #46A302)",
-                boxShadow: "0 4px 20px rgba(88, 204, 2, 0.4)",
-              }}
-            >
-              <Play size={26} />
-              {hasHistory ? "Play Now" : "Start Playing"}
-            </Link>
-            <Link
-              href="/method"
-              className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl font-bold text-lg text-white border-2 border-white/30 transition-all duration-200 hover:bg-white/10 hover:border-white/50"
-            >
-              How It Works
-              <ArrowRight size={24} />
-            </Link>
+            {!hasHistory && progress && !progress.hasCompletedAssessment ? (
+              <>
+                <Link
+                  href="/assessment"
+                  className="inline-flex items-center justify-center gap-2.5 px-10 py-4 rounded-2xl font-bold text-lg text-white transition-all duration-200 hover:shadow-xl hover:-translate-y-0.5 active:scale-[0.98]"
+                  style={{
+                    background: "linear-gradient(135deg, #7C3AED, #6D28D9)",
+                    boxShadow: "0 4px 20px rgba(124, 58, 237, 0.4)",
+                  }}
+                >
+                  <Target size={26} />
+                  Take the Assessment
+                </Link>
+                <Link
+                  href="/workout"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl font-bold text-lg text-white border-2 border-white/30 transition-all duration-200 hover:bg-white/10 hover:border-white/50"
+                >
+                  Skip to Training
+                  <ArrowRight size={24} />
+                </Link>
+              </>
+            ) : (
+              <>
+                <Link
+                  href="/workout"
+                  className="inline-flex items-center justify-center gap-2.5 px-10 py-4 rounded-2xl font-bold text-lg text-white transition-all duration-200 hover:shadow-xl hover:-translate-y-0.5 active:scale-[0.98]"
+                  style={{
+                    background: "linear-gradient(135deg, #58CC02, #46A302)",
+                    boxShadow: "0 4px 20px rgba(88, 204, 2, 0.4)",
+                  }}
+                >
+                  <Play size={26} />
+                  {hasHistory ? "Play Now" : "Start Playing"}
+                </Link>
+                <Link
+                  href="/method"
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl font-bold text-lg text-white border-2 border-white/30 transition-all duration-200 hover:bg-white/10 hover:border-white/50"
+                >
+                  How It Works
+                  <ArrowRight size={24} />
+                </Link>
+              </>
+            )}
           </div>
 
           {/* Feature pills - each a different style colour */}
@@ -314,6 +339,42 @@ export default function HomePage() {
           </section>
         );
       })()}
+
+      {/* Assessment prompt for returning users who haven't taken it */}
+      {hasHistory && progress && !progress.hasCompletedAssessment && (
+        <section
+          style={{
+            background: "linear-gradient(160deg, #0F172A 0%, #1A1035 40%, #0D1520 100%)",
+          }}
+        >
+          <div className="max-w-6xl mx-auto px-6 pt-12">
+            <Link
+              href="/assessment"
+              className="block rounded-2xl p-5 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg"
+              style={{
+                background: "linear-gradient(135deg, rgba(124, 58, 237, 0.15), rgba(124, 58, 237, 0.08))",
+                border: "2px solid rgba(124, 58, 237, 0.4)",
+              }}
+            >
+              <div className="flex items-center gap-4">
+                <div
+                  className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
+                  style={{ backgroundColor: "rgba(124, 58, 237, 0.25)" }}
+                >
+                  <Target size={24} className="text-[#A78BFA]" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <p className="text-sm font-bold text-white">Discover your style profile</p>
+                  <p className="text-sm text-white/70 mt-0.5">
+                    Take a quick 5-question assessment to find your strengths and focus areas.
+                  </p>
+                </div>
+                <ArrowRight size={20} className="text-white/50 flex-shrink-0" />
+              </div>
+            </Link>
+          </div>
+        </section>
+      )}
 
       {/* Four ways to train */}
       <section

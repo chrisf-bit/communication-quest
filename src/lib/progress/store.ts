@@ -46,6 +46,7 @@ function createDefaultProgress(isDemo = true): UserProgress {
     lastSessionDate: null,
     currentStreak: 0,
     isDemo,
+    hasCompletedAssessment: false,
   };
 }
 
@@ -69,6 +70,9 @@ function migrateProgress(data: any): UserProgress {
   }
   if (progress.isDemo === undefined) {
     progress.isDemo = true;
+  }
+  if (progress.hasCompletedAssessment === undefined) {
+    progress.hasCompletedAssessment = false;
   }
 
   return progress;
@@ -218,6 +222,43 @@ export function recordSession(
   }
 
   return { progress, xpEarned: sessionXP, levelUps };
+}
+
+/**
+ * Record assessment results. Awards XP based on correctness.
+ * 4+ correct → bonus 50 XP (skip toward Rising Star).
+ */
+export function recordAssessment(profile: {
+  styleScores: Record<CommunicationStyle, number>;
+  strongestStyle: CommunicationStyle;
+  weakestStyle: CommunicationStyle;
+  correctCount: number;
+}): { xpAwarded: number } {
+  const progress = loadProgress();
+
+  progress.hasCompletedAssessment = true;
+  progress.assessmentProfile = {
+    ...profile,
+    completedAt: new Date().toISOString(),
+  };
+
+  // Award XP: 10 per correct answer + 50 bonus for 4+ correct
+  const baseXP = profile.correctCount * 10;
+  const bonusXP = profile.correctCount >= 4 ? 50 : 0;
+  const totalXP = baseXP + bonusXP;
+
+  progress.totalXP += totalXP;
+
+  // Distribute XP across styles based on what they got right
+  // For simplicity, add equally to all styles
+  const perStyle = Math.floor(totalXP / 4);
+  for (const style of Object.keys(progress.styleXP) as CommunicationStyle[]) {
+    progress.styleXP[style].xp += perStyle;
+    progress.styleXP[style].level = getLevelForXP(progress.styleXP[style].xp);
+  }
+
+  saveProgress(progress);
+  return { xpAwarded: totalXP };
 }
 
 export function resetProgress(): void {

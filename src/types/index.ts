@@ -301,4 +301,12 @@ export interface UserProgress {
   lastSessionDate: string | null;
   currentStreak: number;
   isDemo: boolean;
+  hasCompletedAssessment: boolean;
+  assessmentProfile?: {
+    styleScores: Record<CommunicationStyle, number>;
+    strongestStyle: CommunicationStyle;
+    weakestStyle: CommunicationStyle;
+    correctCount: number;
+    completedAt: string;
+  };
 }
