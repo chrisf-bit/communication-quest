@@ -256,6 +256,18 @@ export interface StyleXP {
 
 export type AppMode = "demo" | "authenticated";
 
+export interface LevelUpEvent {
+  style: CommunicationStyle | "overall";
+  oldLevel: ProficiencyLevel;
+  newLevel: ProficiencyLevel;
+}
+
+export interface SessionResult {
+  progress: UserProgress;
+  xpEarned: number;
+  levelUps: LevelUpEvent[];
+}
+
 // ============================================
 // Progress / Persistence Types
 // ============================================

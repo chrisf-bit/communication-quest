@@ -3,8 +3,9 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { loadProgress } from "@/lib/progress/store";
-import { getOverallPercentage } from "@/lib/progress/stats";
+import { getOverallPercentage, getWeakestStyle, getStylePercentage } from "@/lib/progress/stats";
 import { UserProgress } from "@/types";
+import { STYLES } from "@/data/styles";
 
 import { ScoreRing } from "@/components/shared/ScoreRing";
 import { getProgressToNextLevel } from "@/lib/progress/xp";
@@ -267,9 +268,54 @@ export default function HomePage() {
         );
       })()}
 
-      {/* Three ways to train */}
+      {/* Smart recommendation for returning users */}
+      {hasHistory && progress && (() => {
+        const weakStyle = getWeakestStyle(progress);
+        if (!weakStyle) return null;
+        const weakPct = getStylePercentage(progress, weakStyle);
+        const styleDef = STYLES[weakStyle];
+
+        return (
+          <section
+            className="pt-16"
+            style={{
+              background: "linear-gradient(160deg, #0F172A 0%, #1A1035 40%, #0D1520 100%)",
+            }}
+          >
+            <div className="max-w-6xl mx-auto px-6">
+              <Link
+                href="/practice"
+                className="block rounded-2xl p-5 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg"
+                style={{
+                  background: `linear-gradient(135deg, ${styleDef.colour}20, ${styleDef.colour}10)`,
+                  border: `2px solid ${styleDef.colour}40`,
+                }}
+              >
+                <div className="flex items-center gap-4">
+                  <div
+                    className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
+                    style={{ backgroundColor: `${styleDef.colour}30` }}
+                  >
+                    <Target size={24} style={{ color: styleDef.colour }} />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-sm font-bold text-white">Recommended for you</p>
+                    <p className="text-sm text-white/70 mt-0.5">
+                      Your <span className="font-semibold capitalize" style={{ color: styleDef.colour }}>{weakStyle}</span> style
+                      is at {weakPct}% — try a focused practice session to improve.
+                    </p>
+                  </div>
+                  <ArrowRight size={20} className="text-white/50 flex-shrink-0" />
+                </div>
+              </Link>
+            </div>
+          </section>
+        );
+      })()}
+
+      {/* Four ways to train */}
       <section
-        className={`${hasHistory ? "pt-24" : "pt-16"} pb-16`}
+        className={`${hasHistory ? "pt-8" : "pt-16"} pb-16`}
         style={{
           background: "linear-gradient(160deg, #0F172A 0%, #1A1035 40%, #0D1520 100%)",
         }}

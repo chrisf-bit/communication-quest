@@ -9,7 +9,8 @@ import {
   getWeakestStyle,
   getRecentAverageScore,
 } from "@/lib/progress/stats";
-import { UserProgress } from "@/types";
+import { getProgressToNextLevel } from "@/lib/progress/xp";
+import { UserProgress, CommunicationStyle, PROFICIENCY_TIERS } from "@/types";
 import { STYLES, STYLE_LIST } from "@/data/styles";
 import { StyleBadge } from "@/components/shared/StyleBadge";
 import { ScoreRing } from "@/components/shared/ScoreRing";
@@ -24,15 +25,21 @@ import {
   AlertCircle,
   XCircle,
   ArrowRight,
+  Zap,
+  Shield,
+  Swords,
+  Crown,
+  Star,
 } from "lucide-react";
 import Link from "next/link";
 
-const STAT_ACCENTS = [
-  { label: "Sessions", colour: "#FF6B6B" },
-  { label: "Overall", colour: "#059669" },
-  { label: "Day Streak", colour: "#F59E0B" },
-  { label: "Recent Avg", colour: "#3B82F6" },
-];
+const LEVEL_ICONS: Record<string, typeof Star> = {
+  rookie: Shield,
+  "rising-star": Star,
+  "sharp-shooter": Zap,
+  ninja: Swords,
+  jedi: Crown,
+};
 
 export default function ProgressPage() {
   const [progress, setProgress] = useState<UserProgress | null>(null);
@@ -60,6 +67,8 @@ export default function ProgressPage() {
   const strongest = getStrongestStyle(progress);
   const weakest = getWeakestStyle(progress);
   const recentAvg = getRecentAverageScore(progress);
+  const overallXP = getProgressToNextLevel(progress.totalXP);
+  const OverallLevelIcon = LEVEL_ICONS[overallXP.currentTier.level] ?? Star;
 
   if (!hasData) {
     return (
@@ -70,7 +79,6 @@ export default function ProgressPage() {
             "linear-gradient(160deg, #0F172A 0%, #1A1035 40%, #0D1520 100%)",
         }}
       >
-        {/* Glow orbs */}
         <div
           className="pointer-events-none fixed top-20 left-1/4 w-72 h-72 rounded-full blur-[120px] opacity-20"
           style={{ background: "#7C3AED" }}
@@ -118,7 +126,7 @@ export default function ProgressPage() {
           "linear-gradient(160deg, #0F172A 0%, #1A1035 40%, #0D1520 100%)",
       }}
     >
-      {/* Glow orbs — one for each style colour */}
+      {/* Glow orbs */}
       <div
         className="pointer-events-none fixed top-16 left-[15%] w-72 h-72 rounded-full blur-[120px] opacity-15"
         style={{ background: "#FF6B6B" }}
@@ -139,75 +147,96 @@ export default function ProgressPage() {
       <div className="relative max-w-6xl mx-auto px-4 py-8 space-y-8">
         <h1 className="text-3xl font-bold text-white">Your Progress</h1>
 
-        {/* Overview stats */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-          {/* Sessions */}
-          <div
-            className="backdrop-blur-xl rounded-2xl p-4 text-center space-y-1"
-            style={{
-              background: "rgba(15, 23, 42, 0.8)",
-              border: "2px solid rgba(255,255,255,0.3)",
-              borderTopColor: STAT_ACCENTS[0].colour,
-            }}
-          >
-            <Play size={26} style={{ color: STAT_ACCENTS[0].colour }} className="mx-auto" />
-            <p className="text-2xl font-bold text-white">{progress.workoutsCompleted}</p>
-            <p className="text-xs text-white/90">Sessions</p>
-          </div>
-
-          {/* Overall */}
-          <div
-            className="backdrop-blur-xl rounded-2xl p-4 text-center space-y-1"
-            style={{
-              background: "rgba(15, 23, 42, 0.8)",
-              border: "2px solid rgba(255,255,255,0.3)",
-              borderTopColor: STAT_ACCENTS[1].colour,
-            }}
-          >
-            <div className="flex justify-center">
-              <ScoreRing
-                score={overallPct}
-                maxScore={100}
-                size={44}
-                strokeWidth={4}
-                colour={STAT_ACCENTS[1].colour}
-                showLabel={false}
-              />
+        {/* Overall level card */}
+        <div
+          className="backdrop-blur-xl rounded-2xl p-6"
+          style={{
+            background: "linear-gradient(135deg, rgba(124, 58, 237, 0.2), rgba(59, 130, 246, 0.15))",
+            border: "2px solid rgba(124, 58, 237, 0.3)",
+          }}
+        >
+          <div className="flex items-center gap-5">
+            <div
+              className="w-16 h-16 rounded-2xl flex items-center justify-center flex-shrink-0"
+              style={{
+                background: "linear-gradient(135deg, #7C3AED, #6D28D9)",
+                boxShadow: "0 4px 20px rgba(124, 58, 237, 0.4)",
+              }}
+            >
+              <OverallLevelIcon size={32} className="text-white" />
             </div>
-            <p className="text-2xl font-bold text-white">{overallPct}%</p>
-            <p className="text-xs text-white/90">Overall</p>
-          </div>
-
-          {/* Day Streak */}
-          <div
-            className="backdrop-blur-xl rounded-2xl p-4 text-center space-y-1"
-            style={{
-              background: "rgba(15, 23, 42, 0.8)",
-              border: "2px solid rgba(255,255,255,0.3)",
-              borderTopColor: STAT_ACCENTS[2].colour,
-            }}
-          >
-            <Flame size={26} style={{ color: STAT_ACCENTS[2].colour }} className="mx-auto" />
-            <p className="text-2xl font-bold text-white">{progress.currentStreak}</p>
-            <p className="text-xs text-white/90">Day Streak</p>
-          </div>
-
-          {/* Recent Avg */}
-          <div
-            className="backdrop-blur-xl rounded-2xl p-4 text-center space-y-1"
-            style={{
-              background: "rgba(15, 23, 42, 0.8)",
-              border: "2px solid rgba(255,255,255,0.3)",
-              borderTopColor: STAT_ACCENTS[3].colour,
-            }}
-          >
-            <TrendingUp size={26} style={{ color: STAT_ACCENTS[3].colour }} className="mx-auto" />
-            <p className="text-2xl font-bold text-white">{recentAvg}%</p>
-            <p className="text-xs text-white/90">Recent Avg</p>
+            <div className="flex-1 min-w-0 space-y-2">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-xs text-white/60 uppercase tracking-wider font-semibold">Overall Level</p>
+                  <p className="text-xl font-bold text-white">{overallXP.currentTier.label}</p>
+                </div>
+                <div className="text-right">
+                  <p className="text-2xl font-bold text-[#7C3AED]">{progress.totalXP}</p>
+                  <p className="text-xs text-white/60">Total XP</p>
+                </div>
+              </div>
+              {overallXP.nextTier && (
+                <div className="space-y-1">
+                  <div
+                    className="w-full h-2.5 rounded-full overflow-hidden"
+                    style={{ background: "rgba(255,255,255,0.15)" }}
+                  >
+                    <div
+                      className="h-full rounded-full transition-all duration-700 ease-out"
+                      style={{
+                        width: `${Math.round(overallXP.progress * 100)}%`,
+                        background: "linear-gradient(90deg, #7C3AED, #A78BFA)",
+                      }}
+                    />
+                  </div>
+                  <p className="text-xs text-white/50">
+                    {overallXP.nextTier.xpRequired - progress.totalXP} XP to {overallXP.nextTier.label}
+                  </p>
+                </div>
+              )}
+            </div>
           </div>
         </div>
 
-        {/* Style breakdown */}
+        {/* Overview stats */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          {[
+            { icon: Play, value: String(progress.workoutsCompleted), label: "Sessions", colour: "#FF6B6B" },
+            { icon: null, value: `${overallPct}%`, label: "Overall", colour: "#059669", isScore: true },
+            { icon: Flame, value: String(progress.currentStreak), label: "Day Streak", colour: "#F59E0B" },
+            { icon: TrendingUp, value: `${recentAvg}%`, label: "Recent Avg", colour: "#3B82F6" },
+          ].map(({ icon: CardIcon, value, label, colour, isScore }) => (
+            <div
+              key={label}
+              className="backdrop-blur-xl rounded-2xl p-4 text-center space-y-1"
+              style={{
+                background: "rgba(15, 23, 42, 0.8)",
+                border: "2px solid rgba(255,255,255,0.3)",
+                borderTopColor: colour,
+              }}
+            >
+              {isScore ? (
+                <div className="flex justify-center">
+                  <ScoreRing
+                    score={overallPct}
+                    maxScore={100}
+                    size={44}
+                    strokeWidth={4}
+                    colour={colour}
+                    showLabel={false}
+                  />
+                </div>
+              ) : CardIcon ? (
+                <CardIcon size={26} style={{ color: colour }} className="mx-auto" />
+              ) : null}
+              <p className="text-2xl font-bold text-white">{value}</p>
+              <p className="text-xs text-white/90">{label}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Style proficiency levels */}
         <div
           className="backdrop-blur-xl rounded-2xl p-6 space-y-5"
           style={{
@@ -215,25 +244,40 @@ export default function ProgressPage() {
             border: "2px solid rgba(255,255,255,0.3)",
           }}
         >
-          <h2 className="text-lg font-semibold text-white">Style Performance</h2>
-          <div className="space-y-4">
+          <h2 className="text-lg font-semibold text-white">Style Proficiency</h2>
+          <div className="space-y-5">
             {STYLE_LIST.map((style) => {
               const pct = getStylePercentage(progress, style);
               const ss = progress.styleScores[style];
+              const styleXP = progress.styleXP?.[style] ?? { xp: 0, level: "rookie" as const };
+              const xpProg = getProgressToNextLevel(styleXP.xp);
+              const tier = PROFICIENCY_TIERS.find((t) => t.level === styleXP.level) ?? PROFICIENCY_TIERS[0];
+              const LevelIcon = LEVEL_ICONS[styleXP.level] ?? Star;
+
               return (
-                <div key={style} className="space-y-1.5">
+                <div
+                  key={style}
+                  className="rounded-xl p-4 space-y-3"
+                  style={{ background: "rgba(255,255,255,0.05)" }}
+                >
                   <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-3">
                       <StyleBadge style={style} size="sm" />
-                      <span className="text-xs text-white/90">
-                        {ss.attempts} attempts
-                      </span>
+                      <div className="flex items-center gap-1.5">
+                        <LevelIcon size={16} style={{ color: STYLES[style].colour }} />
+                        <span className="text-sm font-bold text-white">{tier.label}</span>
+                      </div>
                     </div>
-                    <span className="text-sm font-bold text-white">{pct}%</span>
+                    <div className="flex items-center gap-3">
+                      <span className="text-xs text-white/60">{ss.attempts} attempts</span>
+                      <span className="text-sm font-bold text-white">{pct}%</span>
+                    </div>
                   </div>
+
+                  {/* Accuracy bar */}
                   <div
-                    className="w-full h-2.5 rounded-full overflow-hidden"
-                    style={{ background: "rgba(255,255,255,0.3)" }}
+                    className="w-full h-2 rounded-full overflow-hidden"
+                    style={{ background: "rgba(255,255,255,0.15)" }}
                   >
                     <div
                       className="h-full rounded-full transition-all duration-700 ease-out"
@@ -242,6 +286,30 @@ export default function ProgressPage() {
                         backgroundColor: STYLES[style].colour,
                       }}
                     />
+                  </div>
+
+                  {/* XP progress to next level */}
+                  <div className="flex items-center gap-3">
+                    <Zap size={14} style={{ color: STYLES[style].colour }} />
+                    <div className="flex-1">
+                      <div
+                        className="w-full h-1.5 rounded-full overflow-hidden"
+                        style={{ background: "rgba(255,255,255,0.1)" }}
+                      >
+                        <div
+                          className="h-full rounded-full transition-all duration-700 ease-out"
+                          style={{
+                            width: `${Math.round(xpProg.progress * 100)}%`,
+                            backgroundColor: STYLES[style].colour,
+                            opacity: 0.7,
+                          }}
+                        />
+                      </div>
+                    </div>
+                    <span className="text-xs text-white/50 tabular-nums">
+                      {styleXP.xp} XP
+                      {xpProg.nextTier && ` / ${xpProg.nextTier.xpRequired}`}
+                    </span>
                   </div>
                 </div>
               );

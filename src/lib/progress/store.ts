@@ -3,6 +3,9 @@ import {
   SessionRecord,
   CommunicationStyle,
   StyleXP,
+  SessionResult,
+  LevelUpEvent,
+  ProficiencyLevel,
 } from "@/types";
 import { xpForResult, firstTimeBonus, perfectScenarioBonus, getLevelForXP } from "./xp";
 
@@ -97,8 +100,17 @@ export function saveProgress(progress: UserProgress): void {
 export function recordSession(
   session: SessionRecord,
   scenarioStyles: Record<string, CommunicationStyle>
-): UserProgress {
+): SessionResult {
   const progress = loadProgress();
+
+  // Snapshot old levels for level-up detection
+  const oldOverallLevel = getLevelForXP(progress.totalXP);
+  const oldStyleLevels: Record<CommunicationStyle, ProficiencyLevel> = {
+    direct: progress.styleXP.direct.level,
+    expressive: progress.styleXP.expressive.level,
+    supportive: progress.styleXP.supportive.level,
+    analytical: progress.styleXP.analytical.level,
+  };
 
   progress.workoutsCompleted += 1;
   progress.totalScore += session.totalScore;
@@ -188,7 +200,24 @@ export function recordSession(
   progress.sessions = [session, ...progress.sessions].slice(0, 20);
 
   saveProgress(progress);
-  return progress;
+
+  // Detect level-ups
+  const levelUps: LevelUpEvent[] = [];
+  const newOverallLevel = getLevelForXP(progress.totalXP);
+  if (newOverallLevel !== oldOverallLevel) {
+    levelUps.push({ style: "overall", oldLevel: oldOverallLevel, newLevel: newOverallLevel });
+  }
+  for (const style of Object.keys(progress.styleXP) as CommunicationStyle[]) {
+    if (progress.styleXP[style].level !== oldStyleLevels[style]) {
+      levelUps.push({
+        style,
+        oldLevel: oldStyleLevels[style],
+        newLevel: progress.styleXP[style].level,
+      });
+    }
+  }
+
+  return { progress, xpEarned: sessionXP, levelUps };
 }
 
 export function resetProgress(): void {

@@ -1,10 +1,12 @@
 "use client";
 
-import { QuestionAnswer, CommunicationStyle, Scenario } from "@/types";
+import { useState } from "react";
+import { QuestionAnswer, CommunicationStyle, Scenario, LevelUpEvent } from "@/types";
 import { STYLES } from "@/data/styles";
 import { ScoreRing } from "@/components/shared/ScoreRing";
 import { StyleBadge } from "@/components/shared/StyleBadge";
 import { DemoCTA } from "@/components/shared/DemoCTA";
+import { LevelUpNotification } from "@/components/shared/LevelUpNotification";
 import { isDemoMode } from "@/lib/progress/store";
 import {
   Trophy,
@@ -16,6 +18,7 @@ import {
   CheckCircle2,
   AlertCircle,
   XCircle,
+  Zap,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -23,13 +26,20 @@ interface WorkoutSummaryProps {
   answers: QuestionAnswer[];
   scenarios: Record<string, Scenario>;
   onRetry: () => void;
+  levelUps?: LevelUpEvent[];
+  xpEarned?: number;
 }
 
 export function WorkoutSummary({
   answers,
   scenarios,
   onRetry,
+  levelUps = [],
+  xpEarned = 0,
 }: WorkoutSummaryProps) {
+  const [activeLevelUp, setActiveLevelUp] = useState<LevelUpEvent | null>(
+    levelUps.length > 0 ? levelUps[0] : null
+  );
   const totalScore = answers.reduce((sum, a) => sum + a.score, 0);
   const maxScore = answers.reduce((sum, a) => sum + a.maxScore, 0);
   const percentage = maxScore > 0 ? Math.round((totalScore / maxScore) * 100) : 0;
@@ -82,6 +92,15 @@ export function WorkoutSummary({
       className="fixed inset-0 overflow-y-auto"
       style={{ background: "linear-gradient(160deg, #0F172A 0%, #1A1035 40%, #0D1520 100%)" }}
     >
+      {/* Level-up notification */}
+      {activeLevelUp && (
+        <LevelUpNotification
+          newLevel={activeLevelUp.newLevel}
+          context={activeLevelUp.style === "overall" ? undefined : activeLevelUp.style.charAt(0).toUpperCase() + activeLevelUp.style.slice(1)}
+          onDismiss={() => setActiveLevelUp(null)}
+        />
+      )}
+
       <div className="max-w-3xl mx-auto space-y-6 px-4 py-8" style={{ animation: "fade-up 0.5s ease-out" }}>
         {/* Score scene - dark glass with coloured accents */}
         <div
@@ -114,6 +133,12 @@ export function WorkoutSummary({
               />
             </div>
             <h2 className="text-3xl font-bold text-white">Session Complete</h2>
+            {xpEarned > 0 && (
+              <div className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full" style={{ background: "rgba(124, 58, 237, 0.25)", border: "1px solid rgba(124, 58, 237, 0.4)" }}>
+                <Zap size={16} className="text-[#A78BFA]" />
+                <span className="text-sm font-bold text-[#A78BFA]">+{xpEarned} XP</span>
+              </div>
+            )}
           </div>
         </div>
 

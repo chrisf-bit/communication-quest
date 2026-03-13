@@ -6,6 +6,7 @@ import {
   QuestionAnswer,
   Scenario,
   CommunicationStyle,
+  LevelUpEvent,
 } from "@/types";
 import { getCharacter } from "@/data/characters";
 import { scoreSpotTheStyle, scoreChooseBestResponse } from "@/lib/scoring/spotAndChooseScorer";
@@ -37,6 +38,8 @@ export function WorkoutFlow({
   const [phase, setPhase] = useState<Phase>("intro");
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState<QuestionAnswer[]>([]);
+  const [levelUps, setLevelUps] = useState<LevelUpEvent[]>([]);
+  const [xpEarned, setXpEarned] = useState(0);
   const [lastEvaluation, setLastEvaluation] = useState<{
     detectedTraits?: string[];
     missingTraits?: string[];
@@ -187,7 +190,7 @@ export function WorkoutFlow({
         if (s) scenarioStyles[q.scenarioId] = s.targetStyle;
       }
 
-      recordSession(
+      const result = recordSession(
         {
           id: generateId(),
           date: new Date().toISOString(),
@@ -199,6 +202,8 @@ export function WorkoutFlow({
         scenarioStyles
       );
 
+      setLevelUps(result.levelUps);
+      setXpEarned(result.xpEarned);
       setPhase("summary");
       onComplete();
     } else {
@@ -343,6 +348,8 @@ export function WorkoutFlow({
         answers={answers}
         scenarios={scenarioMap}
         onRetry={onRestart}
+        levelUps={levelUps}
+        xpEarned={xpEarned}
       />
     );
   }
