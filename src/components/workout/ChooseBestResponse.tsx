@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Scenario, Character } from "@/types";
 import { ScenarioHeader } from "./ScenarioHeader";
 import { MessageSquare, Check } from "lucide-react";
-import { FirstTimeHint } from "@/components/shared/FirstTimeHint";
+
 
 interface ChooseBestResponseProps {
   scenario: Scenario;
@@ -63,11 +63,6 @@ export function ChooseBestResponse({
             </h3>
           </div>
 
-          <FirstTimeHint
-            hintKey="choose"
-            title="Pick the best response"
-            description="The character has just spoken to you. Choose the reply that best matches how they communicate. Think about their pace, priorities, and what they need to hear from you."
-          />
 
           <div className="space-y-2.5">
             {scenario.chooseQuestion.options.map((option, index) => (

@@ -73,11 +73,11 @@ export default function HomePage() {
         />
 
         <div className="relative max-w-6xl mx-auto px-6 text-center space-y-8">
-          <div className="flex justify-center gap-3">
-            <StyleBadge style="analytical" size="sm" showLabel={false} />
-            <StyleBadge style="direct" size="sm" showLabel={false} />
-            <StyleBadge style="supportive" size="sm" showLabel={false} />
-            <StyleBadge style="expressive" size="sm" showLabel={false} />
+          <div className="flex justify-center gap-4">
+            <StyleBadge style="analytical" size="lg" showLabel={false} />
+            <StyleBadge style="direct" size="lg" showLabel={false} />
+            <StyleBadge style="supportive" size="lg" showLabel={false} />
+            <StyleBadge style="expressive" size="lg" showLabel={false} />
           </div>
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white tracking-tighter leading-none">
             Conversation{" "}

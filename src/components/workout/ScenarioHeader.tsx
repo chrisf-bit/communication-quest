@@ -47,10 +47,10 @@ const EXPRESSION_MAP: Record<
 
 // Where the character stands in each scene type (percentage-based positioning)
 const SCENE_POSITIONS: Record<number, { bottom: string; left: string; height: string }> = {
-  0: { bottom: "4%", left: "6%", height: "85%" },   // Office - standing beside the desk
-  1: { bottom: "6%", left: "26%", height: "82%" },   // Meeting - standing at head of table
-  2: { bottom: "2%", left: "30%", height: "85%" },   // Presentation - standing at podium
-  3: { bottom: "4%", left: "12%", height: "84%" },   // Break room - standing near counter
+  0: { bottom: "-5%", left: "4%", height: "140%" },   // Office - standing beside the desk
+  1: { bottom: "-3%", left: "24%", height: "135%" },  // Meeting - standing at head of table
+  2: { bottom: "-5%", left: "28%", height: "140%" },  // Presentation - standing at podium
+  3: { bottom: "-5%", left: "10%", height: "138%" },  // Break room - standing near counter
 };
 
 export function ScenarioHeader({
@@ -122,63 +122,66 @@ export function ScenarioHeader({
           </div>
         </div>
 
-        {/* Scene background - starts BELOW the context pill */}
-        <div className="relative flex-1 flex flex-col">
-          <div className="absolute inset-0 overflow-hidden">
-            <WorkplaceScene seed={scenario.id} />
-            {/* Light overlay */}
-            <div
-              className="absolute inset-0"
-              style={{
-                background:
-                  "linear-gradient(180deg, rgba(15,23,42,0.05) 0%, rgba(15,23,42,0.02) 40%, rgba(15,23,42,0.1) 70%, rgba(15,23,42,0.3) 100%)",
-              }}
-            />
-          </div>
+        {/* Main content area - character left, panels right */}
+        <div className="relative flex-1 flex flex-row">
+          {/* Left column: Scene + Character */}
+          <div className="relative w-1/3 sm:w-2/5 flex-shrink-0">
+            <div className="absolute inset-0 overflow-hidden">
+              <WorkplaceScene seed={scenario.id} />
+              <div
+                className="absolute inset-0"
+                style={{
+                  background:
+                    "linear-gradient(180deg, rgba(15,23,42,0.05) 0%, rgba(15,23,42,0.02) 40%, rgba(15,23,42,0.1) 70%, rgba(15,23,42,0.3) 100%)",
+                }}
+              />
+            </div>
 
-          {/* Character standing IN the scene - absolutely positioned */}
-          <div
-            className="absolute z-10"
-            style={{
-              bottom: charPos.bottom,
-              left: charPos.left,
-              height: charPos.height,
-              filter: "drop-shadow(0 4px 16px rgba(0,0,0,0.6))",
-            }}
-          >
-            {/* Name tag floating above */}
+            {/* Character */}
             <div
-              className="flex flex-col items-center gap-0.5 mb-1 px-3 py-1.5 rounded-xl mx-auto w-fit"
+              className="absolute z-10"
               style={{
-                backgroundColor: "rgba(15, 23, 42, 0.85)",
-                backdropFilter: "blur(8px)",
-                border: "1px solid rgba(255,255,255,0.12)",
+                bottom: "0%",
+                left: "10%",
+                height: "90%",
+                filter: "drop-shadow(0 4px 16px rgba(0,0,0,0.6))",
               }}
             >
-              <span className="text-sm font-semibold text-white text-center leading-tight whitespace-nowrap">
-                {character.name}
-              </span>
-              <span className="text-[10px] font-medium uppercase tracking-wider text-white/90">
-                {character.role}
-              </span>
+              {/* Name tag */}
+              <div
+                className="flex flex-col items-center gap-0.5 mb-1 px-3 py-1.5 rounded-xl mx-auto w-fit"
+                style={{
+                  backgroundColor: "rgba(15, 23, 42, 0.85)",
+                  backdropFilter: "blur(8px)",
+                  border: "1px solid rgba(255,255,255,0.12)",
+                }}
+              >
+                <span className="text-sm font-semibold text-white text-center leading-tight whitespace-nowrap">
+                  {character.name}
+                </span>
+                <span className="text-[10px] font-medium uppercase tracking-wider text-white/90">
+                  {character.role}
+                </span>
+              </div>
+              <SceneCharacter
+                seed={character.avatarSeed}
+                style={character.style}
+                expression={started ? expression : "neutral"}
+                animated={true}
+              />
             </div>
-            <SceneCharacter
-              seed={character.avatarSeed}
-              style={character.style}
-              expression={started ? expression : "neutral"}
-              animated={true}
-            />
+
+            {/* Foreground furniture */}
+            <div className="absolute inset-0 z-[15] overflow-hidden pointer-events-none">
+              <WorkplaceSceneForeground seed={scenario.id} />
+            </div>
           </div>
 
-          {/* Foreground furniture layer - occludes the character's lower body */}
-          <div className="absolute inset-0 z-[15] overflow-hidden pointer-events-none">
-            <WorkplaceSceneForeground seed={scenario.id} />
-          </div>
-
-          {/* Dialogue / interaction panel - positioned at top right */}
-          <div className="relative z-20 flex-1 flex flex-col justify-start px-4 sm:px-6 max-w-4xl mx-auto w-full">
-            <div className="flex justify-end pt-3">
-              <div className="w-full max-w-md">
+          {/* Right column: Dialogue + Answer panel */}
+          <div className="flex-1 flex flex-col z-20 min-w-0">
+            {/* Speech / intro */}
+            <div className="px-4 sm:px-6 pt-3">
+              <div className="w-full max-w-lg">
                 {!started ? (
                   <div className="space-y-4" style={{ animation: "slide-in-right 0.3s ease-out" }}>
                     <div
@@ -222,10 +225,10 @@ export function ScenarioHeader({
                 )}
               </div>
             </div>
-          </div>
 
-          {/* Bottom section: Answer panel */}
-          {started && children && <div className="relative z-20 mt-auto">{children}</div>}
+            {/* Answer panel */}
+            {started && children && <div className="mt-auto">{children}</div>}
+          </div>
         </div>
       </div>
     </div>

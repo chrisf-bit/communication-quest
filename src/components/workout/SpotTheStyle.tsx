@@ -5,7 +5,7 @@ import { CommunicationStyle, Scenario, Character } from "@/types";
 import { STYLES } from "@/data/styles";
 import { ScenarioHeader } from "./ScenarioHeader";
 import { Eye, Check } from "lucide-react";
-import { FirstTimeHint } from "@/components/shared/FirstTimeHint";
+
 
 // Grid order matches the standard 2-axis model:
 // Vertical: Task (top) / People (bottom)
@@ -80,11 +80,6 @@ export function SpotTheStyle({
             </h3>
           </div>
 
-          <FirstTimeHint
-            hintKey="spot"
-            title="First time? Here's how it works"
-            description="Read what the character says above, then pick which of the four communication styles they're using. Focus on their tone, priorities, and what they seem to care about most."
-          />
 
           <div className="grid grid-cols-2 gap-3">
             {STYLE_GRID_ORDER.map((style) => {

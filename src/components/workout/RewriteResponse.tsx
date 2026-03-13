@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Scenario, Character } from "@/types";
 import { ScenarioHeader } from "./ScenarioHeader";
 import { PenLine, Send } from "lucide-react";
-import { FirstTimeHint } from "@/components/shared/FirstTimeHint";
+
 
 interface RewriteResponseProps {
   scenario: Scenario;
@@ -66,11 +66,6 @@ export function RewriteResponse({
             </h3>
           </div>
 
-          <FirstTimeHint
-            hintKey="rewrite"
-            title="Write in your own words"
-            description="Don't worry about knowing the subject - focus on how you'd say it. Match the character's communication style: are they fast-paced or measured? Do they want facts or feelings? Your tone matters more than your expertise."
-          />
 
           {/* Scenario prompt - tells the user what to respond to */}
           <p className="text-sm leading-relaxed text-white/80 italic">
