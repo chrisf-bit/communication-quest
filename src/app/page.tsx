@@ -163,7 +163,13 @@ export default function HomePage() {
       {hasHistory && progress && (() => {
         const xpProgress = getProgressToNextLevel(progress.totalXP);
         return (
-        <section className="max-w-6xl mx-auto px-6 -mt-8 -mb-8 relative z-10 space-y-4">
+        <section
+          className="relative z-10 py-6"
+          style={{
+            background: "linear-gradient(160deg, #0F172A 0%, #1A1035 40%, #0D1520 100%)",
+          }}
+        >
+          <div className="max-w-6xl mx-auto px-6 space-y-4">
           {/* Demo banner */}
           {progress.isDemo && (
             <div
@@ -264,12 +270,13 @@ export default function HomePage() {
               </div>
             ))}
           </div>
+          </div>
         </section>
         );
       })()}
 
-      {/* Smart recommendation for returning users */}
-      {hasHistory && progress && (() => {
+      {/* Smart recommendation for returning users (signed-up users only) */}
+      {hasHistory && progress && !progress.isDemo && (() => {
         const weakStyle = getWeakestStyle(progress);
         if (!weakStyle) return null;
         const weakPct = getStylePercentage(progress, weakStyle);
