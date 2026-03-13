@@ -54,7 +54,10 @@ export type ScenarioCategory =
   | "team"
   | "conflict"
   | "email"
-  | "one-to-one";
+  | "one-to-one"
+  | "presentation"
+  | "negotiation"
+  | "remote";
 
 export type Difficulty = "foundation" | "intermediate" | "advanced";
 

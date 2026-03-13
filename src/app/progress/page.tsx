@@ -12,6 +12,10 @@ import {
 import { getProgressToNextLevel } from "@/lib/progress/xp";
 import { UserProgress, CommunicationStyle, PROFICIENCY_TIERS } from "@/types";
 import { STYLES, STYLE_LIST } from "@/data/styles";
+import { SCENARIOS } from "@/data/scenarios";
+import { SCENARIO_PACKS, getPackStats } from "@/data/scenarioPacks";
+import { getNextUnlock, getUnlockedDifficulties, getLockedScenarioCount } from "@/lib/progress/levelGating";
+import { getNextMilestone } from "@/lib/daily";
 import { StyleBadge } from "@/components/shared/StyleBadge";
 import { ScoreRing } from "@/components/shared/ScoreRing";
 import {
@@ -30,6 +34,9 @@ import {
   Swords,
   Crown,
   Star,
+  Lock,
+  Unlock,
+  Package,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -366,6 +373,150 @@ export default function ProgressPage() {
             </div>
           )}
         </div>
+
+        {/* Unlock progress and streaks */}
+        <div className="grid sm:grid-cols-2 gap-4">
+          {/* Unlock progress */}
+          {(() => {
+            const nextUnlockInfo = getNextUnlock(progress.totalXP);
+            const unlockedDiffs = getUnlockedDifficulties(progress.totalXP);
+            const lockedCount = getLockedScenarioCount(SCENARIOS, progress.totalXP);
+
+            return (
+              <div
+                className="backdrop-blur-xl rounded-2xl p-5 space-y-3"
+                style={{
+                  background: "rgba(15, 23, 42, 0.8)",
+                  border: "2px solid rgba(255,255,255,0.3)",
+                }}
+              >
+                <div className="flex items-center gap-2">
+                  <Unlock size={20} className="text-[#A78BFA]" />
+                  <h3 className="font-semibold text-sm text-white">Scenario Unlocks</h3>
+                </div>
+                <div className="space-y-2">
+                  {(["foundation", "intermediate", "advanced"] as const).map((diff) => {
+                    const isUnlocked = unlockedDiffs.includes(diff);
+                    return (
+                      <div key={diff} className="flex items-center gap-2">
+                        {isUnlocked ? (
+                          <CheckCircle2 size={16} className="text-emerald-400" />
+                        ) : (
+                          <Lock size={16} className="text-white/30" />
+                        )}
+                        <span className={`text-sm capitalize ${isUnlocked ? "text-white" : "text-white/40"}`}>
+                          {diff}
+                        </span>
+                      </div>
+                    );
+                  })}
+                </div>
+                {nextUnlockInfo && (
+                  <p className="text-xs text-white/50">
+                    {nextUnlockInfo.xpNeeded} XP to unlock {nextUnlockInfo.difficulty}
+                  </p>
+                )}
+                {lockedCount > 0 && (
+                  <p className="text-xs text-white/40">
+                    {lockedCount} scenario{lockedCount !== 1 ? "s" : ""} still locked
+                  </p>
+                )}
+              </div>
+            );
+          })()}
+
+          {/* Streak info */}
+          <div
+            className="backdrop-blur-xl rounded-2xl p-5 space-y-3"
+            style={{
+              background: "rgba(15, 23, 42, 0.8)",
+              border: "2px solid rgba(255,255,255,0.3)",
+            }}
+          >
+            <div className="flex items-center gap-2">
+              <Flame size={20} className="text-amber-400" />
+              <h3 className="font-semibold text-sm text-white">Streaks</h3>
+            </div>
+            <div className="grid grid-cols-2 gap-3">
+              <div className="text-center">
+                <p className="text-2xl font-bold text-amber-400">{progress.currentStreak}</p>
+                <p className="text-xs text-white/60">Current</p>
+              </div>
+              <div className="text-center">
+                <p className="text-2xl font-bold text-white">{progress.longestStreak ?? progress.currentStreak}</p>
+                <p className="text-xs text-white/60">Longest</p>
+              </div>
+            </div>
+            {(() => {
+              const nextMilestone = getNextMilestone(progress.currentStreak);
+              if (!nextMilestone) return null;
+              const daysLeft = nextMilestone.days - progress.currentStreak;
+              return (
+                <div className="text-center">
+                  <p className="text-xs text-white/50">
+                    {daysLeft} {daysLeft === 1 ? "day" : "days"} to {nextMilestone.label} (+{nextMilestone.xpBonus} XP)
+                  </p>
+                </div>
+              );
+            })()}
+          </div>
+        </div>
+
+        {/* Scenario packs */}
+        {(() => {
+          const packsWithData = SCENARIO_PACKS
+            .map((pack) => ({
+              pack,
+              stats: getPackStats(pack, SCENARIOS, progress.completedScenarioIds),
+            }))
+            .filter(({ stats }) => stats.total > 0);
+
+          if (packsWithData.length === 0) return null;
+
+          return (
+            <div
+              className="backdrop-blur-xl rounded-2xl p-6 space-y-4"
+              style={{
+                background: "rgba(15, 23, 42, 0.8)",
+                border: "2px solid rgba(255,255,255,0.3)",
+              }}
+            >
+              <div className="flex items-center gap-2">
+                <Package size={20} className="text-[#A78BFA]" />
+                <h2 className="text-lg font-semibold text-white">Scenario Packs</h2>
+              </div>
+              <div className="grid sm:grid-cols-2 gap-3">
+                {packsWithData.map(({ pack, stats }) => (
+                  <div
+                    key={pack.id}
+                    className="rounded-xl p-4 space-y-2"
+                    style={{ background: "rgba(255,255,255,0.05)" }}
+                  >
+                    <div className="flex items-center justify-between">
+                      <h3 className="text-sm font-bold text-white">{pack.name}</h3>
+                      <span className="text-xs font-bold" style={{ color: pack.colour }}>
+                        {stats.completed}/{stats.total}
+                      </span>
+                    </div>
+                    <div
+                      className="w-full h-1.5 rounded-full overflow-hidden"
+                      style={{ background: "rgba(255,255,255,0.1)" }}
+                    >
+                      <div
+                        className="h-full rounded-full transition-all duration-700"
+                        style={{
+                          width: `${stats.percentage}%`,
+                          backgroundColor: pack.colour,
+                        }}
+                      />
+                    </div>
+                    <p className="text-xs text-white/50">{pack.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          );
+        })()}
 
         {/* Session history */}
         {progress.sessions.length > 0 && (
