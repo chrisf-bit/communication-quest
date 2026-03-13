@@ -159,19 +159,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Stats bar for returning users */}
-      {hasHistory && progress && (() => {
-        const xpProgress = getProgressToNextLevel(progress.totalXP);
-        return (
+      {/* Demo banner for demo users - sits inside the dark zone above stats */}
+      {hasHistory && progress?.isDemo && (
         <section
-          className="relative z-10 py-6"
           style={{
             background: "linear-gradient(160deg, #0F172A 0%, #1A1035 40%, #0D1520 100%)",
           }}
         >
-          <div className="max-w-6xl mx-auto px-6 space-y-4">
-          {/* Demo banner */}
-          {progress.isDemo && (
+          <div className="max-w-6xl mx-auto px-6 pb-4">
             <div
               className="rounded-2xl px-5 py-3 flex items-center justify-between"
               style={{
@@ -192,8 +187,15 @@ export default function HomePage() {
                 <ArrowRight size={16} />
               </button>
             </div>
-          )}
+          </div>
+        </section>
+      )}
 
+      {/* Stats bar for returning users */}
+      {hasHistory && progress && (() => {
+        const xpProgress = getProgressToNextLevel(progress.totalXP);
+        return (
+        <section className="max-w-6xl mx-auto px-6 -mt-8 -mb-8 relative z-10">
           <div className="grid grid-cols-4 gap-4">
             {[
               {
@@ -269,7 +271,6 @@ export default function HomePage() {
                 </div>
               </div>
             ))}
-          </div>
           </div>
         </section>
         );
