@@ -11,6 +11,7 @@ import { STYLES, STYLE_LIST } from "@/data/styles";
 import { generatePracticeSet } from "@/data/workoutGenerator";
 import { loadProgress } from "@/lib/progress/store";
 import { getStylePercentage } from "@/lib/progress/stats";
+import { getUnlockedScenarios } from "@/lib/progress/levelGating";
 import { isDemoLimitReached, isVocabDemoLimitReached } from "@/lib/demo";
 import {
   Eye,
@@ -100,8 +101,9 @@ export default function PracticePage() {
   const questions = useMemo(() => {
     if (!selectedMode || selectedMode === "vocabulary" || step !== "playing") return [];
     const progress = loadProgress();
+    const unlocked = getUnlockedScenarios(SCENARIOS, progress.totalXP);
     return generatePracticeSet(
-      SCENARIOS,
+      unlocked,
       selectedMode,
       5,
       progress.completedScenarioIds,

@@ -29,13 +29,13 @@ export default function WorkoutPage() {
     return <DemoCTA variant="fullscreen" />;
   }
 
-  // Demo users get curated scenarios; full users get the normal generator
+  // Demo users get curated scenarios; full users get adaptive, level-gated workouts
   const questions = progress.isDemo
     ? generateWorkout(
         SCENARIOS.filter((s) => DEMO_SCENARIO_IDS.includes(s.id)),
         []
       )
-    : generateWorkout(SCENARIOS, progress.completedScenarioIds);
+    : generateWorkout(SCENARIOS, progress.completedScenarioIds, undefined, progress);
 
   const handleComplete = () => {};
 

@@ -1,4 +1,5 @@
-import { Scenario, QuestionType, WorkoutQuestion, WorkoutConfig, CommunicationStyle } from "@/types";
+import { Scenario, QuestionType, WorkoutQuestion, WorkoutConfig, CommunicationStyle, UserProgress } from "@/types";
+import { getUnlockedScenarios, getAdaptivePool } from "@/lib/progress/levelGating";
 
 // Shuffles array in place (Fisher-Yates)
 function shuffle<T>(array: T[]): T[] {
@@ -17,40 +18,58 @@ const DEFAULT_WORKOUT_CONFIG: WorkoutConfig = {
 
 /**
  * Generate a multi-turn workout.
- * Each scenario produces 3 questions (spot → choose → rewrite).
+ * Each scenario produces 3 questions (spot -> choose -> rewrite).
  * Questions are grouped by scenario so the player has a full
  * conversation before seeing their combined score.
+ *
+ * When progress is provided:
+ * - Level gating filters scenarios by unlocked difficulty
+ * - Adaptive difficulty biases toward weak styles
  */
 export function generateWorkout(
   scenarios: Scenario[],
   completedIds: string[] = [],
-  config: WorkoutConfig = DEFAULT_WORKOUT_CONFIG
+  config: WorkoutConfig = DEFAULT_WORKOUT_CONFIG,
+  progress?: UserProgress
 ): WorkoutQuestion[] {
   const { questionCount } = config;
 
-  // Prefer unseen scenarios
-  const unseen = scenarios.filter((s) => !completedIds.includes(s.id));
-  const pool = unseen.length >= questionCount ? unseen : shuffle(scenarios);
+  // Apply level gating if progress available
+  let available = progress
+    ? getUnlockedScenarios(scenarios, progress.totalXP)
+    : scenarios;
 
-  // Select scenarios - mix styles where possible
+  // Apply adaptive difficulty weighting if progress available
+  if (progress) {
+    available = getAdaptivePool(available, progress);
+  }
+
+  // Prefer unseen scenarios
+  const unseen = available.filter((s) => !completedIds.includes(s.id));
+  const pool = unseen.length >= questionCount ? unseen : shuffle(available);
+
+  // Select scenarios - mix styles where possible, deduplicate
   const selected: Scenario[] = [];
+  const selectedIds = new Set<string>();
   const shuffled = shuffle(pool);
   const stylesSeen = new Set<string>();
 
   // First pass: one from each style
   for (const scenario of shuffled) {
     if (selected.length >= questionCount) break;
-    if (!stylesSeen.has(scenario.targetStyle)) {
+    if (!stylesSeen.has(scenario.targetStyle) && !selectedIds.has(scenario.id)) {
       selected.push(scenario);
+      selectedIds.add(scenario.id);
       stylesSeen.add(scenario.targetStyle);
     }
   }
 
-  // Fill remaining
+  // Fill remaining (deduplicate since adaptive pool has duplicates)
   for (const scenario of shuffled) {
     if (selected.length >= questionCount) break;
-    if (!selected.includes(scenario)) {
+    if (!selectedIds.has(scenario.id)) {
       selected.push(scenario);
+      selectedIds.add(scenario.id);
     }
   }
 

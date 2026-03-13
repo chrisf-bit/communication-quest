@@ -3,8 +3,9 @@
 import Link from "next/link";
 import { UserProgress, CommunicationStyle } from "@/types";
 import { getWeakestStyle, getStylePercentage } from "@/lib/progress/stats";
+import { getNextUnlock } from "@/lib/progress/levelGating";
 import { STYLES, STYLE_LIST } from "@/data/styles";
-import { Target, BookOpen, RefreshCw, TrendingUp, ArrowRight } from "lucide-react";
+import { Target, BookOpen, RefreshCw, TrendingUp, ArrowRight, Lock } from "lucide-react";
 
 interface Recommendation {
   id: string;
@@ -70,7 +71,22 @@ function getRecommendations(progress: UserProgress): Recommendation[] {
     });
   }
 
-  // 4. Replay suggestion if they've completed many scenarios
+  // 4. Unlock progress
+  const nextUnlock = getNextUnlock(progress.totalXP);
+  if (nextUnlock) {
+    recs.push({
+      id: "unlock",
+      icon: Lock,
+      title: `Unlock ${nextUnlock.difficulty} scenarios`,
+      description: `${nextUnlock.xpNeeded} more XP to unlock ${nextUnlock.difficulty} difficulty. Keep training!`,
+      href: "/workout",
+      colour: "#A78BFA",
+      bgColour: "rgba(124, 58, 237, 0.12)",
+      borderColour: "rgba(124, 58, 237, 0.4)",
+    });
+  }
+
+  // 5. Replay suggestion if they've completed many scenarios
   if (progress.completedScenarioIds.length >= 6) {
     recs.push({
       id: "replay",
