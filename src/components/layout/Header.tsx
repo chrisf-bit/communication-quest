@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { MessageCircle, Home, BarChart3, BookOpen, Info, Play, ArrowRight, Package, LogIn, LogOut, User } from "lucide-react";
+import { Compass, Home, BarChart3, BookOpen, Info, Play, ArrowRight, Package, LogIn, LogOut, User, LayoutDashboard } from "lucide-react";
 import { useProgress } from "@/components/providers/ProgressProvider";
 import { useOptionalAuth } from "@/components/providers/AuthProvider";
 
@@ -42,7 +42,7 @@ export function Header() {
                 boxShadow: "0 2px 8px rgba(88, 204, 2, 0.25)",
               }}
             >
-              <MessageCircle size={20} className="text-white" />
+              <Compass size={20} className="text-white" />
             </div>
             <span className="font-semibold text-white hidden sm:inline tracking-tight">
               Communication Quest
@@ -72,15 +72,28 @@ export function Header() {
               );
             })}
             {isAuthenticated ? (
-              <button
-                onClick={() => auth?.signOut()}
-                className="ml-2 flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium text-white/75 hover:text-white hover:bg-white/10 transition-all duration-200"
-              >
-                <User size={18} />
-                <span className="hidden lg:inline text-xs truncate max-w-[120px]">
-                  {auth?.user?.email}
-                </span>
-              </button>
+              <>
+                <Link
+                  href="/facilitator"
+                  className={`ml-2 flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium transition-all duration-200 ${
+                    pathname === "/facilitator"
+                      ? "bg-[#58CC02] text-white shadow-sm"
+                      : "text-white/75 hover:text-white hover:bg-white/10"
+                  }`}
+                >
+                  <LayoutDashboard size={18} />
+                  <span className="hidden lg:inline">Dashboard</span>
+                </Link>
+                <button
+                  onClick={() => auth?.signOut()}
+                  className="ml-1 flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium text-white/75 hover:text-white hover:bg-white/10 transition-all duration-200"
+                >
+                  <User size={18} />
+                  <span className="hidden lg:inline text-xs truncate max-w-[120px]">
+                    {auth?.user?.email}
+                  </span>
+                </button>
+              </>
             ) : isDemo ? (
               <Link
                 href="/signup"

@@ -3,7 +3,7 @@
 import { useState, useCallback } from "react";
 import Link from "next/link";
 import { useAuth } from "@/components/providers/AuthProvider";
-import { Mail, ArrowRight, MessageCircle } from "lucide-react";
+import { Mail, ArrowRight, Compass } from "lucide-react";
 
 export default function LoginPage() {
   const { signInWithMagicLink } = useAuth();
@@ -85,7 +85,7 @@ export default function LoginPage() {
               boxShadow: "0 4px 16px rgba(88, 204, 2, 0.3)",
             }}
           >
-            <MessageCircle size={32} className="text-white" />
+            <Compass size={32} className="text-white" />
           </div>
           <h1 className="text-2xl font-bold text-white">Welcome back</h1>
           <p className="text-white/60 text-sm">

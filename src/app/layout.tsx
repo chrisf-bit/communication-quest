@@ -33,6 +33,9 @@ export const metadata: Metadata = {
   title: "Communication Quest - Communication Training Game",
   description:
     "Practice recognising and adapting to different communication styles in realistic workplace situations. Short sessions, real scenarios, useful feedback.",
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({
