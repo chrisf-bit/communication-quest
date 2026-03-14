@@ -7,7 +7,8 @@ import {
   CommunicationStyle,
   FeedbackContent,
 } from "@/types";
-import { recordSession } from "@/lib/progress/store";
+import { applySession } from "@/lib/progress/store";
+import { useProgress } from "@/components/providers/ProgressProvider";
 import { generateId } from "@/lib/utils";
 import { generateVocabularySet } from "@/data/vocabulary";
 import { WordSortChallengeUI } from "./WordSortChallenge";
@@ -44,6 +45,7 @@ export function VocabularyFlow({
   onRestart,
   challengeCount = 5,
 }: VocabularyFlowProps) {
+  const { progress: currentProgress, saveProgress } = useProgress();
   const [phase, setPhase] = useState<Phase>("intro");
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState<QuestionAnswer[]>([]);
@@ -99,18 +101,22 @@ export function VocabularyFlow({
           scenarioStyles[challenges[i].id] = getChallengeTargetStyle(challenges[i]);
         }
 
-        recordSession(
-          {
-            id: generateId(),
-            date: new Date().toISOString(),
-            type: "practice",
-            mode: "vocabulary",
-            questions: allAnswers,
-            totalScore,
-            maxScore: totalMax,
-          },
-          scenarioStyles
-        );
+        if (currentProgress) {
+          const result = applySession(
+            currentProgress,
+            {
+              id: generateId(),
+              date: new Date().toISOString(),
+              type: "practice",
+              mode: "vocabulary",
+              questions: allAnswers,
+              totalScore,
+              maxScore: totalMax,
+            },
+            scenarioStyles
+          );
+          saveProgress(result.progress);
+        }
 
         setPhase("summary");
         onComplete();
@@ -118,7 +124,7 @@ export function VocabularyFlow({
         setCurrentIndex((prev) => prev + 1);
       }
     },
-    [currentChallenge, currentIndex, challenges, answers, onComplete]
+    [currentChallenge, currentIndex, challenges, answers, onComplete, currentProgress, saveProgress]
   );
 
   const handleRestart = useCallback(() => {

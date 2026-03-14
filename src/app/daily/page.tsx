@@ -5,7 +5,8 @@ import { useRouter } from "next/navigation";
 import { Scenario, WorkoutQuestion } from "@/types";
 import { WorkoutFlow } from "@/components/workout/WorkoutFlow";
 import { getDailyScenario, getTodayKey, hasCompletedDailyChallenge } from "@/lib/daily";
-import { loadProgress, recordDailyChallenge } from "@/lib/progress/store";
+import { applyDailyChallenge } from "@/lib/progress/store";
+import { useProgress } from "@/components/providers/ProgressProvider";
 import { SCENARIOS } from "@/data/scenarios";
 import { Calendar, Check, ArrowLeft } from "lucide-react";
 import Link from "next/link";
@@ -13,7 +14,10 @@ import Link from "next/link";
 export default function DailyChallengePage() {
   const router = useRouter();
   const todayKey = getTodayKey();
-  const progress = useMemo(() => loadProgress(), []);
+  const { progress, saveProgress } = useProgress();
+
+  if (!progress) return null;
+
   const completed = hasCompletedDailyChallenge(progress.completedDailyChallenges ?? [], todayKey);
 
   const dailyScenario = useMemo(() => getDailyScenario(SCENARIOS, todayKey), [todayKey]);
@@ -37,8 +41,11 @@ export default function DailyChallengePage() {
   }, [dailyScenario]);
 
   const handleComplete = useCallback(() => {
-    recordDailyChallenge(todayKey);
-  }, [todayKey]);
+    if (progress) {
+      const { progress: updated } = applyDailyChallenge(progress, todayKey);
+      saveProgress(updated);
+    }
+  }, [todayKey, progress, saveProgress]);
 
   const handleRestart = useCallback(() => {
     router.push("/");

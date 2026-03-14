@@ -1,14 +1,14 @@
 "use client";
 
-import { useState, useMemo, useCallback, useEffect } from "react";
+import { useState, useMemo, useCallback } from "react";
 import { useParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import * as LucideIcons from "lucide-react";
-import { Scenario, UserProgress } from "@/types";
+import { Scenario } from "@/types";
 import { SCENARIO_PACKS, getScenariosForPack } from "@/data/scenarioPacks";
 import { SCENARIOS } from "@/data/scenarios";
 import { STYLES } from "@/data/styles";
-import { loadProgress } from "@/lib/progress/store";
+import { useProgress } from "@/components/providers/ProgressProvider";
 import { getMasteryStars } from "@/lib/progress/mastery";
 import { getUnlockedScenarios } from "@/lib/progress/levelGating";
 import { generateWorkout } from "@/data/workoutGenerator";
@@ -31,11 +31,7 @@ export default function PackDetailPage() {
   const packId = params.packId as string;
   const [phase, setPhase] = useState<Phase>("browse");
   const [workoutKey, setWorkoutKey] = useState(0);
-  const [progress, setProgress] = useState<UserProgress | null>(null);
-
-  useEffect(() => {
-    setProgress(loadProgress());
-  }, [workoutKey]);
+  const { progress, refreshProgress } = useProgress();
 
   const pack = useMemo(
     () => SCENARIO_PACKS.find((p) => p.id === packId),
@@ -75,7 +71,8 @@ export default function PackDetailPage() {
   const handleRestart = useCallback(() => {
     setWorkoutKey((k) => k + 1);
     setPhase("playing");
-  }, []);
+    refreshProgress();
+  }, [refreshProgress]);
 
   if (!pack) {
     return (

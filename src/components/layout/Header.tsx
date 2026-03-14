@@ -1,10 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { MessageCircle, Home, BarChart3, BookOpen, Info, Play, ArrowRight, Package } from "lucide-react";
-import { loadProgress } from "@/lib/progress/store";
+import { MessageCircle, Home, BarChart3, BookOpen, Info, Play, ArrowRight, Package, LogIn, LogOut, User } from "lucide-react";
+import { useProgress } from "@/components/providers/ProgressProvider";
+import { useOptionalAuth } from "@/components/providers/AuthProvider";
 
 const NAV_ITEMS = [
   { href: "/", label: "Home", icon: Home },
@@ -17,12 +17,11 @@ const NAV_ITEMS = [
 
 export function Header() {
   const pathname = usePathname();
-  const [isDemo, setIsDemo] = useState(false);
+  const { progress } = useProgress();
+  const auth = useOptionalAuth();
 
-  useEffect(() => {
-    const progress = loadProgress();
-    setIsDemo(progress.isDemo);
-  }, []);
+  const isDemo = progress?.isDemo ?? false;
+  const isAuthenticated = !!auth?.user;
 
   return (
     <header
@@ -72,8 +71,19 @@ export function Header() {
                 </Link>
               );
             })}
-            {isDemo && (
+            {isAuthenticated ? (
               <button
+                onClick={() => auth?.signOut()}
+                className="ml-2 flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium text-white/75 hover:text-white hover:bg-white/10 transition-all duration-200"
+              >
+                <User size={18} />
+                <span className="hidden lg:inline text-xs truncate max-w-[120px]">
+                  {auth?.user?.email}
+                </span>
+              </button>
+            ) : isDemo ? (
+              <Link
+                href="/signup"
                 className="ml-2 flex items-center gap-1.5 px-4 py-1.5 rounded-lg text-sm font-bold text-white transition-all duration-200 hover:opacity-90"
                 style={{
                   background: "linear-gradient(135deg, #7C3AED, #6D28D9)",
@@ -81,8 +91,16 @@ export function Header() {
               >
                 Sign Up
                 <ArrowRight size={16} />
-              </button>
-            )}
+              </Link>
+            ) : auth ? (
+              <Link
+                href="/login"
+                className="ml-2 flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium text-white/75 hover:text-white hover:bg-white/10 transition-all duration-200"
+              >
+                <LogIn size={18} />
+                Sign In
+              </Link>
+            ) : null}
           </nav>
 
           {/* Mobile nav */}
@@ -107,16 +125,33 @@ export function Header() {
                 </Link>
               );
             })}
-            {isDemo && (
+            {isAuthenticated ? (
               <button
+                onClick={() => auth?.signOut()}
+                className="ml-1 flex flex-col items-center gap-0.5 px-2 py-1 rounded-lg text-[10px] font-medium text-white/75"
+              >
+                <User size={18} />
+                Account
+              </button>
+            ) : isDemo ? (
+              <Link
+                href="/signup"
                 className="ml-1 flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-bold text-white transition-all duration-200 hover:opacity-90"
                 style={{
                   background: "linear-gradient(135deg, #7C3AED, #6D28D9)",
                 }}
               >
                 Sign Up
-              </button>
-            )}
+              </Link>
+            ) : auth ? (
+              <Link
+                href="/login"
+                className="ml-1 flex flex-col items-center gap-0.5 px-2 py-1 rounded-lg text-[10px] font-medium text-white/75"
+              >
+                <LogIn size={18} />
+                Sign In
+              </Link>
+            ) : null}
           </nav>
         </div>
       </div>

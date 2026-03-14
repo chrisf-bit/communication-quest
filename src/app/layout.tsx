@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Fredoka, Inter, JetBrains_Mono } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { ConsentBanner } from "@/components/layout/ConsentBanner";
+import { Providers } from "@/components/providers/Providers";
 import "./globals.css";
 
 const fredoka = Fredoka({
@@ -44,9 +45,11 @@ export default function RootLayout({
       <body
         className={`${fredoka.variable} ${inter.variable} ${interBody.variable} ${jetbrainsMono.variable} antialiased`}
       >
-        <Header />
-        <main className="min-h-[calc(100vh-3.5rem)]">{children}</main>
-        <ConsentBanner />
+        <Providers>
+          <Header />
+          <main className="min-h-[calc(100vh-3.5rem)]">{children}</main>
+          <ConsentBanner />
+        </Providers>
       </body>
     </html>
   );

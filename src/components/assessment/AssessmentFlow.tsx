@@ -8,7 +8,8 @@ import {
   AssessmentQuestion,
   calculateAssessmentProfile,
 } from "@/data/assessment";
-import { recordAssessment } from "@/lib/progress/store";
+import { applyAssessment } from "@/lib/progress/store";
+import { useProgress } from "@/components/providers/ProgressProvider";
 import {
   ArrowRight,
   Check,
@@ -35,6 +36,7 @@ interface AssessmentFlowProps {
 type Phase = "intro" | "question" | "feedback" | "results";
 
 export function AssessmentFlow({ onComplete }: AssessmentFlowProps) {
+  const { progress: currentProgress, saveProgress } = useProgress();
   const [phase, setPhase] = useState<Phase>("intro");
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState<
@@ -85,8 +87,11 @@ export function AssessmentFlow({ onComplete }: AssessmentFlowProps) {
       const result = calculateAssessmentProfile(answers);
       setProfile(result);
 
-      const { xpAwarded: xp } = recordAssessment(result);
-      setXpAwarded(xp);
+      if (currentProgress) {
+        const { progress: updated, xpAwarded: xp } = applyAssessment(currentProgress, result);
+        setXpAwarded(xp);
+        saveProgress(updated);
+      }
 
       setPhase("results");
     } else {
@@ -94,7 +99,7 @@ export function AssessmentFlow({ onComplete }: AssessmentFlowProps) {
       setLastAnswer(null);
       setPhase("question");
     }
-  }, [currentIndex, answers]);
+  }, [currentIndex, answers, currentProgress, saveProgress]);
 
   // INTRO
   if (phase === "intro") {

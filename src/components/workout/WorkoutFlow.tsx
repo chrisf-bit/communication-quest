@@ -11,7 +11,8 @@ import {
 import { getCharacter } from "@/data/characters";
 import { scoreSpotTheStyle, scoreChooseBestResponse } from "@/lib/scoring/spotAndChooseScorer";
 import { heuristicEvaluator } from "@/lib/scoring/heuristicEvaluator";
-import { recordSession } from "@/lib/progress/store";
+import { applySession } from "@/lib/progress/store";
+import { useProgress } from "@/components/providers/ProgressProvider";
 import { generateId } from "@/lib/utils";
 import { SpotTheStyle } from "./SpotTheStyle";
 import { ChooseBestResponse } from "./ChooseBestResponse";
@@ -36,6 +37,7 @@ export function WorkoutFlow({
   onComplete,
   onRestart,
 }: WorkoutFlowProps) {
+  const { progress: currentProgress, saveProgress } = useProgress();
   const [phase, setPhase] = useState<Phase>("intro");
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState<QuestionAnswer[]>([]);
@@ -196,27 +198,32 @@ export function WorkoutFlow({
         if (s) scenarioStyles[q.scenarioId] = s.targetStyle;
       }
 
-      const result = recordSession(
-        {
-          id: generateId(),
-          date: new Date().toISOString(),
-          type: "workout",
-          questions: answers,
-          totalScore,
-          maxScore,
-        },
-        scenarioStyles
-      );
+      if (currentProgress) {
+        const result = applySession(
+          currentProgress,
+          {
+            id: generateId(),
+            date: new Date().toISOString(),
+            type: "workout",
+            questions: answers,
+            totalScore,
+            maxScore,
+          },
+          scenarioStyles
+        );
 
-      setLevelUps(result.levelUps);
-      setXpEarned(result.xpEarned);
+        setLevelUps(result.levelUps);
+        setXpEarned(result.xpEarned);
+        saveProgress(result.progress);
+      }
+
       setPhase("summary");
       onComplete();
     } else {
       setCurrentIndex(nextIndex);
       setPhase("question");
     }
-  }, [currentIndex, questions, answers, scenarioMap, onComplete]);
+  }, [currentIndex, questions, answers, scenarioMap, onComplete, currentProgress, saveProgress]);
 
   // Count question types for intro tags
   const questionTypeCounts = useMemo(

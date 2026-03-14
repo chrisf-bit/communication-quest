@@ -7,7 +7,7 @@ import { ScoreRing } from "@/components/shared/ScoreRing";
 import { StyleBadge } from "@/components/shared/StyleBadge";
 import { DemoCTA } from "@/components/shared/DemoCTA";
 import { LevelUpNotification } from "@/components/shared/LevelUpNotification";
-import { isDemoMode, loadProgress } from "@/lib/progress/store";
+import { useProgress } from "@/components/providers/ProgressProvider";
 import { getMasteryStars } from "@/lib/progress/mastery";
 import {
   Trophy,
@@ -73,7 +73,8 @@ export function WorkoutSummary({
   const strongestStyle = stylesWithData[0];
   const weakestStyle = stylesWithData[stylesWithData.length - 1];
 
-  const isDemo = isDemoMode();
+  const { progress: currentProgress } = useProgress();
+  const isDemo = currentProgress?.isDemo ?? false;
   const scoreColour = percentage >= 70 ? "#059669" : percentage >= 40 ? "#D97706" : "#FF6B6B";
   const sceneBg = percentage >= 70
     ? "linear-gradient(160deg, rgba(5,150,105,0.15) 0%, rgba(5,150,105,0.08) 100%)"
@@ -240,8 +241,8 @@ export function WorkoutSummary({
         </div>
 
         {/* Scenario mastery stars */}
-        {(() => {
-          const progress = loadProgress();
+        {currentProgress && (() => {
+          const progress = currentProgress;
           const scenarioIds = [...new Set(answers.map((a) => a.scenarioId))];
           return (
             <div

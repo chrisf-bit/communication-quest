@@ -9,7 +9,7 @@ import { DemoCTA } from "@/components/shared/DemoCTA";
 import { SCENARIOS } from "@/data/scenarios";
 import { STYLES, STYLE_LIST } from "@/data/styles";
 import { generatePracticeSet } from "@/data/workoutGenerator";
-import { loadProgress } from "@/lib/progress/store";
+import { useProgress } from "@/components/providers/ProgressProvider";
 import { getStylePercentage } from "@/lib/progress/stats";
 import { getUnlockedScenarios } from "@/lib/progress/levelGating";
 import { isDemoLimitReached, isVocabDemoLimitReached } from "@/lib/demo";
@@ -84,6 +84,7 @@ const MODES: {
 type PracticeStep = "mode" | "style-filter" | "playing";
 
 export default function PracticePage() {
+  const { progress } = useProgress();
   const [step, setStep] = useState<PracticeStep>("mode");
   const [selectedMode, setSelectedMode] = useState<QuestionType | null>(null);
   const [focusStyle, setFocusStyle] = useState<CommunicationStyle | null>(null);
@@ -99,8 +100,7 @@ export default function PracticePage() {
   }, []);
 
   const questions = useMemo(() => {
-    if (!selectedMode || selectedMode === "vocabulary" || step !== "playing") return [];
-    const progress = loadProgress();
+    if (!selectedMode || selectedMode === "vocabulary" || step !== "playing" || !progress) return [];
     const unlocked = getUnlockedScenarios(SCENARIOS, progress.totalXP);
     return generatePracticeSet(
       unlocked,
@@ -110,7 +110,7 @@ export default function PracticePage() {
       focusStyle ?? undefined
     );
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [selectedMode, practiceKey, step, focusStyle]);
+  }, [selectedMode, practiceKey, step, focusStyle, progress]);
 
   const handleRestart = useCallback(() => {
     setPracticeKey((k) => k + 1);
@@ -129,8 +129,7 @@ export default function PracticePage() {
   }, [step]);
 
   const handleModeSelect = useCallback((mode: QuestionType) => {
-    const progress = loadProgress();
-    if (progress.isDemo) {
+    if (progress?.isDemo) {
       if (mode === "vocabulary") {
         if (isVocabDemoLimitReached(progress.sessions, true)) {
           setShowDemoCTA(true);
@@ -151,7 +150,7 @@ export default function PracticePage() {
     } else {
       setStep("style-filter");
     }
-  }, []);
+  }, [progress]);
 
   const handleStyleSelect = useCallback((style: CommunicationStyle | null) => {
     setFocusStyle(style);
@@ -213,9 +212,10 @@ export default function PracticePage() {
     );
   }
 
+  if (!progress) return null;
+
   // Style filter step
   if (step === "style-filter" && selectedMode) {
-    const progress = loadProgress();
     const modeConfig = MODES.find((m) => m.type === selectedMode);
 
     return (
@@ -360,7 +360,6 @@ export default function PracticePage() {
         {/* Mode cards */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {MODES.map(({ type, label, description, icon: Icon, colour, colourBg }) => {
-            const progress = loadProgress();
             const isLocked = progress.isDemo && (
               type === "vocabulary"
                 ? isVocabDemoLimitReached(progress.sessions, true)

@@ -4,15 +4,15 @@ import { useState, useMemo, useCallback } from "react";
 import { Scenario } from "@/types";
 import { WorkoutFlow } from "@/components/workout/WorkoutFlow";
 import { DemoCTA } from "@/components/shared/DemoCTA";
-import { loadProgress } from "@/lib/progress/store";
+import { useProgress } from "@/components/providers/ProgressProvider";
 import { isDemoLimitReached, DEMO_SCENARIO_IDS } from "@/lib/demo";
 
-// Dynamic import to avoid SSR issues with scenarios
 import { SCENARIOS } from "@/data/scenarios";
 import { generateWorkout } from "@/data/workoutGenerator";
 
 export default function WorkoutPage() {
   const [workoutKey, setWorkoutKey] = useState(0);
+  const { progress, refreshProgress } = useProgress();
 
   const scenarioMap = useMemo(() => {
     const map: Record<string, Scenario> = {};
@@ -22,7 +22,7 @@ export default function WorkoutPage() {
     return map;
   }, []);
 
-  const progress = useMemo(() => loadProgress(), [workoutKey]); // eslint-disable-line react-hooks/exhaustive-deps
+  if (!progress) return null;
 
   // Demo users who've used their free session see the fullscreen CTA
   if (isDemoLimitReached(progress.workoutsCompleted, progress.isDemo)) {
@@ -41,6 +41,7 @@ export default function WorkoutPage() {
 
   const handleRestart = () => {
     setWorkoutKey((k) => k + 1);
+    refreshProgress();
   };
 
   return (

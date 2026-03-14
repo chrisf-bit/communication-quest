@@ -1,21 +1,16 @@
 "use client";
 
-import { useMemo, useEffect, useState } from "react";
+import { useMemo } from "react";
 import Link from "next/link";
 import * as LucideIcons from "lucide-react";
 import { SCENARIO_PACKS, getScenariosForPack, getPackStats } from "@/data/scenarioPacks";
 import { SCENARIOS } from "@/data/scenarios";
-import { loadProgress } from "@/lib/progress/store";
+import { useProgress } from "@/components/providers/ProgressProvider";
 import { getMasteryStars } from "@/lib/progress/mastery";
-import { UserProgress } from "@/types";
 import { Package, ArrowRight, Star, CheckCircle2 } from "lucide-react";
 
 export default function PacksPage() {
-  const [progress, setProgress] = useState<UserProgress | null>(null);
-
-  useEffect(() => {
-    setProgress(loadProgress());
-  }, []);
+  const { progress } = useProgress();
 
   const packData = useMemo(() => {
     if (!progress) return [];

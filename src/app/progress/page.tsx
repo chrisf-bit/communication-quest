@@ -1,7 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { loadProgress } from "@/lib/progress/store";
+import { useProgress } from "@/components/providers/ProgressProvider";
 import {
   getOverallPercentage,
   getStylePercentage,
@@ -10,7 +9,7 @@ import {
   getRecentAverageScore,
 } from "@/lib/progress/stats";
 import { getProgressToNextLevel } from "@/lib/progress/xp";
-import { UserProgress, CommunicationStyle, PROFICIENCY_TIERS } from "@/types";
+import { CommunicationStyle, PROFICIENCY_TIERS } from "@/types";
 import { STYLES, STYLE_LIST } from "@/data/styles";
 import { SCENARIOS } from "@/data/scenarios";
 import { SCENARIO_PACKS, getPackStats, getScenariosForPack } from "@/data/scenarioPacks";
@@ -52,11 +51,7 @@ const LEVEL_ICONS: Record<string, typeof Star> = {
 };
 
 export default function ProgressPage() {
-  const [progress, setProgress] = useState<UserProgress | null>(null);
-
-  useEffect(() => {
-    setProgress(loadProgress());
-  }, []);
+  const { progress } = useProgress();
 
   if (!progress) {
     return (

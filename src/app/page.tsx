@@ -1,10 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Link from "next/link";
-import { loadProgress } from "@/lib/progress/store";
 import { getOverallPercentage } from "@/lib/progress/stats";
-import { UserProgress } from "@/types";
+import { useProgress } from "@/components/providers/ProgressProvider";
 import { SCENARIOS } from "@/data/scenarios";
 import { DailyChallengeCard } from "@/components/home/DailyChallengeCard";
 import { SmartRecommendations } from "@/components/home/SmartRecommendations";
@@ -30,11 +28,7 @@ import {
 } from "lucide-react";
 
 export default function HomePage() {
-  const [progress, setProgress] = useState<UserProgress | null>(null);
-
-  useEffect(() => {
-    setProgress(loadProgress());
-  }, []);
+  const { progress } = useProgress();
 
   const hasHistory = progress && progress.workoutsCompleted > 0;
   const overallPct = progress ? getOverallPercentage(progress) : 0;

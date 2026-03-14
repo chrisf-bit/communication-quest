@@ -325,3 +325,167 @@ export function resetProgress(): void {
 export function isDemoMode(): boolean {
   return loadProgress().isDemo;
 }
+
+// ============================================
+// Pure variants (no internal load/save - for use with ProgressProvider)
+// ============================================
+
+/**
+ * Pure version of recordSession. Takes progress as input, returns updated progress + result.
+ * Does NOT read from or write to localStorage.
+ */
+export function applySession(
+  currentProgress: UserProgress,
+  session: SessionRecord,
+  scenarioStyles: Record<string, CommunicationStyle>
+): SessionResult {
+  // Deep-clone to avoid mutation
+  const progress: UserProgress = JSON.parse(JSON.stringify(currentProgress));
+
+  const oldOverallLevel = getLevelForXP(progress.totalXP);
+  const oldStyleLevels: Record<CommunicationStyle, ProficiencyLevel> = {
+    direct: progress.styleXP.direct.level,
+    expressive: progress.styleXP.expressive.level,
+    supportive: progress.styleXP.supportive.level,
+    analytical: progress.styleXP.analytical.level,
+  };
+
+  progress.workoutsCompleted += 1;
+  progress.totalScore += session.totalScore;
+  progress.totalPossibleScore += session.maxScore;
+
+  let sessionXP = 0;
+
+  const answersByScenario = new Map<string, typeof session.questions>();
+  for (const answer of session.questions) {
+    const existing = answersByScenario.get(answer.scenarioId) ?? [];
+    existing.push(answer);
+    answersByScenario.set(answer.scenarioId, existing);
+  }
+
+  for (const answer of session.questions) {
+    const style = scenarioStyles[answer.scenarioId];
+    if (style && progress.styleScores[style]) {
+      const ss = progress.styleScores[style];
+      ss.attempts += 1;
+      ss.totalScore += answer.score;
+      ss.totalPossible += answer.maxScore;
+      if (answer.questionType === "spot" && answer.result === "strong") {
+        ss.correctIdentifications += 1;
+      }
+      const questionXP = xpForResult(answer.result);
+      progress.styleXP[style].xp += questionXP;
+      sessionXP += questionXP;
+    }
+  }
+
+  for (const [scenarioId, answers] of answersByScenario) {
+    const style = scenarioStyles[scenarioId];
+    if (!style) continue;
+    const ftBonus = firstTimeBonus(scenarioId, progress.completedScenarioIds);
+    const perfBonus = perfectScenarioBonus(answers.map((a) => a.result));
+    if (ftBonus > 0) { progress.styleXP[style].xp += ftBonus; sessionXP += ftBonus; }
+    if (perfBonus > 0) { progress.styleXP[style].xp += perfBonus; sessionXP += perfBonus; }
+  }
+
+  for (const style of Object.keys(progress.styleXP) as CommunicationStyle[]) {
+    progress.styleXP[style].level = getLevelForXP(progress.styleXP[style].xp);
+  }
+
+  progress.totalXP += sessionXP;
+
+  const newIds = session.questions.map((q) => q.scenarioId);
+  progress.completedScenarioIds = [...new Set([...progress.completedScenarioIds, ...newIds])];
+
+  for (const [scenarioId, answers] of answersByScenario) {
+    const totalScore = answers.reduce((sum, a) => sum + a.score, 0);
+    const results = answers.map((a) => a.result);
+    progress.scenarioMastery[scenarioId] = updateMastery(progress.scenarioMastery[scenarioId], totalScore, results);
+  }
+
+  const today = new Date().toISOString().split("T")[0];
+  if (progress.lastSessionDate) {
+    const lastDate = new Date(progress.lastSessionDate);
+    const todayDate = new Date(today);
+    const diffDays = Math.floor((todayDate.getTime() - lastDate.getTime()) / (1000 * 60 * 60 * 24));
+    if (diffDays === 1) { progress.currentStreak += 1; }
+    else if (diffDays > 1) { progress.currentStreak = 1; }
+  } else {
+    progress.currentStreak = 1;
+  }
+  progress.lastSessionDate = today;
+  if (progress.currentStreak > (progress.longestStreak ?? 0)) {
+    progress.longestStreak = progress.currentStreak;
+  }
+
+  progress.sessions = [session, ...progress.sessions].slice(0, 20);
+
+  const levelUps: LevelUpEvent[] = [];
+  const newOverallLevel = getLevelForXP(progress.totalXP);
+  if (newOverallLevel !== oldOverallLevel) {
+    levelUps.push({ style: "overall", oldLevel: oldOverallLevel, newLevel: newOverallLevel });
+  }
+  for (const style of Object.keys(progress.styleXP) as CommunicationStyle[]) {
+    if (progress.styleXP[style].level !== oldStyleLevels[style]) {
+      levelUps.push({ style, oldLevel: oldStyleLevels[style], newLevel: progress.styleXP[style].level });
+    }
+  }
+
+  return { progress, xpEarned: sessionXP, levelUps };
+}
+
+/**
+ * Pure version of recordAssessment. Takes progress as input, returns updated progress + XP awarded.
+ */
+export function applyAssessment(
+  currentProgress: UserProgress,
+  profile: {
+    styleScores: Record<CommunicationStyle, number>;
+    strongestStyle: CommunicationStyle | null;
+    weakestStyle: CommunicationStyle | null;
+    correctCount: number;
+  }
+): { progress: UserProgress; xpAwarded: number } {
+  const progress: UserProgress = JSON.parse(JSON.stringify(currentProgress));
+
+  progress.hasCompletedAssessment = true;
+  progress.assessmentProfile = { ...profile, completedAt: new Date().toISOString() };
+
+  const baseXP = profile.correctCount * 5;
+  const bonusXP = profile.correctCount >= 8 ? 50 : 0;
+  const totalXP = baseXP + bonusXP;
+
+  progress.totalXP += totalXP;
+
+  const perStyle = Math.floor(totalXP / 4);
+  for (const style of Object.keys(progress.styleXP) as CommunicationStyle[]) {
+    progress.styleXP[style].xp += perStyle;
+    progress.styleXP[style].level = getLevelForXP(progress.styleXP[style].xp);
+  }
+
+  return { progress, xpAwarded: totalXP };
+}
+
+/**
+ * Pure version of recordDailyChallenge.
+ */
+export function applyDailyChallenge(
+  currentProgress: UserProgress,
+  dateKey: string
+): { progress: UserProgress; streakMilestoneXP: number } {
+  if (currentProgress.completedDailyChallenges.includes(dateKey)) {
+    return { progress: currentProgress, streakMilestoneXP: 0 };
+  }
+
+  const progress: UserProgress = JSON.parse(JSON.stringify(currentProgress));
+  progress.completedDailyChallenges = [...progress.completedDailyChallenges, dateKey];
+
+  const milestone = getStreakMilestone(progress.currentStreak);
+  let streakMilestoneXP = 0;
+  if (milestone) {
+    progress.totalXP += milestone.xpBonus;
+    streakMilestoneXP = milestone.xpBonus;
+  }
+
+  return { progress, streakMilestoneXP };
+}
