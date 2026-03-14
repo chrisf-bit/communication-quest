@@ -59,7 +59,7 @@ export async function GET() {
   // Build org name lookup
   const orgNames: Record<string, string> = {};
   for (const m of memberships) {
-    const org = m.organisations as Record<string, unknown> | null;
+    const org = m.organisations as unknown as Record<string, unknown> | null;
     if (org) {
       orgNames[m.org_id as string] = org.name as string;
     }
