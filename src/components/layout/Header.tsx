@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { MessagesSquare, Home, BarChart3, BookOpen, Info, Play, ArrowRight, Package, LogIn, LogOut, User, LayoutDashboard } from "lucide-react";
+import { MessagesSquare, Home, BarChart3, BookOpen, Info, Play, ArrowRight, Package, LogIn, LogOut, User, LayoutDashboard, Settings } from "lucide-react";
 import { useProgress } from "@/components/providers/ProgressProvider";
 import { useOptionalAuth } from "@/components/providers/AuthProvider";
 
@@ -22,6 +22,7 @@ export function Header() {
 
   const isDemo = progress?.isDemo ?? false;
   const isAuthenticated = !!auth?.user;
+  const isAdmin = auth?.user?.email === "chris@rapid-learn.co.uk";
 
   return (
     <header
@@ -84,6 +85,19 @@ export function Header() {
                   <LayoutDashboard size={18} />
                   <span className="hidden lg:inline">Dashboard</span>
                 </Link>
+                {isAdmin && (
+                  <Link
+                    href="/admin"
+                    className={`ml-1 flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium transition-all duration-200 ${
+                      pathname === "/admin"
+                        ? "bg-[#58CC02] text-white shadow-sm"
+                        : "text-white/75 hover:text-white hover:bg-white/10"
+                    }`}
+                  >
+                    <Settings size={18} />
+                    <span className="hidden lg:inline">Admin</span>
+                  </Link>
+                )}
                 <button
                   onClick={() => auth?.signOut()}
                   className="ml-1 flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium text-white/75 hover:text-white hover:bg-white/10 transition-all duration-200"
