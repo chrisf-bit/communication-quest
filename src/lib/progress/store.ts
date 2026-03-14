@@ -9,6 +9,7 @@ import {
 } from "@/types";
 import { xpForResult, firstTimeBonus, perfectScenarioBonus, getLevelForXP } from "./xp";
 import { getStreakMilestone } from "@/lib/daily";
+import { updateMastery } from "./mastery";
 
 const STORAGE_KEY = "conversation-quest-progress";
 
@@ -48,6 +49,7 @@ function createDefaultProgress(isDemo = true): UserProgress {
     currentStreak: 0,
     longestStreak: 0,
     completedDailyChallenges: [],
+    scenarioMastery: {},
     isDemo,
     hasCompletedAssessment: false,
   };
@@ -82,6 +84,9 @@ function migrateProgress(data: any): UserProgress {
   }
   if (progress.completedDailyChallenges === undefined) {
     progress.completedDailyChallenges = [];
+  }
+  if (progress.scenarioMastery === undefined) {
+    progress.scenarioMastery = {};
   }
 
   return progress;
@@ -189,6 +194,17 @@ export function recordSession(
   progress.completedScenarioIds = [
     ...new Set([...progress.completedScenarioIds, ...newIds]),
   ];
+
+  // Update per-scenario mastery and spaced repetition
+  for (const [scenarioId, answers] of answersByScenario) {
+    const totalScore = answers.reduce((sum, a) => sum + a.score, 0);
+    const results = answers.map((a) => a.result);
+    progress.scenarioMastery[scenarioId] = updateMastery(
+      progress.scenarioMastery[scenarioId],
+      totalScore,
+      results
+    );
+  }
 
   // Update streak
   const today = new Date().toISOString().split("T")[0];

@@ -5,7 +5,8 @@ import { UserProgress, CommunicationStyle } from "@/types";
 import { getWeakestStyle, getStylePercentage } from "@/lib/progress/stats";
 import { getNextUnlock } from "@/lib/progress/levelGating";
 import { STYLES, STYLE_LIST } from "@/data/styles";
-import { Target, BookOpen, RefreshCw, TrendingUp, ArrowRight, Lock } from "lucide-react";
+import { Target, BookOpen, RefreshCw, TrendingUp, ArrowRight, Lock, RotateCcw } from "lucide-react";
+import { getDueCount } from "@/lib/progress/mastery";
 
 interface Recommendation {
   id: string;
@@ -86,7 +87,22 @@ function getRecommendations(progress: UserProgress): Recommendation[] {
     });
   }
 
-  // 5. Replay suggestion if they've completed many scenarios
+  // 5. Spaced repetition - scenarios due for review
+  const dueCount = getDueCount(progress);
+  if (dueCount > 0) {
+    recs.push({
+      id: "review-due",
+      icon: RotateCcw,
+      title: `${dueCount} scenario${dueCount === 1 ? "" : "s"} due for review`,
+      description: "Revisit scenarios you've practised before to strengthen your skills.",
+      href: "/workout",
+      colour: "#F59E0B",
+      bgColour: "rgba(245, 158, 11, 0.12)",
+      borderColour: "rgba(245, 158, 11, 0.4)",
+    });
+  }
+
+  // 6. Replay suggestion if they've completed many scenarios
   if (progress.completedScenarioIds.length >= 6) {
     recs.push({
       id: "replay",

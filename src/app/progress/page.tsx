@@ -13,8 +13,9 @@ import { getProgressToNextLevel } from "@/lib/progress/xp";
 import { UserProgress, CommunicationStyle, PROFICIENCY_TIERS } from "@/types";
 import { STYLES, STYLE_LIST } from "@/data/styles";
 import { SCENARIOS } from "@/data/scenarios";
-import { SCENARIO_PACKS, getPackStats } from "@/data/scenarioPacks";
+import { SCENARIO_PACKS, getPackStats, getScenariosForPack } from "@/data/scenarioPacks";
 import { getNextUnlock, getUnlockedDifficulties, getLockedScenarioCount } from "@/lib/progress/levelGating";
+import { getMasteryOverview, getMasteryStars, getDueCount } from "@/lib/progress/mastery";
 import { getNextMilestone } from "@/lib/daily";
 import { StyleBadge } from "@/components/shared/StyleBadge";
 import { ScoreRing } from "@/components/shared/ScoreRing";
@@ -374,6 +375,69 @@ export default function ProgressPage() {
           )}
         </div>
 
+        {/* Mastery stars overview */}
+        {(() => {
+          const mastery = getMasteryOverview(progress);
+          const dueForReview = getDueCount(progress);
+          if (mastery.totalAttempted === 0) return null;
+
+          return (
+            <div
+              className="backdrop-blur-xl rounded-2xl p-6 space-y-4"
+              style={{
+                background: "rgba(15, 23, 42, 0.8)",
+                border: "2px solid rgba(255,255,255,0.3)",
+              }}
+            >
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <Star size={20} className="text-amber-400" />
+                  <h2 className="text-lg font-semibold text-white">Scenario Mastery</h2>
+                </div>
+                {dueForReview > 0 && (
+                  <Link
+                    href="/workout"
+                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold text-white transition-all hover:opacity-90"
+                    style={{ background: "rgba(245, 158, 11, 0.25)", border: "1px solid rgba(245, 158, 11, 0.4)" }}
+                  >
+                    {dueForReview} due for review
+                    <ArrowRight size={14} />
+                  </Link>
+                )}
+              </div>
+              <div className="grid grid-cols-3 gap-3">
+                {[
+                  { stars: 1, count: mastery.oneStar, label: "Started", colour: "#94A3B8" },
+                  { stars: 2, count: mastery.twoStar, label: "Proficient", colour: "#F59E0B" },
+                  { stars: 3, count: mastery.threeStar, label: "Mastered", colour: "#FBBF24" },
+                ].map(({ stars, count, label, colour }) => (
+                  <div
+                    key={stars}
+                    className="rounded-xl p-4 text-center space-y-1"
+                    style={{ background: "rgba(255,255,255,0.05)" }}
+                  >
+                    <div className="flex justify-center gap-0.5">
+                      {Array.from({ length: 3 }).map((_, i) => (
+                        <Star
+                          key={i}
+                          size={16}
+                          fill={i < stars ? colour : "transparent"}
+                          style={{ color: i < stars ? colour : "rgba(255,255,255,0.2)" }}
+                        />
+                      ))}
+                    </div>
+                    <p className="text-2xl font-bold text-white">{count}</p>
+                    <p className="text-xs text-white/60">{label}</p>
+                  </div>
+                ))}
+              </div>
+              <p className="text-xs text-white/40 text-center">
+                {mastery.totalAttempted} of {SCENARIOS.length} scenarios attempted
+              </p>
+            </div>
+          );
+        })()}
+
         {/* Unlock progress and streaks */}
         <div className="grid sm:grid-cols-2 gap-4">
           {/* Unlock progress */}
@@ -465,10 +529,18 @@ export default function ProgressPage() {
         {/* Scenario packs */}
         {(() => {
           const packsWithData = SCENARIO_PACKS
-            .map((pack) => ({
-              pack,
-              stats: getPackStats(pack, SCENARIOS, progress.completedScenarioIds),
-            }))
+            .map((pack) => {
+              const packScenarios = getScenariosForPack(pack, SCENARIOS);
+              const threeStarCount = packScenarios.filter(
+                (s) => getMasteryStars(progress.scenarioMastery?.[s.id]) === 3
+              ).length;
+              return {
+                pack,
+                stats: getPackStats(pack, SCENARIOS, progress.completedScenarioIds),
+                threeStarCount,
+                totalInPack: packScenarios.length,
+              };
+            })
             .filter(({ stats }) => stats.total > 0);
 
           if (packsWithData.length === 0) return null;
@@ -486,7 +558,7 @@ export default function ProgressPage() {
                 <h2 className="text-lg font-semibold text-white">Scenario Packs</h2>
               </div>
               <div className="grid sm:grid-cols-2 gap-3">
-                {packsWithData.map(({ pack, stats }) => (
+                {packsWithData.map(({ pack, stats, threeStarCount, totalInPack }) => (
                   <div
                     key={pack.id}
                     className="rounded-xl p-4 space-y-2"
@@ -494,9 +566,17 @@ export default function ProgressPage() {
                   >
                     <div className="flex items-center justify-between">
                       <h3 className="text-sm font-bold text-white">{pack.name}</h3>
-                      <span className="text-xs font-bold" style={{ color: pack.colour }}>
-                        {stats.completed}/{stats.total}
-                      </span>
+                      <div className="flex items-center gap-2">
+                        {threeStarCount > 0 && (
+                          <span className="flex items-center gap-0.5 text-xs text-amber-400">
+                            <Star size={12} fill="#FBBF24" />
+                            {threeStarCount}/{totalInPack}
+                          </span>
+                        )}
+                        <span className="text-xs font-bold" style={{ color: pack.colour }}>
+                          {stats.completed}/{stats.total}
+                        </span>
+                      </div>
                     </div>
                     <div
                       className="w-full h-1.5 rounded-full overflow-hidden"

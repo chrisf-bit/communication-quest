@@ -1,5 +1,6 @@
 import { Scenario, QuestionType, WorkoutQuestion, WorkoutConfig, CommunicationStyle, UserProgress } from "@/types";
 import { getUnlockedScenarios, getAdaptivePool } from "@/lib/progress/levelGating";
+import { getDueScenarioIds } from "@/lib/progress/mastery";
 
 // Shuffles array in place (Fisher-Yates)
 function shuffle<T>(array: T[]): T[] {
@@ -44,13 +45,29 @@ export function generateWorkout(
     available = getAdaptivePool(available, progress);
   }
 
-  // Prefer unseen scenarios
-  const unseen = available.filter((s) => !completedIds.includes(s.id));
-  const pool = unseen.length >= questionCount ? unseen : shuffle(available);
+  // Spaced repetition: prioritise scenarios due for review
+  const dueIds = progress ? getDueScenarioIds(progress) : [];
+  const dueScenarios = dueIds
+    .map((id) => available.find((s) => s.id === id))
+    .filter((s): s is Scenario => s !== undefined);
 
   // Select scenarios - mix styles where possible, deduplicate
   const selected: Scenario[] = [];
   const selectedIds = new Set<string>();
+
+  // First: add up to half from spaced repetition due list
+  const maxDue = Math.max(1, Math.floor(questionCount / 2));
+  for (const scenario of dueScenarios) {
+    if (selected.length >= maxDue) break;
+    if (!selectedIds.has(scenario.id)) {
+      selected.push(scenario);
+      selectedIds.add(scenario.id);
+    }
+  }
+
+  // Prefer unseen scenarios for remaining slots
+  const unseen = available.filter((s) => !completedIds.includes(s.id) && !selectedIds.has(s.id));
+  const pool = unseen.length >= (questionCount - selected.length) ? unseen : shuffle(available);
   const shuffled = shuffle(pool);
   const stylesSeen = new Set<string>();
 

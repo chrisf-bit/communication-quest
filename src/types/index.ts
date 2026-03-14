@@ -292,6 +292,20 @@ export interface SessionRecord {
   maxScore: number;
 }
 
+export interface ScenarioMastery {
+  bestScore: number; // Best total score across all attempts (out of 30)
+  bestPossible: number; // Always 30 (3 questions x 10 max)
+  attempts: number;
+  lastAttemptDate: string; // ISO date
+  lastResult: FeedbackResult; // Overall result of last attempt
+  /** SM-2 spaced repetition fields */
+  easeFactor: number; // Starting at 2.5, adjusted per attempt
+  interval: number; // Days until next review
+  nextReviewDate: string; // ISO date for next scheduled review
+}
+
+export type MasteryStars = 0 | 1 | 2 | 3;
+
 export interface UserProgress {
   workoutsCompleted: number;
   totalScore: number;
@@ -301,6 +315,7 @@ export interface UserProgress {
   styleXP: Record<CommunicationStyle, StyleXP>;
   sessions: SessionRecord[];
   completedScenarioIds: string[];
+  scenarioMastery: Record<string, ScenarioMastery>;
   lastSessionDate: string | null;
   currentStreak: number;
   longestStreak: number;
