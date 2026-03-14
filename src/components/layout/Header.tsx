@@ -3,13 +3,14 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { MessageCircle, Home, BarChart3, BookOpen, Info, Play, ArrowRight } from "lucide-react";
+import { MessageCircle, Home, BarChart3, BookOpen, Info, Play, ArrowRight, Package } from "lucide-react";
 import { loadProgress } from "@/lib/progress/store";
 
 const NAV_ITEMS = [
   { href: "/", label: "Home", icon: Home },
   { href: "/workout", label: "Play", icon: Play },
   { href: "/practice", label: "Practice", icon: BookOpen },
+  { href: "/packs", label: "Packs", icon: Package },
   { href: "/progress", label: "Progress", icon: BarChart3 },
   { href: "/method", label: "Styles", icon: Info },
 ];
@@ -86,7 +87,7 @@ export function Header() {
 
           {/* Mobile nav */}
           <nav className="flex md:hidden items-center gap-0.5">
-            {NAV_ITEMS.slice(0, 4).map(({ href, label, icon: Icon }) => {
+            {NAV_ITEMS.slice(0, 5).map(({ href, label, icon: Icon }) => {
               const isActive = pathname === href;
               return (
                 <Link
