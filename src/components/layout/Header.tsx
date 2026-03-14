@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Compass, Home, BarChart3, BookOpen, Info, Play, ArrowRight, Package, LogIn, LogOut, User, LayoutDashboard } from "lucide-react";
+import { MessagesSquare, Home, BarChart3, BookOpen, Info, Play, ArrowRight, Package, LogIn, LogOut, User, LayoutDashboard } from "lucide-react";
 import { useProgress } from "@/components/providers/ProgressProvider";
 import { useOptionalAuth } from "@/components/providers/AuthProvider";
 
@@ -38,11 +38,11 @@ export function Header() {
             <div
               className="w-9 h-9 rounded-xl flex items-center justify-center transition-all group-hover:scale-105 group-hover:shadow-md"
               style={{
-                background: "linear-gradient(135deg, #58CC02, #46A302)",
-                boxShadow: "0 2px 8px rgba(88, 204, 2, 0.25)",
+                background: "linear-gradient(135deg, #F97316, #EA580C)",
+                boxShadow: "0 2px 8px rgba(249, 115, 22, 0.25)",
               }}
             >
-              <Compass size={20} className="text-white" />
+              <MessagesSquare size={20} className="text-white" />
             </div>
             <span className="font-semibold text-white hidden sm:inline tracking-tight">
               Communication Quest

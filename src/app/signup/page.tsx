@@ -3,7 +3,7 @@
 import { useState, useCallback } from "react";
 import Link from "next/link";
 import { useAuth } from "@/components/providers/AuthProvider";
-import { Mail, ArrowRight, Compass, Check } from "lucide-react";
+import { Mail, ArrowRight, MessagesSquare, Check } from "lucide-react";
 
 export default function SignupPage() {
   const { signInWithMagicLink } = useAuth();
@@ -81,11 +81,11 @@ export default function SignupPage() {
           <div
             className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto"
             style={{
-              background: "linear-gradient(135deg, #58CC02, #46A302)",
-              boxShadow: "0 4px 16px rgba(88, 204, 2, 0.3)",
+              background: "linear-gradient(135deg, #F97316, #EA580C)",
+              boxShadow: "0 4px 16px rgba(249, 115, 22, 0.3)",
             }}
           >
-            <Compass size={32} className="text-white" />
+            <MessagesSquare size={32} className="text-white" />
           </div>
           <h1 className="text-2xl font-bold text-white">Create your account</h1>
           <p className="text-white/60 text-sm">

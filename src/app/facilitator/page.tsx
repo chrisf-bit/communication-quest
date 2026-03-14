@@ -591,6 +591,11 @@ function LearnerRow({ learner, expanded, onToggle }: { learner: Learner; expande
             </div>
           )}
 
+          {/* Session history timeline */}
+          {learner.sessions && learner.sessions.length > 0 && (
+            <SessionTimeline sessions={learner.sessions} />
+          )}
+
           <div className="flex items-center gap-4 text-xs text-white/50">
             <span>Streak: {learner.currentStreak} days</span>
             <span>Best streak: {learner.longestStreak} days</span>
@@ -657,6 +662,9 @@ function InsightsTab({ data }: { data: CohortData }) {
 
   return (
     <div className="space-y-6">
+      {/* Cohort progress over time */}
+      <WeeklyProgress learners={learners} cohort={data.cohort} />
+
       {/* Style difficulty ranking */}
       <div
         className="rounded-2xl p-5 space-y-4"
@@ -794,6 +802,205 @@ function InsightsTab({ data }: { data: CohortData }) {
             )}
           </div>
         </div>
+      </div>
+    </div>
+  );
+}
+
+// =============================================
+// Progress Over Time Components
+// =============================================
+
+function WeeklyProgress({ learners, cohort }: { learners: Learner[]; cohort: CohortData["cohort"] }) {
+  // Collect all sessions across all learners, bucket by week
+  const allSessions: { date: string; score: number; max: number }[] = [];
+  for (const l of learners) {
+    if (!l.sessions) continue;
+    for (const s of l.sessions) {
+      allSessions.push({ date: s.date, score: s.totalScore, max: s.maxScore });
+    }
+  }
+
+  if (allSessions.length === 0) {
+    return (
+      <div
+        className="rounded-2xl p-5"
+        style={{
+          background: "rgba(15, 23, 42, 0.8)",
+          border: "2px solid rgba(255,255,255,0.15)",
+        }}
+      >
+        <h3 className="text-sm font-bold text-white/70 uppercase tracking-wider">
+          Progress Over Time
+        </h3>
+        <p className="text-sm text-white/50 italic mt-3">No session data yet.</p>
+      </div>
+    );
+  }
+
+  // Build weekly buckets from cohort start
+  const startDate = new Date(cohort.startsAt);
+  const now = new Date();
+  const weeks: { label: string; sessions: number; avgAccuracy: number; totalSessions: number }[] = [];
+
+  for (let weekStart = new Date(startDate); weekStart <= now; weekStart = new Date(weekStart.getTime() + 7 * 24 * 60 * 60 * 1000)) {
+    const weekEnd = new Date(weekStart.getTime() + 7 * 24 * 60 * 60 * 1000);
+    const weekSessions = allSessions.filter((s) => {
+      const d = new Date(s.date);
+      return d >= weekStart && d < weekEnd;
+    });
+
+    let avgAcc = 0;
+    if (weekSessions.length > 0) {
+      const totalAcc = weekSessions.reduce((sum, s) => sum + (s.max > 0 ? (s.score / s.max) * 100 : 0), 0);
+      avgAcc = Math.round(totalAcc / weekSessions.length);
+    }
+
+    const weekNum = weeks.length + 1;
+    weeks.push({
+      label: `W${weekNum}`,
+      sessions: weekSessions.length,
+      avgAccuracy: avgAcc,
+      totalSessions: weekSessions.length,
+    });
+
+    if (weeks.length >= 12) break; // Max 12 weeks
+  }
+
+  const maxSessions = Math.max(...weeks.map((w) => w.sessions), 1);
+
+  return (
+    <div
+      className="rounded-2xl p-5 space-y-4"
+      style={{
+        background: "rgba(15, 23, 42, 0.8)",
+        border: "2px solid rgba(255,255,255,0.15)",
+      }}
+    >
+      <div className="flex items-center justify-between">
+        <h3 className="text-sm font-bold text-white/70 uppercase tracking-wider">
+          Cohort Progress Over Time
+        </h3>
+        <div className="flex items-center gap-4 text-xs text-white/50">
+          <span className="flex items-center gap-1.5">
+            <div className="w-2.5 h-2.5 rounded-sm" style={{ background: "#7C3AED" }} />
+            Sessions
+          </span>
+          <span className="flex items-center gap-1.5">
+            <div className="w-2.5 h-2.5 rounded-full" style={{ background: "#58CC02" }} />
+            Avg accuracy
+          </span>
+        </div>
+      </div>
+
+      {/* Bar chart */}
+      <div className="flex items-end gap-1.5" style={{ height: 120 }}>
+        {weeks.map((week, i) => (
+          <div key={i} className="flex-1 flex flex-col items-center gap-1" style={{ height: "100%" }}>
+            {/* Accuracy dot */}
+            <div className="flex-1 relative w-full flex items-end justify-center">
+              {/* Session bar */}
+              <div
+                className="w-full rounded-t-md transition-all duration-500"
+                style={{
+                  height: `${Math.max((week.sessions / maxSessions) * 100, week.sessions > 0 ? 8 : 0)}%`,
+                  background: "linear-gradient(180deg, #7C3AED, #6D28D9)",
+                  opacity: week.sessions > 0 ? 1 : 0.2,
+                }}
+              />
+              {/* Accuracy indicator */}
+              {week.sessions > 0 && (
+                <div
+                  className="absolute w-3 h-3 rounded-full border-2 border-[#0F172A]"
+                  style={{
+                    background: "#58CC02",
+                    bottom: `${Math.max(week.avgAccuracy, 5)}%`,
+                    left: "50%",
+                    transform: "translateX(-50%)",
+                  }}
+                />
+              )}
+            </div>
+            {/* Label */}
+            <span className="text-[10px] text-white/40 font-medium">{week.label}</span>
+          </div>
+        ))}
+      </div>
+
+      {/* Summary row */}
+      <div className="flex items-center gap-6 text-xs text-white/50 pt-1 border-t border-white/5">
+        <span>Total sessions: {allSessions.length}</span>
+        <span>
+          Overall accuracy: {allSessions.length > 0
+            ? Math.round(allSessions.reduce((s, a) => s + (a.max > 0 ? (a.score / a.max) * 100 : 0), 0) / allSessions.length)
+            : 0}%
+        </span>
+        <span>Active weeks: {weeks.filter((w) => w.sessions > 0).length}/{weeks.length}</span>
+      </div>
+    </div>
+  );
+}
+
+function SessionTimeline({ sessions }: { sessions: { date: string; totalScore: number; maxScore: number }[] }) {
+  // Show last 10 sessions as a mini sparkline
+  const recent = sessions.slice(-10);
+  if (recent.length === 0) return null;
+
+  const scores = recent.map((s) => s.maxScore > 0 ? (s.totalScore / s.maxScore) * 100 : 0);
+  const maxScore = 100;
+
+  // Trend: compare first half avg to second half avg
+  const midpoint = Math.floor(scores.length / 2);
+  const firstHalf = scores.slice(0, midpoint);
+  const secondHalf = scores.slice(midpoint);
+  const firstAvg = firstHalf.length > 0 ? firstHalf.reduce((a, b) => a + b, 0) / firstHalf.length : 0;
+  const secondAvg = secondHalf.length > 0 ? secondHalf.reduce((a, b) => a + b, 0) / secondHalf.length : 0;
+  const trending = secondAvg > firstAvg + 5 ? "up" : secondAvg < firstAvg - 5 ? "down" : "stable";
+  const trendColor = trending === "up" ? "#58CC02" : trending === "down" ? "#FF6B6B" : "#F59E0B";
+
+  return (
+    <div
+      className="rounded-xl p-3 space-y-2"
+      style={{
+        background: "rgba(255,255,255,0.03)",
+        border: "1px solid rgba(255,255,255,0.08)",
+      }}
+    >
+      <div className="flex items-center justify-between">
+        <span className="text-xs font-bold text-white/50 uppercase tracking-wider">
+          Recent Sessions
+        </span>
+        <div className="flex items-center gap-1.5">
+          <TrendingUp size={12} style={{ color: trendColor }} />
+          <span className="text-xs font-bold" style={{ color: trendColor }}>
+            {trending === "up" ? "Improving" : trending === "down" ? "Declining" : "Steady"}
+          </span>
+        </div>
+      </div>
+
+      {/* Sparkline bars */}
+      <div className="flex items-end gap-1" style={{ height: 32 }}>
+        {scores.map((score, i) => {
+          const pct = Math.max(score / maxScore, 0.08);
+          const color = score >= 70 ? "#58CC02" : score >= 40 ? "#F59E0B" : "#FF6B6B";
+          return (
+            <div
+              key={i}
+              className="flex-1 rounded-t-sm transition-all duration-300"
+              style={{
+                height: `${pct * 100}%`,
+                background: color,
+                opacity: 0.8,
+              }}
+              title={`${Math.round(score)}% - ${new Date(recent[i].date).toLocaleDateString()}`}
+            />
+          );
+        })}
+      </div>
+
+      <div className="flex items-center justify-between text-[10px] text-white/30">
+        <span>{new Date(recent[0].date).toLocaleDateString()}</span>
+        <span>{new Date(recent[recent.length - 1].date).toLocaleDateString()}</span>
       </div>
     </div>
   );
