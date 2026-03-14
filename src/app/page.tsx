@@ -99,7 +99,7 @@ export default function HomePage() {
             ))}
           </div>
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white tracking-tighter leading-none">
-            Conversation{" "}
+            Communication{" "}
             <span
               className="bg-clip-text text-transparent"
               style={{
