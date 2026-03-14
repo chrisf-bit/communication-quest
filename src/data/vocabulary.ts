@@ -5,6 +5,9 @@ import {
   LanguageMatchChallenge,
   VocabularyChallenge,
 } from "@/types";
+import { WORD_SORT_CHALLENGES_EXTRA } from "./vocabulary-wordsort";
+import { SENTENCE_DETECTION_CHALLENGES_EXTRA } from "./vocabulary-sentences";
+import { LANGUAGE_MATCH_CHALLENGES_EXTRA } from "./vocabulary-matches";
 
 // ============================================
 // Word Banks by Style
@@ -395,10 +398,25 @@ const LANGUAGE_MATCH_CHALLENGES: LanguageMatchChallenge[] = [
 // Aggregated Challenges
 // ============================================
 
-export const ALL_VOCABULARY_CHALLENGES: VocabularyChallenge[] = [
+const ALL_WORD_SORTS: WordSortChallenge[] = [
   ...WORD_SORT_CHALLENGES,
+  ...WORD_SORT_CHALLENGES_EXTRA,
+];
+
+const ALL_SENTENCE_DETECTIONS: SentenceDetectionChallenge[] = [
   ...SENTENCE_DETECTION_CHALLENGES,
+  ...SENTENCE_DETECTION_CHALLENGES_EXTRA,
+];
+
+const ALL_LANGUAGE_MATCHES: LanguageMatchChallenge[] = [
   ...LANGUAGE_MATCH_CHALLENGES,
+  ...LANGUAGE_MATCH_CHALLENGES_EXTRA,
+];
+
+export const ALL_VOCABULARY_CHALLENGES: VocabularyChallenge[] = [
+  ...ALL_WORD_SORTS,
+  ...ALL_SENTENCE_DETECTIONS,
+  ...ALL_LANGUAGE_MATCHES,
 ];
 
 // Utility: shuffle array
@@ -417,9 +435,9 @@ function shuffle<T>(array: T[]): T[] {
  */
 export function generateVocabularySet(count: number = 5): VocabularyChallenge[] {
   // Ensure a mix of types
-  const wordSorts = shuffle(WORD_SORT_CHALLENGES);
-  const sentences = shuffle(SENTENCE_DETECTION_CHALLENGES);
-  const matches = shuffle(LANGUAGE_MATCH_CHALLENGES);
+  const wordSorts = shuffle(ALL_WORD_SORTS);
+  const sentences = shuffle(ALL_SENTENCE_DETECTIONS);
+  const matches = shuffle(ALL_LANGUAGE_MATCHES);
 
   const mixed: VocabularyChallenge[] = [];
 
@@ -448,11 +466,11 @@ export function generateVocabularySet(count: number = 5): VocabularyChallenge[] 
  */
 export function getVocabMoment(style: CommunicationStyle): VocabularyChallenge {
   // Filter sentence detection challenges by style
-  const matchingSentences = SENTENCE_DETECTION_CHALLENGES.filter(
+  const matchingSentences = ALL_SENTENCE_DETECTIONS.filter(
     (c) => c.correctStyle === style
   );
   // Filter language match challenges by style
-  const matchingLanguage = LANGUAGE_MATCH_CHALLENGES.filter(
+  const matchingLanguage = ALL_LANGUAGE_MATCHES.filter(
     (c) => c.characterStyle === style
   );
 
@@ -463,5 +481,5 @@ export function getVocabMoment(style: CommunicationStyle): VocabularyChallenge {
   }
 
   // Fallback to a random word sort
-  return shuffle(WORD_SORT_CHALLENGES)[0];
+  return shuffle(ALL_WORD_SORTS)[0];
 }
