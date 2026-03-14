@@ -94,26 +94,29 @@ export function Header() {
                   </span>
                 </button>
               </>
-            ) : isDemo ? (
-              <Link
-                href="/signup"
-                className="ml-2 flex items-center gap-1.5 px-4 py-1.5 rounded-lg text-sm font-bold text-white transition-all duration-200 hover:opacity-90"
-                style={{
-                  background: "linear-gradient(135deg, #7C3AED, #6D28D9)",
-                }}
-              >
-                Sign Up
-                <ArrowRight size={16} />
-              </Link>
-            ) : auth ? (
-              <Link
-                href="/login"
-                className="ml-2 flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium text-white/75 hover:text-white hover:bg-white/10 transition-all duration-200"
-              >
-                <LogIn size={18} />
-                Sign In
-              </Link>
-            ) : null}
+            ) : (
+              <>
+                <Link
+                  href="/login"
+                  className="ml-2 flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium text-white/75 hover:text-white hover:bg-white/10 transition-all duration-200"
+                >
+                  <LogIn size={18} />
+                  Sign In
+                </Link>
+                {isDemo && (
+                  <Link
+                    href="/signup"
+                    className="ml-1 flex items-center gap-1.5 px-4 py-1.5 rounded-lg text-sm font-bold text-white transition-all duration-200 hover:opacity-90"
+                    style={{
+                      background: "linear-gradient(135deg, #7C3AED, #6D28D9)",
+                    }}
+                  >
+                    Sign Up
+                    <ArrowRight size={16} />
+                  </Link>
+                )}
+              </>
+            )}
           </nav>
 
           {/* Mobile nav */}
@@ -146,17 +149,7 @@ export function Header() {
                 <User size={18} />
                 Account
               </button>
-            ) : isDemo ? (
-              <Link
-                href="/signup"
-                className="ml-1 flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-bold text-white transition-all duration-200 hover:opacity-90"
-                style={{
-                  background: "linear-gradient(135deg, #7C3AED, #6D28D9)",
-                }}
-              >
-                Sign Up
-              </Link>
-            ) : auth ? (
+            ) : (
               <Link
                 href="/login"
                 className="ml-1 flex flex-col items-center gap-0.5 px-2 py-1 rounded-lg text-[10px] font-medium text-white/75"
@@ -164,7 +157,7 @@ export function Header() {
                 <LogIn size={18} />
                 Sign In
               </Link>
-            ) : null}
+            )}
           </nav>
         </div>
       </div>
