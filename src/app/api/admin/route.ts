@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { createServerSupabaseClient } from "@/lib/supabase/server";
 
 // Hardcoded admin email - only this user can access admin functions
-const ADMIN_EMAIL = "chris@rapid-learn.co.uk";
+const ADMIN_EMAIL = "chrisfreebairn@hotmail.co.uk";
 
 async function checkAdmin() {
   const supabase = await createServerSupabaseClient();
