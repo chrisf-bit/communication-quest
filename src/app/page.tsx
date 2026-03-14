@@ -8,6 +8,7 @@ import { UserProgress } from "@/types";
 import { SCENARIOS } from "@/data/scenarios";
 import { DailyChallengeCard } from "@/components/home/DailyChallengeCard";
 import { SmartRecommendations } from "@/components/home/SmartRecommendations";
+import { SpotlightTutorial } from "@/components/home/SpotlightTutorial";
 
 import { ScoreRing } from "@/components/shared/ScoreRing";
 import { getProgressToNextLevel } from "@/lib/progress/xp";
@@ -40,6 +41,9 @@ export default function HomePage() {
 
   return (
     <div className="space-y-0">
+      {/* First-time tutorial */}
+      {progress && !hasHistory && <SpotlightTutorial />}
+
       {/* Hero - dark with bold 4-colour glow orbs */}
       <section
         className="relative overflow-hidden py-16 sm:py-20"
