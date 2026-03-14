@@ -15,7 +15,7 @@ interface AuthContextValue {
   user: User | null;
   session: Session | null;
   isLoading: boolean;
-  signInWithMagicLink: (email: string) => Promise<{ error: string | null }>;
+  signInWithMagicLink: (email: string, redirectTo?: string) => Promise<{ error: string | null }>;
   signOut: () => Promise<void>;
 }
 
@@ -75,12 +75,15 @@ export function AuthProvider({ children }: AuthProviderProps) {
   }, [supabase]);
 
   const signInWithMagicLink = useCallback(
-    async (email: string) => {
+    async (email: string, redirectTo?: string) => {
       if (!supabase) return { error: "Auth not configured" };
+      const callbackUrl = redirectTo
+        ? `${window.location.origin}/auth/callback?next=${encodeURIComponent(redirectTo)}`
+        : `${window.location.origin}/auth/callback`;
       const { error } = await supabase.auth.signInWithOtp({
         email,
         options: {
-          emailRedirectTo: `${window.location.origin}/auth/callback`,
+          emailRedirectTo: callbackUrl,
         },
       });
       return { error: error?.message ?? null };
