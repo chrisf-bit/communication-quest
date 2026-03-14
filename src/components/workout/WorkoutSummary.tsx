@@ -7,7 +7,8 @@ import { ScoreRing } from "@/components/shared/ScoreRing";
 import { StyleBadge } from "@/components/shared/StyleBadge";
 import { DemoCTA } from "@/components/shared/DemoCTA";
 import { LevelUpNotification } from "@/components/shared/LevelUpNotification";
-import { isDemoMode } from "@/lib/progress/store";
+import { isDemoMode, loadProgress } from "@/lib/progress/store";
+import { getMasteryStars } from "@/lib/progress/mastery";
 import {
   Trophy,
   TrendingUp,
@@ -19,6 +20,7 @@ import {
   AlertCircle,
   XCircle,
   Zap,
+  Star,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -236,6 +238,63 @@ export function WorkoutSummary({
             </div>
           )}
         </div>
+
+        {/* Scenario mastery stars */}
+        {(() => {
+          const progress = loadProgress();
+          const scenarioIds = [...new Set(answers.map((a) => a.scenarioId))];
+          return (
+            <div
+              className="rounded-3xl p-6 space-y-4 backdrop-blur-xl"
+              style={{
+                background: "rgba(15, 23, 42, 0.8)",
+                border: "2px solid rgba(255,255,255,0.3)",
+              }}
+            >
+              <div className="flex items-center gap-3">
+                <Star size={22} className="text-amber-400" />
+                <h3 className="font-bold text-lg text-white">Scenario Mastery</h3>
+              </div>
+              <div className="space-y-2">
+                {scenarioIds.map((id) => {
+                  const scenario = scenarios[id];
+                  const stars = getMasteryStars(progress.scenarioMastery?.[id]);
+                  const mastery = progress.scenarioMastery?.[id];
+                  const starColours = ["#94A3B8", "#F59E0B", "#FBBF24"];
+                  const starColour = stars >= 3 ? starColours[2] : stars >= 2 ? starColours[1] : starColours[0];
+                  return (
+                    <div
+                      key={id}
+                      className="flex items-center gap-3 py-3 px-4 rounded-2xl"
+                      style={{ backgroundColor: "rgba(255,255,255,0.05)" }}
+                    >
+                      <div className="flex-1 min-w-0">
+                        <p className="text-sm font-bold truncate text-white">
+                          {scenario?.title || "Scenario"}
+                        </p>
+                        {mastery && (
+                          <p className="text-xs text-white/50">
+                            Best: {mastery.bestScore}/{mastery.bestPossible} | Attempt {mastery.attempts}
+                          </p>
+                        )}
+                      </div>
+                      <div className="flex gap-0.5">
+                        {[1, 2, 3].map((s) => (
+                          <Star
+                            key={s}
+                            size={18}
+                            fill={s <= stars ? starColour : "transparent"}
+                            style={{ color: s <= stars ? starColour : "rgba(255,255,255,0.2)" }}
+                          />
+                        ))}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          );
+        })()}
 
         {/* Question review - dark glass card */}
         <div

@@ -17,6 +17,8 @@ import { SCENARIO_PACKS, getPackStats, getScenariosForPack } from "@/data/scenar
 import { getNextUnlock, getUnlockedDifficulties, getLockedScenarioCount } from "@/lib/progress/levelGating";
 import { getMasteryOverview, getMasteryStars, getDueCount } from "@/lib/progress/mastery";
 import { getNextMilestone } from "@/lib/daily";
+import { ACHIEVEMENTS, getUnlockedAchievements } from "@/data/achievements";
+import * as LucideIcons from "lucide-react";
 import { StyleBadge } from "@/components/shared/StyleBadge";
 import { ScoreRing } from "@/components/shared/ScoreRing";
 import {
@@ -594,6 +596,80 @@ export default function ProgressPage() {
                   </div>
                 ))}
               </div>
+            </div>
+          );
+        })()}
+
+        {/* Achievements */}
+        {(() => {
+          const unlocked = getUnlockedAchievements(progress);
+          const locked = ACHIEVEMENTS.filter((a) => !a.check(progress));
+          const IconMap = LucideIcons as unknown as Record<string, typeof Star>;
+
+          return (
+            <div
+              className="backdrop-blur-xl rounded-2xl p-6 space-y-4"
+              style={{
+                background: "rgba(15, 23, 42, 0.8)",
+                border: "2px solid rgba(255,255,255,0.3)",
+              }}
+            >
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <Trophy size={20} className="text-amber-400" />
+                  <h2 className="text-lg font-semibold text-white">Achievements</h2>
+                </div>
+                <span className="text-xs text-white/50">
+                  {unlocked.length}/{ACHIEVEMENTS.length}
+                </span>
+              </div>
+
+              {/* Unlocked */}
+              {unlocked.length > 0 && (
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                  {unlocked.map((a) => {
+                    const AIcon = IconMap[a.icon] ?? Star;
+                    return (
+                      <div
+                        key={a.id}
+                        className="rounded-xl p-3 text-center space-y-1"
+                        style={{
+                          background: `${a.colour}15`,
+                          border: `1px solid ${a.colour}40`,
+                        }}
+                      >
+                        <AIcon size={24} style={{ color: a.colour }} className="mx-auto" />
+                        <p className="text-xs font-bold text-white">{a.name}</p>
+                        <p className="text-[10px] text-white/50">{a.description}</p>
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
+
+              {/* Next locked achievements (show up to 3) */}
+              {locked.length > 0 && (
+                <div className="space-y-1">
+                  <p className="text-xs text-white/40 font-semibold uppercase tracking-wider">Next to unlock</p>
+                  {locked.slice(0, 3).map((a) => {
+                    const AIcon = IconMap[a.icon] ?? Star;
+                    return (
+                      <div
+                        key={a.id}
+                        className="flex items-center gap-3 py-2 px-3 rounded-lg"
+                        style={{ background: "rgba(255,255,255,0.03)" }}
+                      >
+                        <AIcon size={18} className="text-white/20 flex-shrink-0" />
+                        <div className="flex-1 min-w-0">
+                          <p className="text-xs font-bold text-white/40">{a.name}</p>
+                          <p className="text-[10px] text-white/25">{a.description}</p>
+                        </div>
+                        <Lock size={14} className="text-white/15 flex-shrink-0" />
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
             </div>
           );
         })()}
