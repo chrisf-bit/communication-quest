@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { Scenario, Character } from "@/types";
 import { ScenarioHeader } from "./ScenarioHeader";
 import { MessageSquare, Check } from "lucide-react";
@@ -23,6 +23,16 @@ export function ChooseBestResponse({
 }: ChooseBestResponseProps) {
   const [selected, setSelected] = useState<string | null>(null);
   const [confirmed, setConfirmed] = useState(false);
+
+  // Shuffle options to prevent position-based cheating
+  const shuffledOptions = useMemo(() => {
+    const arr = [...scenario.chooseQuestion.options];
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+  }, [scenario]);
 
   const handleConfirm = () => {
     if (selected && !confirmed) {
@@ -65,7 +75,7 @@ export function ChooseBestResponse({
 
 
           <div className="space-y-2.5">
-            {scenario.chooseQuestion.options.map((option, index) => (
+            {shuffledOptions.map((option, index) => (
               <button
                 key={option.id}
                 onClick={() => !confirmed && setSelected(option.id)}
