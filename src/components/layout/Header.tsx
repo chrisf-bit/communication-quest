@@ -37,7 +37,7 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5 group">
             <div
-              className="w-9 h-9 rounded-xl flex items-center justify-center transition-all group-hover:scale-105 group-hover:shadow-md"
+              className="w-9 h-9 min-w-[2.25rem] rounded-xl flex items-center justify-center flex-shrink-0 transition-all group-hover:scale-105 group-hover:shadow-md"
               style={{
                 background: "linear-gradient(135deg, #F97316, #EA580C)",
                 boxShadow: "0 2px 8px rgba(249, 115, 22, 0.25)",
