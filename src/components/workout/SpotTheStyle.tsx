@@ -52,7 +52,7 @@ export function SpotTheStyle({
         className="backdrop-blur-xl rounded-t-3xl px-6 pt-6 pb-8"
         style={{
           background: "rgba(15, 23, 42, 0.9)",
-          borderTop: "3px solid rgba(88, 204, 2, 0.5)",
+          borderTop: "3px solid rgba(124, 58, 237, 0.5)",
           animation: "slide-up 0.4s ease-out",
         }}
       >
@@ -60,9 +60,9 @@ export function SpotTheStyle({
           <div className="flex items-center gap-3">
             <div
               className="w-13 h-13 rounded-2xl flex items-center justify-center"
-              style={{ background: "rgba(88, 204, 2, 0.15)", width: "52px", height: "52px" }}
+              style={{ background: "rgba(124, 58, 237, 0.15)", width: "52px", height: "52px" }}
             >
-              <Eye size={28} className="text-[#58CC02]" />
+              <Eye size={28} className="text-[#A78BFA]" />
             </div>
             <h3 className="font-semibold text-lg text-white">
               What style is this?

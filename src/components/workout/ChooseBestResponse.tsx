@@ -46,7 +46,7 @@ export function ChooseBestResponse({
         className="backdrop-blur-xl rounded-t-3xl px-6 pt-6 pb-8"
         style={{
           background: "rgba(15, 23, 42, 0.9)",
-          borderTop: "3px solid rgba(88, 204, 2, 0.5)",
+          borderTop: "3px solid rgba(124, 58, 237, 0.5)",
           animation: "slide-up 0.4s ease-out",
         }}
       >
@@ -54,9 +54,9 @@ export function ChooseBestResponse({
           <div className="flex items-center gap-3">
             <div
               className="rounded-2xl flex items-center justify-center"
-              style={{ background: "rgba(88, 204, 2, 0.15)", width: "52px", height: "52px" }}
+              style={{ background: "rgba(124, 58, 237, 0.15)", width: "52px", height: "52px" }}
             >
-              <MessageSquare size={28} className="text-[#58CC02]" />
+              <MessageSquare size={28} className="text-[#A78BFA]" />
             </div>
             <h3 className="font-semibold text-lg text-white">
               Pick the best response
