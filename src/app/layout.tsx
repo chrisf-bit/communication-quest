@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Fredoka, Inter, JetBrains_Mono } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { ConsentBanner } from "@/components/layout/ConsentBanner";
+import { AccessGate } from "@/components/layout/AccessGate";
 import { Providers } from "@/components/providers/Providers";
 import "./globals.css";
 
@@ -50,7 +51,9 @@ export default function RootLayout({
       >
         <Providers>
           <Header />
-          <main className="min-h-[calc(100vh-3.5rem)]">{children}</main>
+          <main className="min-h-[calc(100vh-3.5rem)]">
+            <AccessGate>{children}</AccessGate>
+          </main>
           <ConsentBanner />
         </Providers>
       </body>

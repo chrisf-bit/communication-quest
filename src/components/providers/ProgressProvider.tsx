@@ -21,9 +21,17 @@ import { createClient } from "@/lib/supabase/client";
 const BACKUP_KEY = "communication-quest-progress-backup";
 const MIGRATED_KEY = "communication-quest-migrated";
 
+interface AccessStatus {
+  hasAccess: boolean;
+  reason: "admin" | "facilitator" | "active-cohort" | "not-authenticated" | "no-cohort" | "cohort-expired";
+  cohortName?: string;
+  expiresAt?: string;
+}
+
 interface ProgressContextValue {
   progress: UserProgress | null;
   isLoading: boolean;
+  accessStatus: AccessStatus | null;
   saveProgress: (progress: UserProgress) => Promise<void>;
   refreshProgress: () => Promise<void>;
 }
@@ -46,6 +54,7 @@ export function ProgressProvider({ children }: ProgressProviderProps) {
   const auth = useOptionalAuth();
   const [progress, setProgress] = useState<UserProgress | null>(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [accessStatus, setAccessStatus] = useState<AccessStatus | null>(null);
   const adapterRef = useRef<ProgressAdapter>(new LocalStorageAdapter());
 
   // Select adapter based on auth state
@@ -69,6 +78,16 @@ export function ProgressProvider({ children }: ProgressProviderProps) {
 
         if (needsMigration) {
           await migrateLocalToCloud(supabaseAdapter);
+        }
+
+        // Check cohort access
+        try {
+          const accessRes = await fetch("/api/access");
+          const accessData = await accessRes.json();
+          setAccessStatus(accessData);
+        } catch {
+          // If access check fails, allow access (fail open for UX)
+          setAccessStatus({ hasAccess: true, reason: "admin" });
         }
 
         const cloudProgress = await supabaseAdapter.load();
@@ -106,6 +125,7 @@ export function ProgressProvider({ children }: ProgressProviderProps) {
       value={{
         progress,
         isLoading,
+        accessStatus,
         saveProgress: handleSave,
         refreshProgress: handleRefresh,
       }}
