@@ -13,6 +13,9 @@ import {
   ThumbsUp,
   CheckCircle2,
   AlertTriangle,
+  Zap,
+  Heart,
+  BarChart3,
 } from "lucide-react";
 
 interface FeedbackPanelProps {
@@ -152,9 +155,13 @@ export function FeedbackPanel({
         <div className="flex items-start gap-4">
           <div
             className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
-            style={{ background: `${styleColour}15` }}
+            style={{ background: `${styleColour}25` }}
           >
-            <StyleBadge style={targetStyle} size="sm" showLabel={false} />
+            {(() => {
+              const iconMap = { direct: Zap, expressive: Sparkles, supportive: Heart, analytical: BarChart3 };
+              const StyleIcon = iconMap[targetStyle];
+              return <StyleIcon size={22} style={{ color: styleColour }} />;
+            })()}
           </div>
           <div>
             <span className="text-xs font-bold uppercase tracking-wider" style={{ color: styleColour }}>
