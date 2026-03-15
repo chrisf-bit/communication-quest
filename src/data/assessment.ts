@@ -29,116 +29,23 @@ export interface AssessmentQuestion {
 }
 
 /**
- * 5 assessment questions testing language pattern recognition.
- * These are harder than scenario-based questions because they test
- * whether users can identify style from isolated language patterns.
+ * 15 assessment questions designed to be genuinely difficult.
+ *
+ * Target: most untrained users score 0-30% (0-4 correct out of 15).
+ *
+ * Difficulty techniques used:
+ * - Phrases that blend two styles (e.g. task-focused but methodical)
+ * - Context that makes the wrong style seem obvious
+ * - Odd-one-out where the outlier sounds very similar to the group
+ * - Subtle differences between adjacent styles (direct/analytical, expressive/supportive)
  */
 export const ASSESSMENT_QUESTIONS: AssessmentQuestion[] = [
+  // Q1: Sounds direct but is actually analytical - the "why" is the giveaway
   {
     id: "assess-01",
     type: "phrase-match",
     prompt: "Which communication style would most naturally use this phrase?",
-    phrase: "I hear what you're saying, and I think we should make sure everyone's comfortable before we move forward.",
-    options: [
-      { id: "a", text: "Direct", style: "direct" },
-      { id: "b", text: "Expressive", style: "expressive" },
-      { id: "c", text: "Supportive", style: "supportive" },
-      { id: "d", text: "Analytical", style: "analytical" },
-    ],
-    correctOptionId: "c",
-    correctStyle: "supportive",
-    adjacentStyle: "expressive",
-    explanation:
-      "The phrase prioritises consensus and comfort over speed. 'Make sure everyone's comfortable' is classic Supportive language. An Expressive communicator might say 'let's get everyone excited about this' instead.",
-  },
-  {
-    id: "assess-02",
-    type: "pattern-pick",
-    prompt: "Which of these responses sounds most like an Analytical communicator?",
-    targetStyle: "analytical",
-    options: [
-      { id: "a", text: "Let's just try it and see what happens - we can always adjust.", style: "expressive" },
-      { id: "b", text: "Before we commit, can you walk me through the assumptions behind those figures?", style: "analytical" },
-      { id: "c", text: "I trust your judgement on this - what do you think we should do?", style: "supportive" },
-      { id: "d", text: "We need to make a call on this today. What's your recommendation?", style: "direct" },
-    ],
-    correctOptionId: "b",
-    correctStyle: "analytical",
-    adjacentStyle: "direct",
-    explanation:
-      "Analytical communicators want to understand the reasoning and evidence before decisions. 'Walk me through the assumptions' is a request for methodology, not just outcomes. Option D also sounds decisive but focuses on speed rather than understanding.",
-  },
-  {
-    id: "assess-03",
-    type: "odd-one-out",
-    prompt: "Three of these phrases are typically Direct. Which one is NOT?",
-    options: [
-      { id: "a", text: "What's the bottom line?", style: "direct" },
-      { id: "b", text: "Let's cut to the chase.", style: "direct" },
-      { id: "c", text: "I want to make sure we've thought this through properly.", style: "analytical" },
-      { id: "d", text: "Just give me the headline, we'll sort the detail later.", style: "direct" },
-    ],
-    correctOptionId: "c",
-    correctStyle: "analytical",
-    adjacentStyle: "direct",
-    explanation:
-      "'Thought this through properly' signals a need for thoroughness and careful analysis - that's Analytical. It can feel decisive, but the priority is rigour, not speed. Direct communicators want the answer now, not more thinking time.",
-  },
-  {
-    id: "assess-04",
-    type: "phrase-match",
-    prompt: "Which communication style would most naturally use this phrase?",
-    phrase: "This could be a real game-changer if we get the right people behind it - imagine the impact across the whole business!",
-    options: [
-      { id: "a", text: "Direct", style: "direct" },
-      { id: "b", text: "Expressive", style: "expressive" },
-      { id: "c", text: "Supportive", style: "supportive" },
-      { id: "d", text: "Analytical", style: "analytical" },
-    ],
-    correctOptionId: "b",
-    correctStyle: "expressive",
-    adjacentStyle: "direct",
-    explanation:
-      "'Game-changer', 'imagine the impact', and the enthusiasm about scale are hallmarks of Expressive communication. They paint the big picture and generate energy. A Direct communicator might also talk about impact but would focus on specific results, not the vision.",
-  },
-  {
-    id: "assess-05",
-    type: "pattern-pick",
-    prompt: "Which of these is how a Direct communicator would handle a disagreement?",
-    targetStyle: "direct",
-    options: [
-      { id: "a", text: "Let's look at the data from both sides and see which approach has better evidence.", style: "analytical" },
-      { id: "b", text: "I disagree. Here's why, and here's what I think we should do instead.", style: "direct" },
-      { id: "c", text: "I can see your point, but what if we found a middle ground that works for everyone?", style: "supportive" },
-      { id: "d", text: "I love the energy, but what if we took the best parts of both ideas and combined them?", style: "expressive" },
-    ],
-    correctOptionId: "b",
-    correctStyle: "direct",
-    adjacentStyle: "analytical",
-    explanation:
-      "Direct communicators state their position clearly and move to action. 'I disagree. Here's why.' is straightforward and solution-oriented. Option A sounds decisive but prioritises evidence over position. Option C seeks harmony (Supportive), and D seeks creative synthesis (Expressive).",
-  },
-  {
-    id: "assess-06",
-    type: "odd-one-out",
-    prompt: "Three of these phrases are typically Expressive. Which one is NOT?",
-    options: [
-      { id: "a", text: "What if we completely rethought how this works?", style: "expressive" },
-      { id: "b", text: "I love where this is going - let's keep the energy up!", style: "expressive" },
-      { id: "c", text: "How is the team feeling about taking on something this ambitious?", style: "supportive" },
-      { id: "d", text: "Picture this - we launch with a splash and get everyone talking.", style: "expressive" },
-    ],
-    correctOptionId: "c",
-    correctStyle: "supportive",
-    adjacentStyle: "expressive",
-    explanation:
-      "'How is the team feeling' centres people's emotions, which is Supportive. It might sound enthusiastic, but the focus is on wellbeing, not vision. Expressive communicators talk about ideas and possibilities, while Supportive communicators check on people first.",
-  },
-  {
-    id: "assess-07",
-    type: "phrase-match",
-    prompt: "Which communication style would most naturally use this phrase?",
-    phrase: "I'd like to table this until we've had time to review the full report. There are a few inconsistencies I want to cross-reference before we commit.",
+    phrase: "I need to understand why the numbers shifted before I can sign off on the revised plan.",
     options: [
       { id: "a", text: "Direct", style: "direct" },
       { id: "b", text: "Expressive", style: "expressive" },
@@ -149,30 +56,71 @@ export const ASSESSMENT_QUESTIONS: AssessmentQuestion[] = [
     correctStyle: "analytical",
     adjacentStyle: "direct",
     explanation:
-      "Wanting to pause for review, cross-reference, and check inconsistencies before committing is classic Analytical. They won't proceed until the evidence is solid. A Direct communicator might also raise concerns but would push for a decision today.",
+      "The phrase sounds decisive ('I need', 'before I can sign off') which tempts people toward Direct. But the core driver is understanding why - needing to comprehend the cause before acting. A Direct communicator would say 'Just give me the revised plan.' Analytical communicators need the reasoning first.",
   },
+
+  // Q2: Sounds supportive but is actually expressive - enthusiasm disguised as warmth
   {
-    id: "assess-08",
-    type: "pattern-pick",
-    prompt: "Which of these is how a Supportive communicator would open a difficult conversation?",
-    targetStyle: "supportive",
+    id: "assess-02",
+    type: "phrase-match",
+    prompt: "Which communication style would most naturally use this phrase?",
+    phrase: "I really believe in what you're building here, and I think if we get the whole team rallied around it, this could transform how we work.",
     options: [
-      { id: "a", text: "We need to address the elephant in the room. Let's be straight about what's not working.", style: "direct" },
-      { id: "b", text: "Before we get into the detail, I want to check in - how are you doing with everything that's been going on?", style: "supportive" },
-      { id: "c", text: "I've been reflecting on this, and I think there's a creative way we could reframe the situation.", style: "expressive" },
-      { id: "d", text: "I've mapped out the key issues and I'd like to walk through them systematically.", style: "analytical" },
+      { id: "a", text: "Direct", style: "direct" },
+      { id: "b", text: "Expressive", style: "expressive" },
+      { id: "c", text: "Supportive", style: "supportive" },
+      { id: "d", text: "Analytical", style: "analytical" },
     ],
     correctOptionId: "b",
+    correctStyle: "expressive",
+    adjacentStyle: "supportive",
+    explanation:
+      "The personal affirmation ('I really believe in what you're building') sounds Supportive. But the focus is on rallying the team and transforming the business - that is vision and momentum, not care for individuals. Supportive would say 'How are you feeling about the workload this will create?' Expressive communicators inspire through big-picture thinking.",
+  },
+
+  // Q3: Very tricky odd-one-out - all sound analytical
+  {
+    id: "assess-03",
+    type: "odd-one-out",
+    prompt: "Three of these phrases are typically Analytical. Which one is NOT?",
+    options: [
+      { id: "a", text: "I want to see the data segmented by region before we draw any conclusions.", style: "analytical" },
+      { id: "b", text: "We should pressure-test these assumptions against last year's actuals.", style: "analytical" },
+      { id: "c", text: "Let's be precise about what we're committing to - I don't want scope creep.", style: "direct" },
+      { id: "d", text: "The correlation between those two variables looks weak - can we run a deeper analysis?", style: "analytical" },
+    ],
+    correctOptionId: "c",
+    correctStyle: "direct",
+    adjacentStyle: "analytical",
+    explanation:
+      "Option C uses precise language ('precise about what we're committing to') which sounds Analytical. But the underlying driver is commitment and scope control - that is about action and boundaries, not understanding. 'I don't want scope creep' is a Direct communicator protecting outcomes. Analytical communicators would want more analysis, not firmer boundaries.",
+  },
+
+  // Q4: Pattern pick where the supportive option sounds analytical
+  {
+    id: "assess-04",
+    type: "pattern-pick",
+    prompt: "Which of these responses is most likely from a Supportive communicator?",
+    targetStyle: "supportive",
+    options: [
+      { id: "a", text: "I've noticed you've been quieter than usual in meetings lately. Is everything alright, or is there something I can help with?", style: "supportive" },
+      { id: "b", text: "Your meeting participation has dropped 40% over the last month. Can we discuss what's behind that?", style: "analytical" },
+      { id: "c", text: "I need you more engaged in meetings. What do I need to do to make that happen?", style: "direct" },
+      { id: "d", text: "Meetings feel flat without your energy. What would make them more exciting for you?", style: "expressive" },
+    ],
+    correctOptionId: "a",
     correctStyle: "supportive",
     adjacentStyle: "expressive",
     explanation:
-      "Supportive communicators lead with the person, not the problem. 'Check in' and 'how are you doing' show they prioritise the relationship before the task. Option A is Direct (straight to the issue), C is Expressive (reframing creatively), and D is Analytical (structured approach).",
+      "All four options address the same concern but through different lenses. Option B quantifies the problem (Analytical). Option C demands a solution (Direct). Option D focuses on energy and excitement (Expressive). Only Option A leads with personal concern and offers help without pressure. The trap is Option D, which sounds warm but is actually focused on making things more exciting - that is Expressive energy, not Supportive care.",
   },
+
+  // Q5: Phrase that sounds expressive but is direct - action disguised as enthusiasm
   {
-    id: "assess-09",
+    id: "assess-05",
     type: "phrase-match",
     prompt: "Which communication style would most naturally use this phrase?",
-    phrase: "We've been talking about this for weeks. I say we pick a direction, commit to it, and learn as we go.",
+    phrase: "Right, we've talked enough. Let's pick the boldest option and go for it - we can course-correct later if we need to.",
     options: [
       { id: "a", text: "Direct", style: "direct" },
       { id: "b", text: "Expressive", style: "expressive" },
@@ -183,23 +131,194 @@ export const ASSESSMENT_QUESTIONS: AssessmentQuestion[] = [
     correctStyle: "direct",
     adjacentStyle: "expressive",
     explanation:
-      "The frustration with prolonged discussion and the push to 'pick a direction and commit' is textbook Direct. They value action and decisiveness over further analysis. An Expressive communicator might also push to move forward but would frame it around excitement and possibility rather than impatience.",
+      "'Boldest option' and the energetic tone tempt people toward Expressive. But the core message is frustration with discussion and a push to act now. 'We've talked enough' and 'course-correct later' signal someone who prioritises speed over perfection. An Expressive communicator would say 'imagine what this could become' - they'd be excited about the vision, not impatient with the process.",
   },
+
+  // Q6: Odd-one-out where the outlier blends with the group
+  {
+    id: "assess-06",
+    type: "odd-one-out",
+    prompt: "Three of these phrases are typically Supportive. Which one is NOT?",
+    options: [
+      { id: "a", text: "I want to make sure you feel confident about this before we move forward.", style: "supportive" },
+      { id: "b", text: "Let's take a step back and think about how this affects the wider team.", style: "supportive" },
+      { id: "c", text: "I know this is a big change, and I want you to know we'll figure it out together.", style: "supportive" },
+      { id: "d", text: "Let's take a step back and think about whether the evidence actually supports this direction.", style: "analytical" },
+    ],
+    correctOptionId: "d",
+    correctStyle: "analytical",
+    adjacentStyle: "supportive",
+    explanation:
+      "Options B and D both start with 'Let's take a step back and think about...' which makes them look identical. The difference is what follows: B considers the team (people), D examines the evidence (data). Supportive communicators pause to check on people. Analytical communicators pause to check on facts. The phrasing is nearly identical but the intent is completely different.",
+  },
+
+  // Q7: Pattern pick where all options sound plausible for analytical
+  {
+    id: "assess-07",
+    type: "pattern-pick",
+    prompt: "Which of these is how an Analytical communicator would respond to a proposal they disagree with?",
+    targetStyle: "analytical",
+    options: [
+      { id: "a", text: "I don't think this will work. Here's what I'd do instead.", style: "direct" },
+      { id: "b", text: "I can see some gaps in the methodology. Can you walk me through how you controlled for seasonal variation in the comparison data?", style: "analytical" },
+      { id: "c", text: "I appreciate the effort, but I'm worried this could put the team under a lot of pressure. Can we talk about the human side?", style: "supportive" },
+      { id: "d", text: "What if we flipped the whole approach? Instead of optimising what we have, we could reimagine it entirely.", style: "expressive" },
+    ],
+    correctOptionId: "b",
+    correctStyle: "analytical",
+    adjacentStyle: "direct",
+    explanation:
+      "The trap is Option A - it sounds decisive and clear, which people associate with being 'analytical' about something. But Option A states a position without evidence (Direct). Option B challenges the methodology specifically - asking about controlled variables and data quality. Analytical communicators don't say 'this won't work'; they ask 'can you prove it works?'",
+  },
+
+  // Q8: Email that blends direct and analytical
+  {
+    id: "assess-08",
+    type: "phrase-match",
+    prompt: "Which communication style would most naturally write this email opening?",
+    phrase: "Following up on our discussion. I've attached three options with cost-benefit breakdowns for each. Happy to walk through the detail, but the executive summary is on page one if you need the headline first.",
+    options: [
+      { id: "a", text: "Direct", style: "direct" },
+      { id: "b", text: "Expressive", style: "expressive" },
+      { id: "c", text: "Supportive", style: "supportive" },
+      { id: "d", text: "Analytical", style: "analytical" },
+    ],
+    correctOptionId: "d",
+    correctStyle: "analytical",
+    adjacentStyle: "direct",
+    explanation:
+      "This is deliberately misleading. The executive summary and 'headline first' language sounds Direct. But the person prepared three options with cost-benefit breakdowns and offered to walk through the detail - that is thoroughness and structured thinking. A Direct communicator would send one recommendation, not three options with analysis. The Analytical communicator anticipated the reader's style and adapted - but their natural approach (multiple options, detailed breakdowns) reveals their own style.",
+  },
+
+  // Q9: Tricky phrase that sounds analytical but is supportive
+  {
+    id: "assess-09",
+    type: "phrase-match",
+    prompt: "Which communication style would most naturally use this phrase?",
+    phrase: "Before we announce the restructure, I think we need to carefully consider how each team will receive this news and what support they'll need during the transition.",
+    options: [
+      { id: "a", text: "Direct", style: "direct" },
+      { id: "b", text: "Expressive", style: "expressive" },
+      { id: "c", text: "Supportive", style: "supportive" },
+      { id: "d", text: "Analytical", style: "analytical" },
+    ],
+    correctOptionId: "c",
+    correctStyle: "supportive",
+    adjacentStyle: "analytical",
+    explanation:
+      "'Carefully consider' sounds Analytical. But what they want to consider is how people will feel and what support they need - that is people-focused, not data-focused. An Analytical communicator would say 'let's map out the operational impact and risk factors.' A Supportive communicator thinks about human impact first, even when they use methodical-sounding language.",
+  },
+
+  // Q10: Odd-one-out where the direct phrase sounds expressive
   {
     id: "assess-10",
     type: "odd-one-out",
-    prompt: "Three of these phrases are typically Analytical. Which one is NOT?",
+    prompt: "Three of these phrases are typically Expressive. Which one is NOT?",
     options: [
-      { id: "a", text: "Can we revisit the methodology? I want to make sure we're comparing like for like.", style: "analytical" },
-      { id: "b", text: "Based on the trend data, I'd suggest we hold off until Q3.", style: "analytical" },
-      { id: "c", text: "I need the key takeaways by Friday - keep it to one page.", style: "direct" },
-      { id: "d", text: "The variance between projected and actual is 8.3% - what's driving that gap?", style: "analytical" },
+      { id: "a", text: "This is our moment - let's make it count and show everyone what this team can do.", style: "expressive" },
+      { id: "b", text: "I want us to own this market within 18 months. No excuses, no delays.", style: "direct" },
+      { id: "c", text: "What if we partnered with their design team? Together we could create something neither of us could do alone.", style: "expressive" },
+      { id: "d", text: "I've got a feeling this could be the project that puts us on the map.", style: "expressive" },
+    ],
+    correctOptionId: "b",
+    correctStyle: "direct",
+    adjacentStyle: "expressive",
+    explanation:
+      "Option B has ambitious language ('own this market') that sounds Expressive. But 'no excuses, no delays' is a command, not an inspiration. Expressive communicators paint possibilities; Direct communicators set targets and deadlines. The ambition is similar but the delivery is completely different - one inspires, the other demands.",
+  },
+
+  // Q11: Pattern pick - subtle distinction between supportive and expressive in conflict
+  {
+    id: "assess-11",
+    type: "pattern-pick",
+    prompt: "Two colleagues are in a heated disagreement. Which response is most likely from an Expressive communicator?",
+    targetStyle: "expressive",
+    options: [
+      { id: "a", text: "OK, time out. You're both making valid points. Let's park the emotion and look at what the data tells us.", style: "analytical" },
+      { id: "b", text: "I can see this matters to both of you. Let's slow down and make sure everyone feels heard before we go further.", style: "supportive" },
+      { id: "c", text: "Hold on - I think you're actually closer to agreement than you realise. What if we combined both ideas and tested something new?", style: "expressive" },
+      { id: "d", text: "We're wasting time. You've both made your case. I'll make the call and we'll move on.", style: "direct" },
+    ],
+    correctOptionId: "c",
+    correctStyle: "expressive",
+    adjacentStyle: "supportive",
+    explanation:
+      "The trap is Option B - it sounds warm and caring, which people confuse with Expressive energy. But B focuses on feelings and slowing down (Supportive). Option C reframes the conflict as an opportunity to create something new - combining ideas and testing. Expressive communicators find creative synthesis where others see opposition. They don't mediate emotions; they redirect energy toward possibilities.",
+  },
+
+  // Q12: Phrase that mixes analytical and supportive language
+  {
+    id: "assess-12",
+    type: "phrase-match",
+    prompt: "Which communication style would most naturally use this phrase?",
+    phrase: "I've reviewed the engagement scores and there's a clear pattern - the teams with the lowest scores all had manager changes in the last quarter. We should investigate what's driving that.",
+    options: [
+      { id: "a", text: "Direct", style: "direct" },
+      { id: "b", text: "Expressive", style: "expressive" },
+      { id: "c", text: "Supportive", style: "supportive" },
+      { id: "d", text: "Analytical", style: "analytical" },
+    ],
+    correctOptionId: "d",
+    correctStyle: "analytical",
+    adjacentStyle: "supportive",
+    explanation:
+      "The subject matter (engagement scores, team wellbeing) sounds like a Supportive communicator's concern. But the approach is entirely Analytical: reviewing data, identifying patterns, correlating variables, and proposing investigation. A Supportive communicator would say 'I'm worried about those teams - let's check in with them.' The Analytical communicator cares about the pattern in the data, not the feelings behind it.",
+  },
+
+  // Q13: Tricky odd-one-out with direct phrases
+  {
+    id: "assess-13",
+    type: "odd-one-out",
+    prompt: "Three of these phrases are typically Direct. Which one is NOT?",
+    options: [
+      { id: "a", text: "Stop overthinking it. Pick one and commit.", style: "direct" },
+      { id: "b", text: "I want a decision by end of play. No more discussion.", style: "direct" },
+      { id: "c", text: "We need to move fast. Let's get everyone energised and sprint toward the launch.", style: "expressive" },
+      { id: "d", text: "The priority is clear. Execute the plan and report back on Friday.", style: "direct" },
+    ],
+    correctOptionId: "c",
+    correctStyle: "expressive",
+    adjacentStyle: "direct",
+    explanation:
+      "Option C has urgency ('move fast', 'sprint') which sounds Direct. But 'get everyone energised' shifts the focus from task execution to team energy and momentum. Direct communicators don't care about energy levels - they care about deadlines and deliverables. An Expressive communicator motivates through excitement; a Direct communicator motivates through clarity and accountability.",
+  },
+
+  // Q14: Pattern pick - all options involve structure
+  {
+    id: "assess-14",
+    type: "pattern-pick",
+    prompt: "A team needs to decide between two strategies. Which response is most likely from a Direct communicator?",
+    targetStyle: "direct",
+    options: [
+      { id: "a", text: "Let's build a scoring matrix and evaluate both options against our key criteria before deciding.", style: "analytical" },
+      { id: "b", text: "Both have merit. Why don't we pilot both on a small scale and see which one the team prefers?", style: "supportive" },
+      { id: "c", text: "Strategy B has the higher ceiling. Let's go with B. If it doesn't work, we pivot.", style: "direct" },
+      { id: "d", text: "What if we merged the best elements of both? We could create a hybrid approach that captures everything.", style: "expressive" },
     ],
     correctOptionId: "c",
     correctStyle: "direct",
     adjacentStyle: "analytical",
     explanation:
-      "'Key takeaways by Friday, one page' is about brevity and deadlines, which is Direct. It might reference information (like an Analytical person would) but the style is action-oriented and concise. Analytical communicators want depth and detail, not summaries.",
+      "The trap is Option A - building a scoring matrix sounds like a thorough, decisive approach. But it is adding process before action (Analytical). Option C picks a direction, states a rationale in one sentence, and accepts the risk of pivoting. Direct communicators make decisions quickly with incomplete information. They would rather course-correct than over-analyse.",
+  },
+
+  // Q15: Very subtle phrase-match - looks direct but is expressive
+  {
+    id: "assess-15",
+    type: "phrase-match",
+    prompt: "Which communication style would most naturally use this phrase?",
+    phrase: "We have a massive opportunity here, but only if we act now. I want us to be the team that made it happen, not the team that played it safe.",
+    options: [
+      { id: "a", text: "Direct", style: "direct" },
+      { id: "b", text: "Expressive", style: "expressive" },
+      { id: "c", text: "Supportive", style: "supportive" },
+      { id: "d", text: "Analytical", style: "analytical" },
+    ],
+    correctOptionId: "b",
+    correctStyle: "expressive",
+    adjacentStyle: "direct",
+    explanation:
+      "'Act now' and the urgency sound Direct. But the core message is about identity and legacy - 'the team that made it happen' versus 'the team that played it safe.' This is storytelling and vision, not task management. A Direct communicator would say 'We need to move on this by Friday. Here's the plan.' Expressive communicators frame decisions as narratives about who the team wants to be.",
   },
 ];
 

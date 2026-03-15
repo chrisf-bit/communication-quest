@@ -140,8 +140,8 @@ export function AssessmentFlow({ onComplete }: AssessmentFlowProps) {
               Style Assessment
             </h1>
             <p className="text-lg text-white/80 max-w-md mx-auto">
-              10 questions testing your ability to recognise communication
-              patterns. Takes about 3 minutes.
+              15 questions testing your ability to recognise communication
+              patterns from language alone. Takes about 5 minutes.
             </p>
           </div>
 
@@ -355,13 +355,15 @@ export function AssessmentFlow({ onComplete }: AssessmentFlowProps) {
             }}
           >
             <p className="text-sm text-white/90 leading-relaxed">
-              {profile.correctCount >= 8
-                ? "Impressive! You have a strong instinct for language patterns. Training will help you apply this skill to real conversations."
-                : profile.correctCount >= 5
-                  ? `Good foundation! You spotted several patterns.${weakDef ? ` Focus on ${weakDef.name} scenarios to sharpen your weaker area.` : " Keep practising to sharpen all four styles."}`
-                  : profile.correctCount >= 3
-                    ? "A solid start. Communication styles can be tricky to distinguish, especially from language alone. The training scenarios will build your pattern recognition quickly."
-                    : "Great that you're starting this journey! Recognising styles from language patterns is a skill that develops with practice. The training scenarios will help."}
+              {profile.correctCount >= 12
+                ? "Exceptional. You have a rare instinct for language patterns. Training will help you apply this skill under pressure in real conversations."
+                : profile.correctCount >= 8
+                  ? `Strong performance. You spotted more patterns than most.${weakDef ? ` Focus on ${weakDef.name} scenarios to close the remaining gaps.` : " Keep practising to sharpen all four styles."}`
+                  : profile.correctCount >= 5
+                    ? `A solid start. You picked up on some patterns, but communication styles are trickier to distinguish than most people expect.${weakDef ? ` Your ${weakDef.name} recognition could use the most work.` : ""} The training scenarios will build your accuracy quickly.`
+                    : profile.correctCount >= 2
+                      ? "Don't worry - this assessment is deliberately tough. Most people find it harder than expected because styles overlap in subtle ways. That's exactly what the training is designed to teach you."
+                      : "This is a hard test by design. The styles are deliberately ambiguous and the differences are subtle. The good news is that pattern recognition improves dramatically with practice - the training scenarios will sharpen your instincts quickly."}
             </p>
           </div>
 

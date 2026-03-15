@@ -581,7 +581,7 @@ function LearnerRow({ learner, expanded, onToggle }: { learner: Learner; expande
               className="rounded-xl p-3 text-xs text-white/60"
               style={{ background: "rgba(124, 58, 237, 0.1)", border: "1px solid rgba(124, 58, 237, 0.2)" }}
             >
-              Assessment: {learner.assessmentProfile.correctCount}/10 correct
+              Assessment: {learner.assessmentProfile.correctCount}/15 correct
               {learner.assessmentProfile.strongestStyle && (
                 <> - Strongest: <span className="text-white/80 font-bold">{STYLES[learner.assessmentProfile.strongestStyle].name}</span></>
               )}
