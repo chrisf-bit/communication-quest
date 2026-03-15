@@ -179,6 +179,19 @@ export default function FacilitatorPage() {
             <p className="text-sm text-white/60 mt-1">{cohortData.cohort.name}</p>
           </div>
 
+          <div className="flex items-center gap-2">
+            {auth?.user?.email === "chris@rapid-learn.co.uk" && (
+              <a
+                href="/admin"
+                className="flex items-center gap-1.5 px-4 py-2 rounded-xl text-sm font-bold text-white transition-all hover:opacity-90"
+                style={{ background: "linear-gradient(135deg, #7C3AED, #6D28D9)" }}
+              >
+                <Target size={16} />
+                Admin
+              </a>
+            )}
+          </div>
+
           {/* Cohort selector */}
           {cohorts.length > 1 && (
             <select

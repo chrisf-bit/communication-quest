@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { MessagesSquare, Home, BarChart3, BookOpen, Info, Play, ArrowRight, Package, LogIn, LogOut, User, LayoutDashboard, Settings } from "lucide-react";
+import { MessagesSquare, Home, BarChart3, BookOpen, Play, ArrowRight, LogIn, User, LayoutDashboard } from "lucide-react";
 import { useProgress } from "@/components/providers/ProgressProvider";
 import { useOptionalAuth } from "@/components/providers/AuthProvider";
 
@@ -10,9 +10,7 @@ const NAV_ITEMS = [
   { href: "/", label: "Home", icon: Home },
   { href: "/workout", label: "Play", icon: Play },
   { href: "/practice", label: "Practice", icon: BookOpen },
-  { href: "/packs", label: "Packs", icon: Package },
   { href: "/progress", label: "Progress", icon: BarChart3 },
-  { href: "/method", label: "Styles", icon: Info },
 ];
 
 export function Header() {
@@ -22,7 +20,6 @@ export function Header() {
 
   const isDemo = progress?.isDemo ?? false;
   const isAuthenticated = !!auth?.user;
-  const isAdmin = auth?.user?.email === "chris@rapid-learn.co.uk";
 
   return (
     <header
@@ -35,7 +32,7 @@ export function Header() {
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex items-center justify-between h-14">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5 group">
+          <Link href="/" className="flex items-center gap-2.5 group flex-shrink-0">
             <div
               className="w-9 h-9 min-w-[2.25rem] rounded-xl flex items-center justify-center flex-shrink-0 transition-all group-hover:scale-105 group-hover:shadow-md"
               style={{
@@ -45,7 +42,7 @@ export function Header() {
             >
               <MessagesSquare size={20} className="text-white" />
             </div>
-            <span className="font-semibold text-white hidden sm:inline tracking-tight">
+            <span className="font-semibold text-white hidden lg:inline tracking-tight">
               Communication Quest
             </span>
           </Link>
@@ -77,27 +74,14 @@ export function Header() {
                 <Link
                   href="/facilitator"
                   className={`ml-2 flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium transition-all duration-200 ${
-                    pathname === "/facilitator"
+                    pathname === "/facilitator" || pathname === "/admin"
                       ? "bg-[#58CC02] text-white shadow-sm"
                       : "text-white/75 hover:text-white hover:bg-white/10"
                   }`}
                 >
                   <LayoutDashboard size={18} />
-                  <span className="hidden lg:inline">Dashboard</span>
+                  Dashboard
                 </Link>
-                {isAdmin && (
-                  <Link
-                    href="/admin"
-                    className={`ml-1 flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium transition-all duration-200 ${
-                      pathname === "/admin"
-                        ? "bg-[#58CC02] text-white shadow-sm"
-                        : "text-white/75 hover:text-white hover:bg-white/10"
-                    }`}
-                  >
-                    <Settings size={18} />
-                    <span className="hidden lg:inline">Admin</span>
-                  </Link>
-                )}
                 <button
                   onClick={() => auth?.signOut()}
                   className="ml-1 flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-medium text-white/75 hover:text-white hover:bg-white/10 transition-all duration-200"
@@ -135,7 +119,7 @@ export function Header() {
 
           {/* Mobile nav */}
           <nav className="flex md:hidden items-center gap-0.5">
-            {NAV_ITEMS.slice(0, 5).map(({ href, label, icon: Icon }) => {
+            {NAV_ITEMS.map(({ href, label, icon: Icon }) => {
               const isActive = pathname === href;
               return (
                 <Link
