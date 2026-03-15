@@ -496,7 +496,7 @@ export const SCENARIOS_PART3: Scenario[] = [
       options: [
         {
           id: "s28-opt-a",
-          text: "I love where you're going with this. What if we took it further - instead of just telling a story, we let our customers tell it for us? A user-generated campaign that turns our audience into brand ambassadors. Imagine the reach.",
+          text: "I love that. What if we let our customers tell the story for us? A user-generated campaign that turns our audience into brand ambassadors.",
           score: 10,
           result: "strong",
           explanation:
@@ -635,7 +635,7 @@ export const SCENARIOS_PART3: Scenario[] = [
       options: [
         {
           id: "s29-opt-a",
-          text: "I think Marcus is onto something important here. What if instead of choosing between the full vision and the safe version, we find a way to ship a bold first phase that proves the concept? That way we keep the ambition alive and manage the technical risk in stages.",
+          text: "Marcus is onto something. What if we ship a bold first phase that proves the concept? We keep the ambition alive and manage the technical risk in stages.",
           score: 10,
           result: "strong",
           explanation:
@@ -774,7 +774,7 @@ export const SCENARIOS_PART3: Scenario[] = [
       options: [
         {
           id: "s30-opt-a",
-          text: "I think you've put your finger on something real. The work gets done, but the spark is missing. I've noticed it too - fewer spontaneous ideas, less of that buzz after a good session. What if we tried something different to bring that energy back, even remotely?",
+          text: "You've put your finger on something real. The spark is missing. Fewer spontaneous ideas, less buzz after a good session. What if we tried something different to bring that energy back?",
           score: 10,
           result: "strong",
           explanation:
@@ -917,7 +917,7 @@ export const SCENARIOS_PART3: Scenario[] = [
       options: [
         {
           id: "s31-opt-a",
-          text: "I think a light-touch approach works best here. Maybe reach out to each of them individually first, just to check in. Let them know you noticed and that there's no pressure, but you're there if they want to talk. Then, if they're both open to it, suggest a casual three-way chat.",
+          text: "A light-touch approach works best. Reach out individually, let them know you noticed, no pressure, and you're there if they want to talk.",
           score: 10,
           result: "strong",
           explanation:
@@ -1056,7 +1056,7 @@ export const SCENARIOS_PART3: Scenario[] = [
       options: [
         {
           id: "s32-opt-a",
-          text: "I think we owe them honesty, time, and genuine support. That means clear communication about what's happening and why, proper notice periods, and real help with the transition - not just a policy document. Every conversation should feel personal, not procedural.",
+          text: "We owe them honesty, time, and genuine support. Clear communication, proper notice, and real help with the transition. Every conversation should feel personal, not procedural.",
           score: 10,
           result: "strong",
           explanation:
@@ -1195,7 +1195,7 @@ export const SCENARIOS_PART3: Scenario[] = [
       options: [
         {
           id: "s33-opt-a",
-          text: "What if we frame it as a natural rebalance now that we're halfway through the project? We could say the team has learned more about the scope and it makes sense to play to everyone's strengths. That way Kai's workload shifts without anyone feeling like it's about them individually.",
+          text: "What if we frame it as a natural rebalance now we are halfway through? The team has learned more about the scope, so it makes sense to play to everyone's strengths.",
           score: 10,
           result: "strong",
           explanation:
@@ -1338,7 +1338,7 @@ export const SCENARIOS_PART3: Scenario[] = [
       options: [
         {
           id: "s34-opt-a",
-          text: "The model uses 18 months of transaction data from our CRM, covering 42,000 active customers. We cleaned the set by removing accounts with fewer than three transactions. Segments were defined using k-means clustering with five variables. The confidence interval is 95%. I can share the full specification after the meeting.",
+          text: "The model uses 18 months of CRM data covering 42,000 customers, cleaned to accounts with three or more transactions. We used k-means clustering with five variables at a 95% confidence interval.",
           score: 10,
           result: "strong",
           explanation:
@@ -1477,7 +1477,7 @@ export const SCENARIOS_PART3: Scenario[] = [
       options: [
         {
           id: "s35-opt-a",
-          text: "Based on the current test results, we've resolved 87% of identified defects. The remaining 13% include two severity-one issues that have not been regression tested. If we skip the final cycle, the probability of a critical production defect is approximately 30%, based on the pattern from similar releases. The client impact would be service disruption for an estimated 2,000 users.",
+          text: "We have resolved 87% of defects. The remaining 13% include two severity-one issues not yet regression tested. Skipping the final cycle gives roughly a 30% probability of a critical production defect affecting around 2,000 users.",
           score: 10,
           result: "strong",
           explanation:
@@ -1616,7 +1616,7 @@ export const SCENARIOS_PART3: Scenario[] = [
       options: [
         {
           id: "s36-opt-a",
-          text: "I've pulled data from three comparable suppliers: Apex, Vanguard, and Clearline. All are same tier, same geography, twelve-month contracts. Apex is at 4.2% below the proposed rate, Vanguard is 2.8% below, and Clearline is within 0.5%. The weighted average across all three is 2.5% below the proposed increase. I can provide the full comparison table.",
+          text: "I have pulled data from three comparable suppliers: Apex at 4.2% below the proposed rate, Vanguard at 2.8% below, and Clearline within 0.5%. The weighted average is 2.5% below the proposed increase.",
           score: 10,
           result: "strong",
           explanation:

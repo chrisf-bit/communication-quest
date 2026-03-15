@@ -75,7 +75,7 @@ export const SCENARIOS_PART20: Scenario[] = [
       options: [
         {
           id: "s229-opt-a",
-          text: "Monthly works if the tracker is genuinely live. We will update it every Friday, and you will have full visibility at any time. If something needs attention sooner, we call you directly rather than waiting for a scheduled slot.",
+          text: "Monthly works if the tracker is live. We update it every Friday and you have full visibility. If something needs attention sooner, we call you directly.",
           score: 10,
           result: "strong",
           explanation:
@@ -353,7 +353,7 @@ export const SCENARIOS_PART20: Scenario[] = [
       options: [
         {
           id: "s231-opt-a",
-          text: "Of course. But before we close, I want to confirm: the retention proposal with all three commitments in writing will be in your inbox by 9am tomorrow, ahead of your board meeting. You will have everything you need to make the decision.",
+          text: "Of course. The retention proposal with all three commitments will be in your inbox by 9am tomorrow, ahead of your board meeting. You will have everything you need.",
           score: 10,
           result: "strong",
           explanation:
@@ -496,7 +496,7 @@ export const SCENARIOS_PART20: Scenario[] = [
       options: [
         {
           id: "s232-opt-a",
-          text: "That is a great idea, Priya. And I will go first with my own embarrassing fun fact to break the ice - I once accidentally replied all to a company-wide email meant for my manager. Now everyone knows I cannot cook.",
+          text: "Great idea. I will go first - I once accidentally replied all to a company-wide email meant for my manager. Now everyone knows I cannot cook.",
           score: 10,
           result: "strong",
           explanation:
@@ -635,7 +635,7 @@ export const SCENARIOS_PART20: Scenario[] = [
       options: [
         {
           id: "s233-opt-a",
-          text: "I hear you, and honestly, I felt something similar when I first heard about it. But once I saw what the combined team could actually achieve, my frustration turned into curiosity. I think the same thing might happen here if we give it a real chance.",
+          text: "Honestly, I felt something similar when I first heard about it. But once I saw what the combined team could achieve, my frustration turned into curiosity. The same might happen here.",
           score: 10,
           result: "strong",
           explanation:
@@ -774,7 +774,7 @@ export const SCENARIOS_PART20: Scenario[] = [
       options: [
         {
           id: "s234-opt-a",
-          text: "I feel that too. And Nina is right - it will not be the same. But I have been thinking about what makes this group special, and it is not the names on the org chart. It is how we show up for each other. That has not changed, and it will not change as long as we keep choosing it.",
+          text: "I feel that too. It will not be the same. But what makes this group special is not the org chart - it is how we show up for each other. That will not change as long as we keep choosing it.",
           score: 10,
           result: "strong",
           explanation:
@@ -917,7 +917,7 @@ export const SCENARIOS_PART20: Scenario[] = [
       options: [
         {
           id: "s235-opt-a",
-          text: "I can see how strongly you feel about this, and that tells me this matters. Can I just check - before we talk about what happened, is there anything you need from us right now to feel comfortable continuing?",
+          text: "I can see how strongly you feel about this. Before we talk about what happened, is there anything you need from us right now to feel comfortable continuing?",
           score: 10,
           result: "strong",
           explanation:
@@ -1056,7 +1056,7 @@ export const SCENARIOS_PART20: Scenario[] = [
       options: [
         {
           id: "s236-opt-a",
-          text: "Thank you for sharing that. I can only imagine how difficult it has been carrying that feeling. And I think the fact that you are both here shows that you care about making this right. That is a really strong starting point.",
+          text: "Thank you for sharing that. The fact that you are both here shows you care about making this right. That is a really strong starting point.",
           score: 10,
           result: "strong",
           explanation:
@@ -1195,7 +1195,7 @@ export const SCENARIOS_PART20: Scenario[] = [
       options: [
         {
           id: "s237-opt-a",
-          text: "I think David is onto something important here. We all experienced those final two weeks differently, and I suspect we will find that both teams were making reasonable decisions with incomplete information. Can I help map out the timeline from our side?",
+          text: "We all experienced those final two weeks differently. I suspect both teams were making reasonable decisions with incomplete information. Can I help map out the timeline from our side?",
           score: 10,
           result: "strong",
           explanation:
@@ -1338,7 +1338,7 @@ export const SCENARIOS_PART20: Scenario[] = [
       options: [
         {
           id: "s238-opt-a",
-          text: "I have pulled the original estimate alongside the actuals. The variance is concentrated in two areas: vendor costs came in 15% above the Q2 quotes, and the testing phase required 40 additional hours due to scope changes approved in August. I can source both figures from the project tracker.",
+          text: "The variance is in two areas: vendor costs came in 15% above Q2 quotes, and testing required 40 additional hours due to scope changes approved in August. Both figures are in the project tracker.",
           score: 10,
           result: "strong",
           explanation:
@@ -1477,7 +1477,7 @@ export const SCENARIOS_PART20: Scenario[] = [
       options: [
         {
           id: "s239-opt-a",
-          text: "I can add to the reviewer fatigue risk. The logistics team trialled a single-reviewer model last year and tracked error rates over 12 weeks. Errors increased by 8% in weeks 5 to 8 but dropped back to baseline after they introduced a rotation schedule. I have the data if you want to include it.",
+          text: "The logistics team trialled a single-reviewer model last year. Errors increased 8% in weeks 5 to 8 but dropped to baseline after they introduced rotation. I have the data if you want to include it.",
           score: 10,
           result: "strong",
           explanation:
@@ -1616,7 +1616,7 @@ export const SCENARIOS_PART20: Scenario[] = [
       options: [
         {
           id: "s240-opt-a",
-          text: "Fiona's TCO model is sound. I have verified the implementation cost assumptions against two similar projects we completed last year, and the estimates are conservative if anything. The per-incident support charges alone add GBP 18,000 annually based on our current ticket volume of 15 per month.",
+          text: "I have verified the implementation costs against two similar projects last year - the estimates are conservative. The per-incident support charges alone add 18,000 pounds annually at our current ticket volume.",
           score: 10,
           result: "strong",
           explanation:

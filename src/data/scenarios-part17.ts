@@ -496,7 +496,7 @@ export const SCENARIOS_PART17: Scenario[] = [
       options: [
         {
           id: "s196-opt-a",
-          text: "Priya is right, and here is the thing that makes it exciting - that pricing section is actually where your preparation really showed. Once you trust those numbers and slow down, it is going to be the strongest part of your whole presentation.",
+          text: "Priya is right. That pricing section is where your preparation really showed. Trust those numbers, slow down, and it becomes the strongest part of your whole presentation.",
           score: 10,
           result: "strong",
           explanation:
@@ -635,7 +635,7 @@ export const SCENARIOS_PART17: Scenario[] = [
       options: [
         {
           id: "s197-opt-a",
-          text: "Marcus is saying the thinking is strong enough to deserve braver execution. That is a compliment to the strategy. He is not saying start again - he is saying go further with what you have already built. The hard part is done.",
+          text: "Marcus is saying the thinking deserves braver execution. He is not saying start again - he is saying go further with what you have built. The hard part is done.",
           score: 10,
           result: "strong",
           explanation:
@@ -774,7 +774,7 @@ export const SCENARIOS_PART17: Scenario[] = [
       options: [
         {
           id: "s198-opt-a",
-          text: "Efficiency matters, but so does quality. If someone cannot hear feedback in its current format, then we are not being efficient - we are just talking to ourselves. Nina's approach means the feedback actually lands, which is the whole point.",
+          text: "If someone cannot hear feedback in its current format, we are not being efficient - we are talking to ourselves. Nina's approach means the feedback actually lands.",
           score: 10,
           result: "strong",
           explanation:
@@ -917,7 +917,7 @@ export const SCENARIOS_PART17: Scenario[] = [
       options: [
         {
           id: "s199-opt-a",
-          text: "That makes complete sense, and I appreciate you being honest about it. There is no timeline on our side. Take whatever time you need, and if it helps, I am happy to share references from clients who had similar concerns before they started working with us.",
+          text: "That makes complete sense. There is no timeline on our side. Take whatever time you need, and if it helps, I can share references from clients who had similar concerns.",
           score: 10,
           result: "strong",
           explanation:
@@ -1056,7 +1056,7 @@ export const SCENARIOS_PART17: Scenario[] = [
       options: [
         {
           id: "s200-opt-a",
-          text: "You are right to think about cost, and we respect that. What we would ask is this: think about the moments over the past three years where having a partner who truly knew your business made a real difference. That knowledge took time to build, and it is not something a new vendor can replicate on day one.",
+          text: "You are right to think about cost. What we would ask is this: think about the moments where having a partner who truly knew your business made a difference. That knowledge is not something a new vendor can replicate on day one.",
           score: 10,
           result: "strong",
           explanation:
@@ -1195,7 +1195,7 @@ export const SCENARIOS_PART17: Scenario[] = [
       options: [
         {
           id: "s201-opt-a",
-          text: "Let us go through the three questions your CFO is most likely to ask. For each one, I will give you a clear, calm answer you can use in your own words. And if anything comes up that we have not covered, I am a phone call away. You will not be on your own in there.",
+          text: "Let us go through the three questions your CFO is most likely to ask. For each one, I will give you a clear answer you can use in your own words. If anything else comes up, I am a phone call away.",
           score: 10,
           result: "strong",
           explanation:
@@ -1338,7 +1338,7 @@ export const SCENARIOS_PART17: Scenario[] = [
       options: [
         {
           id: "s202-opt-a",
-          text: "Rachel's analysis shows that the remediation cost for a corrupted migration is roughly four times the cost of completing the pre-checks now. The numbers do not support skipping them. Could we agree to a two-week pre-check window and then proceed at full speed?",
+          text: "The remediation cost for a corrupted migration is four times the cost of pre-checks. The numbers do not support skipping them. Can we agree a two-week window and then proceed at full speed?",
           score: 10,
           result: "strong",
           explanation:
@@ -1477,7 +1477,7 @@ export const SCENARIOS_PART17: Scenario[] = [
       options: [
         {
           id: "s203-opt-a",
-          text: "Lead with the two genuine breaches. Own them fully, present the root cause analysis and corrective actions. Then transition to the measurement methodology, show the contract definition, and offer a joint session to align on how SLAs are tracked going forward.",
+          text: "Lead with the two genuine breaches and own them fully with root cause analysis. Then show the contract definition for the other three and offer a joint session to align on SLA tracking.",
           score: 10,
           result: "strong",
           explanation:
@@ -1616,7 +1616,7 @@ export const SCENARIOS_PART17: Scenario[] = [
       options: [
         {
           id: "s204-opt-a",
-          text: "Fiona's sample covers 68% of volume and 81% of spend, with a stratified design across all categories. At a 95% confidence level, the margin of error is 3.4%. That is well within accepted standards for this type of audit. The methodology is sound.",
+          text: "The sample covers 68% of volume and 81% of spend with a stratified design. At 95% confidence, the margin of error is 3.4%. That is well within accepted standards.",
           score: 10,
           result: "strong",
           explanation:

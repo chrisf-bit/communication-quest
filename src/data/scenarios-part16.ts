@@ -214,7 +214,7 @@ export const SCENARIOS_PART16: Scenario[] = [
       options: [
         {
           id: "s182-opt-a",
-          text: "To be clear, 90 days is our maximum. We have costed the transition and anything beyond that creates a financial exposure we are not prepared to carry. The numbers do not support six months.",
+          text: "To be clear, 90 days is our maximum. Anything beyond that creates a financial exposure we are not prepared to carry. The numbers do not support six months.",
           score: 10,
           result: "strong",
           explanation:
@@ -353,7 +353,7 @@ export const SCENARIOS_PART16: Scenario[] = [
       options: [
         {
           id: "s183-opt-a",
-          text: "You are the strongest internal candidate. There is one external candidate being considered as a benchmark. The decision will be made on the criteria I outlined, and I will be transparent about where you stand at each review point.",
+          text: "You are the strongest internal candidate. One external candidate is being benchmarked. The decision will be made on the criteria I outlined, and I will be transparent about where you stand at each stage.",
           score: 10,
           result: "strong",
           explanation:
@@ -496,7 +496,7 @@ export const SCENARIOS_PART16: Scenario[] = [
       options: [
         {
           id: "s184-opt-a",
-          text: "I can hear how much the community engagement work means to you. Stepping back from something you care about deeply is not defeat; it is you protecting the passion that made you brilliant at it in the first place. That takes real courage.",
+          text: "I can hear how much the community work means to you. Stepping back from something you care about deeply is not defeat; it is protecting the passion that made you brilliant at it. That takes courage.",
           score: 10,
           result: "strong",
           explanation:
@@ -635,7 +635,7 @@ export const SCENARIOS_PART16: Scenario[] = [
       options: [
         {
           id: "s185-opt-a",
-          text: "You are both right. Marcus is spot on that we need shared excitement about the end goal, and the ownership question is legitimate. What if we sketch out the finished product together first, then assign components based on who is best placed to deliver each piece? That way, ownership follows vision.",
+          text: "You are both right. What if we sketch out the finished product together first, then assign components based on who is best placed to deliver each piece? That way, ownership follows vision.",
           score: 10,
           result: "strong",
           explanation:
@@ -774,7 +774,7 @@ export const SCENARIOS_PART16: Scenario[] = [
       options: [
         {
           id: "s186-opt-a",
-          text: "Nina is right that the impact shows up in people, not just percentages. But if it helps, I can map the three promotions she mentioned to the revenue those individuals now generate. The story writes itself when you follow the people.",
+          text: "Nina is right that the impact shows up in people, not just percentages. I can map those three promotions to the revenue those individuals now generate. The story writes itself when you follow the people.",
           score: 10,
           result: "strong",
           explanation:
@@ -917,7 +917,7 @@ export const SCENARIOS_PART16: Scenario[] = [
       options: [
         {
           id: "s187-opt-a",
-          text: "I understand your need for accountability, and we share it. What Tom is proposing still has consequences for underperformance, but frames them as service credits that keep both sides invested in resolution rather than blame. The protection is the same; the relationship is better.",
+          text: "We share your need for accountability. Tom's proposal still has consequences for underperformance, but frames them as service credits that keep both sides invested in resolution. The protection is the same; the relationship is better.",
           score: 10,
           result: "strong",
           explanation:
@@ -1056,7 +1056,7 @@ export const SCENARIOS_PART16: Scenario[] = [
       options: [
         {
           id: "s188-opt-a",
-          text: "The fact that you are thinking about this shows exactly why your team values you so much. But the care you have shown them has built something lasting. They will not lose that when you move; they will carry it forward because you taught them how. And you can still be there for them, just in a different way.",
+          text: "The fact that you are thinking about this shows why your team values you. The care you have shown them has built something lasting. They will carry it forward because you taught them how, and you can still be there for them in a different way.",
           score: 10,
           result: "strong",
           explanation:
@@ -1195,7 +1195,7 @@ export const SCENARIOS_PART16: Scenario[] = [
       options: [
         {
           id: "s189-opt-a",
-          text: "You are right that it was a key decision point. What David is asking is really valuable though: what information was available at that moment, and what would we need to change so that any of us in that position would make a better call next time? That is what protects all of us going forward.",
+          text: "You are right that it was a key decision point. What David is asking is valuable: what information was available at that moment, and what would we need to change so anyone in that position makes a better call next time?",
           score: 10,
           result: "strong",
           explanation:
@@ -1338,7 +1338,7 @@ export const SCENARIOS_PART16: Scenario[] = [
       options: [
         {
           id: "s190-opt-a",
-          text: "Good approach. Objective one: stakeholder communication. Expected outcome was weekly updates to three key stakeholders. My assessment is that you delivered this consistently, with evidence from the project log showing 12 out of 12 weeks completed. I would rate this as fully met.",
+          text: "Good approach. Objective one: stakeholder communication. Expected outcome was weekly updates to three key stakeholders. You delivered consistently - the project log shows 12 out of 12 weeks completed. Fully met.",
           score: 10,
           result: "strong",
           explanation:
@@ -1477,7 +1477,7 @@ export const SCENARIOS_PART16: Scenario[] = [
       options: [
         {
           id: "s191-opt-a",
-          text: "The partnership is valued, and that is precisely why we are having this conversation rather than simply switching. But trust should be reflected in competitive terms. If the relationship is strong, you should be confident enough to match the market on pricing. The data shows a 12% annual cost gap. Closing that gap is how you demonstrate the partnership is mutual.",
+          text: "The partnership is valued, which is why we are having this conversation rather than simply switching. But trust should be reflected in competitive terms. The data shows a 12% annual cost gap. Closing that gap demonstrates the partnership is mutual.",
           score: 10,
           result: "strong",
           explanation:
@@ -1616,7 +1616,7 @@ export const SCENARIOS_PART16: Scenario[] = [
       options: [
         {
           id: "s192-opt-a",
-          text: "Fiona's model already accounts for reasonable efficiency. The 94% utilisation figure assumes current productivity levels, which are above the industry benchmark of 85%. We are not dealing with an efficiency gap; we are dealing with a capacity gap of 275 hours. The question is which work we deprioritise to create that space.",
+          text: "Fiona's model already accounts for reasonable efficiency. The 94% utilisation figure is above the industry benchmark of 85%. This is a capacity gap of 275 hours, not an efficiency gap. The question is which work we deprioritise.",
           score: 10,
           result: "strong",
           explanation:

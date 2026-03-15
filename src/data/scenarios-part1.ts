@@ -75,7 +75,7 @@ export const SCENARIOS_PART1: Scenario[] = [
       options: [
         {
           id: "s01-opt-a",
-          text: "Understood. Here are the three options: Option A cuts cost by 12%, Option B improves turnaround by two days, Option C does both but needs a budget increase. I recommend Option B for the fastest impact.",
+          text: "Three options: A cuts cost by 12%, B improves turnaround by two days, C does both but needs more budget. I recommend B for the fastest impact.",
           score: 10,
           result: "strong",
           explanation:
@@ -353,7 +353,7 @@ export const SCENARIOS_PART1: Scenario[] = [
       options: [
         {
           id: "s03-opt-a",
-          text: "Three reasons: we deliver 20% faster than the industry average, our contract includes a performance guarantee, and we assigned a dedicated account lead from day one. No other proposal offers all three.",
+          text: "Three reasons: 20% faster delivery than the industry average, a performance guarantee in the contract, and a dedicated account lead from day one.",
           score: 10,
           result: "strong",
           explanation:
@@ -500,7 +500,7 @@ export const SCENARIOS_PART1: Scenario[] = [
         },
         {
           id: "s04-opt-b",
-          text: "The delay was caused by a supplier hold-up that was flagged too late. I've already put a weekly supplier checkpoint in place so we catch issues earlier. We'll hit the revised deadline of the 28th.",
+          text: "A supplier hold-up was flagged too late. I've put a weekly supplier checkpoint in place and we'll hit the revised deadline of the 28th.",
           score: 10,
           result: "strong",
           explanation:
@@ -631,7 +631,7 @@ export const SCENARIOS_PART1: Scenario[] = [
       options: [
         {
           id: "s05-opt-a",
-          text: "I'd draft something like: 'Following the programme review, we recommend proceeding with Option B. This delivers a 22% efficiency gain at no additional cost. Implementation begins 1 April with a go-live date of 1 July. No further approvals are needed. Please reply if you have questions.'",
+          text: "I'd write: 'We recommend Option B, delivering a 22% efficiency gain at no additional cost. Implementation begins 1 April, go-live 1 July. No further approvals needed.'",
           score: 10,
           result: "strong",
           explanation:
@@ -913,7 +913,7 @@ export const SCENARIOS_PART1: Scenario[] = [
       options: [
         {
           id: "s07-opt-a",
-          text: "Love that energy, Priya. Building on what you said, what if we explored a customer storytelling angle? We could involve real users and let their experiences drive the campaign. That could be really powerful.",
+          text: "Love that energy, Priya. What if we explored a customer storytelling angle? Real users telling their own stories to drive the campaign.",
           score: 10,
           result: "strong",
           explanation:
@@ -1065,7 +1065,7 @@ export const SCENARIOS_PART1: Scenario[] = [
         },
         {
           id: "s08-opt-b",
-          text: "Priya's right, this could be really exciting for your brand. Building on what she said, we could start with a small pilot to test the concept, so you get to see the impact before committing fully. We could shape it together.",
+          text: "Priya's right, this could be exciting for your brand. We could start with a small pilot to test the concept and shape it together.",
           score: 10,
           result: "strong",
           explanation:
@@ -1201,7 +1201,7 @@ export const SCENARIOS_PART1: Scenario[] = [
       options: [
         {
           id: "s09-opt-a",
-          text: "That sounds fantastic, Marcus. I love the vision. What if we started by getting a small group together to prototype one of those automated workflows? We could show the rest of the business what's possible and build momentum from there.",
+          text: "I love that vision, Marcus. What if we got a small group together to prototype one of those workflows and show the business what's possible?",
           score: 10,
           result: "strong",
           explanation:
@@ -1345,7 +1345,7 @@ export const SCENARIOS_PART1: Scenario[] = [
       options: [
         {
           id: "s10-opt-a",
-          text: "Marcus is spot on. And the exciting thing is, we've already seen this work. One of our clients went from 12-month development cycles to six months in under a year. Imagine what that could mean for your team. We'd love to explore how we could make that happen together.",
+          text: "Marcus is spot on. One of our clients went from 12-month cycles to six months in under a year. Imagine what that could mean for your team.",
           score: 10,
           result: "strong",
           explanation:
@@ -1489,7 +1489,7 @@ export const SCENARIOS_PART1: Scenario[] = [
       options: [
         {
           id: "s11-opt-a",
-          text: "Thanks, Nina, that really means a lot. The team will be thrilled to hear that. I love your idea of sharing what worked. What if we put together a short showcase for the next all-hands meeting? We could involve the whole team so they get the recognition they deserve.",
+          text: "Thanks, Nina, that really means a lot. What if we put together a short showcase for the next all-hands so the whole team gets the recognition they deserve?",
           score: 10,
           result: "strong",
           explanation:
@@ -1633,7 +1633,7 @@ export const SCENARIOS_PART1: Scenario[] = [
       options: [
         {
           id: "s12-opt-a",
-          text: "Thanks, Nina, I really appreciate you noticing. Honestly, I've been feeling a bit overwhelmed with the workload, but I didn't want to make a fuss. It means a lot that you've checked in. I think it would help to talk through priorities together so I can focus on what matters most.",
+          text: "Thanks, Nina, I appreciate you noticing. I've been feeling a bit overwhelmed but didn't want to make a fuss. It would help to talk through priorities together.",
           score: 10,
           result: "strong",
           explanation:

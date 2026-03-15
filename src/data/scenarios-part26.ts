@@ -496,7 +496,7 @@ export const SCENARIOS_PART26: Scenario[] = [
       options: [
         {
           id: "s304-opt-a",
-          text: "I love that you are exploring all of this. The client-facing work clearly gives you energy, and I have seen you light up in those meetings. What if we started there and built the strategy skills around it? Best of both worlds.",
+          text: "I love that you are exploring this. The client-facing work clearly gives you energy. What if we started there and built the strategy skills around it? Best of both worlds.",
           score: 10,
           result: "strong",
           explanation:
@@ -635,7 +635,7 @@ export const SCENARIOS_PART26: Scenario[] = [
       options: [
         {
           id: "s305-opt-a",
-          text: "Let us lead with the impact you had - the creative concept, the pitch, the execution. Then connect it to what you want next. Frame it as 'here is what I bring and here is where I want to take it.' That turns it into a forward-looking story.",
+          text: "Lead with your impact - the creative concept, the pitch, the execution. Then frame it as 'here is what I bring and here is where I want to take it.' That turns it into a forward-looking story.",
           score: 10,
           result: "strong",
           explanation:
@@ -774,7 +774,7 @@ export const SCENARIOS_PART26: Scenario[] = [
       options: [
         {
           id: "s306-opt-a",
-          text: "You are right that visibility matters, and the Manchester project is a strong example. Let us build a plan that puts your strategic work in front of the right people over the next two quarters. By the time the next panel sits, your name should already be in the conversation.",
+          text: "You are right that visibility matters. Let us build a plan that puts your strategic work in front of the right people over the next two quarters. By the next panel, your name should already be in the conversation.",
           score: 10,
           result: "strong",
           explanation:
@@ -917,7 +917,7 @@ export const SCENARIOS_PART26: Scenario[] = [
       options: [
         {
           id: "s307-opt-a",
-          text: "Tom, you made the point well - the research backs up a 25% reduction in absence. And you are right that the deeper value is in creating a culture where people speak up before they burn out. Both things can be true.",
+          text: "Tom, you made the point well - the research backs up a 25% reduction in absence. The deeper value is creating a culture where people speak up before they burn out. Both things can be true.",
           score: 10,
           result: "strong",
           explanation:
@@ -1056,7 +1056,7 @@ export const SCENARIOS_PART26: Scenario[] = [
       options: [
         {
           id: "s308-opt-a",
-          text: "Thank you for creating the space for this, Leah. I think what would help right now is knowing that we can come back to you individually if we are not ready to ask questions in front of the group. Would that be possible?",
+          text: "Thank you for creating this space, Leah. What would help is knowing we can come back to you individually if we are not ready to ask in front of the group. Would that be possible?",
           score: 10,
           result: "strong",
           explanation:
@@ -1195,7 +1195,7 @@ export const SCENARIOS_PART26: Scenario[] = [
       options: [
         {
           id: "s309-opt-a",
-          text: "I want to build on what David said. I know I found parts of this project really challenging too, and I think if we each share what we found hardest, we might discover we were all struggling with the same things. Can I go first?",
+          text: "Building on what David said - I found parts of this really challenging too. If we each share what we found hardest, we might discover we were all struggling with the same things. Can I go first?",
           score: 10,
           result: "strong",
           explanation:
@@ -1338,7 +1338,7 @@ export const SCENARIOS_PART26: Scenario[] = [
       options: [
         {
           id: "s310-opt-a",
-          text: "Rachel is right to ask for data. Could you share adoption rates for these features across your enterprise clients of a similar size? If the trend shows growth, we are open to discussing a phased approach. If not, our usage data stands.",
+          text: "Rachel is right to ask for data. Could you share adoption rates for these features across enterprise clients of similar size? If the trend shows growth, we can discuss a phased approach. If not, our usage data stands.",
           score: 10,
           result: "strong",
           explanation:
@@ -1477,7 +1477,7 @@ export const SCENARIOS_PART26: Scenario[] = [
       options: [
         {
           id: "s311-opt-a",
-          text: "Owen has already accounted for external factors in his analysis. The 73 controllable failures are the ones we need to address. Could you walk us through what corrective actions you have taken on routing errors and warehouse delays specifically?",
+          text: "Owen has already accounted for external factors. The 73 controllable failures are what we need to address. Could you walk us through the corrective actions taken on routing errors and warehouse delays?",
           score: 10,
           result: "strong",
           explanation:
@@ -1616,7 +1616,7 @@ export const SCENARIOS_PART26: Scenario[] = [
       options: [
         {
           id: "s312-opt-a",
-          text: "Fiona's analysis is clear. The bonus model still leaves a 13-point gap between our contribution and our share. Could we explore a base split that reflects the weighted contribution, with the bonus layer applied on top for exceptional performance?",
+          text: "Fiona's analysis is clear. The bonus model still leaves a 13-point gap. Could we explore a base split reflecting weighted contribution, with the bonus layer on top for exceptional performance?",
           score: 10,
           result: "strong",
           explanation:

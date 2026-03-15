@@ -214,7 +214,7 @@ export const SCENARIOS_PART22: Scenario[] = [
       options: [
         {
           id: "s254-opt-a",
-          text: "That makes sense. I will run the new process from Monday and track any issues that come through the stage-two gate. If anything slips through, I will bring you the specifics within the first two weeks as you suggested.",
+          text: "I will run the new process from Monday and track any issues through the stage-two gate. If anything slips through, I will bring you the specifics within two weeks.",
           score: 10,
           result: "strong",
           explanation:
@@ -496,7 +496,7 @@ export const SCENARIOS_PART22: Scenario[] = [
       options: [
         {
           id: "s256-opt-a",
-          text: "That is a brilliant way to think about it. I already know the opening and closing are strong - maybe we can work on the middle section where the client needs to see the data before the recommendation. I would love to map that out with you.",
+          text: "Brilliant way to think about it. The opening and closing are strong - can we work on the middle section where the client needs the data before the recommendation? I would love to map that out with you.",
           score: 10,
           result: "strong",
           explanation:
@@ -635,7 +635,7 @@ export const SCENARIOS_PART22: Scenario[] = [
       options: [
         {
           id: "s257-opt-a",
-          text: "I think what Marcus is describing is something we can fix easily, and it would make the joint sessions much more productive. What if we tried a simple rule: before anyone says 'that will not work', they have to say 'what I like about that idea is...' first? It slows the reflex and opens space for dialogue.",
+          text: "What if we tried a simple rule: before anyone says 'that will not work', they have to say 'what I like about that idea is...' first? It slows the reflex and opens space for dialogue.",
           score: 10,
           result: "strong",
           explanation:
@@ -774,7 +774,7 @@ export const SCENARIOS_PART22: Scenario[] = [
       options: [
         {
           id: "s258-opt-a",
-          text: "That is a fair comparison, and I can see it. At the offsite I was speaking from experience, not slides. I think the town halls have become too data-heavy because I assumed that was what people wanted. How do I bring more of the offsite energy without losing the rigour?",
+          text: "Fair comparison. At the offsite I was speaking from experience, not slides. The town halls have become too data-heavy. How do I bring more of that offsite energy without losing the rigour?",
           score: 10,
           result: "strong",
           explanation:
@@ -917,7 +917,7 @@ export const SCENARIOS_PART22: Scenario[] = [
       options: [
         {
           id: "s259-opt-a",
-          text: "I think talking it through with my partner would help. Could you send me a summary of what we discussed today so I can share it with them? No rush - I just want to feel like we have thought it through together.",
+          text: "Talking it through with my partner would help. Could you send me a summary of what we discussed so I can share it? I just want to feel like we have thought it through together.",
           score: 10,
           result: "strong",
           explanation:
@@ -1056,7 +1056,7 @@ export const SCENARIOS_PART22: Scenario[] = [
       options: [
         {
           id: "s260-opt-a",
-          text: "You make a fair point about the value, and I had not thought about the transition cost of moving to a new provider. Let me take your full picture back to my team and compare it properly with the other offer. Can you send me something I can share with them?",
+          text: "Fair point about the value, and I had not thought about the transition cost. Let me take the full picture back to my team and compare it with the other offer. Can you send me something to share?",
           score: 10,
           result: "strong",
           explanation:
@@ -1195,7 +1195,7 @@ export const SCENARIOS_PART22: Scenario[] = [
       options: [
         {
           id: "s261-opt-a",
-          text: "Fine. I will give you the chance. But I need you to understand that this is not just about one delivery. It is about what this says about how we are valued as a customer. I need to see that things will be different going forward, not just that you can fix this one incident.",
+          text: "Fine. But this is not just about one delivery. It is about how we are valued as a customer. I need to see that things will be different going forward, not just that you can fix this incident.",
           score: 10,
           result: "strong",
           explanation:
@@ -1338,7 +1338,7 @@ export const SCENARIOS_PART22: Scenario[] = [
       options: [
         {
           id: "s262-opt-a",
-          text: "That is a good point. The first dependency was the API endpoint from the platform team - we knew about it on day two but did not escalate until day seven. If we had flagged it on day three, we could have unblocked it by day five. Let me pull up the timeline for the other two.",
+          text: "The first dependency was the API endpoint - we knew about it on day two but did not escalate until day seven. Flagging on day three would have unblocked it by day five. Let me pull up the other two.",
           score: 10,
           result: "strong",
           explanation:
@@ -1477,7 +1477,7 @@ export const SCENARIOS_PART22: Scenario[] = [
       options: [
         {
           id: "s263-opt-a",
-          text: "The early-detection data is compelling. If we move the first QA touchpoint to day 3, what does your model show for the overall rework reduction across a typical release? I want to see the projected impact before we commit.",
+          text: "If we move the first QA touchpoint to day 3, what does your model show for overall rework reduction across a typical release? I want to see the projected impact before we commit.",
           score: 10,
           result: "strong",
           explanation:
@@ -1616,7 +1616,7 @@ export const SCENARIOS_PART22: Scenario[] = [
       options: [
         {
           id: "s264-opt-a",
-          text: "That is a useful reframe. If the board needs a fully loaded CAC for strategic planning, then the finance methodology is closer to what they need. But I would still want us to track the direct acquisition cost separately so we can measure channel efficiency. Can we define both metrics with clear purposes?",
+          text: "If the board needs a fully loaded CAC, then the finance methodology is closer. But I still want us to track direct acquisition cost separately for channel efficiency. Can we define both metrics with clear purposes?",
           score: 10,
           result: "strong",
           explanation:

@@ -496,7 +496,7 @@ export const SCENARIOS_PART11: Scenario[] = [
       options: [
         {
           id: "s124-opt-a",
-          text: "Priya, I love the vision. To build on it, what if we showed people the 'before and after' of where our spend goes? A visual that shows money moving from overhead into growth areas would make the story really tangible.",
+          text: "I love the vision, Priya. What if we showed a 'before and after' of where our spend goes? A visual of money moving from overhead into growth areas would make the story tangible.",
           score: 10,
           result: "strong",
           explanation:
@@ -635,7 +635,7 @@ export const SCENARIOS_PART11: Scenario[] = [
       options: [
         {
           id: "s125-opt-a",
-          text: "To build on Marcus's point: the 12 million we invested this year has already secured contracts worth 28 million over the next three years. We did not just spend; we planted seeds that are already growing. The margin story next year will look very different.",
+          text: "To build on Marcus's point: the 12 million invested this year has secured contracts worth 28 million over the next three years. We planted seeds that are already growing. The margin story next year will look very different.",
           score: 10,
           result: "strong",
           explanation:
@@ -774,7 +774,7 @@ export const SCENARIOS_PART11: Scenario[] = [
       options: [
         {
           id: "s126-opt-a",
-          text: "And that lived experience translates directly into product decisions. Our supply-chain algorithm was designed by someone who spent her childhood watching medicine go missing. She did not read about the problem in a report; she solved it because she had lived it. That is an insight no competitor can replicate.",
+          text: "That lived experience translates directly into product decisions. Our supply-chain algorithm was designed by someone who grew up watching medicine go missing. She solved the problem because she had lived it. No competitor can replicate that insight.",
           score: 10,
           result: "strong",
           explanation:
@@ -917,7 +917,7 @@ export const SCENARIOS_PART11: Scenario[] = [
       options: [
         {
           id: "s127-opt-a",
-          text: "I felt the same way when I first heard about the switch. It took me a couple of weeks to get comfortable, but I found that the new system actually handles the things that used to frustrate me about the old one. I am happy to sit with anyone who wants a walkthrough at their own pace.",
+          text: "I felt the same way when I first heard about the switch. It took me a couple of weeks, but the new system actually handles the things that used to frustrate me about the old one. I am happy to sit with anyone who wants a walkthrough.",
           score: 10,
           result: "strong",
           explanation:
@@ -1056,7 +1056,7 @@ export const SCENARIOS_PART11: Scenario[] = [
       options: [
         {
           id: "s128-opt-a",
-          text: "That is a fair point about price. And Leah, the client feedback you mentioned sounds really valuable. I think hearing directly from clients who switched could help us understand the full picture. Would the room be comfortable hearing some of those quotes?",
+          text: "Fair point about price. Leah, the client feedback you mentioned sounds valuable. Hearing directly from clients who switched could help us understand the full picture. Would the room be open to hearing some of those quotes?",
           score: 10,
           result: "strong",
           explanation:
@@ -1195,7 +1195,7 @@ export const SCENARIOS_PART11: Scenario[] = [
       options: [
         {
           id: "s129-opt-a",
-          text: "I would add that the moments that went wrong were actually the moments that strengthened the partnership. The client's willingness to have those difficult conversations early meant we could course-correct before small issues became big ones. That kind of openness is rare and valuable.",
+          text: "The moments that went wrong actually strengthened the partnership. The client's willingness to have difficult conversations early meant we could course-correct before small issues became big ones. That openness is rare and valuable.",
           score: 10,
           result: "strong",
           explanation:
@@ -1338,7 +1338,7 @@ export const SCENARIOS_PART11: Scenario[] = [
       options: [
         {
           id: "s130-opt-a",
-          text: "Rachel, would it be helpful to share the scoring criteria and weightings with the team? If people can see how each function was assessed, it might address concerns about fairness. I can prepare a summary document with the methodology by tomorrow.",
+          text: "Rachel, would it help to share the scoring criteria and weightings with the team? If people can see how each function was assessed, it should address the fairness concerns. I can prepare a summary by tomorrow.",
           score: 10,
           result: "strong",
           explanation:
@@ -1477,7 +1477,7 @@ export const SCENARIOS_PART11: Scenario[] = [
       options: [
         {
           id: "s131-opt-a",
-          text: "Owen, could you also share the latency metrics at each load level? I would like to understand whether the user experience degrades gradually or whether there is a cliff edge at a particular threshold. That would help us set realistic SLAs.",
+          text: "Owen, could you share the latency metrics at each load level? I want to understand whether the user experience degrades gradually or hits a cliff edge at a particular threshold.",
           score: 10,
           result: "strong",
           explanation:
@@ -1616,7 +1616,7 @@ export const SCENARIOS_PART11: Scenario[] = [
       options: [
         {
           id: "s132-opt-a",
-          text: "Fiona, would it be useful to publish the methodology note alongside the results? If people can see the validation process, the question design principles, and the benchmarking approach, it might address concerns about rigour before they arise.",
+          text: "Fiona, would it help to publish the methodology note alongside the results? If people can see the validation process and benchmarking approach, it should address concerns about rigour before they arise.",
           score: 10,
           result: "strong",
           explanation:

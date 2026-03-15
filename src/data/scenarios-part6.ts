@@ -214,7 +214,7 @@ export const SCENARIOS_PART6: Scenario[] = [
       options: [
         {
           id: "s62-opt-a",
-          text: "Fair challenge. Here are three confirmed savings from the pilot: GBP 28,000 in reduced overtime, GBP 15,000 in supplier consolidation, and GBP 9,000 in process automation. That is GBP 52,000 confirmed, not projected. A 60/40 split in your favour still funds both.",
+          text: "Fair challenge. Three confirmed savings from the pilot: GBP 28,000 in reduced overtime, GBP 15,000 in supplier consolidation, GBP 9,000 in automation. That is GBP 52,000 confirmed. A 60/40 split still funds both.",
           score: 10,
           result: "strong",
           explanation:
@@ -353,7 +353,7 @@ export const SCENARIOS_PART6: Scenario[] = [
       options: [
         {
           id: "s63-opt-a",
-          text: "Feature A drives GBP 35,000 in quarterly revenue for my department. I can fund two additional developers from my budget for the next sprint, which covers the resource gap without extending the deadline. That keeps all three features and your timeline.",
+          text: "Feature A drives GBP 35,000 in quarterly revenue. I can fund two extra developers from my budget for the next sprint, covering the gap without extending the deadline.",
           score: 10,
           result: "strong",
           explanation:
@@ -496,7 +496,7 @@ export const SCENARIOS_PART6: Scenario[] = [
       options: [
         {
           id: "s64-opt-a",
-          text: "I love the ambition. A certification pathway would really set this apart from anything else in the market. Let us sketch out the full vision today, then I will map out what each phase would look like so we can bring it to life step by step.",
+          text: "I love the ambition. A certification pathway would set this apart from anything in the market. Let us sketch the vision today and I will map out each phase.",
           score: 10,
           result: "strong",
           explanation:
@@ -635,7 +635,7 @@ export const SCENARIOS_PART6: Scenario[] = [
       options: [
         {
           id: "s65-opt-a",
-          text: "The adaptive journey idea is genuinely exciting and I can see why you are fired up about it. Here is what I need to make this work: a one-page summary of the upgrade I can present to my stakeholders, and the demo prototype you mentioned by Friday. If those land well, I will champion the revised timeline.",
+          text: "The adaptive journey idea is exciting. I need a one-page summary I can present to my stakeholders and the demo prototype by Friday. If those land well, I will champion the revised timeline.",
           score: 10,
           result: "strong",
           explanation:
@@ -774,7 +774,7 @@ export const SCENARIOS_PART6: Scenario[] = [
       options: [
         {
           id: "s66-opt-a",
-          text: "I see it. This project has the potential to reshape how we operate, and I want to be part of that. I can commit two of my strongest people for the first phase. Let us build the momentum now and bring the others along once they see what we are creating.",
+          text: "I see it. This project could reshape how we operate. I can commit two of my strongest people for the first phase. Let us build the momentum and bring the others along.",
           score: 10,
           result: "strong",
           explanation:
@@ -917,7 +917,7 @@ export const SCENARIOS_PART6: Scenario[] = [
       options: [
         {
           id: "s67-opt-a",
-          text: "Tom, I want you to know that your contribution is genuinely valued and this conversation is not awkward at all. You are right that your role has grown significantly. Let me propose a phased approach: a 5% increase now, with a review for a further adjustment in six months based on the targets we agree together. Does that feel fair to you?",
+          text: "Tom, your contribution is genuinely valued and this is not awkward at all. Your role has grown significantly. How about a 5% increase now, with a review in six months based on targets we agree together?",
           score: 10,
           result: "strong",
           explanation:
@@ -1056,7 +1056,7 @@ export const SCENARIOS_PART6: Scenario[] = [
       options: [
         {
           id: "s68-opt-a",
-          text: "Thank you for being so understanding about the capacity issues, Leah. I appreciate that. Here is a proposal: we move the response target from 4 hours to 6 hours for the next quarter, then step it back down to 4 as we bring the new team members up to speed. That way your stakeholders see a clear commitment to improvement and my team has a realistic runway. How does that feel?",
+          text: "Thank you for understanding the capacity issues, Leah. Here is a proposal: we move the response target from 4 hours to 6 for next quarter, then back to 4 as new team members come up to speed. How does that feel?",
           score: 10,
           result: "strong",
           explanation:
@@ -1195,7 +1195,7 @@ export const SCENARIOS_PART6: Scenario[] = [
       options: [
         {
           id: "s69-opt-a",
-          text: "David, this is a really thoughtful compromise and I can see how much effort you have put into understanding both sides. I have spoken to my team and we are comfortable with phasing. Let us sit down together and prioritise the items so we can present a united front to both teams. I want to make sure your side feels this is fair too.",
+          text: "This is a thoughtful compromise, David. My team is comfortable with phasing. Let us sit down and prioritise the items together so we can present a united front. I want your side to feel it is fair too.",
           score: 10,
           result: "strong",
           explanation:
@@ -1338,7 +1338,7 @@ export const SCENARIOS_PART6: Scenario[] = [
       options: [
         {
           id: "s70-opt-a",
-          text: "Good catch. The industry benchmark for volume discounts at that scale is typically 18 to 20% at the 1,000-unit tier. I will draft a response that references the benchmark data and asks them to justify the 14% figure with a cost breakdown. We should also request their pricing methodology documentation.",
+          text: "Good catch. The industry benchmark at that scale is 18 to 20% at the 1,000-unit tier. I will draft a response referencing the benchmark and asking them to justify 14% with a cost breakdown.",
           score: 10,
           result: "strong",
           explanation:
@@ -1477,7 +1477,7 @@ export const SCENARIOS_PART6: Scenario[] = [
       options: [
         {
           id: "s71-opt-a",
-          text: "Owen is right to challenge that. I have pulled three comparable contracts from our portfolio and none include uncapped liability. I suggest we present those as counter-evidence and propose a cap at 2x the annual contract value. That is defensible, fair, and consistent with our risk framework.",
+          text: "I have pulled three comparable contracts and none include uncapped liability. I suggest we propose a cap at 2x the annual contract value. That is defensible and consistent with our risk framework.",
           score: 10,
           result: "strong",
           explanation:
@@ -1616,7 +1616,7 @@ export const SCENARIOS_PART6: Scenario[] = [
       options: [
         {
           id: "s72-opt-a",
-          text: "I think the weights are well-calibrated but I have one data point to consider. Our department's customer risk score may be understated. Last quarter we had three escalations that cost GBP 45,000 in remediation. If we factor that in, customer risk might warrant a higher weight than 15%. Here is the data for your review.",
+          text: "The weights are well-calibrated but one data point to consider: last quarter we had three customer escalations costing GBP 45,000 in remediation. Customer risk may warrant a higher weight than 15%. Here is the data.",
           score: 10,
           result: "strong",
           explanation:

@@ -75,7 +75,7 @@ export const SCENARIOS_PART24: Scenario[] = [
       options: [
         {
           id: "s277-opt-a",
-          text: "We need your response by close of business Friday. Our procurement team is ready to issue an alternative tender on Monday if we do not have agreed terms in writing by then. We would prefer to continue the partnership, but not at any price.",
+          text: "We need your response by close of business Friday. Our procurement team is ready to issue an alternative tender on Monday if we do not have agreed terms by then.",
           score: 10,
           result: "strong",
           explanation:
@@ -214,7 +214,7 @@ export const SCENARIOS_PART24: Scenario[] = [
       options: [
         {
           id: "s278-opt-a",
-          text: "I will have the business case on your desk by tomorrow morning. Performance data from the last fourteen months, three stakeholder endorsements, and the replacement cost analysis. Manager sign-off is already confirmed. What is the fastest approval route once you have the document?",
+          text: "I will have the business case on your desk by tomorrow morning. Performance data, three stakeholder endorsements, and the replacement cost analysis. Manager sign-off is confirmed. What is the fastest approval route?",
           score: 10,
           result: "strong",
           explanation:
@@ -353,7 +353,7 @@ export const SCENARIOS_PART24: Scenario[] = [
       options: [
         {
           id: "s279-opt-a",
-          text: "I understand the internal challenge, but the numbers justify the split. Here is what I can offer: we set the review at twelve months instead of eighteen, and if your technology achieves the agreed revenue target, the split moves to 50/50 automatically. That gives your board a clear path to parity and gives us protection for the risk we are taking now.",
+          text: "The numbers justify the split. Here is what I can offer: the review at twelve months instead of eighteen, and if your technology hits the agreed revenue target, the split moves to 50/50 automatically. That gives your board a clear path to parity.",
           score: 10,
           result: "strong",
           explanation:
@@ -496,7 +496,7 @@ export const SCENARIOS_PART24: Scenario[] = [
       options: [
         {
           id: "s280-opt-a",
-          text: "I just want to say, when I started here six months ago, I was exactly where you are now. Priya did the same thing for me and within a week I felt like I had been here for years. So genuinely, ask anything, message anyone, and join any conversation that catches your interest. We are glad you are here.",
+          text: "When I started six months ago, I was exactly where you are now. Priya did the same for me and within a week I felt like I had been here years. Ask anything, message anyone. We are glad you are here.",
           score: 10,
           result: "strong",
           explanation:
@@ -635,7 +635,7 @@ export const SCENARIOS_PART24: Scenario[] = [
       options: [
         {
           id: "s281-opt-a",
-          text: "What if we started each Monday with a 15-minute coffee call where we talk about our weekends instead of work? No agenda, no screen-sharing, just people being people. And on Thursdays, we could pair up for a virtual walk-and-talk where two people dial in on their phones and just chat while walking. It keeps the connection human.",
+          text: "What if we started each Monday with a 15-minute coffee call about our weekends? No agenda, just people being people. And on Thursdays, pair up for a virtual walk-and-talk on phones. It keeps the connection human.",
           score: 10,
           result: "strong",
           explanation:
@@ -774,7 +774,7 @@ export const SCENARIOS_PART24: Scenario[] = [
       options: [
         {
           id: "s282-opt-a",
-          text: "Take a moment. There is no rush. I think it might help if you told us what you were actually thinking and feeling when you wrote that message. Not to justify it, but so we can all see the gap between intent and impact. That gap is where the learning is for all of us.",
+          text: "Take a moment. It might help if you shared what you were thinking when you wrote that message. Not to justify it, but so we can all see the gap between intent and impact. That is where the learning is.",
           score: 10,
           result: "strong",
           explanation:
@@ -917,7 +917,7 @@ export const SCENARIOS_PART24: Scenario[] = [
       options: [
         {
           id: "s283-opt-a",
-          text: "Thank you for being straight with us, Tom. I appreciate that you do not have all the answers yet, and I trust that you will share them when you do. Knowing that we will hear from you personally, not from an email or a rumour, makes a real difference.",
+          text: "Thank you for being straight with us, Tom. I trust that you will share answers when you have them. Knowing we will hear from you personally, not from an email or a rumour, makes a real difference.",
           score: 10,
           result: "strong",
           explanation:
@@ -1056,7 +1056,7 @@ export const SCENARIOS_PART24: Scenario[] = [
       options: [
         {
           id: "s284-opt-a",
-          text: "I get that it feels slower, and your instinct to move fast is valuable. But I have already seen ideas in the shared doc from people who normally stay quiet, and some of them are really good. Give it two more sessions and if it genuinely slows us down without adding value, we revisit. Fair?",
+          text: "I get that it feels slower. But I have already seen ideas in the shared doc from people who normally stay quiet, and they are really good. Give it two more sessions and if it adds no value, we revisit. Fair?",
           score: 10,
           result: "strong",
           explanation:
@@ -1195,7 +1195,7 @@ export const SCENARIOS_PART24: Scenario[] = [
       options: [
         {
           id: "s285-opt-a",
-          text: "Thank you for flagging that. First group, could you briefly add the point that was missed? I want to make sure the summary is complete before we hear the second position. Getting this right now saves us from going in circles later.",
+          text: "First group, could you briefly add the point that was missed? I want the summary complete before we hear the second position. Getting this right now saves us going in circles later.",
           score: 10,
           result: "strong",
           explanation:
@@ -1338,7 +1338,7 @@ export const SCENARIOS_PART24: Scenario[] = [
       options: [
         {
           id: "s286-opt-a",
-          text: "You are right. 2.1% is a factual increase but 'significantly' implies something larger or statistically tested. I should have written 'revenue grew 2.1% year-on-year, compared to 1.4% in the previous period'. That is accurate and lets the reader judge the significance for themselves.",
+          text: "You are right. 'Significantly' implies something larger or statistically tested. I should have written 'revenue grew 2.1% year-on-year, compared to 1.4% in the previous period'. That lets the reader judge.",
           score: 10,
           result: "strong",
           explanation:
@@ -1477,7 +1477,7 @@ export const SCENARIOS_PART24: Scenario[] = [
       options: [
         {
           id: "s287-opt-a",
-          text: "The structural fix is to create a shared handover checklist in the project tracker that auto-assigns tasks to both the outgoing and incoming team leads. Completion triggers a notification to the project manager. That way, the handover proceeds regardless of any individual's availability and is visible to everyone.",
+          text: "Create a shared handover checklist in the project tracker that auto-assigns tasks to both team leads. Completion triggers a notification to the project manager. The handover proceeds regardless of any individual's availability.",
           score: 10,
           result: "strong",
           explanation:
@@ -1616,7 +1616,7 @@ export const SCENARIOS_PART24: Scenario[] = [
       options: [
         {
           id: "s288-opt-a",
-          text: "You are right, and I appreciate you saying it now. Let me go through the three conclusions you flagged and we can discuss what additional analysis would be needed to support each one. If the data does not support them, I would rather remove them than have a reviewer reject the paper.",
+          text: "You are right. Let me go through the three conclusions you flagged and we can discuss what additional analysis is needed. If the data does not support them, I would rather remove them than have a reviewer reject the paper.",
           score: 10,
           result: "strong",
           explanation:

@@ -75,7 +75,7 @@ export const SCENARIOS_PART33: Scenario[] = [
       options: [
         {
           id: "s385-opt-a",
-          text: "Keep the people element but condense it. One slide, three lines: names, relevant experience, and one exit or scaling credential each. No photos, no hobbies. Let the credentials do the talking.",
+          text: "Keep the people element but condense it. One slide: names, relevant experience, and one key credential each. Let the credentials do the talking.",
           score: 10,
           result: "strong",
           explanation:
@@ -214,7 +214,7 @@ export const SCENARIOS_PART33: Scenario[] = [
       options: [
         {
           id: "s386-opt-a",
-          text: "The data does not support a launch recommendation yet. I recommend we tell the board: 'We are not ready for Nordic entry. We need three months and 50K for a market validation study. We will return with a go or no-go recommendation in Q3.' That is a clear position without a premature commitment.",
+          text: "The data does not support a launch recommendation yet. Tell the board: 'We need three months and 50K for a market validation study. We return with a go or no-go in Q3.' Clear position, no premature commitment.",
           score: 10,
           result: "strong",
           explanation:
@@ -353,7 +353,7 @@ export const SCENARIOS_PART33: Scenario[] = [
       options: [
         {
           id: "s387-opt-a",
-          text: "We cannot wait. The regulatory clock is already ticking, and if a customer finds out from the media before hearing from us, the trust damage is far worse. We send within 24 hours. We can follow up with a more detailed message later if needed.",
+          text: "We cannot wait. If a customer finds out from the media before hearing from us, the trust damage is far worse. We send within 24 hours and follow up with more detail later.",
           score: 10,
           result: "strong",
           explanation:
@@ -496,7 +496,7 @@ export const SCENARIOS_PART33: Scenario[] = [
       options: [
         {
           id: "s388-opt-a",
-          text: "Absolutely - and I want those numbers to be as exciting as the vision. Let us sketch out what the first joint campaign could look like, estimate the reach, and build the business case together. I would love for both of us to present this to our leadership as a story we are both thrilled about.",
+          text: "Absolutely - and I want the numbers to be as exciting as the vision. Let us sketch the first joint campaign, estimate the reach, and build the case together. I would love us both presenting this to leadership.",
           score: 10,
           result: "strong",
           explanation:
@@ -635,7 +635,7 @@ export const SCENARIOS_PART33: Scenario[] = [
       options: [
         {
           id: "s389-opt-a",
-          text: "I understand the pull of certainty. But certainty of what? A new title at a company where nobody knows your work yet? Here, you have a track record, a team that respects you, and a manager who is telling you openly that he got it wrong and wants to make it right. That is rare. Let us make the next year undeniable.",
+          text: "I understand the pull of certainty. But certainty of what? A new title where nobody knows your work? Here, you have a track record, a team that respects you, and a manager openly saying he got it wrong. That is rare. Let us make the next year undeniable.",
           score: 10,
           result: "strong",
           explanation:
@@ -774,7 +774,7 @@ export const SCENARIOS_PART33: Scenario[] = [
       options: [
         {
           id: "s390-opt-a",
-          text: "I understand that constraint, and I would never ask you to go against your CFO. But what if the proposal I send shows a 20% increase in deliverables at the same price? On paper, that is a 20% reduction in unit cost - your CFO gets the saving, and you get more value. Let us find a way to make everyone happy.",
+          text: "I would never ask you to go against your CFO. But what if I show a 20% increase in deliverables at the same price? That is a 20% reduction in unit cost - your CFO gets the saving, you get more value.",
           score: 10,
           result: "strong",
           explanation:
@@ -917,7 +917,7 @@ export const SCENARIOS_PART33: Scenario[] = [
       options: [
         {
           id: "s391-opt-a",
-          text: "Thank you for telling me that - I really appreciate your honesty. Feeling lost on day one is completely normal, especially remotely. Let us look at tomorrow together right now and map out your day so you go in knowing exactly what to expect. And I will pair you with someone on the team for a virtual coffee first thing.",
+          text: "Thank you for telling me that. Feeling lost on day one is completely normal, especially remotely. Let us map out tomorrow together right now so you know what to expect, and I will pair you with someone for a virtual coffee first thing.",
           score: 10,
           result: "strong",
           explanation:
@@ -1056,7 +1056,7 @@ export const SCENARIOS_PART33: Scenario[] = [
       options: [
         {
           id: "s392-opt-a",
-          text: "Okay, I hear you. And I am glad you are alright. I just want you to know that this offer stands - today, next week, whenever. If anything changes or you just want someone to talk to, I am here. No judgement, no agenda.",
+          text: "Okay, I hear you. I am glad you are alright. This offer stands - today, next week, whenever. If anything changes, I am here. No judgement, no agenda.",
           score: 10,
           result: "strong",
           explanation:
@@ -1195,7 +1195,7 @@ export const SCENARIOS_PART33: Scenario[] = [
       options: [
         {
           id: "s393-opt-a",
-          text: "I hear that, and I am sorry it has felt that way. You are not an afterthought - you are an essential part of this team. Let us look at how we can adjust our planning process so your input is built in from the start, not bolted on afterwards. I want you to feel that you shape our direction, not just react to it.",
+          text: "I hear that, and I am sorry it has felt that way. You are not an afterthought. Let us adjust the planning process so your input is built in from the start, not bolted on afterwards.",
           score: 10,
           result: "strong",
           explanation:
@@ -1338,7 +1338,7 @@ export const SCENARIOS_PART33: Scenario[] = [
       options: [
         {
           id: "s394-opt-a",
-          text: "It is not about trust - the data shows the problem. Five decisions revisited in one quarter, costing 12 hours. A written record protects everyone, including the people whose decisions were overturned without them knowing. It is actually a tool for fairness, not suspicion.",
+          text: "It is not about trust - five decisions revisited in one quarter, costing 12 hours. A written record protects everyone, including people whose decisions were overturned without them knowing. It is a tool for fairness, not suspicion.",
           score: 10,
           result: "strong",
           explanation:
@@ -1477,7 +1477,7 @@ export const SCENARIOS_PART33: Scenario[] = [
       options: [
         {
           id: "s395-opt-a",
-          text: "Unstructured conversations are valuable, but they do not need to be meetings. The audit shows that 40% of meetings have no agenda - those are the ones producing no value. The rules protect structured decision-making while freeing up time for the spontaneous conversations you value, just not in a meeting format.",
+          text: "Unstructured conversations are valuable, but they do not need to be meetings. 40% of meetings have no agenda - those produce no value. The rules protect structured decisions while freeing time for spontaneous conversations outside meeting format.",
           score: 10,
           result: "strong",
           explanation:
@@ -1616,7 +1616,7 @@ export const SCENARIOS_PART33: Scenario[] = [
       options: [
         {
           id: "s396-opt-a",
-          text: "Ambition and rigour are not opposites. The data shows that 59% of last year's strategic initiatives were never delivered. Undelivered ambition is not strategy - it is a wish list. The challenge panel does not kill ambition; it makes ambition executable by forcing it through a feasibility filter before resources are committed.",
+          text: "Ambition and rigour are not opposites. 59% of last year's initiatives were never delivered - that is a wish list, not strategy. The challenge panel makes ambition executable by forcing it through a feasibility filter before resources are committed.",
           score: 10,
           result: "strong",
           explanation:

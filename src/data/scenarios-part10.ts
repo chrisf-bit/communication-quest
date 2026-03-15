@@ -353,7 +353,7 @@ export const SCENARIOS_PART10: Scenario[] = [
       options: [
         {
           id: "s111-opt-a",
-          text: "I would tell the client that I am the decision-maker on this project and that escalating will not change the timeline, because the timeline is based on delivery capacity, not authority. Then I would offer them two alternative phasing options that protect the critical path. If the client still escalates, I will brief you in advance so you are not blindsided, but I will handle it.",
+          text: "I would tell the client that escalating will not change the timeline, because it is based on delivery capacity, not authority. I would offer two phasing alternatives that protect the critical path. If they still escalate, I will brief you in advance, but I will handle it.",
           score: 10,
           result: "strong",
           explanation:
@@ -496,7 +496,7 @@ export const SCENARIOS_PART10: Scenario[] = [
       options: [
         {
           id: "s112-opt-a",
-          text: "So picture this: it is 4pm on a Friday, the client presentation is in two hours, and I have just realised the data in slide seven is completely wrong. My stomach dropped. I had two choices, bluff through it or call the client and be honest. I called them. And the thing is, being upfront about the mistake actually built more trust than a perfect presentation ever would have. The lesson? Honesty under pressure is a superpower.",
+          text: "Picture this: Friday afternoon, client presentation in two hours, and I realise the data in slide seven is completely wrong. I had two choices - bluff through it or call the client. I called them. Being upfront about the mistake built more trust than a perfect presentation ever would have. Honesty under pressure is a superpower.",
           score: 10,
           result: "strong",
           explanation:
@@ -635,7 +635,7 @@ export const SCENARIOS_PART10: Scenario[] = [
       options: [
         {
           id: "s113-opt-a",
-          text: "Think about your best customer right now, the one who keeps coming back. Now imagine every customer having that experience. That is what we are talking about here. The investment is not a cost; it is the difference between keeping customers and losing them to someone who gives them that feeling.",
+          text: "Think about your best customer, the one who keeps coming back. Now imagine every customer having that experience. That is what this investment is - the difference between keeping customers and losing them.",
           score: 10,
           result: "strong",
           explanation:
@@ -774,7 +774,7 @@ export const SCENARIOS_PART10: Scenario[] = [
       options: [
         {
           id: "s114-opt-a",
-          text: "I value your energy, Marcus, and your instinct for the answer is often right. But here is the thing: when you jump in, the rest of the team stops trying. And then you lose access to ideas you would never have thought of yourself. Your energy is an asset, but only when it amplifies others, not when it replaces them.",
+          text: "I value your energy, Marcus, and your instincts are often right. But when you jump in, the rest of the team stops trying. You lose access to ideas you would never have had yourself. Your energy is an asset when it amplifies others, not when it replaces them.",
           score: 10,
           result: "strong",
           explanation:
@@ -917,7 +917,7 @@ export const SCENARIOS_PART10: Scenario[] = [
       options: [
         {
           id: "s115-opt-a",
-          text: "Keep it simple and low-pressure. Send a short message that says you are thinking of them and that you are around if they want to chat, no pressure. Then let them decide. Some will reach out straight away, and some might take a few days. Either way, they will know someone noticed and cared.",
+          text: "Keep it simple. Send a short message saying you are thinking of them and you are around if they want to chat, no pressure. Let them decide when to reach out. Either way, they will know someone noticed and cared.",
           score: 10,
           result: "strong",
           explanation:
@@ -1056,7 +1056,7 @@ export const SCENARIOS_PART10: Scenario[] = [
       options: [
         {
           id: "s116-opt-a",
-          text: "I think what would help is if we set up a short check-in each week during the transition, just 15 minutes, where anyone can raise concerns or flag things that are not working. Not a status update, but a space to talk honestly about how things are going.",
+          text: "What if we set up a 15-minute weekly check-in during the transition where anyone can raise concerns or flag things that are not working? Not a status update, but a space to talk honestly.",
           score: 10,
           result: "strong",
           explanation:
@@ -1195,7 +1195,7 @@ export const SCENARIOS_PART10: Scenario[] = [
       options: [
         {
           id: "s117-opt-a",
-          text: "I want to add that we have already started mapping out which parts of the deliverable matter most to your team, so we can prioritise those during the delay. If there are critical elements you need earlier, we will find a way to accelerate them. We are not stepping back from this; we are stepping closer.",
+          text: "We have already started mapping which parts of the deliverable matter most to your team, so we can prioritise those during the delay. If there are critical elements you need earlier, we will find a way to accelerate them.",
           score: 10,
           result: "strong",
           explanation:
@@ -1338,7 +1338,7 @@ export const SCENARIOS_PART10: Scenario[] = [
       options: [
         {
           id: "s118-opt-a",
-          text: "In the Henderson project review, your analysis was thorough but you presented the findings without a recommendation. At the next grade, the expectation is that you interpret the data and propose a course of action, not just present it. A stronger version of that presentation would have included your recommended approach, supported by the three strongest data points, with a clear rationale for why you chose that direction over the alternatives.",
+          text: "In the Henderson review, your analysis was thorough but you presented findings without a recommendation. At the next grade, you need to interpret the data and propose a course of action. That presentation needed your recommended approach, supported by the three strongest data points.",
           score: 10,
           result: "strong",
           explanation:
@@ -1477,7 +1477,7 @@ export const SCENARIOS_PART10: Scenario[] = [
       options: [
         {
           id: "s119-opt-a",
-          text: "If it helps, I have pulled together a comparison table showing each of the seven items alongside the relevant section of the scope document. In five cases, the scope document explicitly excludes the requested functionality. For the remaining two, the wording is ambiguous, so I would suggest we review those together and agree on whether they fall in or out of scope.",
+          text: "I have a comparison table showing each of the seven items against the scope document. Five are explicitly excluded. The remaining two have ambiguous wording, so I suggest we review those together and agree whether they are in or out of scope.",
           score: 10,
           result: "strong",
           explanation:
@@ -1616,7 +1616,7 @@ export const SCENARIOS_PART10: Scenario[] = [
       options: [
         {
           id: "s120-opt-a",
-          text: "Fiona is right, and I can add to the evidence. The rework from the Q3 handoff cost 120 hours and pushed the delivery back by two weeks. If we compare that to the 15 hours it takes to complete the full documentation, the return on investment is clear. I would rather we invest the time now than repeat the same mistake.",
+          text: "Fiona is right. The rework from the Q3 handoff cost 120 hours and pushed delivery back two weeks. Compare that to the 15 hours for full documentation - the return on investment is clear.",
           score: 10,
           result: "strong",
           explanation:

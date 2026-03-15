@@ -75,7 +75,7 @@ export const SCENARIOS_PART34: Scenario[] = [
       options: [
         {
           id: "s397-opt-a",
-          text: "That is too vague. Give me three specifics. For example: book a coffee chat with one person outside the team each week, present your work at the next team showcase, and ask your two closest stakeholders for written feedback by end of month. Can you commit to those?",
+          text: "Too vague. Give me three specifics: a weekly coffee chat outside the team, present at the next showcase, and get stakeholder feedback by month end. Can you commit?",
           score: 10,
           result: "strong",
           explanation:
@@ -214,7 +214,7 @@ export const SCENARIOS_PART34: Scenario[] = [
       options: [
         {
           id: "s398-opt-a",
-          text: "Keeping both doors open sounds safe, but it means you do not walk through either one. Pick the one that excites you more right now - even slightly. We will build a six-month plan around it. If it turns out to be the wrong fit, we pivot. But we are not standing still any longer.",
+          text: "Keeping both doors open sounds safe, but it means you walk through neither. Pick the one that excites you more. We build a six-month plan around it and pivot if needed. But we are not standing still.",
           score: 10,
           result: "strong",
           explanation:
@@ -353,7 +353,7 @@ export const SCENARIOS_PART34: Scenario[] = [
       options: [
         {
           id: "s399-opt-a",
-          text: "That framing puts the responsibility on everyone else. The feedback is not about their resilience - it is about your impact. When three people independently tell me they have stopped contributing in meetings because of how you respond, that is not a resilience problem. That is a leadership problem. And it is yours to fix.",
+          text: "That framing puts the responsibility on everyone else. When three people independently say they have stopped contributing because of how you respond, that is not a resilience problem. That is a leadership problem, and it is yours to fix.",
           score: 10,
           result: "strong",
           explanation:
@@ -496,7 +496,7 @@ export const SCENARIOS_PART34: Scenario[] = [
       options: [
         {
           id: "s400-opt-a",
-          text: "I love the ambition behind that - making our product accessible to everyone. What if we explored a limited free version in one market as a test? The spirit of the idea is brilliant; let us see what a realistic version might look like.",
+          text: "I love that ambition. What if we explored a limited free version in one market as a test? The spirit is brilliant - let us see what a realistic version looks like.",
           score: 10,
           result: "strong",
           explanation:
@@ -635,7 +635,7 @@ export const SCENARIOS_PART34: Scenario[] = [
       options: [
         {
           id: "s401-opt-a",
-          text: "Fair challenge, and I am not going to dismiss it. But look at the board - priority two came directly from your retro feedback about workload distribution. That is not me saying 'I listened'. That is your words on the plan. If it does not feel different by month two, call me out on it. Publicly.",
+          text: "Fair challenge. But priority two came directly from your retro feedback on workload distribution. That is your words on the plan. If it does not feel different by month two, call me out. Publicly.",
           score: 10,
           result: "strong",
           explanation:
@@ -774,7 +774,7 @@ export const SCENARIOS_PART34: Scenario[] = [
       options: [
         {
           id: "s402-opt-a",
-          text: "Absolutely - and I want the ROI model to be as exciting as the vision. What if we built it together this week? Your financial rigour combined with the input from each department will give us a model that everyone trusts and wants to fund. This should be the easiest business case you have ever written, because every department is already on board.",
+          text: "Absolutely - and I want the ROI model to be as exciting as the vision. What if we built it together this week? Your financial rigour plus each department's input gives us a model everyone trusts. This should be the easiest business case you have written.",
           score: 10,
           result: "strong",
           explanation:
@@ -917,7 +917,7 @@ export const SCENARIOS_PART34: Scenario[] = [
       options: [
         {
           id: "s403-opt-a",
-          text: "That is a really honest thing to share, and I appreciate you trusting me with it. I think the fear of getting it wrong is completely natural, and most people feel it at some point. What if we started small - I could give you a heads-up before the next meeting about a topic I know you have insight on, so you can prepare something you feel confident about?",
+          text: "That is honest, and I appreciate you trusting me with it. The fear of getting it wrong is natural. What if I gave you a heads-up before the next meeting on a topic you have insight on, so you can prepare something you feel confident about?",
           score: 10,
           result: "strong",
           explanation:
@@ -1056,7 +1056,7 @@ export const SCENARIOS_PART34: Scenario[] = [
       options: [
         {
           id: "s404-opt-a",
-          text: "I understand that fear, and it is more common than you think. What if we set up a standing weekly check-in - just us? You can flag anything that feels overwhelming before it becomes visible to anyone else. That way, asking for help does not have to feel public. And for what it is worth, the team respects you enormously. Asking for help would not change that.",
+          text: "I understand that fear, and it is more common than you think. What if we set up a weekly check-in, just us? You flag anything overwhelming before it becomes visible. Asking for help does not have to feel public.",
           score: 10,
           result: "strong",
           explanation:
@@ -1195,7 +1195,7 @@ export const SCENARIOS_PART34: Scenario[] = [
       options: [
         {
           id: "s405-opt-a",
-          text: "That is a completely valid concern, and I am glad you raised it. Here is the safeguard: the developmental question is specifically framed as 'what could they do differently to help you', not 'what are they doing wrong'. And after the written round, there is an optional discussion session where you can explore any feedback you received in a facilitated conversation. Nobody has to participate in that either - it is entirely your choice.",
+          text: "That is a valid concern. The safeguard is this: the question asks 'what could they do differently to help you', not 'what are they doing wrong'. After the written round, there is an optional facilitated discussion to explore the feedback. Participation is entirely your choice.",
           score: 10,
           result: "strong",
           explanation:
@@ -1338,7 +1338,7 @@ export const SCENARIOS_PART34: Scenario[] = [
       options: [
         {
           id: "s406-opt-a",
-          text: "The data tells a different story. The stall happens specifically at week four after the second stakeholder meeting, not randomly across the cycle. That suggests a procurement step we are not navigating well, not a natural decision pace. If we can identify what happens at that stage and build it into our process, we can shorten the cycle without pressuring the client.",
+          text: "The data tells a different story. The stall happens at week four after the second stakeholder meeting, not randomly. That suggests a procurement step we are not navigating well. If we identify what happens there and build it into our process, we shorten the cycle without pressuring the client.",
           score: 10,
           result: "strong",
           explanation:
@@ -1477,7 +1477,7 @@ export const SCENARIOS_PART34: Scenario[] = [
       options: [
         {
           id: "s407-opt-a",
-          text: "That is a testable claim. I looked at the 14 timeline losses specifically. In 9 of them, the client chose a competitor with a higher price but a faster go-live. If timeline were a proxy for price, they would have chosen the cheaper option. The data shows they genuinely value speed over cost.",
+          text: "That is testable. Of 14 timeline losses, 9 clients chose a competitor with a higher price but faster go-live. If timeline were a proxy for price, they would have chosen cheaper. The data shows they genuinely value speed over cost.",
           score: 10,
           result: "strong",
           explanation:
@@ -1616,7 +1616,7 @@ export const SCENARIOS_PART34: Scenario[] = [
       options: [
         {
           id: "s408-opt-a",
-          text: "The data does not support that concern. I checked close times for deals at different discount levels. Deals at under 10% discount close in an average of 32 days. Deals over 20% close in 41 days. Deeper discounts do not accelerate closing - they actually correlate with longer cycles because they trigger client procurement reviews. The approval layer adds 24-48 hours, which is marginal against a 32-day cycle.",
+          text: "The data does not support that. Deals under 10% discount close in 32 days on average. Over 20% close in 41 days - deeper discounts trigger procurement reviews that lengthen cycles. The approval layer adds 24-48 hours, marginal against a 32-day cycle.",
           score: 10,
           result: "strong",
           explanation:

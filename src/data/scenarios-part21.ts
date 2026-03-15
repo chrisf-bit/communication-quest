@@ -75,7 +75,7 @@ export const SCENARIOS_PART21: Scenario[] = [
       options: [
         {
           id: "s241-opt-a",
-          text: "That list is really clear, and having it written down should help. I would add one thing: let us agree a 10-minute check-in on Wednesday mornings so you can flag anything that is blocking you before it becomes a problem.",
+          text: "That list is clear. I would add one thing: a 10-minute check-in on Wednesday mornings so you can flag anything blocking you before it becomes a problem.",
           score: 10,
           result: "strong",
           explanation:
@@ -214,7 +214,7 @@ export const SCENARIOS_PART21: Scenario[] = [
       options: [
         {
           id: "s242-opt-a",
-          text: "Sam is right about the criteria. And the good news is that all three gaps are closable. I can think of at least one project currently running that would give you cross-functional leadership experience if you want to put your hand up for it.",
+          text: "All three gaps are closable. There is a project running now that would give you cross-functional leadership experience if you want to put your hand up for it.",
           score: 10,
           result: "strong",
           explanation:
@@ -353,7 +353,7 @@ export const SCENARIOS_PART21: Scenario[] = [
       options: [
         {
           id: "s243-opt-a",
-          text: "Alex makes a fair point. If you are comfortable sharing, we would genuinely benefit from knowing what changed recently. Was it a specific event, a conversation, or something that built up over time? Whatever you say stays in this room unless you tell us otherwise.",
+          text: "If you are comfortable sharing, we would benefit from knowing what changed recently. Was it a specific event, a conversation, or something that built up? Whatever you say stays in this room.",
           score: 10,
           result: "strong",
           explanation:
@@ -496,7 +496,7 @@ export const SCENARIOS_PART21: Scenario[] = [
       options: [
         {
           id: "s244-opt-a",
-          text: "And I want to add to what Priya is about to share. I was there when this happened, and honestly, I have never seen a team respond to a crisis like that. You are about to hear something that will change how you think about what is possible in 45 minutes.",
+          text: "I was there when this happened, and I have never seen a team respond to a crisis like that. You are about to hear something that will change how you think about what is possible.",
           score: 10,
           result: "strong",
           explanation:
@@ -635,7 +635,7 @@ export const SCENARIOS_PART21: Scenario[] = [
       options: [
         {
           id: "s245-opt-a",
-          text: "I was on three of those customer calls, and the consistent theme was urgency. These people are not passively interested - they are actively looking for a solution and told us they would switch from their current workaround immediately. That demand signal is stronger than any market report.",
+          text: "I was on three of those calls. The consistent theme was urgency - they are actively looking for a solution and said they would switch from their current workaround immediately. That demand signal is stronger than any market report.",
           score: 10,
           result: "strong",
           explanation:
@@ -774,7 +774,7 @@ export const SCENARIOS_PART21: Scenario[] = [
       options: [
         {
           id: "s246-opt-a",
-          text: "I want to build on that. The most impactful leader I have ever worked for once told me she had no idea how to handle a situation and asked for my help. That single moment of honesty did more for my trust in her than two years of polished presentations ever did.",
+          text: "The most impactful leader I ever worked for told me she had no idea how to handle a situation and asked for my help. That single moment of honesty did more for my trust than two years of polished presentations.",
           score: 10,
           result: "strong",
           explanation:
@@ -917,7 +917,7 @@ export const SCENARIOS_PART21: Scenario[] = [
       options: [
         {
           id: "s247-opt-a",
-          text: "I think a trial is a really thoughtful way to approach this. It shows that we respect the policy while also recognising that one size does not always fit every situation. And it gives everyone - including HR - a chance to see the data before making a permanent decision.",
+          text: "A trial respects the policy while recognising that one size does not always fit. It gives everyone, including HR, a chance to see the data before making a permanent decision.",
           score: 10,
           result: "strong",
           explanation:
@@ -1056,7 +1056,7 @@ export const SCENARIOS_PART21: Scenario[] = [
       options: [
         {
           id: "s248-opt-a",
-          text: "I think Leah is right to pause here. Both of you clearly care deeply about your projects, and that is a good thing. Looking at the numbers together with shared assumptions is a fair way to address the concern without anyone feeling accused.",
+          text: "Both of you clearly care deeply about your projects, and that is a good thing. Looking at the numbers together with shared assumptions is a fair way to address the concern.",
           score: 10,
           result: "strong",
           explanation:
@@ -1195,7 +1195,7 @@ export const SCENARIOS_PART21: Scenario[] = [
       options: [
         {
           id: "s249-opt-a",
-          text: "I think David has found the right frame here. Both sides want integration to work - the question is pace, not direction. If we start with the systems that have the least impact on daily workflows, we give people time to adjust while still showing progress toward the goal.",
+          text: "Both sides want integration to work - the question is pace, not direction. If we start with systems that have the least impact on daily workflows, we give people time to adjust while showing progress.",
           score: 10,
           result: "strong",
           explanation:
@@ -1338,7 +1338,7 @@ export const SCENARIOS_PART21: Scenario[] = [
       options: [
         {
           id: "s250-opt-a",
-          text: "I have pulled together the five most common question categories from the last three new joiners' Slack messages. IT setup, HR admin, project access, team introductions, and tool training. I can map each to a named contact with response time expectations if that helps.",
+          text: "The five most common question categories from recent joiners are IT setup, HR admin, project access, team introductions, and tool training. I can map each to a named contact with response times.",
           score: 10,
           result: "strong",
           explanation:
@@ -1477,7 +1477,7 @@ export const SCENARIOS_PART21: Scenario[] = [
       options: [
         {
           id: "s251-opt-a",
-          text: "Owen's data matches what I have seen too. Last Thursday's project sync had no agenda, ran 25 minutes over, and we still left without clear actions. Compare that to Tuesday's sprint review, which had a two-line agenda and finished five minutes early with documented next steps.",
+          text: "Last Thursday's sync had no agenda, ran 25 minutes over, and ended without clear actions. Tuesday's sprint review had a two-line agenda and finished five minutes early with documented next steps.",
           score: 10,
           result: "strong",
           explanation:
@@ -1616,7 +1616,7 @@ export const SCENARIOS_PART21: Scenario[] = [
       options: [
         {
           id: "s252-opt-a",
-          text: "Fiona is right that nothing new is being tracked. I have reviewed the data sources and they are all things we already produce: delivery reports, project tracker updates, and quarterly peer feedback. If anything, this framework gives us more visibility into how our work is valued, not less.",
+          text: "Nothing new is being tracked. The data sources are all things we already produce: delivery reports, tracker updates, and quarterly peer feedback. This framework gives us more visibility into how our work is valued.",
           score: 10,
           result: "strong",
           explanation:

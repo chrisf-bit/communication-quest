@@ -75,7 +75,7 @@ export const SCENARIOS_PART27: Scenario[] = [
       options: [
         {
           id: "s313-opt-a",
-          text: "The 90-second format makes sense. We can use the 25 minutes we save each day for proper collaboration or team check-ins that actually build connection, rather than pretending the stand-up serves that purpose.",
+          text: "The 90-second format makes sense. We can use the time we save for proper collaboration or check-ins that actually build connection, rather than pretending the stand-up does.",
           score: 10,
           result: "strong",
           explanation:
@@ -214,7 +214,7 @@ export const SCENARIOS_PART27: Scenario[] = [
       options: [
         {
           id: "s314-opt-a",
-          text: "Sam has a point. The rest of the team manages to stay visible in the same remote setup. The three expectations Sam outlined - daily board updates, stand-up participation, and two-hour Slack response - are practical and achievable. What specifically is making those difficult for you?",
+          text: "Sam has a point. The rest of the team stays visible in the same setup. Daily board updates, stand-up participation, and two-hour Slack response are practical and achievable. What specifically is making those difficult?",
           score: 10,
           result: "strong",
           explanation:
@@ -353,7 +353,7 @@ export const SCENARIOS_PART27: Scenario[] = [
       options: [
         {
           id: "s315-opt-a",
-          text: "Alex is right that three of five projects slipped with unclear ownership. The pod model gives each group a defined scope and a named owner. If it works, everyone keeps their autonomy within the pod. I think the proof will be in the delivery data over the next quarter.",
+          text: "Alex is right that three of five projects slipped with unclear ownership. The pod model gives each group a defined scope and a named owner. The proof will be in the delivery data over the next quarter.",
           score: 10,
           result: "strong",
           explanation:
@@ -496,7 +496,7 @@ export const SCENARIOS_PART27: Scenario[] = [
       options: [
         {
           id: "s316-opt-a",
-          text: "I had an idea earlier that I almost did not say because it sounded odd. But that is the point, right? So here it is... and actually, I would love to hear what you were thinking when Priya mentioned the self-explaining product. Did that spark anything for you?",
+          text: "I had an idea that I almost held back because it sounded odd. But that is the point, right? So here it is... What were you thinking when Priya mentioned the self-explaining product? Did that spark anything?",
           score: 10,
           result: "strong",
           explanation:
@@ -635,7 +635,7 @@ export const SCENARIOS_PART27: Scenario[] = [
       options: [
         {
           id: "s317-opt-a",
-          text: "I agree - the data is stronger when it proves a story the client already believes. What if we opened with the challenge their industry is facing, told the story of how we solved it for a similar company, and then used the data as the punchline?",
+          text: "I agree - data is stronger when it proves a story the client already believes. What if we open with their industry challenge, tell how we solved it for a similar company, then use the data as the punchline?",
           score: 10,
           result: "strong",
           explanation:
@@ -774,7 +774,7 @@ export const SCENARIOS_PART27: Scenario[] = [
       options: [
         {
           id: "s318-opt-a",
-          text: "Nina is right - this is not about priority, it is about combination. What if each department led the strand they are strongest in? You bring the customer insight, you bring the tech, and the operations team brings the delivery engine. One programme, three experts.",
+          text: "Nina is right - this is not about priority, it is about combination. What if each department led the strand they are strongest in? Customer insight, tech, and operations each own their piece. One programme, three experts.",
           score: 10,
           result: "strong",
           explanation:
@@ -917,7 +917,7 @@ export const SCENARIOS_PART27: Scenario[] = [
       options: [
         {
           id: "s319-opt-a",
-          text: "That makes a lot of sense, Tom. And honestly, the first three months are meant to be a learning curve, not a performance sprint. There is no expectation that you should have everything figured out already. Let us look at the workload together and see where we can give you a bit more breathing room.",
+          text: "That makes sense, Tom. The first three months are meant to be a learning curve, not a performance sprint. Let us look at the workload together and see where we can give you more breathing room.",
           score: 10,
           result: "strong",
           explanation:
@@ -1056,7 +1056,7 @@ export const SCENARIOS_PART27: Scenario[] = [
       options: [
         {
           id: "s320-opt-a",
-          text: "I think what was shared comes from a good place, and I know it can sting when it is said directly. For what it is worth, I have seen how hard you work and I think the feedback is about building on something strong, not tearing it down. You are doing more right than you might feel right now.",
+          text: "I think what was shared comes from a good place, and I know it can sting when said directly. I have seen how hard you work, and the feedback is about building on something strong, not tearing it down.",
           score: 10,
           result: "strong",
           explanation:
@@ -1195,7 +1195,7 @@ export const SCENARIOS_PART27: Scenario[] = [
       options: [
         {
           id: "s321-opt-a",
-          text: "David's point is important. Your commitment to quality is clear and nobody is questioning that. The opportunity is in how that commitment is communicated. What if we explored one area where you could give the team more ownership and see how they respond? Small experiment, low risk.",
+          text: "David's point is important. Your commitment to quality is clear. The opportunity is in how it is communicated. What if you gave the team more ownership in one area and saw how they respond? Small experiment, low risk.",
           score: 10,
           result: "strong",
           explanation:
@@ -1338,7 +1338,7 @@ export const SCENARIOS_PART27: Scenario[] = [
       options: [
         {
           id: "s322-opt-a",
-          text: "Rachel's model is worth examining closely. The implementation and support costs are often where the real expense sits. If we run your specific scenario through the model with your actual team size and integration requirements, the picture becomes clearer.",
+          text: "Rachel's model is worth examining closely. Implementation and support costs are often where the real expense sits. Running your specific scenario through with actual team size and integration requirements would clarify the picture.",
           score: 10,
           result: "strong",
           explanation:
@@ -1477,7 +1477,7 @@ export const SCENARIOS_PART27: Scenario[] = [
       options: [
         {
           id: "s323-opt-a",
-          text: "Both perspectives have value. What if we combine them? Owen's data identifies where the risk sits, and the account manager's relationship insights can help us understand why. Together, that gives us a fuller picture and a more targeted mitigation plan.",
+          text: "Both perspectives have value. Owen's data identifies where the risk sits, and the account manager's insights explain why. Combining them gives a fuller picture and a more targeted mitigation plan.",
           score: 10,
           result: "strong",
           explanation:
@@ -1616,7 +1616,7 @@ export const SCENARIOS_PART27: Scenario[] = [
       options: [
         {
           id: "s324-opt-a",
-          text: "Fiona's research gives us an edge that relationship building alone cannot deliver. The client's brief tells us what they care about, and the competitor is weak in exactly those areas. I think we lead with the evidence and let the relationship develop through credibility.",
+          text: "Fiona's research gives us an edge that relationship building alone cannot. The client's brief shows what they care about, and the competitor is weak in exactly those areas. We lead with evidence and let credibility build the relationship.",
           score: 10,
           result: "strong",
           explanation:

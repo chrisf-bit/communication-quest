@@ -353,7 +353,7 @@ export const SCENARIOS_PART8: Scenario[] = [
       options: [
         {
           id: "s87-opt-a",
-          text: "Here is the breakdown. Budget variance: 127,000 pounds over (30.2%). Top three cost drivers: 1) Unplanned infrastructure migration, 62,000 pounds. 2) Scope change on reporting module, 38,000 pounds. 3) Contractor extension due to testing delays, 27,000 pounds. Recommended actions: freeze all non-essential scope, renegotiate contractor day rate, and cap remaining spend with weekly sign-off. Revised forecast attached.",
+          text: "Budget variance: 127,000 pounds over (30.2%). Top drivers: infrastructure migration (62k), scope change on reporting (38k), contractor extension (27k). Actions: freeze non-essential scope, renegotiate contractor rate, cap spend with weekly sign-off.",
           score: 10,
           result: "strong",
           explanation:
@@ -496,7 +496,7 @@ export const SCENARIOS_PART8: Scenario[] = [
       options: [
         {
           id: "s88-opt-a",
-          text: "Picture this: your team walks into the awards ceremony knowing they have created something the industry has never seen. Our platform has a real-time collaboration feature that lets your designers and copywriters build campaigns together, live, with instant visual previews. Last year, a client used it to produce a campaign that won three golds at the Marketing Excellence Awards. I can see your team doing something even bigger.",
+          text: "Picture your team walking into the awards ceremony knowing they have created something the industry has never seen. Our real-time collaboration feature lets designers and copywriters build campaigns live. One client used it to win three golds at the Marketing Excellence Awards.",
           score: 10,
           result: "strong",
           explanation:
@@ -635,7 +635,7 @@ export const SCENARIOS_PART8: Scenario[] = [
       options: [
         {
           id: "s89-opt-a",
-          text: "The creative idea is genuinely strong, Marcus, and the room responded to it. What we need to do is build a commercial story that is as compelling as the creative one. Think of the business case as the foundation that lets your idea fly higher. Let us take the three boldest elements of your concept and attach a revenue projection or cost saving to each one. That way, the numbers amplify the vision instead of competing with it.",
+          text: "The creative idea is genuinely strong, Marcus. Think of the business case as the foundation that lets it fly higher. Take the three boldest elements and attach a revenue projection to each. The numbers amplify the vision instead of competing with it.",
           score: 10,
           result: "strong",
           explanation:
@@ -774,7 +774,7 @@ export const SCENARIOS_PART8: Scenario[] = [
       options: [
         {
           id: "s90-opt-a",
-          text: "What if the best idea our company ever has is sitting in someone's head right now, waiting for a space to come alive? That is why we are launching the Innovation Lab, a place where curious minds from every corner of the business can come together to experiment, create, and build things that do not exist yet. If you have ever thought 'what if we tried this?', this is your invitation.",
+          text: "What if the best idea our company ever has is sitting in someone's head right now? That is why we are launching the Innovation Lab, a place where curious minds can experiment, create, and build things that do not exist yet. This is your invitation.",
           score: 10,
           result: "strong",
           explanation:
@@ -917,7 +917,7 @@ export const SCENARIOS_PART8: Scenario[] = [
       options: [
         {
           id: "s91-opt-a",
-          text: "Hi everyone, I am really pleased to let you know that Sarah Mitchell will be joining our team on 7 April. Sarah comes to us from a community engagement background and has a real passion for bringing people together, something you will notice straight away when you meet her. She mentioned during her interview that she loves a good team lunch, so perhaps we can organise one for her first week. Please do reach out and say hello before she starts. It means more than you might think.",
+          text: "Hi everyone, Sarah Mitchell joins our team on 7 April. She comes from a community engagement background with a real passion for bringing people together. She mentioned she loves a good team lunch, so perhaps we can organise one for her first week. Please reach out and say hello before she starts.",
           score: 10,
           result: "strong",
           explanation:
@@ -1056,7 +1056,7 @@ export const SCENARIOS_PART8: Scenario[] = [
       options: [
         {
           id: "s92-opt-a",
-          text: "I completely understand, Leah. One of our clients, a team of about twenty in a similar operations role, had the same concern. Their manager told us that the key was involving the team early, letting them trial the system before go-live, and giving everyone a named support contact they could reach out to with questions. After six weeks, the feedback was overwhelmingly positive. Staff said they felt listened to throughout the process, which made all the difference.",
+          text: "I completely understand, Leah. One of our clients in a similar role had the same concern. The key was involving the team early, trialling the system before go-live, and giving everyone a named support contact. After six weeks, staff said they felt listened to throughout, which made all the difference.",
           score: 10,
           result: "strong",
           explanation:
@@ -1195,7 +1195,7 @@ export const SCENARIOS_PART8: Scenario[] = [
       options: [
         {
           id: "s93-opt-a",
-          text: "David, the fact that you care this much is exactly why you are the right person to have this conversation. Think about it this way: if someone on your team is struggling and you do not say anything, they miss the chance to improve, and that is not protecting them, that is leaving them stuck. The most caring thing you can do is be honest with them, because it shows you believe they are capable of more. You are not giving up on them by having this conversation. You are investing in them.",
+          text: "David, the fact that you care this much is why you are the right person for this conversation. If someone is struggling and you stay silent, they miss the chance to improve. The most caring thing you can do is be honest, because it shows you believe they are capable of more.",
           score: 10,
           result: "strong",
           explanation:
@@ -1338,7 +1338,7 @@ export const SCENARIOS_PART8: Scenario[] = [
       options: [
         {
           id: "s94-opt-a",
-          text: "Good catch, Rachel. You are right that the threshold shifted. This quarter, we recalibrated the 'exceeds expectations' boundary from 96.5% to 97.5% based on an uplift in the team-wide accuracy baseline. The average moved from 93.1% to 95.4%, which meant the relative performance bands needed adjusting. I should have communicated that change at the start of the quarter, and I will make sure any future methodology updates are shared in advance.",
+          text: "Good catch, Rachel. We recalibrated the 'exceeds' boundary from 96.5% to 97.5% because the team-wide accuracy baseline rose from 93.1% to 95.4%. I should have communicated that change earlier and will share methodology updates in advance going forward.",
           score: 10,
           result: "strong",
           explanation:
@@ -1477,7 +1477,7 @@ export const SCENARIOS_PART8: Scenario[] = [
       options: [
         {
           id: "s95-opt-a",
-          text: "You are right, Owen, my response lacked the detail your proposal deserves. Here is my section-by-section feedback:\n\nSection 2 (Process Map): Agreed as drafted. The three-stage gate review aligns with our ISO 9001 requirements.\nSection 3 (Cost-Benefit): The projected 18% defect reduction is credible based on the benchmark data you cited. However, the implementation cost estimate of 12,000 pounds does not appear to include backfill for the two team members who will lead the pilot. I estimate an additional 4,500 pounds.\nSection 5 (Risk Register): I would add a risk around stakeholder fatigue given the recent restructure. Likelihood: medium. Impact: high. Mitigation: staggered rollout with check-ins at each phase gate.\n\nHappy to discuss any of these points in detail.",
+          text: "Fair point, Owen. Section-by-section: Section 2 is solid, aligns with ISO 9001. Section 3's 18% defect reduction is credible, but the 12,000 cost estimate misses backfill for two pilot leads, roughly 4,500 more. Section 5 needs a stakeholder fatigue risk given the restructure. Happy to discuss.",
           score: 10,
           result: "strong",
           explanation:
@@ -1616,7 +1616,7 @@ export const SCENARIOS_PART8: Scenario[] = [
       options: [
         {
           id: "s96-opt-a",
-          text: "The 22% figure is derived from a time-motion analysis across three client implementations. The calculation is: average hours spent on manual data reconciliation (14.2 hours/week) multiplied by the platform's automated processing rate (89.3%), minus the residual manual effort (1.52 hours/week). This gives a net saving of 12.68 hours per analyst per week, which translates to 22.1% of total productive capacity.\n\nCase Study 1: Meridian Financial Services. Pre-implementation manual processing: 16.4 hours/week. Post-implementation: 2.1 hours/week. Verified saving: 87.2%. Independent audit by Deloitte, March 2025.\n\nCase Study 2: Northern Grid Utilities. Pre-implementation: 11.8 hours/week. Post-implementation: 1.3 hours/week. Verified saving: 89.0%. Client reference available on request.\n\nFull methodology document attached as Appendix B.",
+          text: "The 22% comes from time-motion analysis across three implementations. Average manual reconciliation of 14.2 hours/week reduced to 1.52 hours via 89.3% automation. Two verified case studies: Meridian Financial Services saw an 87.2% saving (audited by Deloitte), Northern Grid Utilities saw 89.0%. Full methodology in Appendix B.",
           score: 10,
           result: "strong",
           explanation:

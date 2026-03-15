@@ -214,7 +214,7 @@ export const SCENARIOS_PART4: Scenario[] = [
       options: [
         {
           id: "s38-opt-a",
-          text: "Three changes. First, I am moving the pipeline review from monthly to fortnightly so I catch slippage earlier. Second, I am ring-fencing two days a week for client-facing work instead of letting admin creep in. Third, I am setting a weekly check-in with the delivery team to track milestones. All three start Monday.",
+          text: "Three changes, all starting Monday. Pipeline reviews move from monthly to fortnightly. Two days a week ring-fenced for client-facing work. Weekly delivery check-in to track milestones.",
           score: 10,
           result: "strong",
           explanation:
@@ -353,7 +353,7 @@ export const SCENARIOS_PART4: Scenario[] = [
       options: [
         {
           id: "s39-opt-a",
-          text: "One action: I am calling their MD tomorrow at 9am to present a revised service agreement with a 15% uplift in dedicated support hours at no additional cost for 90 days. That gives us a window to prove the value.",
+          text: "I am calling their MD tomorrow at 9am with a revised service agreement: 15% uplift in support hours at no extra cost for 90 days to prove the value.",
           score: 10,
           result: "strong",
           explanation:
@@ -496,7 +496,7 @@ export const SCENARIOS_PART4: Scenario[] = [
       options: [
         {
           id: "s40-opt-a",
-          text: "What if we take our top three customer success stories and turn them into short, cinematic video clips? Real people, real results - but shot like a mini-documentary. We could premiere them at the launch event and let the emotion do the selling.",
+          text: "What if we turn our top three customer stories into cinematic mini-documentaries? Real people, real results. Premiere them at the launch and let the emotion do the selling.",
           score: 10,
           result: "strong",
           explanation:
@@ -635,7 +635,7 @@ export const SCENARIOS_PART4: Scenario[] = [
       options: [
         {
           id: "s41-opt-a",
-          text: "Start with a story. Pick one moment from the last year where your team did something unexpected and brilliant. Open with that, then say 'now imagine if we did that every quarter.' The execs will see the potential because you are showing it, not just telling it.",
+          text: "Pick one moment from the last year where your team did something brilliant. Open with that, then say 'now imagine if we did that every quarter.' Show it, do not just tell it.",
           score: 10,
           result: "strong",
           explanation:
@@ -774,7 +774,7 @@ export const SCENARIOS_PART4: Scenario[] = [
       options: [
         {
           id: "s42-opt-a",
-          text: "Open with something specific you remember about them - maybe a project they were excited about or a personal milestone they mentioned. Something like: 'I was thinking about you the other day when I saw [specific thing]. It reminded me of our conversation about [their goal]. I hope that is going well.' It shows you were paying attention.",
+          text: "Open with something specific you remember about them. Something like: 'I was thinking of you when I saw [specific thing]. It reminded me of our conversation about [their goal].' It shows you were paying attention.",
           score: 10,
           result: "strong",
           explanation:
@@ -917,7 +917,7 @@ export const SCENARIOS_PART4: Scenario[] = [
       options: [
         {
           id: "s43-opt-a",
-          text: "Talk to each of them individually, face to face. Start by acknowledging how much you value them and their contribution. Then share the news honestly, and give them space to react. Let them know you are there for them and that you will personally help them navigate whatever comes next.",
+          text: "Talk to each of them individually. Acknowledge how much you value their contribution, share the news honestly, and give them space to react. Let them know you will personally help them navigate whatever comes next.",
           score: 10,
           result: "strong",
           explanation:
@@ -1056,7 +1056,7 @@ export const SCENARIOS_PART4: Scenario[] = [
       options: [
         {
           id: "s44-opt-a",
-          text: "Send him a low-key message saying you were thinking about how much you valued his input in earlier sessions, and that you have missed hearing his perspective recently. Then offer a casual catch-up - no agenda, no pressure. Let him set the pace.",
+          text: "Send a low-key message saying you have missed his perspective in recent sessions and offer a casual catch-up. No agenda, no pressure. Let him set the pace.",
           score: 10,
           result: "strong",
           explanation:
@@ -1195,7 +1195,7 @@ export const SCENARIOS_PART4: Scenario[] = [
       options: [
         {
           id: "s45-opt-a",
-          text: "Pause the conversation and say something like: 'I can see you both feel strongly about this, and that is because you both care about getting it right. Let us take a moment to make sure we have really understood each other's position before we move forward. Sarah, can you summarise what you think Mike's main concern is, and then Mike, can you do the same for Sarah?'",
+          text: "Pause and say: 'You both feel strongly because you both care about getting it right. Before we move forward, Sarah, can you summarise Mike's main concern, and Mike, can you do the same for Sarah?'",
           score: 10,
           result: "strong",
           explanation:
@@ -1338,7 +1338,7 @@ export const SCENARIOS_PART4: Scenario[] = [
       options: [
         {
           id: "s46-opt-a",
-          text: "The data suggests three factors. First, 58% of marketing users completed onboarding in a single session but did not return within seven days, which indicates a lack of follow-up nudges. Second, the dashboard does not include marketing-specific KPIs, so they have no reason to check it regularly. Third, their existing Looker dashboards cover 80% of their needs. I can share the full analysis.",
+          text: "Three factors: 58% of marketing users onboarded but did not return within seven days, suggesting no follow-up nudges. The dashboard lacks marketing-specific KPIs. And their existing Looker dashboards cover 80% of their needs.",
           score: 10,
           result: "strong",
           explanation:
@@ -1477,7 +1477,7 @@ export const SCENARIOS_PART4: Scenario[] = [
       options: [
         {
           id: "s47-opt-a",
-          text: "Fair challenge. The baseline figure was calculated from a 12-week rolling average, which gives us a confidence interval of plus or minus 0.4%. The post-change figure of 3.8% sits well outside that range. I have not yet controlled for seasonal volume changes - I will run that analysis and share the results by Thursday. You are right that we need more rigour before drawing conclusions.",
+          text: "Fair challenge. The baseline uses a 12-week rolling average with a confidence interval of plus or minus 0.4%. The 3.8% post-change figure sits well outside that range. I have not yet controlled for seasonal volume, and I will share that analysis by Thursday.",
           score: 10,
           result: "strong",
           explanation:
@@ -1616,7 +1616,7 @@ export const SCENARIOS_PART4: Scenario[] = [
       options: [
         {
           id: "s48-opt-a",
-          text: "The contractor line is based on six contractors at an average day rate of 650 pounds for 40 weeks. That gives us 156,000 pounds per contractor and 936,000 pounds total. The 20% increase reflects two additional headcount we are projecting for the Q3 product build, based on the scoping document approved in November. I can share the detailed breakdown after this meeting.",
+          text: "Six contractors at 650 pounds per day for 40 weeks gives 936,000 pounds. The 20% increase reflects two additional headcount for the Q3 product build, per the November scoping document. I can share the full breakdown.",
           score: 10,
           result: "strong",
           explanation:

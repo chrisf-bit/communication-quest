@@ -75,7 +75,7 @@ export const SCENARIOS_PART18: Scenario[] = [
       options: [
         {
           id: "s205-opt-a",
-          text: "Jordan is right. I will draft the two-week plan today with daily objectives and circulate it for input by end of play. I will also confirm the buddy and make sure IT has the systems access sorted by Thursday.",
+          text: "Agreed. I will draft the two-week plan today with daily objectives and circulate it by end of play. I will confirm the buddy and get IT to sort systems access by Thursday.",
           score: 10,
           result: "strong",
           explanation:
@@ -214,7 +214,7 @@ export const SCENARIOS_PART18: Scenario[] = [
       options: [
         {
           id: "s206-opt-a",
-          text: "Sam is right. Let us make it specific. Going forward, if any deliverable is at risk more than 48 hours before the deadline, it gets flagged in the stand-up that day. That way we can redistribute or adjust. Does that work for both of you?",
+          text: "Let us make it specific. If any deliverable is at risk more than 48 hours before the deadline, flag it in the stand-up that day so we can redistribute. Does that work for both of you?",
           score: 10,
           result: "strong",
           explanation:
@@ -353,7 +353,7 @@ export const SCENARIOS_PART18: Scenario[] = [
       options: [
         {
           id: "s207-opt-a",
-          text: "Here is what I can tell you: no one is losing their job, your pay is unchanged, and your current projects continue. Reporting lines will be confirmed by the 21st. Until then, the best thing you can do is focus on the work in front of you. If anything changes that affects you personally, you will hear from Alex directly.",
+          text: "No one is losing their job, your pay is unchanged, and your current projects continue. Reporting lines will be confirmed by the 21st. Focus on the work in front of you, and if anything changes, Alex will tell you directly.",
           score: 10,
           result: "strong",
           explanation:
@@ -496,7 +496,7 @@ export const SCENARIOS_PART18: Scenario[] = [
       options: [
         {
           id: "s208-opt-a",
-          text: "Priya makes a great point. Kai and Ren, you are both fighting for the same thing - a campaign that makes the client proud. What if we created one concept that leads with Kai's bold visual identity and carries Ren's clear messaging underneath? Let the boldness grab attention and the clarity keep it.",
+          text: "You are both fighting for a campaign the client will be proud of. What if we lead with Kai's bold visual identity and carry Ren's clear messaging underneath? Boldness grabs attention, clarity keeps it.",
           score: 10,
           result: "strong",
           explanation:
@@ -635,7 +635,7 @@ export const SCENARIOS_PART18: Scenario[] = [
       options: [
         {
           id: "s209-opt-a",
-          text: "Marcus is right. Jess and Derek, you both need Maya because she is exceptional at what she does. The question is not who gets her - it is how you work together to use her time well. What if the three of you, including Maya, agreed a weekly priority together? That puts Maya back in control of her own time.",
+          text: "The question is not who gets Maya - it is how you use her time well together. What if all three of you agreed a weekly priority? That puts Maya back in control of her own time.",
           score: 10,
           result: "strong",
           explanation:
@@ -774,7 +774,7 @@ export const SCENARIOS_PART18: Scenario[] = [
       options: [
         {
           id: "s210-opt-a",
-          text: "Think about a time when you had a really important piece of work that needed deep focus. Maybe you came in early or stayed late to get quiet time. That is what flexible work gives people every day - the ability to choose the environment that matches the work. It is not about avoiding the office; it is about doing your best work wherever that happens.",
+          text: "Think about a time you needed deep focus and came in early or stayed late for quiet. That is what flexible work gives people - the ability to match their environment to the work. It is about doing your best work wherever that happens.",
           score: 10,
           result: "strong",
           explanation:
@@ -917,7 +917,7 @@ export const SCENARIOS_PART18: Scenario[] = [
       options: [
         {
           id: "s211-opt-a",
-          text: "During our testing phase, we identified a data integrity issue that we want to resolve properly before moving to launch. We are adjusting the timeline by three weeks to ensure we deliver a product you can rely on. Here is our plan for that period.",
+          text: "During testing, we identified a data integrity issue we want to resolve properly before launch. We are adjusting the timeline by three weeks to deliver a product you can rely on. Here is our plan.",
           score: 10,
           result: "strong",
           explanation:
@@ -1056,7 +1056,7 @@ export const SCENARIOS_PART18: Scenario[] = [
       options: [
         {
           id: "s212-opt-a",
-          text: "The structure of the pricing model is solid, and I can see the logic behind it. Before it goes to the client, I think the underlying assumptions need pressure-testing - particularly the volume projections in year two. If we tighten those, the model becomes much stronger.",
+          text: "The pricing model's structure is solid. Before it goes to the client, the volume projections in year two need pressure-testing. Tighten those and the model becomes much stronger.",
           score: 10,
           result: "strong",
           explanation:
@@ -1195,7 +1195,7 @@ export const SCENARIOS_PART18: Scenario[] = [
       options: [
         {
           id: "s213-opt-a",
-          text: "To give every request the attention it deserves, our team responds to all communications within our core hours of 8am to 6pm. Any email received after 6pm will be our first priority the following morning, with a response by 10am. This ensures you always receive a thorough, considered reply rather than a rushed one.",
+          text: "Our team responds to all communications within core hours of 8am to 6pm. Emails received after 6pm will be our first priority the following morning, with a response by 10am. This ensures you always receive a thorough reply.",
           score: 10,
           result: "strong",
           explanation:
@@ -1338,7 +1338,7 @@ export const SCENARIOS_PART18: Scenario[] = [
       options: [
         {
           id: "s214-opt-a",
-          text: "That is a fair challenge. Let us rebuild the competencies into testable criteria. For 'strategic thinking', the measure could be: 'your analysis is used as the basis for at least two senior leadership decisions per quarter, with no significant rework requested'. We will define all five competencies like that.",
+          text: "Fair challenge. For 'strategic thinking', the measure could be: 'your analysis informs at least two senior leadership decisions per quarter, with no significant rework'. We will define all five competencies that way.",
           score: 10,
           result: "strong",
           explanation:
@@ -1477,7 +1477,7 @@ export const SCENARIOS_PART18: Scenario[] = [
       options: [
         {
           id: "s215-opt-a",
-          text: "Owen's eight weeks of data show 18 hours of monthly rework at an 11.4% error rate. The proposed automation has a three-week implementation and a two-month payback. The question is not whether to change - the data answers that. The question is when we can start.",
+          text: "Owen's data shows 18 hours of monthly rework at an 11.4% error rate. The automation has a three-week build and two-month payback. The question is not whether to change - it is when we start.",
           score: 10,
           result: "strong",
           explanation:
@@ -1616,7 +1616,7 @@ export const SCENARIOS_PART18: Scenario[] = [
       options: [
         {
           id: "s216-opt-a",
-          text: "Fiona's comparison is clear. The simpler approach has a plus or minus 8% margin versus 2.5% for her method. On a 2 million pound decision, that is a 110,000 pound difference in confidence. The extra two days of work is a fraction of that cost. For this engagement, the rigour is justified.",
+          text: "The simpler approach has plus or minus 8% versus 2.5% for Fiona's method. On a 2 million pound decision, that is 110,000 pounds of confidence. Two extra days is a fraction of that cost.",
           score: 10,
           result: "strong",
           explanation:

@@ -75,7 +75,7 @@ export const SCENARIOS_PART35: Scenario[] = [
       options: [
         {
           id: "s409-opt-a",
-          text: "I will call them at two o'clock. I will offer the agreed discount if they sign today, and if they cannot commit, I will move them out of the pipeline. You will have an answer by four.",
+          text: "I will call at two, offer the discount if they sign today, and move them out of the pipeline if they cannot. You will have an answer by four.",
           score: 10,
           result: "strong",
           explanation:
@@ -214,7 +214,7 @@ export const SCENARIOS_PART35: Scenario[] = [
       options: [
         {
           id: "s410-opt-a",
-          text: "Our platform costs more upfront, but here is the difference: you get 99.9% uptime backed by a financial guarantee. If your current provider goes down for a day, that costs you roughly 40K in lost revenue. Over three years, our solution saves you 120K. That is the real comparison.",
+          text: "Our platform costs more upfront, but you get 99.9% uptime with a financial guarantee. One day of downtime costs you 40K. Over three years, our solution saves you 120K. That is the real comparison.",
           score: 10,
           result: "strong",
           explanation:
@@ -353,7 +353,7 @@ export const SCENARIOS_PART35: Scenario[] = [
       options: [
         {
           id: "s411-opt-a",
-          text: "The pricing on the table represents our best and final offer. We have already applied three reductions totalling 22%. I am not able to reduce further. If this works for you, we can sign today. If not, I understand and we can part on good terms.",
+          text: "This is our best and final offer. We have already applied three reductions totalling 22%. If this works, we sign today. If not, I understand and we part on good terms.",
           score: 10,
           result: "strong",
           explanation:
@@ -496,7 +496,7 @@ export const SCENARIOS_PART35: Scenario[] = [
       options: [
         {
           id: "s412-opt-a",
-          text: "Honestly, the moment I read your brief I started sketching ideas. Your brand has so much potential and I cannot wait to explore what we can build together. I think this partnership is going to produce something really special.",
+          text: "The moment I read your brief I started sketching ideas. Your brand has so much potential and I cannot wait to explore what we build together. This is going to be special.",
           score: 10,
           result: "strong",
           explanation:
@@ -635,7 +635,7 @@ export const SCENARIOS_PART35: Scenario[] = [
       options: [
         {
           id: "s413-opt-a",
-          text: "Picture this - instead of a static campaign, we make the audience part of the story. They interact, they choose, they create. Your brand stops being something people look at and becomes something they participate in. That is the kind of idea that gets talked about.",
+          text: "Picture this - instead of a static campaign, we make the audience part of the story. They interact, they choose, they create. Your brand becomes something people participate in, not just look at.",
           score: 10,
           result: "strong",
           explanation:
@@ -774,7 +774,7 @@ export const SCENARIOS_PART35: Scenario[] = [
       options: [
         {
           id: "s414-opt-a",
-          text: "Before we talk about anything else, I want to say something honestly. This partnership has been one of the most important of my career, and the thought that it might not continue genuinely concerns me. I want to understand what has changed for you and what you need from us - not as a service provider, but as a partner who cares about your success.",
+          text: "Before anything else, I want to be honest: this partnership has been one of the most important of my career. I want to understand what has changed and what you need from us - not as a provider, but as a partner who cares about your success.",
           score: 10,
           result: "strong",
           explanation:
@@ -917,7 +917,7 @@ export const SCENARIOS_PART35: Scenario[] = [
       options: [
         {
           id: "s415-opt-a",
-          text: "The team is already stretched, and I am worried about the impact on people's wellbeing. Two of our team members worked every weekend last month, and that is not sustainable for them or their families. I think if we work together on this, we can find a way to protect the team without putting finance in a difficult position.",
+          text: "The team is already stretched. Two members worked every weekend last month, which is not sustainable. I think if we work together, we can protect the team without putting finance in a difficult position.",
           score: 10,
           result: "strong",
           explanation:
@@ -1056,7 +1056,7 @@ export const SCENARIOS_PART35: Scenario[] = [
       options: [
         {
           id: "s416-opt-a",
-          text: "We know the increase is real and we respect that your costs have gone up. What we would like to propose is phasing the increase over twelve months - 50% now and the remainder in six months. That gives both of us time to adjust without anyone absorbing the full impact at once. Does that feel workable from your side?",
+          text: "We respect that your costs have gone up. We propose phasing the increase over twelve months - 50% now and the rest in six months. That gives both sides time to adjust. Does that feel workable?",
           score: 10,
           result: "strong",
           explanation:
@@ -1195,7 +1195,7 @@ export const SCENARIOS_PART35: Scenario[] = [
       options: [
         {
           id: "s417-opt-a",
-          text: "Honestly, the user research Kathryn's team did on this feature was outstanding. It shaped our thinking significantly, and we would not be as far along without it. I want to acknowledge that before we talk about next steps, because whatever we decide, that contribution should not be overlooked.",
+          text: "The user research Kathryn's team did was outstanding - it shaped our thinking significantly and we would not be as far along without it. Whatever we decide on next steps, that contribution should not be overlooked.",
           score: 10,
           result: "strong",
           explanation:
@@ -1338,7 +1338,7 @@ export const SCENARIOS_PART35: Scenario[] = [
       options: [
         {
           id: "s418-opt-a",
-          text: "We were working from SOP version 3.2, dated January 15th. Our process followed the five-step workflow: intake, review, classification, routing, and confirmation. The divergence occurred at step three - classification - where the other team's version uses a different taxonomy introduced in their version 3.4 update from March.",
+          text: "We used SOP version 3.2, dated January 15th, following the five-step workflow. The divergence occurred at step three - classification - where the other team's version 3.4 from March uses a different taxonomy.",
           score: 10,
           result: "strong",
           explanation:
@@ -1477,7 +1477,7 @@ export const SCENARIOS_PART35: Scenario[] = [
       options: [
         {
           id: "s419-opt-a",
-          text: "I have compared both workbooks step by step. There are four points of divergence. First, they used different date ranges for the baseline - one used calendar year, the other used financial year. Second, the outlier treatment differs - one excludes values above two standard deviations, the other uses three. Third, the aggregation method differs at the regional level. Fourth, they applied different rounding rules to the final output. I have documented all four in a comparison table.",
+          text: "Four points of divergence: different baseline date ranges (calendar vs financial year), different outlier thresholds (two vs three standard deviations), different regional aggregation methods, and different rounding rules. All four are documented in a comparison table.",
           score: 10,
           result: "strong",
           explanation:
@@ -1616,7 +1616,7 @@ export const SCENARIOS_PART35: Scenario[] = [
       options: [
         {
           id: "s420-opt-a",
-          text: "On the first requirement - data residency - our current state is that user data is processed in two regions, UK and EU. The gap is that we do not currently have a mechanism to prevent data transfer to a third region during peak load. The mitigation is to implement geo-fencing at the infrastructure level, which our engineering team has scoped at three weeks. I can share the technical specification after this meeting.",
+          text: "On data residency: we process in UK and EU, but lack a mechanism to prevent transfer to a third region during peak load. The mitigation is infrastructure-level geo-fencing, scoped at three weeks. I can share the technical spec after this meeting.",
           score: 10,
           result: "strong",
           explanation:

@@ -75,7 +75,7 @@ export const SCENARIOS_PART30: Scenario[] = [
       options: [
         {
           id: "s349-opt-a",
-          text: "Understood. We do not agree with the outcome but we accept the criteria. Give us the list of upcoming accounts and we will start building the relationships now so we are in a stronger position next time.",
+          text: "Understood. We accept the criteria. Give us the upcoming accounts and we will start building relationships now to be stronger next time.",
           score: 10,
           result: "strong",
           explanation:
@@ -214,7 +214,7 @@ export const SCENARIOS_PART30: Scenario[] = [
       options: [
         {
           id: "s350-opt-a",
-          text: "Fine. Here are my top three items ranked by quarterly revenue impact: the CRM upgrade at 45,000 in projected return, the training programme at 28,000, and the recruitment tool at 22,000. Cut the rest.",
+          text: "Fine. Top three by revenue impact: CRM upgrade at 45,000 return, training programme at 28,000, recruitment tool at 22,000. Cut the rest.",
           score: 10,
           result: "strong",
           explanation:
@@ -353,7 +353,7 @@ export const SCENARIOS_PART30: Scenario[] = [
       options: [
         {
           id: "s351-opt-a",
-          text: "You are right - that was not helpful. I will put together a risk assessment by Thursday covering market size uncertainty, capital requirements, and opportunity cost of diverting resources from the core business. Three scenarios: best case, expected case, worst case.",
+          text: "You are right - that was not helpful. I will put together a risk assessment by Thursday covering market size uncertainty, capital requirements, and opportunity cost. Three scenarios: best, expected, worst case.",
           score: 10,
           result: "strong",
           explanation:
@@ -496,7 +496,7 @@ export const SCENARIOS_PART30: Scenario[] = [
       options: [
         {
           id: "s352-opt-a",
-          text: "The part about Amir and the dashboard is brilliant - that is the kind of detail that makes it real. Could you add one more story, maybe about the moment the team rallied when the tech went down? That would give it even more heart.",
+          text: "The part about Amir and the dashboard is brilliant - that detail makes it real. Could you add one more story, maybe about when the team rallied after the tech went down? That would give it even more heart.",
           score: 10,
           result: "strong",
           explanation:
@@ -635,7 +635,7 @@ export const SCENARIOS_PART30: Scenario[] = [
       options: [
         {
           id: "s353-opt-a",
-          text: "Close with a vision of where the partnership could go next - something specific that would excite her. Then end with a personal invitation: 'I would love to sit down over coffee and map out what the next two years could look like together.'",
+          text: "Close with a vision of where the partnership goes next - something specific that excites her. End with: 'I would love to sit down over coffee and map out the next two years together.'",
           score: 10,
           result: "strong",
           explanation:
@@ -774,7 +774,7 @@ export const SCENARIOS_PART30: Scenario[] = [
       options: [
         {
           id: "s354-opt-a",
-          text: "I agree with you, Nina. If the first thing they read is the fix, it feels like we are managing the message rather than owning the problem. Leading with honesty shows we respect them enough to say it plainly. The fix lands harder after the apology because they trust it is genuine.",
+          text: "I agree, Nina. If they read the fix first, it feels like message management rather than owning the problem. Leading with honesty shows respect, and the fix lands harder after the apology because they trust it is genuine.",
           score: 10,
           result: "strong",
           explanation:
@@ -917,7 +917,7 @@ export const SCENARIOS_PART30: Scenario[] = [
       options: [
         {
           id: "s355-opt-a",
-          text: "That is really good to hear. I was worried I should be further along by now. Knowing that I can just focus on getting to know people and asking questions takes a lot of pressure off. Thank you for saying that.",
+          text: "That is really good to hear. I was worried I should be further along by now. Knowing I can focus on getting to know people and asking questions takes the pressure off.",
           score: 10,
           result: "strong",
           explanation:
@@ -1056,7 +1056,7 @@ export const SCENARIOS_PART30: Scenario[] = [
       options: [
         {
           id: "s356-opt-a",
-          text: "That is actually a relief. I had not thought about it that way. I think you are right - it is the admin and reporting that drain me, not the role itself. I would really appreciate exploring how to shift the balance.",
+          text: "That is actually a relief. You are right - it is the admin and reporting that drain me, not the role itself. I would appreciate exploring how to shift that balance.",
           score: 10,
           result: "strong",
           explanation:
@@ -1195,7 +1195,7 @@ export const SCENARIOS_PART30: Scenario[] = [
       options: [
         {
           id: "s357-opt-a",
-          text: "I did not expect to react like that. Thank you for making it safe to say it. I think the biggest thing is I cannot say no when people ask me to take on work. Could you help me work out what to drop? I do not think I can do it on my own right now.",
+          text: "I did not expect to react like that. Thank you for making it safe. The biggest thing is I cannot say no to extra work. Could you help me work out what to drop?",
           score: 10,
           result: "strong",
           explanation:
@@ -1338,7 +1338,7 @@ export const SCENARIOS_PART30: Scenario[] = [
       options: [
         {
           id: "s358-opt-a",
-          text: "Thank you for the summary, Rachel. I would like to see the internal efficiency data in more detail - specifically the two process failures you mentioned. Can you walk us through the root cause and the corrective actions?",
+          text: "Thank you, Rachel. I would like to see the two process failures in more detail. Can you walk us through root cause and corrective actions?",
           score: 10,
           result: "strong",
           explanation:
@@ -1477,7 +1477,7 @@ export const SCENARIOS_PART30: Scenario[] = [
       options: [
         {
           id: "s359-opt-a",
-          text: "I appreciate the transparency. The 28-month lower bound is within our acceptable range. Can you walk us through the key assumptions in the expected scenario so we can assess how likely those assumptions are to hold?",
+          text: "I appreciate the transparency. The 28-month lower bound is within range. Can you walk us through the key assumptions in the expected scenario so we can assess how likely they are to hold?",
           score: 10,
           result: "strong",
           explanation:
@@ -1616,7 +1616,7 @@ export const SCENARIOS_PART30: Scenario[] = [
       options: [
         {
           id: "s360-opt-a",
-          text: "Fiona, have you modelled the productivity impact during the transition period? If we can show the board that Phase 1 has a defined performance floor and recovery timeline, that might address the concern about team uncertainty.",
+          text: "Fiona, have you modelled productivity impact during the transition? If we show the board a defined performance floor and recovery timeline for Phase 1, that could address the uncertainty concern.",
           score: 10,
           result: "strong",
           explanation:

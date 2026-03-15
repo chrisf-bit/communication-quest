@@ -75,7 +75,7 @@ export const SCENARIOS_PART25: Scenario[] = [
       options: [
         {
           id: "s289-opt-a",
-          text: "I understand internal processes take time. But I need something concrete. Who is the final decision-maker, and can we get 30 minutes with them this week? If we can address their questions directly, we can cut weeks off the approval timeline.",
+          text: "I understand. But I need something concrete. Who is the final decision-maker, and can we get 30 minutes with them this week to cut weeks off the timeline?",
           score: 10,
           result: "strong",
           explanation:
@@ -214,7 +214,7 @@ export const SCENARIOS_PART25: Scenario[] = [
       options: [
         {
           id: "s290-opt-a",
-          text: "To put it concretely: three of your competitors switched to platforms like ours in the last twelve months. They did it because 'good enough' meant they were falling behind on automation, reporting speed, and integration capability. You do not have to switch, but your competitors already have.",
+          text: "Three of your competitors switched to platforms like ours in the last twelve months because 'good enough' meant falling behind on automation and reporting. You do not have to switch, but they already have.",
           score: 10,
           result: "strong",
           explanation:
@@ -353,7 +353,7 @@ export const SCENARIOS_PART25: Scenario[] = [
       options: [
         {
           id: "s291-opt-a",
-          text: "If we miss the eight-week target, we will cover our professional services costs for every additional week until we deliver. That commitment is in the contract. We can afford to make that offer because in the three implementations I referenced, the longest took seven weeks and two days.",
+          text: "If we miss eight weeks, we cover our professional services costs for every additional week. That is in the contract. We can offer that because the longest of our three recent implementations took seven weeks and two days.",
           score: 10,
           result: "strong",
           explanation:
@@ -496,7 +496,7 @@ export const SCENARIOS_PART25: Scenario[] = [
       options: [
         {
           id: "s292-opt-a",
-          text: "What if we turned the first milestone review into a 'show and tell' where both teams present their favourite part of what we have built so far? We could record it and share it with both companies' leadership teams. It gives the work visibility and makes the milestone feel like an achievement, not a checkbox.",
+          text: "What if we turn the first milestone into a 'show and tell' where both teams present their favourite part of the build? We record it, share it with leadership, and the milestone feels like an achievement, not a checkbox.",
           score: 10,
           result: "strong",
           explanation:
@@ -635,7 +635,7 @@ export const SCENARIOS_PART25: Scenario[] = [
       options: [
         {
           id: "s293-opt-a",
-          text: "Absolutely. Here is what changes starting today. First, you get a weekly status call with me directly - not a delegate, me. Second, any risk to timeline is communicated to you within 24 hours of us identifying it. Third, I am giving you my direct mobile number. If you ever feel out of the loop, you call me and I will fix it in real time. Judge me on the next four weeks.",
+          text: "Absolutely. Starting today: weekly status calls with me directly, any timeline risk communicated within 24 hours, and here is my direct mobile number. If you feel out of the loop, call me. Judge me on the next four weeks.",
           score: 10,
           result: "strong",
           explanation:
@@ -774,7 +774,7 @@ export const SCENARIOS_PART25: Scenario[] = [
       options: [
         {
           id: "s294-opt-a",
-          text: "I completely respect that. And here is what I would say to your board: in three years, we have delivered nine projects, resolved 140 support tickets with an average four-hour response time, and our team knows your systems well enough to solve problems before they escalate. A new provider would spend their first year learning what we already know. The cost of that learning curve is real.",
+          text: "I completely respect that. Here is what I would tell your board: nine projects delivered, 140 support tickets resolved at four-hour average response, and we know your systems well enough to solve problems before they escalate. A new provider spends year one learning what we already know.",
           score: 10,
           result: "strong",
           explanation:
@@ -917,7 +917,7 @@ export const SCENARIOS_PART25: Scenario[] = [
       options: [
         {
           id: "s295-opt-a",
-          text: "Good idea. I think pairing them with Emma on the Henderson report would work well. Emma is naturally inclusive and the task is collaborative enough that they will have to work closely for a few days. It will feel like a work pairing, not a buddy system, which keeps it natural.",
+          text: "Good idea. Pairing them with Emma on the Henderson report would work well. Emma is naturally inclusive and the task means they will work closely for a few days. It feels like a work pairing, not a buddy system.",
           score: 10,
           result: "strong",
           explanation:
@@ -1056,7 +1056,7 @@ export const SCENARIOS_PART25: Scenario[] = [
       options: [
         {
           id: "s296-opt-a",
-          text: "Nobody will know we had this conversation. The workload board is something I have been planning for the whole team, not because of any one person. When it launches, it will look like a general improvement, not a response to a problem. Your name will not be attached to this in any way.",
+          text: "Nobody will know we had this conversation. The workload board is something I have been planning for the whole team. When it launches, it will look like a general improvement, not a response to a problem.",
           score: 10,
           result: "strong",
           explanation:
@@ -1195,7 +1195,7 @@ export const SCENARIOS_PART25: Scenario[] = [
       options: [
         {
           id: "s297-opt-a",
-          text: "I hear you, and that is a completely fair reaction. You do not owe them anything. But think about it this way: this is not about proving something to them. It is about reminding yourselves of what you are capable of. The best teams I have ever been part of came back from moments like this stronger because they decided to be excellent for each other, not for anyone else.",
+          text: "I hear you, and that is a fair reaction. You do not owe them anything. But this is not about proving something to them. It is about reminding yourselves of what you are capable of. The best teams come back from moments like this stronger by choosing to be excellent for each other.",
           score: 10,
           result: "strong",
           explanation:
@@ -1338,7 +1338,7 @@ export const SCENARIOS_PART25: Scenario[] = [
       options: [
         {
           id: "s298-opt-a",
-          text: "I suggest we use the twelve-month window because it captures full seasonal cycles, and define retention as customers who made at least two purchases with a minimum of 60 days between first and last purchase. That distinguishes genuinely retained customers from one-time returners.",
+          text: "I suggest a twelve-month window to capture full seasonal cycles, defining retention as at least two purchases with a minimum of 60 days between first and last. That separates genuinely retained customers from one-time returners.",
           score: 10,
           result: "strong",
           explanation:
@@ -1477,7 +1477,7 @@ export const SCENARIOS_PART25: Scenario[] = [
       options: [
         {
           id: "s299-opt-a",
-          text: "Fair point. Let us weight them. I suggest revenue at risk gets a multiplier of two because it directly affects the company's financial position. Client impact gets 1.5 because it affects retention. Deadline flexibility and alternative resources stay at one. That gives us a weighted score that better reflects business priority. We test it on the last three resource conflicts to see if the outcomes feel right.",
+          text: "Fair point. Let us weight them. Revenue at risk gets a multiplier of two, client impact gets 1.5, and the others stay at one. That gives a weighted score reflecting business priority. We test it on the last three resource conflicts to validate.",
           score: 10,
           result: "strong",
           explanation:
@@ -1616,7 +1616,7 @@ export const SCENARIOS_PART25: Scenario[] = [
       options: [
         {
           id: "s300-opt-a",
-          text: "What if we apply the modern methodology but present it with a parallel traditional analysis in an appendix? That gives us the accuracy advantage while providing peer reviewers with a familiar reference point. We can track reviewer feedback over the next three papers and revisit if acceptance becomes a barrier to publication.",
+          text: "What if we apply the modern methodology but include a parallel traditional analysis in an appendix? That gives us accuracy while providing reviewers a familiar reference point. We track feedback over the next three papers and revisit if needed.",
           score: 10,
           result: "strong",
           explanation:

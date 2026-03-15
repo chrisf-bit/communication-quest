@@ -214,7 +214,7 @@ export const SCENARIOS_PART15: Scenario[] = [
       options: [
         {
           id: "s170-opt-a",
-          text: "Understood. Here is the revised version: milestone three slipped by nine days due to a vendor dependency; projected revenue impact of 40K if unresolved; recovery plan is to run workstreams two and three in parallel; new completion date is 28 April. I will send it to you in fifteen minutes.",
+          text: "Understood. Revised version: milestone three slipped nine days, vendor dependency; 40K revenue impact if unresolved; recovery plan is to run workstreams two and three in parallel; new completion date 28 April. Sending in fifteen minutes.",
           score: 10,
           result: "strong",
           explanation:
@@ -496,7 +496,7 @@ export const SCENARIOS_PART15: Scenario[] = [
       options: [
         {
           id: "s172-opt-a",
-          text: "Nina is right, some of the best thinking happens quietly. To build on that, why don't we try a quick round where everyone shares one idea that excited them from the last exercise? Even a half-formed thought is welcome. Let us go around the table.",
+          text: "Nina is right, the best thinking often happens quietly. Why don't we try a quick round where everyone shares one idea that excited them from the last exercise? Even a half-formed thought is welcome.",
           score: 10,
           result: "strong",
           explanation:
@@ -635,7 +635,7 @@ export const SCENARIOS_PART15: Scenario[] = [
       options: [
         {
           id: "s173-opt-a",
-          text: "I can picture this working brilliantly with your team. What if we set up a short pilot with one of your regions? Two weeks, real teams, real feedback. You would see within days whether this shifts the conversation. We could have you up and running by mid-April.",
+          text: "I can picture this working with your team. What if we set up a short pilot in one of your regions? Two weeks, real teams, real feedback. You would see within days whether it shifts the conversation.",
           score: 10,
           result: "strong",
           explanation:
@@ -774,7 +774,7 @@ export const SCENARIOS_PART15: Scenario[] = [
       options: [
         {
           id: "s174-opt-a",
-          text: "That works, Marcus. Paint the six-month picture first, then anchor it with three measurable milestones: prototype in market by month four, three pilot clients signed by month five, and a pipeline review at month six. The vision gets her excited; the milestones give her something to approve against.",
+          text: "That works, Marcus. Paint the six-month picture first, then anchor it with three milestones: prototype in market by month four, three pilot clients by month five, pipeline review at month six. The vision excites her; the milestones give her something to approve.",
           score: 10,
           result: "strong",
           explanation:
@@ -917,7 +917,7 @@ export const SCENARIOS_PART15: Scenario[] = [
       options: [
         {
           id: "s175-opt-a",
-          text: "How about we include a line like: 'We know how important consistency is to you, and that is exactly why we have chosen Amira. She has spent the last two weeks getting to know your account inside out, and I will be alongside her for the first month to make sure the transition is seamless.' It acknowledges the concern without labelling it.",
+          text: "How about: 'We know how important consistency is to you, and that is exactly why we chose Amira. She has spent two weeks getting to know your account, and I will be alongside her for the first month to ensure the transition is seamless.' It acknowledges the concern without labelling it.",
           score: 10,
           result: "strong",
           explanation:
@@ -1056,7 +1056,7 @@ export const SCENARIOS_PART15: Scenario[] = [
       options: [
         {
           id: "s176-opt-a",
-          text: "I completely understand, and your managers deserve better than what happened. Here is what I would like to do: I will assign a dedicated person to contact each affected manager individually, help them recover any lost work, and make sure they feel supported. I will also send them a personal message from our team acknowledging what happened. No one should feel like they are dealing with this alone.",
+          text: "I completely understand, and your managers deserve better. I will assign someone to contact each affected manager individually, help them recover lost work, and make sure they feel supported. I will also send a personal message acknowledging what happened.",
           score: 10,
           result: "strong",
           explanation:
@@ -1195,7 +1195,7 @@ export const SCENARIOS_PART15: Scenario[] = [
       options: [
         {
           id: "s177-opt-a",
-          text: "Thank you for making the time to meet. Before we talk about anything else, I want to say that we have heard your feedback, and it matters to us. You told us the partnership does not feel the way it used to, and we take that seriously. I would like to start by understanding what changed from your side, because getting this right matters more to us than any contract.",
+          text: "Thank you for making the time to meet. Before anything else, we have heard your feedback and it matters to us. You said the partnership does not feel the way it used to, and we take that seriously. I would like to understand what changed from your side.",
           score: 10,
           result: "strong",
           explanation:
@@ -1338,7 +1338,7 @@ export const SCENARIOS_PART15: Scenario[] = [
       options: [
         {
           id: "s178-opt-a",
-          text: "Send a 'final version for the project record' to the full group, with each action numbered, showing owner, deliverable, and deadline. Preface it with: 'I have cross-referenced the actions against the project plan and made a few clarifications. This version should serve as the definitive record.' It corrects the errors without naming them as errors.",
+          text: "Send a 'final version for the project record' to the group, with each action numbered: owner, deliverable, deadline. Preface it with: 'I have cross-referenced the actions against the project plan and made a few clarifications.' It corrects the errors without naming them.",
           score: 10,
           result: "strong",
           explanation:
@@ -1477,7 +1477,7 @@ export const SCENARIOS_PART15: Scenario[] = [
       options: [
         {
           id: "s179-opt-a",
-          text: "Absolutely. Our defect rate over the last twelve months is 0.3%, compared to an industry average of 1.2%. SLA compliance is 99.4% across all active contracts. I can also share our ISO 27001 audit report from November and two client references who can speak to quality outcomes. I will send the data pack by end of day tomorrow.",
+          text: "Absolutely. Our defect rate is 0.3% over the last twelve months, against an industry average of 1.2%. SLA compliance is 99.4%. I can share our ISO 27001 audit report and two client references. Data pack by end of day tomorrow.",
           score: 10,
           result: "strong",
           explanation:
@@ -1616,7 +1616,7 @@ export const SCENARIOS_PART15: Scenario[] = [
       options: [
         {
           id: "s180-opt-a",
-          text: "I agree with that approach. I have initial projections for each initiative. Ranked by ROI: initiative two returns an estimated 3.2x over twelve months, initiative four returns 2.7x, and initiative one returns 1.8x. Initiatives three and five have projected returns below 1x in the first year, so I would recommend either deferring them or treating them as exploratory pilots with capped investment. I can share the full modelling behind each figure.",
+          text: "Agreed. Ranked by ROI: initiative two returns 3.2x over twelve months, initiative four returns 2.7x, initiative one returns 1.8x. Initiatives three and five are below 1x in year one, so I would recommend deferring them or capping investment as exploratory pilots. Full modelling available.",
           score: 10,
           result: "strong",
           explanation:

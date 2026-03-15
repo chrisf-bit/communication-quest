@@ -214,7 +214,7 @@ export const SCENARIOS_PART7: Scenario[] = [
       options: [
         {
           id: "s74-opt-a",
-          text: "Action plan posted below. 1) Data gap identification, owned by me, complete by 14:00 GMT. 2) Supplementary data pull, owned by analytics team, complete by 18:00 GMT. 3) QA and client pack assembly, owned by me, complete by 09:00 GMT tomorrow. Escalation path: if analytics cannot deliver by 18:00, I will pull in the backup data set and flag to you immediately.",
+          text: "Action plan: 1) Data gap identification, me, by 14:00 GMT. 2) Supplementary data pull, analytics, by 18:00 GMT. 3) QA and client pack, me, by 09:00 tomorrow. Escalation: if analytics misses 18:00, I pull the backup data set and flag to you.",
           score: 10,
           result: "strong",
           explanation:
@@ -353,7 +353,7 @@ export const SCENARIOS_PART7: Scenario[] = [
       options: [
         {
           id: "s75-opt-a",
-          text: "We extend by five working days. The full scope is critical to the client commitment and cutting 20% creates a bigger risk downstream. I will confirm the new deadline with all three leads in a follow-up message within the next ten minutes.",
+          text: "We extend by five working days. The full scope is critical to the client commitment and cutting 20% creates a bigger risk downstream. I will confirm the new deadline with all leads within ten minutes.",
           score: 10,
           result: "strong",
           explanation:
@@ -496,7 +496,7 @@ export const SCENARIOS_PART7: Scenario[] = [
       options: [
         {
           id: "s76-opt-a",
-          text: "I love the onboarding-as-a-story concept. It feels completely fresh and I can already see how it would change the new starter experience. Let us build on that one. Priya, what if you sketched out the first three chapters of that journey and we regroup tomorrow to develop it further?",
+          text: "I love the onboarding-as-a-story concept. It feels completely fresh. Let us build on that one. Priya, sketch out the first three chapters and we regroup tomorrow.",
           score: 10,
           result: "strong",
           explanation:
@@ -635,7 +635,7 @@ export const SCENARIOS_PART7: Scenario[] = [
       options: [
         {
           id: "s77-opt-a",
-          text: "So we had this customer portal that was functional but completely uninspiring. The team got together and said, what if we started from scratch and designed it around what customers actually feel when they log in? We threw out the template, ran some creative workshops, and built something that the client said was the best digital experience they had ever had. That is the kind of thing this team does.",
+          text: "We had a customer portal that was functional but uninspiring. So we started from scratch, designed it around what customers feel when they log in, and the client called it the best digital experience they had ever had. That is what this team does.",
           score: 10,
           result: "strong",
           explanation:
@@ -774,7 +774,7 @@ export const SCENARIOS_PART7: Scenario[] = [
       options: [
         {
           id: "s78-opt-a",
-          text: "I love the idea. Let us try it this Thursday. I will kick things off by telling my sprint story first so people see it is safe to be creative. If we get even half the energy you are describing, it will be worth it. Let us make the invite something people actually want to open.",
+          text: "Let us try it this Thursday. I will kick things off by telling my sprint story first so people see it is safe to be creative. Let us make the invite something people actually want to open.",
           score: 10,
           result: "strong",
           explanation:
@@ -917,7 +917,7 @@ export const SCENARIOS_PART7: Scenario[] = [
       options: [
         {
           id: "s79-opt-a",
-          text: "What if we send Jamie a casual message, something like 'Fancy a virtual coffee this week?' No agenda, no pressure. Just create an opening for them to talk if they want to. And if they are not ready, that is fine too. The important thing is they know the door is open.",
+          text: "Send a casual message: 'Fancy a virtual coffee this week?' No agenda, no pressure. Create an opening if they want to talk, and if they are not ready, that is fine too.",
           score: 10,
           result: "strong",
           explanation:
@@ -1056,7 +1056,7 @@ export const SCENARIOS_PART7: Scenario[] = [
       options: [
         {
           id: "s80-opt-a",
-          text: "Let us frame it as a project alignment chat. We open by acknowledging that both approaches have strengths, then give each person uninterrupted time to share their perspective. We do not need to pick a winner. The goal is for both people to feel understood, and then we look for where their ideas overlap. We close by agreeing on one thing they both value.",
+          text: "Frame it as a project alignment chat. Acknowledge both approaches have strengths, give each person uninterrupted time to share, then look for where their ideas overlap. Close by agreeing on one thing they both value.",
           score: 10,
           result: "strong",
           explanation:
@@ -1195,7 +1195,7 @@ export const SCENARIOS_PART7: Scenario[] = [
       options: [
         {
           id: "s81-opt-a",
-          text: "Start by asking how they are, genuinely. Let them talk. When you raise the performance change, frame it as something you have noticed, not something you are concerned about. Say something like 'I have noticed a shift recently and I wanted to check in with you, not about the work, but about you.' Give them permission to share as much or as little as they want.",
+          text: "Ask how they are, genuinely. Let them talk. Frame the performance change as something you have noticed, not a concern: 'I have noticed a shift and wanted to check in with you, not about the work, but about you.'",
           score: 10,
           result: "strong",
           explanation:
@@ -1338,7 +1338,7 @@ export const SCENARIOS_PART7: Scenario[] = [
       options: [
         {
           id: "s82-opt-a",
-          text: "Based on the scoring matrix, Option C leads on four of the seven criteria including scalability, which I consider the highest-weighted factor given our three-year growth projections. The longer implementation window (12 weeks versus 8) is a trade-off, but the total cost of ownership over three years is 18% lower. I would recommend Option C with a phased rollout to manage the implementation timeline.",
+          text: "Option C leads on four of seven criteria including scalability, the highest-weighted factor given our growth projections. The 12-week implementation is a trade-off, but three-year cost of ownership is 18% lower. I recommend C with a phased rollout.",
           score: 10,
           result: "strong",
           explanation:
@@ -1477,7 +1477,7 @@ export const SCENARIOS_PART7: Scenario[] = [
       options: [
         {
           id: "s83-opt-a",
-          text: "I have mapped all 14 gaps against the template. Twelve are covered by existing fields. Two are not: first, in-progress tasks that are blocked pending external input, which needs a dedicated 'blocked items' field; second, client communications sent but not yet replied to, which needs a 'pending client responses' field. I recommend adding both. Here is the mapping table.",
+          text: "Twelve of the 14 gaps are covered by existing fields. Two are not: blocked tasks pending external input, and client communications awaiting replies. I recommend adding a 'blocked items' field and a 'pending responses' field.",
           score: 10,
           result: "strong",
           explanation:
@@ -1616,7 +1616,7 @@ export const SCENARIOS_PART7: Scenario[] = [
       options: [
         {
           id: "s84-opt-a",
-          text: "Agreed. I will rework slides six, nine, and twelve tonight. For each claim, I will add the specific metric, the measurement period, and the baseline comparison. Slide nine's stakeholder satisfaction claim will be backed by the survey data: 342 respondents, 78% response rate, 4.2 out of 5 average score versus 3.1 at baseline. I will send the updated deck for your review by 8am.",
+          text: "I will rework slides six, nine, and twelve tonight with specific metrics and baseline comparisons. Slide nine will cite the survey: 342 respondents, 78% response rate, 4.2 out of 5 versus 3.1 at baseline. Updated deck by 8am.",
           score: 10,
           result: "strong",
           explanation:

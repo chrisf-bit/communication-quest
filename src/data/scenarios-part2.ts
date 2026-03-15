@@ -75,7 +75,7 @@ export const SCENARIOS_PART2: Scenario[] = [
       options: [
         {
           id: "scenario-13-a",
-          text: "I completely understand your concern, Tom. You and your team have built something really strong, and that is not going to be ignored. Let us work through this together so we can make sure everyone is supported through the transition.",
+          text: "I hear you, Tom. What your team has built is not going to be ignored. Let us work through this together to make sure everyone is supported.",
           score: 10,
           result: "strong",
           explanation:
@@ -218,7 +218,7 @@ export const SCENARIOS_PART2: Scenario[] = [
       options: [
         {
           id: "scenario-14-a",
-          text: "That is a really fair point, Tom. We will phase the rollout so your team is not overwhelmed, and I will make sure there is proper training and support in place before anyone is expected to use the system day-to-day. Let us plan it together.",
+          text: "That is a fair point, Tom. We will phase the rollout so your team is not overwhelmed, and proper training will be in place first. Let us plan it together.",
           score: 10,
           result: "strong",
           explanation:
@@ -362,7 +362,7 @@ export const SCENARIOS_PART2: Scenario[] = [
       options: [
         {
           id: "scenario-15-a",
-          text: "I share that concern, Leah, and I want you to know that treating people with dignity is non-negotiable for us. Let us work together to build a process that gives everyone proper support, clear communication, and enough time to ask questions and plan their next steps.",
+          text: "I share that concern, Leah. Treating people with dignity is non-negotiable. Let us build a process together that gives everyone proper support and time to plan their next steps.",
           score: 10,
           result: "strong",
           explanation:
@@ -505,7 +505,7 @@ export const SCENARIOS_PART2: Scenario[] = [
       options: [
         {
           id: "scenario-16-a",
-          text: "I think that is a really thoughtful way to approach it, Leah. Let us look at the options together and find an arrangement that supports her without putting extra pressure on the rest of the team. We can take our time to get it right.",
+          text: "That is a really thoughtful approach, Leah. Let us look at the options together and find an arrangement that supports her without pressuring the rest of the team.",
           score: 10,
           result: "strong",
           explanation:
@@ -649,7 +649,7 @@ export const SCENARIOS_PART2: Scenario[] = [
       options: [
         {
           id: "scenario-17-a",
-          text: "I can see how much that relationship means to you, David, and the trust you have built is genuinely valuable. Let us look at this together and weigh up the full picture, not just the cost. If the relationship delivers value that the numbers do not capture, that is worth considering.",
+          text: "I can see how much that relationship means to you, David. Let us weigh up the full picture together, not just the cost. Trust like that has real value.",
           score: 10,
           result: "strong",
           explanation:
@@ -792,7 +792,7 @@ export const SCENARIOS_PART2: Scenario[] = [
       options: [
         {
           id: "scenario-18-a",
-          text: "It is clear you care about her, David, and that is a real strength. But sometimes the most supportive thing we can do is have an honest, caring conversation. We can plan it together so it feels constructive rather than critical, and I will support you through it.",
+          text: "That care is a real strength, David. Sometimes the most supportive thing is an honest, caring conversation. We can plan it together so it feels constructive.",
           score: 10,
           result: "strong",
           explanation:
@@ -940,7 +940,7 @@ export const SCENARIOS_PART2: Scenario[] = [
       options: [
         {
           id: "scenario-19-a",
-          text: "That is a fair challenge, Rachel. The ROI projection is based on three data sources: our own campaign performance from the last two years, the IPA benchmarks for our sector, and a regression analysis of spend versus lead volume. I can share the full methodology document with you this afternoon so you can review it in detail.",
+          text: "Fair challenge, Rachel. The ROI is based on our two-year campaign data, IPA sector benchmarks, and a regression analysis of spend versus lead volume. I can share the methodology document this afternoon.",
           score: 10,
           result: "strong",
           explanation:
@@ -1083,7 +1083,7 @@ export const SCENARIOS_PART2: Scenario[] = [
       options: [
         {
           id: "scenario-20-a",
-          text: "Great questions, Rachel. I have mapped out three exception scenarios: late data submissions, format inconsistencies, and missing approvals. For each one, there is a defined escalation path with clear timelines. I will send you the full exception-handling matrix so you can review it and flag anything I have missed.",
+          text: "Good questions, Rachel. I have mapped three exception scenarios: late submissions, format inconsistencies, and missing approvals, each with a defined escalation path. I will send you the full matrix to review.",
           score: 10,
           result: "strong",
           explanation:
@@ -1227,7 +1227,7 @@ export const SCENARIOS_PART2: Scenario[] = [
       options: [
         {
           id: "scenario-21-a",
-          text: "That is a compelling data point, Owen. If 40% of critical bugs are found in days three to five, then cutting those days creates a measurable risk. Let us look at whether we can automate some of the earlier test cycles to free up time for the later stages, so we can meet the deadline without increasing the defect rate.",
+          text: "That is a compelling data point, Owen. If 40% of critical bugs surface in days three to five, cutting them is a measurable risk. Could we automate the earlier test cycles to free up time for those later stages?",
           score: 10,
           result: "strong",
           explanation:
@@ -1370,7 +1370,7 @@ export const SCENARIOS_PART2: Scenario[] = [
       options: [
         {
           id: "scenario-22-a",
-          text: "The weighting was agreed with the project board using a paired comparison method. Security and data compliance were weighted at 25% each, integration at 20%, total cost of ownership at 20%, and vendor stability at 10%. I can share the full weighting rationale document so you can review how we arrived at those percentages.",
+          text: "The weighting used paired comparison: security and compliance at 25% each, integration at 20%, total cost of ownership at 20%, and vendor stability at 10%. I can share the rationale document.",
           score: 10,
           result: "strong",
           explanation:
@@ -1514,7 +1514,7 @@ export const SCENARIOS_PART2: Scenario[] = [
       options: [
         {
           id: "scenario-23-a",
-          text: "You are right to flag that, Fiona. The 5% gap is made up of two components: 3% is from a contract renewal that is verbally confirmed but not yet in the pipeline system, and 2% is from a pricing adjustment on existing accounts that takes effect in August. I can provide the supporting documentation for both so you can verify them against the pipeline data.",
+          text: "Good catch, Fiona. The 5% gap is two components: 3% from a verbally confirmed renewal not yet in the system, and 2% from a pricing adjustment effective August. I can provide the supporting documentation.",
           score: 10,
           result: "strong",
           explanation:
@@ -1657,7 +1657,7 @@ export const SCENARIOS_PART2: Scenario[] = [
       options: [
         {
           id: "scenario-24-a",
-          text: "That is a well-evidenced challenge, Fiona. You are right that the 4% movement combined with only 60% hedging cover leaves a significant unhedged position. Based on the data, I agree we should reclassify this as 'medium' and I will update the risk register with the supporting rationale. Would you be willing to review the updated entry to make sure the quantification is accurate?",
+          text: "Well-evidenced, Fiona. The 4% movement with only 60% hedging cover does leave a significant unhedged position. I agree we should reclassify to 'medium' and I will update the register. Would you review it for accuracy?",
           score: 10,
           result: "strong",
           explanation:

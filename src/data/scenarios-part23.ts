@@ -496,7 +496,7 @@ export const SCENARIOS_PART23: Scenario[] = [
       options: [
         {
           id: "s268-opt-a",
-          text: "How about framing each role with a tagline? Like 'Demo Lead - be the first person to show the world what we have built' or 'Event Coordinator - the person who makes the magic happen behind the scenes'.",
+          text: "How about framing each role with a tagline? 'Demo Lead - be the first to show the world what we built' or 'Event Coordinator - the one who makes the magic happen behind the scenes'.",
           score: 10,
           result: "strong",
           explanation:
@@ -635,7 +635,7 @@ export const SCENARIOS_PART23: Scenario[] = [
       options: [
         {
           id: "s269-opt-a",
-          text: "Great choices. For the workshop, we could write something like 'When Sarah's idea reshaped the entire product direction in that Wednesday session, we all knew this project was going to deliver something special.' That captures the moment and names the person.",
+          text: "For the workshop we could write: 'When Sarah's idea reshaped the product direction that Wednesday, we all knew this project would deliver something special.' That captures the moment and names the person.",
           score: 10,
           result: "strong",
           explanation:
@@ -774,7 +774,7 @@ export const SCENARIOS_PART23: Scenario[] = [
       options: [
         {
           id: "s270-opt-a",
-          text: "I think we should open with the facts clearly, then pivot to something like: 'What you built in four months would take most teams a year. The budget changed, but the quality of your work did not.' Then close with the specific next steps that show the work lives on.",
+          text: "Open with the facts, then pivot: 'What you built in four months would take most teams a year. The budget changed, but the quality of your work did not.' Close with next steps showing the work lives on.",
           score: 10,
           result: "strong",
           explanation:
@@ -917,7 +917,7 @@ export const SCENARIOS_PART23: Scenario[] = [
       options: [
         {
           id: "s271-opt-a",
-          text: "I understand that, and no one is treating you differently. This is how we would handle it for anyone. The phased plan is about setting you up to succeed, not holding you back. Let us try this week at a lighter pace and review on Friday - you are in control of the timeline.",
+          text: "No one is treating you differently. The phased plan is about setting you up to succeed. Let us try this week at a lighter pace and review on Friday - you are in control of the timeline.",
           score: 10,
           result: "strong",
           explanation:
@@ -1056,7 +1056,7 @@ export const SCENARIOS_PART23: Scenario[] = [
       options: [
         {
           id: "s272-opt-a",
-          text: "Honestly, I think it would help if I could work on a couple of smaller tasks first where the stakes are lower. Just to get some wins under my belt before I take on anything client-facing again. And maybe check in with you before I present anything internally, just until I find my feet.",
+          text: "I think it would help to work on a couple of smaller tasks first where the stakes are lower. Just to get some wins before anything client-facing. And maybe check in with you before I present internally.",
           score: 10,
           result: "strong",
           explanation:
@@ -1195,7 +1195,7 @@ export const SCENARIOS_PART23: Scenario[] = [
       options: [
         {
           id: "s273-opt-a",
-          text: "Thank you for being open to this. There are two areas. The first is stakeholder visibility - your work is excellent but it does not always reach the people who make promotion decisions. The second is leading through ambiguity - the successful candidate demonstrated this on the restructure project. Both are completely buildable and I will help you with both.",
+          text: "There are two areas. First, stakeholder visibility - your work is excellent but does not always reach the people who make promotion decisions. Second, leading through ambiguity. Both are buildable and I will help you with both.",
           score: 10,
           result: "strong",
           explanation:
@@ -1338,7 +1338,7 @@ export const SCENARIOS_PART23: Scenario[] = [
       options: [
         {
           id: "s274-opt-a",
-          text: "Good catch. I will reset the axis to start at zero. I will also add the actual percentage change as a data label on each bar so the audience can see the precise improvement regardless of the visual scale.",
+          text: "Good catch. I will reset the axis to start at zero and add percentage change as a data label on each bar so the audience sees the precise improvement.",
           score: 10,
           result: "strong",
           explanation:
@@ -1477,7 +1477,7 @@ export const SCENARIOS_PART23: Scenario[] = [
       options: [
         {
           id: "s275-opt-a",
-          text: "Based on our last three migrations, we experienced partial failures in two out of three. That gives us a probability rating of four out of five. The financial exposure from the last failure was 120,000 pounds in lost productivity over two weeks. A parallel running period would cost approximately 35,000 pounds. The cost-benefit case for the mitigation is clear.",
+          text: "In our last three migrations, two had partial failures - probability four out of five. The last failure cost 120,000 pounds. A parallel running period costs 35,000. The cost-benefit case is clear.",
           score: 10,
           result: "strong",
           explanation:
@@ -1616,7 +1616,7 @@ export const SCENARIOS_PART23: Scenario[] = [
       options: [
         {
           id: "s276-opt-a",
-          text: "The population of specialist practitioners in this field is 124 in total. Our 84 responses represent a 68% capture rate. We attempted to reach all 124 through three contact methods over a six-week period. The remaining 40 were non-responsive after two follow-ups. A larger sample was not achievable within the study parameters without compromising response quality through incentive-driven participation.",
+          text: "The total population is 124 practitioners. Our 84 responses represent a 68% capture rate. We contacted all 124 through three methods over six weeks. The remaining 40 were non-responsive after two follow-ups.",
           score: 10,
           result: "strong",
           explanation:

@@ -496,7 +496,7 @@ export const SCENARIOS_PART14: Scenario[] = [
       options: [
         {
           id: "s160-opt-a",
-          text: "Your energy is one of your biggest strengths, and nobody is asking you to lose that. Think of it as making space for other people to match your enthusiasm. You could try sharing your top two ideas and then actively inviting others to build on them.",
+          text: "Your energy is a genuine strength. Think of it as making space for others to match your enthusiasm. Try sharing your top two ideas and then inviting others to build on them.",
           score: 10,
           result: "strong",
           explanation:
@@ -635,7 +635,7 @@ export const SCENARIOS_PART14: Scenario[] = [
       options: [
         {
           id: "s161-opt-a",
-          text: "I share your concern, and I think the message is stronger if we combine the human story with some hard evidence. Let me pull together the productivity and retention data, and you bring the team perspective. Together, that is a compelling case.",
+          text: "I share your concern, and the message is stronger if we combine the human story with hard evidence. I will pull together the productivity and retention data; you bring the team perspective. Together, that is compelling.",
           score: 10,
           result: "strong",
           explanation:
@@ -774,7 +774,7 @@ export const SCENARIOS_PART14: Scenario[] = [
       options: [
         {
           id: "s162-opt-a",
-          text: "Nina's point is that governance and engagement are not mutually exclusive. We can cover every required metric while making the format more interactive. What if we pilot it this quarter and measure whether retention of key figures actually improves?",
+          text: "Nina's point is that governance and engagement are not mutually exclusive. We can cover every required metric while making the format more interactive. What if we pilot it this quarter and measure the results?",
           score: 10,
           result: "strong",
           explanation:
@@ -917,7 +917,7 @@ export const SCENARIOS_PART14: Scenario[] = [
       options: [
         {
           id: "s163-opt-a",
-          text: "What if you brought both department heads together for a short conversation? Let each explain their priorities, and then jointly agree on a schedule for this sprint. If they feel involved in the decision, they are much more likely to accept it.",
+          text: "What if you brought both department heads together for a short conversation? Let each explain their priorities, then jointly agree on a schedule for this sprint. If they feel involved, they are more likely to accept it.",
           score: 10,
           result: "strong",
           explanation:
@@ -1056,7 +1056,7 @@ export const SCENARIOS_PART14: Scenario[] = [
       options: [
         {
           id: "s164-opt-a",
-          text: "What if we give everyone two minutes to write down their top risk on a sticky note, and then we collect them all at once? That way people can contribute without having to speak in front of the whole group.",
+          text: "What if everyone writes their top risk on a sticky note and we collect them all at once? That way people can contribute without speaking in front of the whole group.",
           score: 10,
           result: "strong",
           explanation:
@@ -1195,7 +1195,7 @@ export const SCENARIOS_PART14: Scenario[] = [
       options: [
         {
           id: "s165-opt-a",
-          text: "You could say: 'I agree the content was spot on. What I am suggesting is a small adjustment to the tone, not the substance. Think of it like adding a greeting and a closing line to your emails. The facts stay the same; the experience just gets warmer. Would you be open to trying that on the next two emails and seeing how it lands?'",
+          text: "You could say: 'I agree the content is spot on. This is a small adjustment to the tone, not the substance. Think of it like adding a greeting and a closing line to your emails. The facts stay the same; the experience gets warmer. Would you try that on the next two emails and see how it lands?'",
           score: 10,
           result: "strong",
           explanation:
@@ -1338,7 +1338,7 @@ export const SCENARIOS_PART14: Scenario[] = [
       options: [
         {
           id: "s166-opt-a",
-          text: "Rachel is right. Let us take five minutes to write the acceptance criteria now, estimate it together, and then decide whether it fits within our remaining capacity. If it does, it goes in. If not, it goes to the next sprint.",
+          text: "Rachel is right. Let us write the acceptance criteria now, estimate it together, and decide whether it fits our remaining capacity. If it does, it goes in. If not, next sprint.",
           score: 10,
           result: "strong",
           explanation:
@@ -1477,7 +1477,7 @@ export const SCENARIOS_PART14: Scenario[] = [
       options: [
         {
           id: "s167-opt-a",
-          text: "Owen has a point. The exchange rate error alone could undermine the proposal's credibility with the board. Perhaps the colleague could address the critical issues Owen flagged and treat the minor ones as optional improvements. That way the depth of review is honoured without overwhelming the author.",
+          text: "Owen has a point. The exchange rate error alone could undermine the proposal's credibility. The colleague could address the critical issues Owen flagged and treat the minor ones as optional. That honours the review without overwhelming the author.",
           score: 10,
           result: "strong",
           explanation:
@@ -1616,7 +1616,7 @@ export const SCENARIOS_PART14: Scenario[] = [
       options: [
         {
           id: "s168-opt-a",
-          text: "Fiona, could you share the defect classification data you mentioned? If three of the five most common failure modes are only caught in week two, that directly contradicts the low-risk classification. Let us put that data side by side with the cost savings and let the numbers speak for themselves.",
+          text: "Fiona, could you share the defect classification data? If three of the five most common failure modes are only caught in week two, that contradicts the low-risk classification. Let us put that data beside the cost savings and let the numbers speak.",
           score: 10,
           result: "strong",
           explanation:

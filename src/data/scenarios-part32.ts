@@ -75,7 +75,7 @@ export const SCENARIOS_PART32: Scenario[] = [
       options: [
         {
           id: "s373-opt-a",
-          text: "Morale is worth addressing. Here is a specific proposal: pair people on tasks they have been avoiding solo. It builds support and clears the backlog. Can we trial it this sprint?",
+          text: "Morale is worth addressing. Pair people on tasks they have been avoiding solo - it builds support and clears the backlog. Can we trial it this sprint?",
           score: 10,
           result: "strong",
           explanation:
@@ -496,7 +496,7 @@ export const SCENARIOS_PART32: Scenario[] = [
       options: [
         {
           id: "s376-opt-a",
-          text: "Your work is not a backup - it is one of two strong contenders. That is a compliment to your talent, not a compromise. Let us both go in with confidence and see which direction the client connects with.",
+          text: "Your work is not a backup - it is one of two strong contenders. That is a compliment, not a compromise. Let us go in with confidence and see which one the client connects with.",
           score: 10,
           result: "strong",
           explanation:
@@ -635,7 +635,7 @@ export const SCENARIOS_PART32: Scenario[] = [
       options: [
         {
           id: "s377-opt-a",
-          text: "That clearly stung, and I appreciate you saying it out loud. But imagine if the client saw both teams presenting together with a united message - that is the story we want to tell from here. Can we build toward that?",
+          text: "That stung, and I appreciate you saying it. Imagine both teams presenting together with a united message - that is the story we want to tell. Can we build toward that?",
           score: 10,
           result: "strong",
           explanation:
@@ -774,7 +774,7 @@ export const SCENARIOS_PART32: Scenario[] = [
       options: [
         {
           id: "s378-opt-a",
-          text: "Absolutely - and I want that proposal to reflect what we discussed today, not some generic recovery plan. Let us sketch the key points together now so the written version is genuinely ours, not just ours on paper.",
+          text: "Absolutely - and I want it to reflect what we discussed today, not a generic recovery plan. Let us sketch the key points now so the written version is genuinely ours.",
           score: 10,
           result: "strong",
           explanation:
@@ -917,7 +917,7 @@ export const SCENARIOS_PART32: Scenario[] = [
       options: [
         {
           id: "s379-opt-a",
-          text: "I can understand why it might feel that way, and that is a valid concern. I want you to know that I trust this team completely. If you want to talk through how we can make the new arrangement work for you specifically, I am here for that conversation.",
+          text: "I can understand why it might feel that way. I trust this team completely. If you want to talk through how the new arrangement can work for you specifically, I am here.",
           score: 10,
           result: "strong",
           explanation:
@@ -1056,7 +1056,7 @@ export const SCENARIOS_PART32: Scenario[] = [
       options: [
         {
           id: "s380-opt-a",
-          text: "Thank you for being honest with me about how you are feeling. I completely understand the worry. I cannot share all the details by email, but I want to meet with you tomorrow morning so we can talk through what this means for you specifically. You are not facing this alone.",
+          text: "Thank you for being honest about how you are feeling. I cannot share all the details by email, but let us meet tomorrow morning to talk through what this means for you. You are not facing this alone.",
           score: 10,
           result: "strong",
           explanation:
@@ -1195,7 +1195,7 @@ export const SCENARIOS_PART32: Scenario[] = [
       options: [
         {
           id: "s381-opt-a",
-          text: "That is a really natural thing to feel, and I appreciate you trusting me with it. Survivor guilt is real, and there is no timeline for working through it. Let us have a coffee this week - I want to make sure you have the support you need.",
+          text: "That is a natural thing to feel, and I appreciate you trusting me with it. Survivor guilt is real and there is no timeline for it. Let us have a coffee this week so I can make sure you are supported.",
           score: 10,
           result: "strong",
           explanation:
@@ -1338,7 +1338,7 @@ export const SCENARIOS_PART32: Scenario[] = [
       options: [
         {
           id: "s382-opt-a",
-          text: "That is a valid point. What if we keep the standup focused as Rachel proposes, but add a separate 15-minute optional coffee chat twice a week for open discussion? That way we protect both efficiency and connection, and we can track attendance to see if people value it.",
+          text: "Valid point. What if we keep the standup focused as Rachel proposes, but add a 15-minute optional coffee chat twice a week? That protects both efficiency and connection.",
           score: 10,
           result: "strong",
           explanation:
@@ -1477,7 +1477,7 @@ export const SCENARIOS_PART32: Scenario[] = [
       options: [
         {
           id: "s383-opt-a",
-          text: "Relationships matter, but the data shows that the biggest gaps are structural - tool access, learning pathways, and check-in frequency. The framework does not prevent relationship-building; it ensures the foundational elements are in place so managers can focus their energy on connection rather than admin.",
+          text: "Relationships matter, but the data shows the biggest gaps are structural - tool access, learning pathways, and check-in frequency. The framework ensures foundations are in place so managers can focus on connection rather than admin.",
           score: 10,
           result: "strong",
           explanation:
@@ -1616,7 +1616,7 @@ export const SCENARIOS_PART32: Scenario[] = [
       options: [
         {
           id: "s384-opt-a",
-          text: "We can measure those. 'Team presence' becomes 'number of cross-functional collaborations initiated per quarter'. 'Cultural contribution' becomes 'peer recognition nominations received and given'. If we define the behaviours precisely, we can score them without proximity bias.",
+          text: "We can measure those. 'Team presence' becomes cross-functional collaborations initiated per quarter. 'Cultural contribution' becomes peer recognition nominations received and given. Defined behaviours can be scored without proximity bias.",
           score: 10,
           result: "strong",
           explanation:

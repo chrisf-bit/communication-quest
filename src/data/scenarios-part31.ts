@@ -75,7 +75,7 @@ export const SCENARIOS_PART31: Scenario[] = [
       options: [
         {
           id: "s361-opt-a",
-          text: "Understood. We value this partnership and we will have a revised proposal on your desk by Thursday morning. The flat rate is challenging, but let us see what we can do with a two-year commitment in place.",
+          text: "Understood. We will have a revised proposal on your desk by Thursday. The flat rate is challenging, but let us see what we can do with a two-year commitment.",
           score: 10,
           result: "strong",
           explanation:
@@ -214,7 +214,7 @@ export const SCENARIOS_PART31: Scenario[] = [
       options: [
         {
           id: "s362-opt-a",
-          text: "That is a fair structure. If the adjustment clause is clear and measurable, I can work with 65-35 as the starting point. Let us define exactly what counts as delivery contribution so there is no ambiguity at the quarterly review.",
+          text: "That is a fair structure. If the adjustment clause is clear and measurable, I can work with 65-35 as the start. Let us define what counts as delivery contribution so there is no ambiguity.",
           score: 10,
           result: "strong",
           explanation:
@@ -353,7 +353,7 @@ export const SCENARIOS_PART31: Scenario[] = [
       options: [
         {
           id: "s363-opt-a",
-          text: "You are right that two CEOs would be a mess. If the Chief Strategy Officer role has genuine strategic authority and I report directly to you, I can make this work. Let us define the scope clearly so my team sees it as a promotion to influence, not a step down.",
+          text: "You are right that two CEOs would be a mess. If Chief Strategy Officer has genuine authority and I report to you directly, I can make it work. Let us define the scope so my team sees it as a step up.",
           score: 10,
           result: "strong",
           explanation:
@@ -496,7 +496,7 @@ export const SCENARIOS_PART31: Scenario[] = [
       options: [
         {
           id: "s364-opt-a",
-          text: "I love that. My last team went straight into agendas and I always felt like I was just a name on a screen. The fact that you all actually care about each other as people - I can already feel that. I am really excited to be here.",
+          text: "I love that. My last team went straight into agendas and I felt like a name on a screen. The fact that you care about each other as people - I can already feel it. I am really excited to be here.",
           score: 10,
           result: "strong",
           explanation:
@@ -635,7 +635,7 @@ export const SCENARIOS_PART31: Scenario[] = [
       options: [
         {
           id: "s365-opt-a",
-          text: "Honestly? The Friday creative sessions where we would throw around wild ideas with no pressure. Some of them went nowhere, but a few turned into our best projects. I miss that energy - and I miss seeing everyone's faces when someone had a ridiculous idea that somehow worked.",
+          text: "Honestly? The Friday creative sessions where we threw around wild ideas with no pressure. Some went nowhere, but a few turned into our best projects. I miss that energy and those moments when a ridiculous idea somehow worked.",
           score: 10,
           result: "strong",
           explanation:
@@ -774,7 +774,7 @@ export const SCENARIOS_PART31: Scenario[] = [
       options: [
         {
           id: "s366-opt-a",
-          text: "You are right - I was frustrated and I typed things I would never have said face to face. What I actually wanted to say was that I think we are approaching the project brief from different angles and I did not feel heard when I raised my concerns in the last meeting. Can we talk about that?",
+          text: "You are right - I typed things I would never have said face to face. What I actually wanted to say is that we are approaching the brief from different angles and I did not feel heard last meeting. Can we talk about that?",
           score: 10,
           result: "strong",
           explanation:
@@ -917,7 +917,7 @@ export const SCENARIOS_PART31: Scenario[] = [
       options: [
         {
           id: "s367-opt-a",
-          text: "I appreciate you not pretending this is easy. I left a team I had been with for three years, and it is hard. But you are right - it is fair to give this a proper chance. I will commit to the first two weeks with an open mind.",
+          text: "I appreciate you not pretending this is easy. I left a team I had been with for three years, and that is hard. But you are right - I will commit to the first two weeks with an open mind.",
           score: 10,
           result: "strong",
           explanation:
@@ -1056,7 +1056,7 @@ export const SCENARIOS_PART31: Scenario[] = [
       options: [
         {
           id: "s368-opt-a",
-          text: "Fair enough. I had not thought about it that way. I am used to thinking out loud, but I can see how that might crowd others out. Let us try it - I am curious to see what the board surfaces.",
+          text: "Fair enough. I am used to thinking out loud, but I can see how that might crowd others out. Let us try it - I am curious to see what the board surfaces.",
           score: 10,
           result: "strong",
           explanation:
@@ -1195,7 +1195,7 @@ export const SCENARIOS_PART31: Scenario[] = [
       options: [
         {
           id: "s369-opt-a",
-          text: "I understand why you might think that, but David has been straight with us today in a way that most managers would not be. He admitted what he does not know instead of spinning it. I think we should take him at his word and see if he follows through.",
+          text: "I understand why you might think that, but David has been straight with us in a way most managers would not be. He admitted what he does not know instead of spinning it. Let us take him at his word.",
           score: 10,
           result: "strong",
           explanation:
@@ -1338,7 +1338,7 @@ export const SCENARIOS_PART31: Scenario[] = [
       options: [
         {
           id: "s370-opt-a",
-          text: "That makes sense. The errors you found were avoidable and I should have caught them. Can we build a checklist together so I have a systematic way to verify the figures before submitting? I do not want this to happen again.",
+          text: "That makes sense. The errors were avoidable and I should have caught them. Can we build a checklist so I have a systematic way to verify figures before submitting?",
           score: 10,
           result: "strong",
           explanation:
@@ -1477,7 +1477,7 @@ export const SCENARIOS_PART31: Scenario[] = [
       options: [
         {
           id: "s371-opt-a",
-          text: "You are right about the sample threshold. I will relabel the segment findings as indicative and draft a methodology note that explains the limitation. Can you review the note before I submit to make sure the statistical framing is accurate?",
+          text: "You are right about the sample threshold. I will relabel segment findings as indicative and draft a methodology note explaining the limitation. Can you review it before I submit?",
           score: 10,
           result: "strong",
           explanation:
@@ -1616,7 +1616,7 @@ export const SCENARIOS_PART31: Scenario[] = [
       options: [
         {
           id: "s372-opt-a",
-          text: "You have a point about the year-one risk. Let me revise the three assumptions. I will use the market data you cited to build a more conservative base case and present the original projections as an upside scenario. That way the board sees both possibilities.",
+          text: "You have a point about year-one risk. I will use your market data to build a conservative base case and present the original projections as an upside scenario. The board sees both possibilities.",
           score: 10,
           result: "strong",
           explanation:

@@ -353,7 +353,7 @@ export const SCENARIOS_PART9: Scenario[] = [
       options: [
         {
           id: "s99-opt-a",
-          text: "Fair enough. The promotion window opens in September. You need to hit your Q2 revenue target, complete the leadership programme by July, and get a sign-off from the regional director. I will set up a meeting with her next week so you can hear it directly. You will have a definitive answer by 1 October.",
+          text: "Fair enough. Promotion window is September. Hit your Q2 revenue target, complete the leadership programme by July, and get sign-off from the regional director. I will set up a meeting with her next week. Definitive answer by 1 October.",
           score: 10,
           result: "strong",
           explanation:
@@ -496,7 +496,7 @@ export const SCENARIOS_PART9: Scenario[] = [
       options: [
         {
           id: "s100-opt-a",
-          text: "I am with you on this, Priya. The vision you have described is exactly the kind of workplace people talk about when they say they love where they work. If we back this now, we are not just improving retention; we are building a reputation that attracts the best talent in the industry. Let us make it happen.",
+          text: "I am with you, Priya. That is the kind of workplace people talk about when they say they love where they work. Back this now and we are building a reputation that attracts the best talent in the industry.",
           score: 10,
           result: "strong",
           explanation:
@@ -635,7 +635,7 @@ export const SCENARIOS_PART9: Scenario[] = [
       options: [
         {
           id: "s101-opt-a",
-          text: "I love that idea. What if the project was something that connects to their personal interests too? You could ask them to find one thing about the company they find genuinely exciting and build a five-minute pitch around it. It gives you insight into how they think, and it gives them ownership from day one.",
+          text: "I love that idea. What if you asked them to find one thing about the company they find genuinely exciting and build a five-minute pitch around it? It gives you insight into how they think and gives them ownership from day one.",
           score: 10,
           result: "strong",
           explanation:
@@ -774,7 +774,7 @@ export const SCENARIOS_PART9: Scenario[] = [
       options: [
         {
           id: "s102-opt-a",
-          text: "You are right to be frustrated, and the way you have articulated this shows real self-awareness. Here is what I suggest: reach out to the marketing lead and propose a joint approach. Frame it as an opportunity, not a complaint. Your strength is that you genuinely want to collaborate; lead with that. It turns a conflict into a conversation, and it keeps your credibility intact.",
+          text: "You are right to be frustrated. Reach out to the marketing lead and propose a joint approach. Frame it as an opportunity, not a complaint. Lead with your genuine desire to collaborate. That turns a conflict into a conversation and keeps your credibility intact.",
           score: 10,
           result: "strong",
           explanation:
@@ -917,7 +917,7 @@ export const SCENARIOS_PART9: Scenario[] = [
       options: [
         {
           id: "s103-opt-a",
-          text: "Tom, nobody is annoyed with you. The team pulled together because they care about you, not because they resented the extra work. Your health matters more than any project deadline. We have planned a gradual return so you can ease back in at your own pace. There is no rush, and there is no pressure.",
+          text: "Tom, nobody is annoyed with you. The team pulled together because they care about you, not because they resented it. Your health matters more than any deadline. We have planned a gradual return at your own pace.",
           score: 10,
           result: "strong",
           explanation:
@@ -1056,7 +1056,7 @@ export const SCENARIOS_PART9: Scenario[] = [
       options: [
         {
           id: "s104-opt-a",
-          text: "I think a quiet, one-to-one conversation is exactly the right approach. Start by acknowledging your part in the missed handover, because that shows good faith. Then calmly explain that you had flagged the risk earlier and that being called out publicly was hurtful. Focus on how you want to work together going forward, not on assigning blame. Jamie is more likely to listen if they feel you are coming from a place of wanting to repair things.",
+          text: "A quiet, one-to-one conversation is the right approach. Acknowledge your part in the missed handover first to show good faith. Then explain that you flagged the risk earlier and that being called out publicly was hurtful. Focus on working together going forward, not assigning blame.",
           score: 10,
           result: "strong",
           explanation:
@@ -1195,7 +1195,7 @@ export const SCENARIOS_PART9: Scenario[] = [
       options: [
         {
           id: "s105-opt-a",
-          text: "David is right. The configuration step had no automated validation and no second-pair-of-eyes check. Anyone could have made this error in the same circumstances. I think we should focus on what safeguards were missing and how we build them into the process. If we fix the system, we protect everyone, not just this time, but every time.",
+          text: "David is right. The configuration step had no automated validation and no peer check. Anyone could have made this error. Let us focus on what safeguards were missing and build them into the process going forward.",
           score: 10,
           result: "strong",
           explanation:
@@ -1338,7 +1338,7 @@ export const SCENARIOS_PART9: Scenario[] = [
       options: [
         {
           id: "s106-opt-a",
-          text: "Rachel raises a valid point. I suggest we ask the marketing team to provide the three data points by Wednesday so we can reconvene with a clear evidence base. That way we are making the decision on actual data rather than projections. We can approve the budget at the follow-up meeting once the figures are verified.",
+          text: "Rachel raises a valid point. Let us ask the marketing team to provide those three data points by Wednesday so we can reconvene with a clear evidence base. We approve the budget once the figures are verified.",
           score: 10,
           result: "strong",
           explanation:
@@ -1477,7 +1477,7 @@ export const SCENARIOS_PART9: Scenario[] = [
       options: [
         {
           id: "s107-opt-a",
-          text: "Both positions have merit. The methodology is industry standard, but Owen has identified a context-specific issue that standard methods do not account for. I suggest we run a parallel analysis: keep the original report as-is, and ask Owen to produce a reweighted version using adjusted sample criteria. We present both to the leadership team with a note on the difference. That way the data speaks for itself.",
+          text: "Both positions have merit. The methodology is standard, but Owen has found a context-specific issue. I suggest we run a parallel analysis: keep the original and ask Owen to produce a reweighted version. Present both to leadership and let the data speak for itself.",
           score: 10,
           result: "strong",
           explanation:
@@ -1616,7 +1616,7 @@ export const SCENARIOS_PART9: Scenario[] = [
       options: [
         {
           id: "s108-opt-a",
-          text: "The primary driver is the review bottleneck. Looking at the data, average review turnaround has increased from 1.2 days to 3.4 days over the past six weeks. In the same period, the skills-related error rate has only risen from 4% to 5.1%, which is within normal variation. I would estimate the bottleneck accounts for roughly 75% of the output drop, with the skills gap contributing the remaining 25%. The review stage is where we need to intervene first.",
+          text: "The primary driver is the review bottleneck. Average turnaround has increased from 1.2 to 3.4 days over six weeks, while the skills-related error rate only rose from 4% to 5.1%, which is normal variation. I estimate the bottleneck accounts for 75% of the output drop. That is where we intervene first.",
           score: 10,
           result: "strong",
           explanation:

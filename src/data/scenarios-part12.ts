@@ -214,7 +214,7 @@ export const SCENARIOS_PART12: Scenario[] = [
       options: [
         {
           id: "s134-opt-a",
-          text: "I can hit the 45-day IT migration if I get two additional contractors approved by Monday and direct access to the legacy systems team. Finance can do 60 days if we bring the audit forward to week three. Here are the three things I need signed off today.",
+          text: "I can hit 45 days on IT migration if I get two contractors approved by Monday and access to the legacy systems team. Finance can do 60 days if we bring the audit forward. Here is what I need signed off today.",
           score: 10,
           result: "strong",
           explanation:
@@ -353,7 +353,7 @@ export const SCENARIOS_PART12: Scenario[] = [
       options: [
         {
           id: "s135-opt-a",
-          text: "I agree. I will send the supplier a formal letter today stating that we require the full GBP 47,000 credited within 14 days and a quarterly billing audit written into the next contract amendment. I will note that failure to comply will trigger a formal supplier review.",
+          text: "Agreed. I will send a formal letter today requiring the full GBP 47,000 credited within 14 days and a quarterly billing audit in the next contract amendment. Failure to comply triggers a formal supplier review.",
           score: 10,
           result: "strong",
           explanation:
@@ -496,7 +496,7 @@ export const SCENARIOS_PART12: Scenario[] = [
       options: [
         {
           id: "s136-opt-a",
-          text: "I love the momentum you are building. Let us organise a quick session with the team leaders this week where you can share the vision and get their buy-in. If we can show leadership that the whole department is behind this, that is a powerful message.",
+          text: "I love the momentum. Let us organise a session with the team leaders this week where you can share the vision and get their buy-in. The whole department backing this sends a powerful message to leadership.",
           score: 10,
           result: "strong",
           explanation:
@@ -635,7 +635,7 @@ export const SCENARIOS_PART12: Scenario[] = [
       options: [
         {
           id: "s137-opt-a",
-          text: "Great idea. I will put together a short narrative about our company's journey, our founding values, and what this partnership means to us. We could open the next call with that and then invite them to share more about their own story. Building that bridge will make the commercial conversation much more natural.",
+          text: "Great idea. I will put together a short narrative about our journey, our values, and what this partnership means to us. We open the next call with that and invite them to share their story. That bridge will make the commercial conversation much more natural.",
           score: 10,
           result: "strong",
           explanation:
@@ -774,7 +774,7 @@ export const SCENARIOS_PART12: Scenario[] = [
       options: [
         {
           id: "s138-opt-a",
-          text: "I think the open model is exactly right. Let me draft a proposal that frames co-development as the competitive advantage, with attribution and revenue sharing built in as safeguards. We can present it as 'the partnership framework that makes innovation possible' rather than a set of restrictions.",
+          text: "The open model is exactly right. Let me draft a proposal framing co-development as the competitive advantage, with attribution and revenue sharing as safeguards. We present it as 'the framework that makes innovation possible' rather than restrictions.",
           score: 10,
           result: "strong",
           explanation:
@@ -917,7 +917,7 @@ export const SCENARIOS_PART12: Scenario[] = [
       options: [
         {
           id: "s139-opt-a",
-          text: "I agree. Let us restructure the fee so the upfront cost is lower and we recover the balance through the first year's royalties. I will also draft a personal note from you to the franchisee, letting them know you understand their concerns and that we are here to support them through the early months.",
+          text: "Agreed. Let us lower the upfront cost and recover the balance through first-year royalties. I will also draft a personal note from you to the franchisee, letting them know you understand their concerns and are here to support them.",
           score: 10,
           result: "strong",
           explanation:
@@ -1056,7 +1056,7 @@ export const SCENARIOS_PART12: Scenario[] = [
       options: [
         {
           id: "s140-opt-a",
-          text: "That is a lovely idea. I will put together a package that combines the cash sponsorship with specific in-kind contributions: mentoring sessions for the youth programme, some equipment, and perhaps a skills workshop for the volunteers. I will frame it as a partnership commitment, not a budget workaround, so the club feels genuinely valued.",
+          text: "Lovely idea. I will put together a package combining cash sponsorship with in-kind contributions: mentoring sessions, equipment, and a skills workshop for the volunteers. I will frame it as a partnership commitment so the club feels genuinely valued.",
           score: 10,
           result: "strong",
           explanation:
@@ -1195,7 +1195,7 @@ export const SCENARIOS_PART12: Scenario[] = [
       options: [
         {
           id: "s141-opt-a",
-          text: "I agree completely. I will respond to the adjuster stating that regardless of any contributory factors, our priority is our colleague's full recovery. I will request that the settlement covers all rehabilitation costs and ongoing support needs, and I will make it clear that we stand behind our duty of care without reservation.",
+          text: "Agreed. I will respond to the adjuster stating that our priority is our colleague's full recovery, regardless of contributory factors. I will request the settlement covers all rehabilitation and support costs, and make clear we stand behind our duty of care.",
           score: 10,
           result: "strong",
           explanation:
@@ -1338,7 +1338,7 @@ export const SCENARIOS_PART12: Scenario[] = [
       options: [
         {
           id: "s142-opt-a",
-          text: "Understood. I will draft amendments for all three clauses: a fixed percentage penalty for SLA breaches, a specific deletion timeline for data retention, and a guaranteed minimum transition period. I will reference comparable industry standards for each and send you the redline by Thursday for review.",
+          text: "Understood. I will draft amendments for all three clauses: fixed penalty for SLA breaches, specific deletion timeline for data retention, and guaranteed minimum transition period. I will reference industry standards and send the redline by Thursday.",
           score: 10,
           result: "strong",
           explanation:
@@ -1477,7 +1477,7 @@ export const SCENARIOS_PART12: Scenario[] = [
       options: [
         {
           id: "s143-opt-a",
-          text: "I will draft the revised SLA with the exact penalty escalation you have outlined: 1% for the first quarterly breach, 3% for the second, and a formal contract review for the third. I will attach your performance analysis as evidence supporting the change and include a clause requiring the supplier to report against the SLA monthly with verified data.",
+          text: "I will draft the revised SLA with your penalty escalation: 1% for the first breach, 3% for the second, formal review for the third. I will attach your performance analysis as evidence and include a clause requiring monthly verified SLA reporting.",
           score: 10,
           result: "strong",
           explanation:
@@ -1616,7 +1616,7 @@ export const SCENARIOS_PART12: Scenario[] = [
       options: [
         {
           id: "s144-opt-a",
-          text: "I will prepare a one-page summary showing the three data points side by side: IP valuation, revenue channel contribution, and capital investment ratio. I will include the methodology for each so the partner can see exactly how the 55/45 figure was derived. If they want to challenge the split, they will need to challenge the data, not the feeling.",
+          text: "I will prepare a one-page summary showing three data points side by side: IP valuation, revenue channel contribution, and capital investment ratio. The methodology will show how the 55/45 figure was derived. If they want to challenge the split, they challenge the data.",
           score: 10,
           result: "strong",
           explanation:

@@ -75,7 +75,7 @@ export const SCENARIOS_PART28: Scenario[] = [
       options: [
         {
           id: "s325-opt-a",
-          text: "Jordan is right. Fourteen requests, regardless of size, represent a significant cumulative impact. The change request process protects both of us - you get transparency on cost and timeline, and we can plan our resources properly.",
+          text: "Jordan is right. Fourteen requests represent a significant cumulative impact. The change process protects both of us - you get cost and timeline transparency, and we can plan resources properly.",
           score: 10,
           result: "strong",
           explanation:
@@ -214,7 +214,7 @@ export const SCENARIOS_PART28: Scenario[] = [
       options: [
         {
           id: "s326-opt-a",
-          text: "Sam is right - the internal escalation should have reached you sooner and it did not. One of the preventative actions is a weekly client status update that flags any risks as they emerge, not after they have materialised. You will see the first one this Friday.",
+          text: "Sam is right - the escalation should have reached you sooner. One preventative action is a weekly status update that flags risks as they emerge, not after they materialise. You will see the first one this Friday.",
           score: 10,
           result: "strong",
           explanation:
@@ -353,7 +353,7 @@ export const SCENARIOS_PART28: Scenario[] = [
       options: [
         {
           id: "s327-opt-a",
-          text: "Alex's proposal protects the partnership. A 25% fee cut puts our delivery quality at risk, which hurts both of us. The restructured scope gives you the same value for the services you actually use, and the quarterly review means you are never locked into something that does not work.",
+          text: "Alex's proposal protects the partnership. A 25% fee cut puts delivery quality at risk for both of us. The restructured scope gives you value for what you actually use, and quarterly reviews mean you are never locked in.",
           score: 10,
           result: "strong",
           explanation:
@@ -496,7 +496,7 @@ export const SCENARIOS_PART28: Scenario[] = [
       options: [
         {
           id: "s328-opt-a",
-          text: "I think Priya has a point. The documentation will get done regardless, but the chance to make a strong first impression is a one-time thing. Two hours of personal connection on day one pays off for months. And honestly, it is good for us too - it reminds us what kind of team we want to be.",
+          text: "Priya has a point. The documentation will get done regardless, but a strong first impression is a one-time thing. Two hours of personal connection on day one pays off for months, and it reminds us what kind of team we want to be.",
           score: 10,
           result: "strong",
           explanation:
@@ -635,7 +635,7 @@ export const SCENARIOS_PART28: Scenario[] = [
       options: [
         {
           id: "s329-opt-a",
-          text: "Marcus is right that this deserves more than an email. A two-minute video is not much time to ask for, but the impact of named, personal recognition is huge - both for the team and for how the wider business sees what we are capable of.",
+          text: "Marcus is right that this deserves more than an email. A two-minute video is little to ask for, and the impact of named, personal recognition is huge - for the team and for how the wider business sees us.",
           score: 10,
           result: "strong",
           explanation:
@@ -774,7 +774,7 @@ export const SCENARIOS_PART28: Scenario[] = [
       options: [
         {
           id: "s330-opt-a",
-          text: "Nina is right - those words take guts to say. And if I can add one: 'ready.' I think this team is ready for something different. We have survived the hard part. Now we get to choose what comes next. What would we each want the word to be in six months?",
+          text: "Nina is right - those words take guts to say. If I can add one: 'ready.' We have survived the hard part and now we get to choose what comes next. What would we each want the word to be in six months?",
           score: 10,
           result: "strong",
           explanation:
@@ -917,7 +917,7 @@ export const SCENARIOS_PART28: Scenario[] = [
       options: [
         {
           id: "s331-opt-a",
-          text: "Tom is right. Taking on more work is a sign of trust, not a correction. And honestly, the fact that you handled your current project so well is exactly why this makes sense. You have proved you can take more on - and we want to give you that opportunity.",
+          text: "Tom is right. Taking on more work is a sign of trust, not a correction. You handled your current project so well that this is exactly why it makes sense. You have proved you can take more on.",
           score: 10,
           result: "strong",
           explanation:
@@ -1056,7 +1056,7 @@ export const SCENARIOS_PART28: Scenario[] = [
       options: [
         {
           id: "s332-opt-a",
-          text: "Leah's suggestion is a good one. If I can share first: what I need from this team is to feel like I can go directly to anyone without worrying about how it will land. I imagine that is true for both of you too. Would it help to start there - with what we each need, rather than what happened?",
+          text: "Leah's suggestion is good. If I can share first: I need to feel like I can go directly to anyone without worrying about how it lands. Would it help to start there - with what we each need, rather than what happened?",
           score: 10,
           result: "strong",
           explanation:
@@ -1195,7 +1195,7 @@ export const SCENARIOS_PART28: Scenario[] = [
       options: [
         {
           id: "s333-opt-a",
-          text: "David's reframe is important. I work differently from some of you, and what I have learned is that commitment shows up in how reliably someone delivers, not in how late their light is on. If we can agree on what 'delivered' looks like, we can stop watching each other's clocks.",
+          text: "David's reframe is important. Commitment shows up in how reliably someone delivers, not in how late their light is on. If we agree on what 'delivered' looks like, we can stop watching each other's clocks.",
           score: 10,
           result: "strong",
           explanation:
@@ -1338,7 +1338,7 @@ export const SCENARIOS_PART28: Scenario[] = [
       options: [
         {
           id: "s334-opt-a",
-          text: "Rachel's self-assessment is thorough and the gaps she has identified are real. I think the most helpful thing we can do is take the plan seriously and help her refine the milestones. She has done the hard work of diagnosing - now she needs support with the prescription.",
+          text: "Rachel's self-assessment is thorough and the gaps are real. The most helpful thing we can do is take the plan seriously and help refine the milestones. She has done the diagnosing - now she needs support with the prescription.",
           score: 10,
           result: "strong",
           explanation:
@@ -1477,7 +1477,7 @@ export const SCENARIOS_PART28: Scenario[] = [
       options: [
         {
           id: "s335-opt-a",
-          text: "The pilot approach makes strong sense. Eight weeks of data with one team gives us evidence to validate the full rollout without committing the entire operation. Owen, could you outline the specific metrics you would track during the pilot to determine success?",
+          text: "The pilot approach makes strong sense. Eight weeks with one team gives us evidence to validate the rollout without committing the entire operation. Owen, could you outline the metrics you would track to determine success?",
           score: 10,
           result: "strong",
           explanation:
@@ -1616,7 +1616,7 @@ export const SCENARIOS_PART28: Scenario[] = [
       options: [
         {
           id: "s336-opt-a",
-          text: "Fiona's research is compelling. The three case studies show this is a market trend, not an experiment. And the internal data - 40% deliverable overlap between analytics and strategy - suggests the need already exists. I think the question is not whether to create the role, but how quickly we can transition.",
+          text: "Fiona's research is compelling. Three case studies show this is a market trend, not an experiment, and 40% deliverable overlap between analytics and strategy confirms the need exists. The question is not whether to create the role, but how quickly we can transition.",
           score: 10,
           result: "strong",
           explanation:

@@ -496,7 +496,7 @@ export const SCENARIOS_PART29: Scenario[] = [
       options: [
         {
           id: "s340-opt-a",
-          text: "That is exactly what we have been trying to achieve. Our managers want to have those conversations but they do not know where to start. I am excited to see how the platform supports that.",
+          text: "That is exactly what we have been trying to achieve. Our managers want those conversations but do not know where to start. I am excited to see how the platform supports that.",
           score: 10,
           result: "strong",
           explanation:
@@ -635,7 +635,7 @@ export const SCENARIOS_PART29: Scenario[] = [
       options: [
         {
           id: "s341-opt-a",
-          text: "That resonates. We have felt like a contract number for two years. If we were to work together, I would want that same kind of dedicated relationship. Can you talk me through how that would look for us?",
+          text: "That resonates. We have felt like a contract number for two years. I would want that same dedicated relationship. Can you talk me through how that looks for us?",
           score: 10,
           result: "strong",
           explanation:
@@ -774,7 +774,7 @@ export const SCENARIOS_PART29: Scenario[] = [
       options: [
         {
           id: "s342-opt-a",
-          text: "I completely understand wanting to see more before you sign. How about this - let us schedule a 30-minute deep dive with your team next week where we can answer every question, and then you will have everything you need to make the call with full confidence.",
+          text: "I completely understand wanting to see more. Let us schedule a 30-minute deep dive with your team next week where we answer every question, so you can make the call with full confidence.",
           score: 10,
           result: "strong",
           explanation:
@@ -917,7 +917,7 @@ export const SCENARIOS_PART29: Scenario[] = [
       options: [
         {
           id: "s343-opt-a",
-          text: "That is really reassuring to hear. I think a gradual approach would go down much better with my team. Could we start with just one department as a pilot so people can see how it works before we roll out more widely?",
+          text: "That is really reassuring. A gradual approach would go down much better with my team. Could we start with one department as a pilot so people can see how it works first?",
           score: 10,
           result: "strong",
           explanation:
@@ -1056,7 +1056,7 @@ export const SCENARIOS_PART29: Scenario[] = [
       options: [
         {
           id: "s344-opt-a",
-          text: "That is a relief. I was dreading this conversation, honestly. Let us look at the options together - I want to find something that works without putting too much pressure on your team either.",
+          text: "That is a relief. I was dreading this conversation. Let us look at the options together - I want something that works without putting too much pressure on your team.",
           score: 10,
           result: "strong",
           explanation:
@@ -1195,7 +1195,7 @@ export const SCENARIOS_PART29: Scenario[] = [
       options: [
         {
           id: "s345-opt-a",
-          text: "I really appreciate that response, David. The fact that you listened to everything before jumping to solutions means a lot. The plan sounds right - let us start with the redo and I will feel much better knowing there is a senior review step in place.",
+          text: "I really appreciate that, David. You listened to everything before jumping to solutions, and that means a lot. The plan sounds right - let us start with the redo and add the senior review step.",
           score: 10,
           result: "strong",
           explanation:
@@ -1338,7 +1338,7 @@ export const SCENARIOS_PART29: Scenario[] = [
       options: [
         {
           id: "s346-opt-a",
-          text: "Fair point about last quarter. Let us walk through the scores. Can you show me how each project performed against the five criteria? I want to understand the methodology before we finalise the rankings.",
+          text: "Fair point about last quarter. Can you show me how each project scored against the five criteria? I want to understand the methodology before we finalise rankings.",
           score: 10,
           result: "strong",
           explanation:
@@ -1477,7 +1477,7 @@ export const SCENARIOS_PART29: Scenario[] = [
       options: [
         {
           id: "s347-opt-a",
-          text: "The data on serial versus parallel processing is convincing. Before we commit, can you show me the sensitivity analysis? I want to understand what happens if the technical check takes longer than projected.",
+          text: "The data on serial versus parallel processing is convincing. Before we commit, can you show me the sensitivity analysis for what happens if the technical check takes longer than projected?",
           score: 10,
           result: "strong",
           explanation:
@@ -1616,7 +1616,7 @@ export const SCENARIOS_PART29: Scenario[] = [
       options: [
         {
           id: "s348-opt-a",
-          text: "That distinction is helpful. If the approval chain delays exist independently of requirement quality, we need to address them as a separate workstream. Can you share the data on which approval chains cause the longest delays so we can target the highest-impact change first?",
+          text: "That distinction is helpful. If approval chain delays exist independently of requirement quality, they need a separate workstream. Can you share which chains cause the longest delays so we target the highest-impact change first?",
           score: 10,
           result: "strong",
           explanation:

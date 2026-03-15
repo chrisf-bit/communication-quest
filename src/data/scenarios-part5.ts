@@ -214,7 +214,7 @@ export const SCENARIOS_PART5: Scenario[] = [
       options: [
         {
           id: "s50-opt-a",
-          text: "Both accounts left due to pricing pressure from a competitor who undercut us by 15%. We have already revised our retention framework and are piloting loyalty pricing with our top 10 at-risk accounts this quarter.",
+          text: "Both left due to a competitor undercutting us by 15%. We have revised our retention framework and are piloting loyalty pricing with our top 10 at-risk accounts.",
           score: 10,
           result: "strong",
           explanation:
@@ -635,7 +635,7 @@ export const SCENARIOS_PART5: Scenario[] = [
       options: [
         {
           id: "s53-opt-a",
-          text: "Here is what I can tell you: four pilot users said they would pay double our target price point. If we convert even 10% of our existing customer base, we are looking at a seven-figure opportunity. I will have the full model ready within a fortnight, but the demand signal is already clear.",
+          text: "Four pilot users said they would pay double our target price. Convert even 10% of our base and we are looking at a seven-figure opportunity. The demand signal is already clear.",
           score: 10,
           result: "strong",
           explanation:
@@ -774,7 +774,7 @@ export const SCENARIOS_PART5: Scenario[] = [
       options: [
         {
           id: "s54-opt-a",
-          text: "Pause the slides and say: 'I am going to be honest with you, I can feel the energy dipping, so let us do something different. Drop one word in the chat that describes your biggest challenge right now, and I will respond to three of them live.' It feels raw, real, and reconnects the room.",
+          text: "Pause and say: 'I can feel the energy dipping, so let us do something different. Drop one word in the chat that describes your biggest challenge right now and I will respond to three of them live.'",
           score: 10,
           result: "strong",
           explanation:
@@ -917,7 +917,7 @@ export const SCENARIOS_PART5: Scenario[] = [
       options: [
         {
           id: "s55-opt-a",
-          text: "Thank you for saying that, Jess. I suspect quite a few of us feel the same way, and that is completely fair. I want you to know that the transition plan includes protected time for learning, and no one will be expected to carry their full workload while getting up to speed. We will do this together, at a pace that works for everyone.",
+          text: "Thank you for saying that, Jess. I suspect a lot of us feel the same way. The transition plan includes protected time for learning, and no one will carry their full workload while getting up to speed. We will do this together.",
           score: 10,
           result: "strong",
           explanation:
@@ -1056,7 +1056,7 @@ export const SCENARIOS_PART5: Scenario[] = [
       options: [
         {
           id: "s56-opt-a",
-          text: "I appreciate you saying that, and I know a number of people share that feeling. I am not going to pretend the consultation process was ideal. What I can promise is that from this point on, your voice matters in how the transition is managed. This session is part of that commitment, and I want your input on the support plan.",
+          text: "I appreciate you saying that. The consultation process was not ideal, and I will not pretend otherwise. From this point on, your voice matters in how the transition is managed. I want your input on the support plan.",
           score: 10,
           result: "strong",
           explanation:
@@ -1195,7 +1195,7 @@ export const SCENARIOS_PART5: Scenario[] = [
       options: [
         {
           id: "s57-opt-a",
-          text: "I am glad you asked that, and I am not going to give you a rehearsed answer. Here is my commitment: every person in this room will have a one-to-one conversation with their manager within the next two weeks to discuss their individual situation. If at any point you feel that your concern has been noted but not acted on, come to me directly. My door is open, and that is not a corporate phrase. I mean it.",
+          text: "I am not going to give you a rehearsed answer. Every person here will have a one-to-one with their manager within two weeks. If you feel your concern has been noted but not acted on, come to me directly. My door is open, and I mean it.",
           score: 10,
           result: "strong",
           explanation:
@@ -1338,7 +1338,7 @@ export const SCENARIOS_PART5: Scenario[] = [
       options: [
         {
           id: "s58-opt-a",
-          text: "I understand the time pressure. Let me do this: I will cover the three most critical data points in 90 seconds, and then move to the recommendations. That way you have the evidence you need to make an informed decision without the full methodology walkthrough.",
+          text: "Let me cover the three most critical data points in 90 seconds, then move to the recommendations. That gives you the evidence you need without the full methodology walkthrough.",
           score: 10,
           result: "strong",
           explanation:
@@ -1477,7 +1477,7 @@ export const SCENARIOS_PART5: Scenario[] = [
       options: [
         {
           id: "s59-opt-a",
-          text: "That is a valid challenge. The sample size is 1,200 units across four quarters, and the correlation coefficient between Plant C batches and elevated defect rates is 0.87, which is well above the threshold for statistical significance. I also ran a control comparison against Plants A and B, which showed no comparable pattern. The data rules out coincidence.",
+          text: "The sample is 1,200 units across four quarters. The correlation between Plant C batches and elevated defects is 0.87, well above the significance threshold. Plants A and B showed no comparable pattern. The data rules out coincidence.",
           score: 10,
           result: "strong",
           explanation:
@@ -1616,7 +1616,7 @@ export const SCENARIOS_PART5: Scenario[] = [
       options: [
         {
           id: "s60-opt-a",
-          text: "I built that scenario into the sensitivity analysis. If adoption drops to 60% of our base case, the payback period extends from 18 to 29 months, but the net present value remains positive at 940,000. I have also modelled a worst-case scenario at 40% adoption, which still breaks even within 36 months. The investment case is resilient across all three models.",
+          text: "That is in the sensitivity analysis. At 60% adoption, payback extends from 18 to 29 months but NPV stays positive at 940,000. At 40% adoption, we still break even within 36 months. The case is resilient across all three models.",
           score: 10,
           result: "strong",
           explanation:

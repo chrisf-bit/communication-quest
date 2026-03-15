@@ -75,7 +75,7 @@ export const SCENARIOS_PART19: Scenario[] = [
       options: [
         {
           id: "s217-opt-a",
-          text: "Agreed. Here is the opening: 'This product cuts reporting time by 60%. The nearest competitor does 35%. The objection you will hear is price - we cost 20% more. The answer: the time saving pays for itself in six weeks.' I will restructure the deck around that.",
+          text: "Here is the opening: 'This product cuts reporting time by 60%. The nearest competitor does 35%. The objection is price - we cost 20% more. The answer: the saving pays for itself in six weeks.' I will restructure the deck around that.",
           score: 10,
           result: "strong",
           explanation:
@@ -214,7 +214,7 @@ export const SCENARIOS_PART19: Scenario[] = [
       options: [
         {
           id: "s218-opt-a",
-          text: "Skip the landscape slide. Your revenue growth and customer pipeline tell the competitive story without a separate analysis. If an investor asks about competitors, answer it verbally. Do not build a slide for a question that might not come.",
+          text: "Skip the landscape slide. Revenue growth and your pipeline tell the competitive story. If an investor asks, answer verbally. Do not build a slide for a question that might not come.",
           score: 10,
           result: "strong",
           explanation:
@@ -353,7 +353,7 @@ export const SCENARIOS_PART19: Scenario[] = [
       options: [
         {
           id: "s219-opt-a",
-          text: "Say 'data breach'. Employees will find out the real language within hours anyway, and if the company used softer words, they will feel misled. Being straight now earns trust that protects us later. We can add 'we are still determining the full scope' to acknowledge what we do not yet know.",
+          text: "Say 'data breach'. Employees will find out the real language within hours. Softer words will feel misleading. Being straight now earns trust. Add 'we are still determining the full scope' to cover what we do not yet know.",
           score: 10,
           result: "strong",
           explanation:
@@ -496,7 +496,7 @@ export const SCENARIOS_PART19: Scenario[] = [
       options: [
         {
           id: "s220-opt-a",
-          text: "First, I want you to know that everything you said about your value is true. We see it every day in your work. We cannot quite reach the rate you asked for, but here is what we can do: a 15% increase, first refusal on all creative briefs, and the flexibility to work on your own schedule. We want this partnership to feel as good for you as it does for us.",
+          text: "Everything you said about your value is true. We cannot quite reach the rate you asked for, but here is what we can do: a 15% increase, first refusal on all creative briefs, and full schedule flexibility.",
           score: 10,
           result: "strong",
           explanation:
@@ -635,7 +635,7 @@ export const SCENARIOS_PART19: Scenario[] = [
       options: [
         {
           id: "s221-opt-a",
-          text: "Your brand is what makes you remarkable, and we have no intention of overshadowing it. We want to propose something: full creative control over how this partnership is presented publicly sits with you. Your voice, your visual identity, your standards. We are joining forces, not taking over.",
+          text: "Your brand is what makes you remarkable. Full creative control over how this partnership is presented publicly sits with you. Your voice, your visual identity, your standards. We are joining forces, not taking over.",
           score: 10,
           result: "strong",
           explanation:
@@ -774,7 +774,7 @@ export const SCENARIOS_PART19: Scenario[] = [
       options: [
         {
           id: "s222-opt-a",
-          text: "Nina is right. Think about the last major local project that faced community opposition. The delays cost more than any apprenticeship programme would. Community benefit clauses are not a cost - they are insurance against the most expensive risk in public sector delivery: local resistance. And they create something you can point to with genuine pride.",
+          text: "Think about the last local project that faced community opposition. Those delays cost more than any apprenticeship programme. Community benefit clauses are insurance against the costliest risk in public sector delivery: local resistance.",
           score: 10,
           result: "strong",
           explanation:
@@ -917,7 +917,7 @@ export const SCENARIOS_PART19: Scenario[] = [
       options: [
         {
           id: "s223-opt-a",
-          text: "Tom has a point. The people who most need a check-in are the least likely to type it into Slack. Fifteen minutes a week is a small investment in making sure nobody falls through the cracks. And it is not just about catching problems - it is about people knowing someone genuinely cares how they are doing.",
+          text: "The people who most need a check-in are the least likely to type it into Slack. Fifteen minutes a week is a small investment in making sure nobody falls through the cracks.",
           score: 10,
           result: "strong",
           explanation:
@@ -1056,7 +1056,7 @@ export const SCENARIOS_PART19: Scenario[] = [
       options: [
         {
           id: "s224-opt-a",
-          text: "Leah is right. Imagine logging on to your first day and immediately facing twenty strangers on a screen. A fifteen-minute call with one friendly person first gives them an ally before they walk into the group. Efficiency matters, but not at the cost of the new starter's first impression of the team.",
+          text: "Imagine logging on to your first day and facing twenty strangers on a screen. A fifteen-minute call with one friendly person first gives them an ally before the group call. That first impression matters.",
           score: 10,
           result: "strong",
           explanation:
@@ -1195,7 +1195,7 @@ export const SCENARIOS_PART19: Scenario[] = [
       options: [
         {
           id: "s225-opt-a",
-          text: "I appreciate you saying that, and I do not want to make it bigger than it needs to be. I just noticed things have felt a bit different between you and Jen this past week, and I wanted to check you are okay. No pressure to talk about it - but if you ever do want to, I am here and it stays between us.",
+          text: "I do not want to make it bigger than it needs to be. I just noticed things have felt different between you and Jen this week, and I wanted to check you are okay. No pressure - but if you do want to talk, I am here.",
           score: 10,
           result: "strong",
           explanation:
@@ -1338,7 +1338,7 @@ export const SCENARIOS_PART19: Scenario[] = [
       options: [
         {
           id: "s226-opt-a",
-          text: "Rachel's trend data is concerning. The error rate has gone from 2.8% to 4.2% in one quarter. At that trajectory, we cross the 5% ISO threshold by September. The remediation plan addresses the root cause now, before we face a certification issue that would cost significantly more to resolve retroactively.",
+          text: "The error rate has gone from 2.8% to 4.2% in one quarter. At that trajectory, we cross the 5% ISO threshold by September. The remediation plan addresses the root cause now, before a certification issue costs far more.",
           score: 10,
           result: "strong",
           explanation:
@@ -1477,7 +1477,7 @@ export const SCENARIOS_PART19: Scenario[] = [
       options: [
         {
           id: "s227-opt-a",
-          text: "Owen's point about the supply chain risk is exactly why we need the matrix. That risk was dismissed intuitively and it cost us eight weeks. The framework is not replacing experience - it is making sure experience is applied consistently and nothing falls through the gaps. Can we run through the matrix together and see if it surfaces anything we might otherwise miss?",
+          text: "That supply chain risk was dismissed intuitively and cost us eight weeks. The framework is not replacing experience - it ensures nothing falls through the gaps. Can we run through the matrix together and see if it surfaces anything we might miss?",
           score: 10,
           result: "strong",
           explanation:
@@ -1616,7 +1616,7 @@ export const SCENARIOS_PART19: Scenario[] = [
       options: [
         {
           id: "s228-opt-a",
-          text: "Fiona has cited four independent sources that all show the same trend. If we want to challenge the finding, we need counter-evidence from a comparable source, not a challenge to the messenger. The question should be: what data supports the current direction? If we cannot produce it, the data Fiona has presented should inform the decision.",
+          text: "Four independent sources show the same trend. To challenge the finding, we need counter-evidence, not a challenge to the messenger. What data supports the current direction? If we cannot produce it, Fiona's data should inform the decision.",
           score: 10,
           result: "strong",
           explanation:

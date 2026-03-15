@@ -496,7 +496,7 @@ export const SCENARIOS_PART13: Scenario[] = [
       options: [
         {
           id: "s148-opt-a",
-          text: "Love this idea! I will go first in the chat. Mine is that I once accidentally ended up on stage at a comedy club. Cannot wait to hear everyone else's. New joiners, yours are going to be the best ones, I can tell already!",
+          text: "Love this! I will go first - mine is that I once accidentally ended up on stage at a comedy club. New joiners, yours are going to be the best ones, I can tell already!",
           score: 10,
           result: "strong",
           explanation:
@@ -635,7 +635,7 @@ export const SCENARIOS_PART13: Scenario[] = [
       options: [
         {
           id: "s149-opt-a",
-          text: "Marcus is right, the finance perspective always changes the game. And honestly, some of the best insights I have heard in workshops started with 'I am not sure about this, but...' so whatever you are thinking, we want to hear it.",
+          text: "Marcus is right, the finance perspective always changes the game. Some of the best workshop insights start with 'I am not sure about this, but...' so whatever you are thinking, we want to hear it.",
           score: 10,
           result: "strong",
           explanation:
@@ -774,7 +774,7 @@ export const SCENARIOS_PART13: Scenario[] = [
       options: [
         {
           id: "s150-opt-a",
-          text: "That feasibility lens is going to be really valuable tomorrow when we prototype. For now, I am curious what would happen if we assumed this idea could work. What would it look like? Sometimes the most impractical-sounding ideas contain a kernel that becomes the actual solution.",
+          text: "That feasibility lens will be valuable tomorrow when we prototype. For now, what would it look like if we assumed this idea could work? Sometimes the most impractical-sounding ideas contain a kernel that becomes the actual solution.",
           score: 10,
           result: "strong",
           explanation:
@@ -917,7 +917,7 @@ export const SCENARIOS_PART13: Scenario[] = [
       options: [
         {
           id: "s151-opt-a",
-          text: "You are not underperforming, Tom. You have been carrying a workload built for two people and you have kept things moving when many people would have flagged this sooner. Let us work out together which tasks are genuinely yours and which we need to redistribute. You do not have to carry this alone.",
+          text: "You are not underperforming, Tom. You have been carrying a workload built for two people and kept things moving when others would have flagged this sooner. Let us work out which tasks are genuinely yours and which we need to redistribute.",
           score: 10,
           result: "strong",
           explanation:
@@ -1056,7 +1056,7 @@ export const SCENARIOS_PART13: Scenario[] = [
       options: [
         {
           id: "s152-opt-a",
-          text: "I appreciate you sharing that, and I can see it still affects you. We want to make sure this kind of thing does not happen to someone else. Whatever detail you feel comfortable sharing will help us. And if you would rather pause for a moment, that is completely fine.",
+          text: "I appreciate you sharing that, and I can see it still affects you. We want to make sure this does not happen to someone else. Whatever you feel comfortable sharing will help us, and if you need to pause, that is fine.",
           score: 10,
           result: "strong",
           explanation:
@@ -1195,7 +1195,7 @@ export const SCENARIOS_PART13: Scenario[] = [
       options: [
         {
           id: "s153-opt-a",
-          text: "I felt exactly the same way when I first heard about this, and I think that honesty is actually a strength. If we go to our teams and say 'here is what I know, here is what I am still finding out, and here is where you can ask questions', I think they will respect that more than a polished script.",
+          text: "I felt the same way when I first heard about this, and that honesty is actually a strength. If we tell our teams 'here is what I know, here is what I am still finding out, and here is where you can ask questions', they will respect that more than a polished script.",
           score: 10,
           result: "strong",
           explanation:
@@ -1338,7 +1338,7 @@ export const SCENARIOS_PART13: Scenario[] = [
       options: [
         {
           id: "s154-opt-a",
-          text: "Agree with Rachel on this one. The observability benefit outweighs the readability cost here. For reference, we had an incident last quarter (INC-2847) where a generic handler made diagnosis take 40 minutes longer than it should have. The typed exception pattern would have surfaced the root cause immediately.",
+          text: "Agree with Rachel. The observability benefit outweighs the readability cost. Last quarter, a generic handler made incident INC-2847 take 40 minutes longer to diagnose. The typed exception pattern would have surfaced the root cause immediately.",
           score: 10,
           result: "strong",
           explanation:
@@ -1477,7 +1477,7 @@ export const SCENARIOS_PART13: Scenario[] = [
       options: [
         {
           id: "s155-opt-a",
-          text: "Agree on the rating and the register entry. Before the 17 March review, could you also check with the provider's support team whether the outages are scheduled maintenance? That would move us from medium to either high or low likelihood, which changes the mitigation approach.",
+          text: "Agree on the rating. Before the 17 March review, could you check with the provider whether the outages are scheduled maintenance? That would shift the likelihood rating and change the mitigation approach.",
           score: 10,
           result: "strong",
           explanation:
@@ -1616,7 +1616,7 @@ export const SCENARIOS_PART13: Scenario[] = [
       options: [
         {
           id: "s156-opt-a",
-          text: "Fiona, that controllable/uncontrollable split is really useful. For the contractor spend, could we see a month-by-month breakdown? If the increase started before the market shift, it strengthens the case that it is a controllable issue. I have seen similar patterns where contractor spend drifts up gradually and gets attributed to external factors after the fact.",
+          text: "Fiona, that controllable/uncontrollable split is useful. For the contractor spend, could we see a month-by-month breakdown? If the increase started before the market shift, it strengthens the case that it is a controllable issue rather than an external factor.",
           score: 10,
           result: "strong",
           explanation:
