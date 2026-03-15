@@ -28,6 +28,7 @@ export function WordSortChallengeUI({
 }: Props) {
   const [assignments, setAssignments] = useState<Record<string, CommunicationStyle | null>>({});
   const [submitted, setSubmitted] = useState(false);
+  const [finalScore, setFinalScore] = useState<number | null>(null);
 
   // Shuffle words once
   const shuffledWords = useMemo(() => {
@@ -65,8 +66,7 @@ export function WordSortChallengeUI({
       (w) => assignments[w.word] === w.style
     ).length;
     const score = Math.round((correct / shuffledWords.length) * 10);
-    // Delay to show results before advancing
-    setTimeout(() => onAnswer(score, 10), 2000);
+    setFinalScore(score);
   };
 
   const getWordResult = (word: string, correctStyle: CommunicationStyle) => {
@@ -256,6 +256,17 @@ export function WordSortChallengeUI({
                 </>
               );
             })()}
+            <button
+              onClick={() => finalScore !== null && onAnswer(finalScore, 10)}
+              className="mt-2 px-10 py-3 rounded-2xl font-bold text-lg text-white flex items-center justify-center gap-2 mx-auto transition-all duration-200 hover:-translate-y-0.5"
+              style={{
+                background: "linear-gradient(135deg, #58CC02, #46A302)",
+                boxShadow: "0 4px 20px rgba(88, 204, 2, 0.4)",
+              }}
+            >
+              Next
+              <ArrowRight size={20} />
+            </button>
           </div>
         )}
       </div>

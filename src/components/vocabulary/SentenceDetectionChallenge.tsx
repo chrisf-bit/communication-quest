@@ -4,7 +4,7 @@ import { useState } from "react";
 import { CommunicationStyle, SentenceDetectionChallenge as SentenceData } from "@/types";
 import { STYLES, STYLE_GRID_ORDER } from "@/data/styles";
 import { STYLE_LANGUAGE_TIPS } from "@/data/vocabulary";
-import { Check, X, MessageSquare } from "lucide-react";
+import { Check, X, MessageSquare, ArrowRight } from "lucide-react";
 
 const STYLE_BG: Record<CommunicationStyle, string> = {
   direct: "linear-gradient(145deg, #DC2626, #B91C1C)",
@@ -36,6 +36,7 @@ export function SentenceDetectionChallengeUI({
 }: Props) {
   const [selected, setSelected] = useState<CommunicationStyle | null>(null);
   const [submitted, setSubmitted] = useState(false);
+  const [finalScore, setFinalScore] = useState<number | null>(null);
 
   const handleSubmit = () => {
     if (!selected || submitted) return;
@@ -52,7 +53,7 @@ export function SentenceDetectionChallengeUI({
       score = 5;
     }
 
-    setTimeout(() => onAnswer(score, 10), 2000);
+    setFinalScore(score);
   };
 
   const getButtonState = (style: CommunicationStyle) => {
@@ -202,6 +203,17 @@ export function SentenceDetectionChallengeUI({
             <p className="text-sm text-white/70 italic">
               {STYLE_LANGUAGE_TIPS[challenge.correctStyle]}
             </p>
+            <button
+              onClick={() => finalScore !== null && onAnswer(finalScore, 10)}
+              className="mt-2 px-10 py-3 rounded-2xl font-bold text-lg text-white flex items-center justify-center gap-2 mx-auto transition-all duration-200 hover:-translate-y-0.5"
+              style={{
+                background: "linear-gradient(135deg, #58CC02, #46A302)",
+                boxShadow: "0 4px 20px rgba(88, 204, 2, 0.4)",
+              }}
+            >
+              Next
+              <ArrowRight size={20} />
+            </button>
           </div>
         )}
       </div>

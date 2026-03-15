@@ -4,7 +4,7 @@ import { useState, useMemo } from "react";
 import { LanguageMatchChallenge as MatchData } from "@/types";
 import { STYLES } from "@/data/styles";
 import { STYLE_LANGUAGE_TIPS } from "@/data/vocabulary";
-import { Check, X, MessageCircle } from "lucide-react";
+import { Check, X, MessageCircle, ArrowRight } from "lucide-react";
 
 interface Props {
   challenge: MatchData;
@@ -21,6 +21,7 @@ export function LanguageMatchChallengeUI({
 }: Props) {
   const [selected, setSelected] = useState<string | null>(null);
   const [submitted, setSubmitted] = useState(false);
+  const [finalScore, setFinalScore] = useState<number | null>(null);
 
   // Shuffle options once
   const shuffledOptions = useMemo(() => {
@@ -39,7 +40,7 @@ export function LanguageMatchChallengeUI({
     const option = challenge.options.find((o) => o.id === selected);
     const score = option?.isCorrect ? 10 : 0;
 
-    setTimeout(() => onAnswer(score, 10), 2000);
+    setFinalScore(score);
   };
 
   const getOptionState = (optionId: string) => {
@@ -206,6 +207,17 @@ export function LanguageMatchChallengeUI({
             <p className="text-sm text-white/70 italic">
               {STYLE_LANGUAGE_TIPS[challenge.characterStyle]}
             </p>
+            <button
+              onClick={() => finalScore !== null && onAnswer(finalScore, 10)}
+              className="mt-2 px-10 py-3 rounded-2xl font-bold text-lg text-white flex items-center justify-center gap-2 mx-auto transition-all duration-200 hover:-translate-y-0.5"
+              style={{
+                background: "linear-gradient(135deg, #58CC02, #46A302)",
+                boxShadow: "0 4px 20px rgba(88, 204, 2, 0.4)",
+              }}
+            >
+              Next
+              <ArrowRight size={20} />
+            </button>
           </div>
         )}
       </div>
