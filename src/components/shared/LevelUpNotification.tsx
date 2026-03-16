@@ -52,7 +52,7 @@ export function LevelUpNotification({
 
   return (
     <div
-      className="fixed top-6 left-1/2 -translate-x-1/2 z-[100] transition-all duration-300"
+      className="fixed top-[4.5rem] left-1/2 -translate-x-1/2 z-[100] transition-all duration-300"
       style={{
         opacity: visible ? 1 : 0,
         transform: `translateX(-50%) translateY(${visible ? "0" : "-20px"})`,

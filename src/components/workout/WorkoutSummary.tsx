@@ -107,7 +107,7 @@ export function WorkoutSummary({
       <div className="max-w-3xl mx-auto space-y-6 px-4 py-8" style={{ animation: "fade-up 0.5s ease-out" }}>
         {/* Score scene - dark glass with coloured accents */}
         <div
-          className="relative rounded-3xl overflow-hidden px-8 py-10 text-center backdrop-blur-xl"
+          className="relative rounded-3xl overflow-hidden px-4 sm:px-8 py-10 text-center backdrop-blur-xl"
           style={{
             background: sceneBg,
             borderLeft: `5px solid ${scoreColour}`,
@@ -117,11 +117,11 @@ export function WorkoutSummary({
           }}
         >
           <div
-            className="absolute top-4 right-8 w-32 h-32 rounded-full blur-3xl opacity-25"
+            className="absolute top-4 right-8 w-20 h-20 sm:w-32 sm:h-32 rounded-full blur-3xl opacity-25"
             style={{ backgroundColor: scoreColour }}
           />
           <div
-            className="absolute bottom-4 left-10 w-40 h-40 rounded-full blur-3xl opacity-15"
+            className="absolute bottom-4 left-10 w-24 h-24 sm:w-40 sm:h-40 rounded-full blur-3xl opacity-15"
             style={{ backgroundColor: scoreColour }}
           />
 
@@ -187,7 +187,7 @@ export function WorkoutSummary({
         )}
 
         {/* Strengths and focus - dark glass scene cards */}
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {strongestStyle && (
             <div
               className="relative rounded-3xl overflow-hidden p-5 space-y-3 backdrop-blur-xl"

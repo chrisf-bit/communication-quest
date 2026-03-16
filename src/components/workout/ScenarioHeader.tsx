@@ -72,7 +72,7 @@ export function ScenarioHeader({
   const charPos = SCENE_POSITIONS[sceneIndex] || SCENE_POSITIONS[0];
 
   return (
-    <div className="relative min-h-[calc(100vh-3.5rem)] flex flex-col">
+    <div className="relative min-h-[calc(100dvh-3.5rem)] flex flex-col">
       {/* Dark gradient base background */}
       <div
         className="absolute inset-0"
@@ -83,7 +83,7 @@ export function ScenarioHeader({
       />
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col min-h-[calc(100vh-3.5rem)]">
+      <div className="relative z-10 flex flex-col min-h-[calc(100dvh-3.5rem)]">
         {/* Top bar: Progress */}
         <div className="px-6 pt-4 pb-2 max-w-4xl mx-auto w-full">
           <div className="flex items-center gap-3">
@@ -125,7 +125,7 @@ export function ScenarioHeader({
         {/* Main content area - character left, panels right */}
         <div className="relative flex-1 flex flex-row">
           {/* Left column: Scene + Character */}
-          <div className="relative w-1/3 sm:w-2/5 flex-shrink-0">
+          <div className="relative hidden sm:block sm:w-2/5 flex-shrink-0">
             <div className="absolute inset-0 overflow-hidden">
               <WorkplaceScene seed={scenario.id} />
               <div

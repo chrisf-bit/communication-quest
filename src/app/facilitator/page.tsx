@@ -163,11 +163,11 @@ export default function FacilitatorPage() {
     >
       {/* Glow orbs */}
       <div
-        className="pointer-events-none fixed top-20 left-1/4 w-72 h-72 rounded-full blur-[120px] opacity-15"
+        className="pointer-events-none fixed top-20 left-1/4 w-40 h-40 sm:w-72 sm:h-72 rounded-full blur-[120px] opacity-15"
         style={{ background: "#7C3AED" }}
       />
       <div
-        className="pointer-events-none fixed bottom-32 right-1/4 w-64 h-64 rounded-full blur-[120px] opacity-10"
+        className="pointer-events-none fixed bottom-32 right-1/4 w-32 h-32 sm:w-64 sm:h-64 rounded-full blur-[120px] opacity-10"
         style={{ background: "#58CC02" }}
       />
 

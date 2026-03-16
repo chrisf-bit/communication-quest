@@ -48,28 +48,28 @@ export default function HomePage() {
       >
         {/* 4 style colour glow orbs - bold and vivid */}
         <div
-          className="absolute top-0 left-0 w-80 h-80 rounded-full"
+          className="absolute top-0 left-0 w-40 h-40 sm:w-80 sm:h-80 rounded-full"
           style={{
             backgroundColor: "rgba(255, 107, 107, 0.25)",
             filter: "blur(100px)",
           }}
         />
         <div
-          className="absolute top-0 right-0 w-72 h-72 rounded-full"
+          className="absolute top-0 right-0 w-40 h-40 sm:w-72 sm:h-72 rounded-full"
           style={{
             backgroundColor: "rgba(245, 158, 11, 0.22)",
             filter: "blur(100px)",
           }}
         />
         <div
-          className="absolute bottom-0 left-1/4 w-96 h-96 rounded-full"
+          className="absolute bottom-0 left-1/4 w-48 h-48 sm:w-96 sm:h-96 rounded-full"
           style={{
             backgroundColor: "rgba(5, 150, 105, 0.2)",
             filter: "blur(120px)",
           }}
         />
         <div
-          className="absolute bottom-0 right-1/4 w-80 h-80 rounded-full"
+          className="absolute bottom-0 right-1/4 w-40 h-40 sm:w-80 sm:h-80 rounded-full"
           style={{
             backgroundColor: "rgba(59, 130, 246, 0.25)",
             filter: "blur(100px)",
@@ -460,7 +460,7 @@ export default function HomePage() {
               >
                 {/* Background glow orb */}
                 <div
-                  className="absolute top-0 right-0 w-32 h-32 rounded-full"
+                  className="absolute top-0 right-0 w-20 h-20 sm:w-32 sm:h-32 rounded-full"
                   style={{ backgroundColor: "rgba(255,255,255,0.15)", filter: "blur(40px)" }}
                 />
                 <div className="relative z-10 flex items-start gap-4">
@@ -496,7 +496,7 @@ export default function HomePage() {
         }}
       >
         <div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 sm:w-96 sm:h-96 rounded-full"
           style={{ backgroundColor: "rgba(88,204,2,0.1)", filter: "blur(120px)" }}
         />
         <div className="relative z-10 max-w-6xl mx-auto px-6 space-y-6">

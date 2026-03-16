@@ -244,13 +244,13 @@ export function SpotlightTutorial() {
         {/* Skip button */}
         <button
           onClick={dismiss}
-          className="absolute top-4 right-4 w-8 h-8 rounded-full flex items-center justify-center text-white/40 hover:text-white/80 hover:bg-white/10 transition-all z-10"
+          className="absolute top-4 right-4 w-10 h-10 sm:w-8 sm:h-8 rounded-full flex items-center justify-center text-white/40 hover:text-white/80 hover:bg-white/10 transition-all z-10"
         >
           <X size={18} />
         </button>
 
         {/* Content */}
-        <div className="px-8 pt-8 pb-6 space-y-4">
+        <div className="px-4 sm:px-8 pt-8 pb-6 space-y-4">
           {/* Step indicator */}
           <div className="flex justify-center gap-2">
             {steps.map((_, i) => (
@@ -281,7 +281,7 @@ export function SpotlightTutorial() {
         </div>
 
         {/* Actions */}
-        <div className="px-8 pb-8 flex gap-3">
+        <div className="px-4 sm:px-8 pb-8 flex gap-3">
           {step > 0 && (
             <button
               onClick={() => setStep(step - 1)}

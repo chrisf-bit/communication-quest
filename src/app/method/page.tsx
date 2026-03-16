@@ -34,11 +34,11 @@ export default function MethodPage() {
     >
       {/* Background glow orbs */}
       <div
-        className="fixed top-0 left-0 w-72 h-72 rounded-full pointer-events-none"
+        className="fixed top-0 left-0 w-40 h-40 sm:w-72 sm:h-72 rounded-full pointer-events-none"
         style={{ backgroundColor: "rgba(225, 29, 72, 0.12)", filter: "blur(100px)" }}
       />
       <div
-        className="fixed bottom-0 right-0 w-80 h-80 rounded-full pointer-events-none"
+        className="fixed bottom-0 right-0 w-40 h-40 sm:w-80 sm:h-80 rounded-full pointer-events-none"
         style={{ backgroundColor: "rgba(59, 130, 246, 0.12)", filter: "blur(100px)" }}
       />
 
@@ -100,7 +100,7 @@ export default function MethodPage() {
                 >
                   {/* Background glow */}
                   <div
-                    className="absolute top-0 right-0 w-40 h-40 rounded-full"
+                    className="absolute top-0 right-0 w-24 h-24 sm:w-40 sm:h-40 rounded-full"
                     style={{ backgroundColor: "rgba(255,255,255,0.15)", filter: "blur(50px)" }}
                   />
 

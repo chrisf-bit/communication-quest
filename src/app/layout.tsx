@@ -51,7 +51,7 @@ export default function RootLayout({
       >
         <Providers>
           <Header />
-          <main className="min-h-[calc(100vh-3.5rem)]">
+          <main className="min-h-[calc(100dvh-3.5rem)]">
             <AccessGate>{children}</AccessGate>
           </main>
           <ConsentBanner />

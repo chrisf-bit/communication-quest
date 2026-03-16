@@ -147,23 +147,23 @@ export function VocabularyFlow({
       >
         {/* Glow orbs */}
         <div
-          className="absolute top-0 left-0 w-72 h-72 rounded-full"
+          className="absolute top-0 left-0 w-40 h-40 sm:w-72 sm:h-72 rounded-full"
           style={{ backgroundColor: "rgba(255, 107, 107, 0.2)", filter: "blur(100px)" }}
         />
         <div
-          className="absolute top-0 right-0 w-64 h-64 rounded-full"
+          className="absolute top-0 right-0 w-32 h-32 sm:w-64 sm:h-64 rounded-full"
           style={{ backgroundColor: "rgba(245, 158, 11, 0.18)", filter: "blur(100px)" }}
         />
         <div
-          className="absolute bottom-0 left-1/4 w-80 h-80 rounded-full"
+          className="absolute bottom-0 left-1/4 w-40 h-40 sm:w-80 sm:h-80 rounded-full"
           style={{ backgroundColor: "rgba(5, 150, 105, 0.15)", filter: "blur(120px)" }}
         />
         <div
-          className="absolute bottom-0 right-1/4 w-72 h-72 rounded-full"
+          className="absolute bottom-0 right-1/4 w-40 h-40 sm:w-72 sm:h-72 rounded-full"
           style={{ backgroundColor: "rgba(59, 130, 246, 0.2)", filter: "blur(100px)" }}
         />
 
-        <div className="relative z-10 text-center space-y-8 px-8 max-w-2xl">
+        <div className="relative z-10 text-center space-y-8 px-4 sm:px-8 max-w-2xl">
           <div
             className="w-24 h-24 rounded-2xl flex items-center justify-center mx-auto"
             style={{
@@ -229,7 +229,7 @@ export function VocabularyFlow({
           animation: "fade-up 0.5s ease-out",
         }}
       >
-        <div className="text-center space-y-8 px-8 max-w-2xl">
+        <div className="text-center space-y-8 px-4 sm:px-8 max-w-2xl">
           <div
             className="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto"
             style={{

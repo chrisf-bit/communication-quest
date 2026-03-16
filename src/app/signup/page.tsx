@@ -71,7 +71,7 @@ export default function SignupPage() {
       }}
     >
       <div
-        className="pointer-events-none fixed top-20 left-1/4 w-72 h-72 rounded-full blur-[120px] opacity-20"
+        className="pointer-events-none fixed top-20 left-1/4 w-40 h-40 sm:w-72 sm:h-72 rounded-full blur-[120px] opacity-20"
         style={{ background: "#58CC02" }}
       />
 

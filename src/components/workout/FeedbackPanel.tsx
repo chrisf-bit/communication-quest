@@ -113,7 +113,7 @@ export function FeedbackPanel({
     <div className="space-y-5" style={{ animation: "fade-up 0.4s ease-out" }}>
       {/* Result scene - full coloured background */}
       <div
-        className="relative rounded-3xl overflow-hidden px-8 py-8"
+        className="relative rounded-3xl overflow-hidden px-4 sm:px-8 py-8"
         style={{
           background: config.sceneBg,
           borderLeft: `5px solid ${config.colour}`,

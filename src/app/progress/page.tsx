@@ -85,11 +85,11 @@ export default function ProgressPage() {
         }}
       >
         <div
-          className="pointer-events-none fixed top-20 left-1/4 w-72 h-72 rounded-full blur-[120px] opacity-20"
+          className="pointer-events-none fixed top-20 left-1/4 w-40 h-40 sm:w-72 sm:h-72 rounded-full blur-[120px] opacity-20"
           style={{ background: "#7C3AED" }}
         />
         <div
-          className="pointer-events-none fixed bottom-40 right-1/3 w-64 h-64 rounded-full blur-[120px] opacity-15"
+          className="pointer-events-none fixed bottom-40 right-1/3 w-32 h-32 sm:w-64 sm:h-64 rounded-full blur-[120px] opacity-15"
           style={{ background: "#3B82F6" }}
         />
 
@@ -133,19 +133,19 @@ export default function ProgressPage() {
     >
       {/* Glow orbs */}
       <div
-        className="pointer-events-none fixed top-16 left-[15%] w-72 h-72 rounded-full blur-[120px] opacity-15"
+        className="pointer-events-none fixed top-16 left-[15%] w-40 h-40 sm:w-72 sm:h-72 rounded-full blur-[120px] opacity-15"
         style={{ background: "#FF6B6B" }}
       />
       <div
-        className="pointer-events-none fixed top-1/3 right-[10%] w-64 h-64 rounded-full blur-[120px] opacity-15"
+        className="pointer-events-none fixed top-1/3 right-[10%] w-32 h-32 sm:w-64 sm:h-64 rounded-full blur-[120px] opacity-15"
         style={{ background: "#F59E0B" }}
       />
       <div
-        className="pointer-events-none fixed bottom-32 left-[30%] w-60 h-60 rounded-full blur-[100px] opacity-12"
+        className="pointer-events-none fixed bottom-32 left-[30%] w-32 h-32 sm:w-60 sm:h-60 rounded-full blur-[100px] opacity-12"
         style={{ background: "#059669" }}
       />
       <div
-        className="pointer-events-none fixed bottom-16 right-[25%] w-56 h-56 rounded-full blur-[100px] opacity-10"
+        className="pointer-events-none fixed bottom-16 right-[25%] w-28 h-28 sm:w-56 sm:h-56 rounded-full blur-[100px] opacity-10"
         style={{ background: "#3B82F6" }}
       />
 
