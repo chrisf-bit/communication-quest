@@ -3,6 +3,7 @@
 import { useState, type ReactNode } from "react";
 import { Scenario, Character, QuestionType } from "@/types";
 import { SceneCharacter } from "@/components/shared/SceneCharacter";
+import { CharacterAvatar } from "@/components/shared/CharacterAvatar";
 import { SpeechBubble } from "@/components/shared/SpeechBubble";
 import { DifficultyBadge } from "@/components/shared/DifficultyBadge";
 import { WorkplaceScene, WorkplaceSceneForeground, hashToScene } from "@/components/shared/WorkplaceScene";
@@ -110,15 +111,33 @@ export function ScenarioHeader({
 
         {/* Context bar */}
         <div className="px-6 pb-3 max-w-4xl mx-auto w-full">
-          <div
-            className="inline-flex items-start gap-2.5 px-5 py-3 rounded-xl text-base text-white/90 font-medium leading-relaxed"
-            style={{
-              backgroundColor: "rgba(30, 27, 75, 0.85)",
-              border: "2px solid rgba(99, 102, 241, 0.4)",
-            }}
-          >
-            <MapPin size={20} className="flex-shrink-0 mt-0.5 text-indigo-400" />
-            {context}
+          <div className="flex items-center gap-3">
+            <div className="sm:hidden flex-shrink-0">
+              <CharacterAvatar
+                name={character.name}
+                seed={character.avatarSeed}
+                style={character.style}
+                size="sm"
+                expression={started ? expression : "neutral"}
+                neutral={true}
+                animated={true}
+              />
+            </div>
+            <div className="flex-1 min-w-0">
+              <div className="sm:hidden text-sm font-semibold text-white mb-1">
+                {character.name} <span className="text-white/50 font-normal text-xs">{character.role}</span>
+              </div>
+              <div
+                className="inline-flex items-start gap-2.5 px-4 sm:px-5 py-2.5 sm:py-3 rounded-xl text-sm sm:text-base text-white/90 font-medium leading-relaxed"
+                style={{
+                  backgroundColor: "rgba(30, 27, 75, 0.85)",
+                  border: "2px solid rgba(99, 102, 241, 0.4)",
+                }}
+              >
+                <MapPin size={18} className="flex-shrink-0 mt-0.5 text-indigo-400" />
+                {context}
+              </div>
+            </div>
           </div>
         </div>
 
