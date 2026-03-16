@@ -165,8 +165,8 @@ export default function PracticePage() {
   if (step === "playing" && selectedMode) {
     if (selectedMode === "vocabulary") {
       return (
-        <div className="min-h-screen">
-          <div className="absolute top-4 left-4 z-50">
+        <div className="min-h-screen pt-14 sm:pt-16">
+          <div className="fixed top-[4.5rem] left-4 z-30">
             <button
               onClick={() => { setStep("mode"); setSelectedMode(null); }}
               className="flex items-center gap-1.5 text-sm text-white/90 hover:text-white transition-colors"
