@@ -23,9 +23,10 @@ const MIGRATED_KEY = "communication-quest-migrated";
 
 interface AccessStatus {
   hasAccess: boolean;
-  reason: "admin" | "facilitator" | "active-cohort" | "not-authenticated" | "no-cohort" | "cohort-expired";
+  reason: "admin" | "facilitator" | "active-cohort" | "not-authenticated" | "no-cohort" | "cohort-expired" | "free-trial" | "trial-expired";
   cohortName?: string;
   expiresAt?: string;
+  trialEndsAt?: string;
 }
 
 interface ProgressContextValue {

@@ -4,6 +4,9 @@ import { createServerSupabaseClient } from "@/lib/supabase/server";
 // Admin email - always has access
 const ADMIN_EMAIL = "chris@rapid-learn.co.uk";
 
+// Free trial duration in days for users with no cohort
+const FREE_TRIAL_DAYS = 3;
+
 /**
  * GET /api/access
  *
@@ -41,7 +44,24 @@ export async function GET() {
       return NextResponse.json({ hasAccess: true, reason: "facilitator" });
     }
 
-    return NextResponse.json({ hasAccess: false, reason: "no-cohort" });
+    // No cohort - check if within free trial period
+    const createdAt = new Date(user.created_at);
+    const trialEnd = new Date(createdAt.getTime() + FREE_TRIAL_DAYS * 24 * 60 * 60 * 1000);
+    const now2 = new Date();
+
+    if (now2 < trialEnd) {
+      return NextResponse.json({
+        hasAccess: true,
+        reason: "free-trial",
+        trialEndsAt: trialEnd.toISOString(),
+      });
+    }
+
+    return NextResponse.json({
+      hasAccess: false,
+      reason: "trial-expired",
+      trialEndsAt: trialEnd.toISOString(),
+    });
   }
 
   // Check if any cohort is still active
