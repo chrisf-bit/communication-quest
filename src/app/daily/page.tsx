@@ -65,39 +65,46 @@ export default function DailyChallengePage() {
   // Already completed today
   if (completed) {
     return (
-      <div className="max-w-2xl mx-auto px-4 py-12 space-y-6">
-        <div
-          className="rounded-2xl p-8 text-center space-y-4"
-          style={{
-            background: "linear-gradient(135deg, rgba(5, 150, 105, 0.15), rgba(5, 150, 105, 0.08))",
-            border: "2px solid rgba(5, 150, 105, 0.3)",
-          }}
-        >
+      <div
+        className="min-h-[calc(100vh-3.5rem)] flex items-center justify-center px-4"
+        style={{
+          background: "linear-gradient(160deg, #0F172A 0%, #1A1035 40%, #0D1520 100%)",
+        }}
+      >
+        <div className="max-w-md w-full">
           <div
-            className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto"
-            style={{ backgroundColor: "rgba(5, 150, 105, 0.25)" }}
-          >
-            <Check size={32} className="text-emerald-400" />
-          </div>
-          <h2 className="text-2xl font-bold text-white">Challenge Complete!</h2>
-          <p className="text-white/70">
-            You have already completed today's daily challenge. Come back tomorrow for a new one.
-          </p>
-          {progress.currentStreak > 1 && (
-            <p className="text-amber-400 font-bold">
-              {progress.currentStreak}-day streak!
-            </p>
-          )}
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-white transition-all duration-200 hover:opacity-90"
+            className="rounded-2xl p-8 text-center space-y-4"
             style={{
-              background: "linear-gradient(135deg, #7C3AED, #6D28D9)",
+              background: "linear-gradient(135deg, rgba(5, 150, 105, 0.15), rgba(5, 150, 105, 0.08))",
+              border: "2px solid rgba(5, 150, 105, 0.3)",
             }}
           >
-            <ArrowLeft size={18} />
-            Back to Home
-          </Link>
+            <div
+              className="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto"
+              style={{ backgroundColor: "rgba(5, 150, 105, 0.25)" }}
+            >
+              <Check size={32} className="text-emerald-400" />
+            </div>
+            <h2 className="text-2xl font-bold text-white">Challenge Complete!</h2>
+            <p className="text-white/70">
+              You have already completed today&apos;s daily challenge. Come back tomorrow for a new one.
+            </p>
+            {progress.currentStreak > 1 && (
+              <p className="text-amber-400 font-bold">
+                {progress.currentStreak}-day streak!
+              </p>
+            )}
+            <Link
+              href="/"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-white transition-all duration-200 hover:opacity-90"
+              style={{
+                background: "linear-gradient(135deg, #7C3AED, #6D28D9)",
+              }}
+            >
+              <ArrowLeft size={18} />
+              Back to Home
+            </Link>
+          </div>
         </div>
       </div>
     );

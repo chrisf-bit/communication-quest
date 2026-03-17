@@ -180,9 +180,46 @@ export function WorkoutFlow({
   );
 
   const handleScenarioContinue = useCallback(() => {
-    // After scenario feedback, show a vocab moment
-    setPhase("vocab-moment");
-  }, []);
+    const nextIndex = currentIndex + 1;
+    const isLastQuestion = nextIndex >= questions.length;
+
+    if (isLastQuestion) {
+      // Last scenario - skip vocab moment, go straight to summary
+      const totalScore = answers.reduce((sum, a) => sum + a.score, 0);
+      const maxScore = answers.reduce((sum, a) => sum + a.maxScore, 0);
+
+      const scenarioStyles: Record<string, CommunicationStyle> = {};
+      for (const q of questions) {
+        const s = scenarioMap[q.scenarioId];
+        if (s) scenarioStyles[q.scenarioId] = s.targetStyle;
+      }
+
+      if (currentProgress) {
+        const result = applySession(
+          currentProgress,
+          {
+            id: generateId(),
+            date: new Date().toISOString(),
+            type: "workout",
+            questions: answers,
+            totalScore,
+            maxScore,
+          },
+          scenarioStyles
+        );
+
+        setLevelUps(result.levelUps);
+        setXpEarned(result.xpEarned);
+        saveProgress(result.progress);
+      }
+
+      setPhase("summary");
+      onComplete();
+    } else {
+      // More scenarios to go - show a vocab moment between scenarios
+      setPhase("vocab-moment");
+    }
+  }, [currentIndex, questions, answers, scenarioMap, onComplete, currentProgress, saveProgress]);
 
   const handleVocabMomentComplete = useCallback(() => {
     const nextIndex = currentIndex + 1;
