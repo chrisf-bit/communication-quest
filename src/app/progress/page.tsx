@@ -328,10 +328,8 @@ export default function ProgressPage() {
             <div
               className="backdrop-blur-xl rounded-2xl p-5 space-y-3"
               style={{
-                background: "rgba(15, 23, 42, 0.8)",
-                border: "2px solid rgba(255,255,255,0.3)",
-                borderLeftColor: "#059669",
-                borderLeftWidth: "4px",
+                background: "linear-gradient(160deg, rgba(5,150,105,0.1) 0%, rgba(15, 23, 42, 0.8) 40%)",
+                border: "2px solid rgba(5,150,105,0.25)",
               }}
             >
               <div className="flex items-center gap-2">
@@ -351,10 +349,8 @@ export default function ProgressPage() {
             <div
               className="backdrop-blur-xl rounded-2xl p-5 space-y-3"
               style={{
-                background: "rgba(15, 23, 42, 0.8)",
-                border: "2px solid rgba(255,255,255,0.3)",
-                borderLeftColor: "#F59E0B",
-                borderLeftWidth: "4px",
+                background: "linear-gradient(160deg, rgba(245,158,11,0.1) 0%, rgba(15, 23, 42, 0.8) 40%)",
+                border: "2px solid rgba(245,158,11,0.25)",
               }}
             >
               <div className="flex items-center gap-2">

@@ -116,7 +116,7 @@ export function FeedbackPanel({
         className="relative rounded-3xl overflow-hidden px-4 sm:px-8 py-8"
         style={{
           background: config.sceneBg,
-          borderLeft: `5px solid ${config.colour}`,
+          border: `2px solid ${config.colour}40`,
         }}
       >
         {/* Decorative blurs */}

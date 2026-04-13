@@ -142,8 +142,7 @@ export function SpeechBubble({
         className={`relative rounded-2xl rounded-tl-sm px-5 py-4 max-w-2xl transition-all duration-300 ${neutral ? "backdrop-blur-xl" : ""}`}
         style={{
           backgroundColor: bgColour,
-          borderLeft: `4px solid ${borderColour}`,
-          ...(neutral ? { border: `2px solid rgba(255,255,255,0.3)`, borderLeft: `4px solid rgba(255,255,255,0.5)` } : {}),
+          border: neutral ? `2px solid rgba(255,255,255,0.3)` : `2px solid ${borderColour}40`,
         }}
       >
         <p className={`text-base leading-relaxed pr-8 ${neutral ? "text-white/90" : "text-foreground"}`}>

@@ -110,10 +110,7 @@ export function WorkoutSummary({
           className="relative rounded-3xl overflow-hidden px-4 sm:px-8 py-10 text-center backdrop-blur-xl"
           style={{
             background: sceneBg,
-            borderLeft: `5px solid ${scoreColour}`,
-            border: `2px solid rgba(255,255,255,0.3)`,
-            borderLeftWidth: "5px",
-            borderLeftColor: scoreColour,
+            border: `2px solid ${scoreColour}40`,
           }}
         >
           <div
@@ -192,11 +189,8 @@ export function WorkoutSummary({
             <div
               className="relative rounded-3xl overflow-hidden p-5 space-y-3 backdrop-blur-xl"
               style={{
-                background: "linear-gradient(160deg, rgba(5,150,105,0.15) 0%, rgba(5,150,105,0.08) 100%)",
-                borderLeft: "4px solid #059669",
-                border: "2px solid rgba(255,255,255,0.3)",
-                borderLeftWidth: "4px",
-                borderLeftColor: "#059669",
+                background: "linear-gradient(160deg, rgba(5,150,105,0.15) 0%, rgba(5,150,105,0.05) 100%)",
+                border: "2px solid rgba(5,150,105,0.3)",
               }}
             >
               <div className="absolute top-2 right-3 w-16 h-16 rounded-full blur-2xl opacity-20 bg-emerald-500" />
@@ -217,11 +211,8 @@ export function WorkoutSummary({
             <div
               className="relative rounded-3xl overflow-hidden p-5 space-y-3 backdrop-blur-xl"
               style={{
-                background: "linear-gradient(160deg, rgba(217,119,6,0.15) 0%, rgba(217,119,6,0.08) 100%)",
-                borderLeft: "4px solid #D97706",
-                border: "2px solid rgba(255,255,255,0.3)",
-                borderLeftWidth: "4px",
-                borderLeftColor: "#D97706",
+                background: "linear-gradient(160deg, rgba(217,119,6,0.15) 0%, rgba(217,119,6,0.05) 100%)",
+                border: "2px solid rgba(217,119,6,0.3)",
               }}
             >
               <div className="absolute top-2 right-3 w-16 h-16 rounded-full blur-2xl opacity-20 bg-amber-500" />

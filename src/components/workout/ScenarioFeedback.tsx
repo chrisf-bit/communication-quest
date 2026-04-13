@@ -178,9 +178,7 @@ export function ScenarioFeedback({
           className="relative rounded-3xl overflow-hidden px-4 sm:px-8 py-8 backdrop-blur-xl"
           style={{
             background: config.sceneBg,
-            border: "2px solid rgba(255,255,255,0.3)",
-            borderLeftWidth: "5px",
-            borderLeftColor: config.colour,
+            border: `2px solid ${config.colour}40`,
           }}
         >
           <div
